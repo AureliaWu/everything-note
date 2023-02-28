@@ -71,6 +71,33 @@
 
     
   <url>
+    <loc>http://garden.aezo.cn/2019/06/22/computerLanguage/web/vue/</loc>
+    <lastmod>2023-02-24T08:23:43.362Z</lastmod>
+    <data>
+        <display>
+        <title>Vue</title>
+        <pubTime>2019-06-22T06:47:36.000Z</pubTime>
+        
+        <tag>Computer Language</tag>
+         
+        <tag>web</tag>
+         
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://garden.aezo.cn/categories/web/"/>
+          
+             
+              <breadCrumb title="vue" url="http://garden.aezo.cn/categories/web/vue/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://garden.aezo.cn/2019/08/25/computerLanguage/web/uni-app/</loc>
     <lastmod>2023-02-24T08:23:43.362Z</lastmod>
     <data>
@@ -96,33 +123,6 @@
           
              
               <breadCrumb title="uni-app" url="http://garden.aezo.cn/categories/web/vue/uni-app/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://garden.aezo.cn/2019/06/22/computerLanguage/web/vue/</loc>
-    <lastmod>2023-02-24T08:23:43.362Z</lastmod>
-    <data>
-        <display>
-        <title>Vue</title>
-        <pubTime>2019-06-22T06:47:36.000Z</pubTime>
-        
-        <tag>Computer Language</tag>
-         
-        <tag>web</tag>
-         
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="web" url="http://garden.aezo.cn/categories/web/"/>
-          
-             
-              <breadCrumb title="vue" url="http://garden.aezo.cn/categories/web/vue/"/>
           
         </display>
     </data>

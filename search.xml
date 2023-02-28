@@ -360,31 +360,6 @@
     </entry>
     
     <entry>
-      <title>Ofbiz</title>
-      <link href="/2019/10/23/computerLanguage/frameworks/ofbiz/"/>
-      <url>/2019/10/23/computerLanguage/frameworks/ofbiz/</url>
-      <content type="html"><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p><h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
-      
-      <categories>
-          
-          <category> framework,Ofbiz </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Computer Language </tag>
-            
-            <tag> framework </tag>
-            
-            <tag> Ofbiz </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Flutter</title>
       <link href="/2019/10/23/computerLanguage/frameworks/flutter/"/>
       <url>/2019/10/23/computerLanguage/frameworks/flutter/</url>
@@ -406,6 +381,31 @@
             <tag> framework </tag>
             
             <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Ofbiz</title>
+      <link href="/2019/10/23/computerLanguage/frameworks/ofbiz/"/>
+      <url>/2019/10/23/computerLanguage/frameworks/ofbiz/</url>
+      <content type="html"><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p><h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
+      
+      <categories>
+          
+          <category> framework,Ofbiz </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer Language </tag>
+            
+            <tag> framework </tag>
+            
+            <tag> Ofbiz </tag>
             
         </tags>
       
@@ -639,6 +639,27 @@
     </entry>
     
     <entry>
+      <title>你好，世界</title>
+      <link href="/2019/05/12/others/hello-world/"/>
+      <url>/2019/05/12/others/hello-world/</url>
+      <content type="html"><![CDATA[<p>我的第一篇文章</p><h2 id="github-jeykll-markdown个人书写习惯"><a href="#github-jeykll-markdown个人书写习惯" class="headerlink" title="github-jeykll-markdown个人书写习惯"></a>github-jeykll-markdown个人书写习惯</h2><blockquote><p>2017-07-01 之后使用hexo书写博客, 格式依然可用</p></blockquote><h3 id="元信息"><a href="#元信息" class="headerlink" title="元信息"></a>元信息</h3><p>categories和tags都可以有多个</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">categories: [cat1, cat2]</span><br><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure><h3 id="md语法"><a href="#md语法" class="headerlink" title="md语法"></a>md语法</h3><ul><li>md文件中可以使用html标签</li><li><code>---</code>代表分割线</li></ul><h3 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h3><p>正文的第一级标题用h2(<code>##</code>)，标题和字段间要有换行</p><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul><li><p>列表（有序/无序）下面显示 <strong>代码、引用、图片</strong> 时：相对列表的该子项代码需要多缩进一个Tab（4个空格），且中间要空行，如：</p><pre>- 标题  &#x60;&#x60;&#x60;html    ...  &#x60;&#x60;&#x60;</pre></li><li><p>引用需要上下都空一行，列表只需要在上面空一行</p></li><li><p>子列表基于父列表要有一个Tab缩进（4个空格），中间无需空行</p></li></ul><h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>脚注支持链接跳转，注意脚注与被批注文本之间有一个空格</p><pre>标题或者文字 [^1]---参考文章[^1]: [http://blog.aezo.cn](http://blog.aezo.cn)</pre><h2 id="github-hexo-markdown个人书写习惯"><a href="#github-hexo-markdown个人书写习惯" class="headerlink" title="github-hexo-markdown个人书写习惯"></a>github-hexo-markdown个人书写习惯</h2><h3 id="修改文章后保存源码并更新博客"><a href="#修改文章后保存源码并更新博客" class="headerlink" title="修改文章后保存源码并更新博客"></a>修改文章后保存源码并更新博客</h3><ul><li><p><strong>更新步骤如下</strong> (或者直接执行项目目录下的<strong>blog-deploy.sh</strong>文件)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean # 有时候修改了静态文件需要先clean一下</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -am "update blog"</span><br><span class="line"><span class="meta">$</span> git push origin master:source</span><br><span class="line"><span class="meta">$</span> hexo g &amp;&amp; gulp &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></li></ul><h3 id="博客源码管理和博客更新"><a href="#博客源码管理和博客更新" class="headerlink" title="博客源码管理和博客更新"></a>博客源码管理和博客更新</h3><ul><li>本地处于master分支，远程有master(为博客渲染后的代码)和source(博客源码, 可设为远程默认分支)两个分支</li><li><p>更新博客 <code>hexo d -g</code></p><ul><li><p><code>_config.yml</code>文件中需要指向master分支</p>  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/aezocn/aezocn.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li></ul></li></ul><h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><ul><li><code>hexo clean</code> 清除缓存(如果未修改配置文件可不运行)</li><li><code>hexo g</code>/<code>hexo generate</code> 静态文件生成(修改主题文件可不用重新启动服务)</li><li><code>hexo s -p 5000</code>(<code>hexo server</code>) <strong>启动本地服务器(本地测试)</strong></li><li><code>hexo d</code>/<code>hexo deploy</code> 部署到github</li></ul><h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><ul><li>clone远程source分支到本地master分支</li><li><code>npm install -g hexo-cli</code> 全局安装hexo</li><li><code>npm install</code> 初始化</li><li>按照上述【修改文章后保存源码并更新博客】进行部署</li></ul><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><ul><li>图片格式如：<code>![hello](/data/images/2017/07/hello.png)</code></li><li>内部链接格式如：<code>[http://blog.aezo.cn/2017/01/16/arch/nginx/](/_posts/arch/nginx.md#基于编译安装tengine)</code>，其中<code>#</code>后面为完整子标题</li><li>hexo转义字符：<code>{: &amp;#123;</code>、<code>}: &amp;#125;</code> (如写vue代码的时会出现双括号导致hexo编译失败)</li></ul><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul><li>NexT主题本地搜索<ul><li>安装：<code>npm install --save hexo-generator-search</code></li><li>开启local_search</li><li>还可手动写本地搜索功能 <a href="http://www.hahack.com/codes/local-search-engine-for-hexo/" title="jQuery-based Local Search Engine for Hexo" target="_blank" rel="noopener">^1</a></li></ul></li><li>基于Swiftype的搜索</li></ul><h4 id="PlantUML"><a href="#PlantUML" class="headerlink" title="PlantUML"></a>PlantUML</h4><ul><li><code>npm install --save hexo-filter-plantuml</code> 安装插件(vscode可以再配合插件<code>PlantUML</code>使用)</li><li>markdown语法如下</li></ul><pre>&#x60;&#x60;&#x60;plantuml@startuml/' 样式(背景和波浪线条)和标题。这是代码注释，不会渲染 '/skinparam backgroundColor #EEEBDCskinparam handwritten truetitle  标题和水印 &lt;img:http://blog.aezo.cn/aezocn.png&gt;end titleBob->Alice : hello@enduml&#x60;&#x60;&#x60;</pre><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><h4 id="next"><a href="#next" class="headerlink" title="next"></a>next</h4><ul><li>自定义代码在<code>/themes/next/layout/_custom/</code>目录下</li><li>footer代码修改 <code>/themes/next/layout/_partials/footer.swig</code></li><li>部分图片禁用fancybox，可在img上加<code>class=&quot;nofancybox&quot;</code>。需要修改主题中的js文件，详细修改方法参考<a href="https://blog.csdn.net/cddchina/article/details/79764432" target="_blank" rel="noopener">https://blog.csdn.net/cddchina/article/details/79764432</a></li></ul><hr><p>参考文章</p>]]></content>
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> others </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Java基础知识</title>
       <link href="/2019/05/12/computerLanguage/java/javase/"/>
       <url>/2019/05/12/computerLanguage/java/javase/</url>
@@ -656,27 +677,6 @@
             <tag> Computer Language </tag>
             
             <tag> javase </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>你好，世界</title>
-      <link href="/2019/05/12/others/hello-world/"/>
-      <url>/2019/05/12/others/hello-world/</url>
-      <content type="html"><![CDATA[<p>我的第一篇文章</p><h2 id="github-jeykll-markdown个人书写习惯"><a href="#github-jeykll-markdown个人书写习惯" class="headerlink" title="github-jeykll-markdown个人书写习惯"></a>github-jeykll-markdown个人书写习惯</h2><blockquote><p>2017-07-01 之后使用hexo书写博客, 格式依然可用</p></blockquote><h3 id="元信息"><a href="#元信息" class="headerlink" title="元信息"></a>元信息</h3><p>categories和tags都可以有多个</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">categories: [cat1, cat2]</span><br><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure><h3 id="md语法"><a href="#md语法" class="headerlink" title="md语法"></a>md语法</h3><ul><li>md文件中可以使用html标签</li><li><code>---</code>代表分割线</li></ul><h3 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h3><p>正文的第一级标题用h2(<code>##</code>)，标题和字段间要有换行</p><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul><li><p>列表（有序/无序）下面显示 <strong>代码、引用、图片</strong> 时：相对列表的该子项代码需要多缩进一个Tab（4个空格），且中间要空行，如：</p><pre>- 标题  &#x60;&#x60;&#x60;html    ...  &#x60;&#x60;&#x60;</pre></li><li><p>引用需要上下都空一行，列表只需要在上面空一行</p></li><li><p>子列表基于父列表要有一个Tab缩进（4个空格），中间无需空行</p></li></ul><h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>脚注支持链接跳转，注意脚注与被批注文本之间有一个空格</p><pre>标题或者文字 [^1]---参考文章[^1]: [http://blog.aezo.cn](http://blog.aezo.cn)</pre><h2 id="github-hexo-markdown个人书写习惯"><a href="#github-hexo-markdown个人书写习惯" class="headerlink" title="github-hexo-markdown个人书写习惯"></a>github-hexo-markdown个人书写习惯</h2><h3 id="修改文章后保存源码并更新博客"><a href="#修改文章后保存源码并更新博客" class="headerlink" title="修改文章后保存源码并更新博客"></a>修改文章后保存源码并更新博客</h3><ul><li><p><strong>更新步骤如下</strong> (或者直接执行项目目录下的<strong>blog-deploy.sh</strong>文件)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean # 有时候修改了静态文件需要先clean一下</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -am "update blog"</span><br><span class="line"><span class="meta">$</span> git push origin master:source</span><br><span class="line"><span class="meta">$</span> hexo g &amp;&amp; gulp &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></li></ul><h3 id="博客源码管理和博客更新"><a href="#博客源码管理和博客更新" class="headerlink" title="博客源码管理和博客更新"></a>博客源码管理和博客更新</h3><ul><li>本地处于master分支，远程有master(为博客渲染后的代码)和source(博客源码, 可设为远程默认分支)两个分支</li><li><p>更新博客 <code>hexo d -g</code></p><ul><li><p><code>_config.yml</code>文件中需要指向master分支</p>  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/aezocn/aezocn.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li></ul></li></ul><h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><ul><li><code>hexo clean</code> 清除缓存(如果未修改配置文件可不运行)</li><li><code>hexo g</code>/<code>hexo generate</code> 静态文件生成(修改主题文件可不用重新启动服务)</li><li><code>hexo s -p 5000</code>(<code>hexo server</code>) <strong>启动本地服务器(本地测试)</strong></li><li><code>hexo d</code>/<code>hexo deploy</code> 部署到github</li></ul><h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><ul><li>clone远程source分支到本地master分支</li><li><code>npm install -g hexo-cli</code> 全局安装hexo</li><li><code>npm install</code> 初始化</li><li>按照上述【修改文章后保存源码并更新博客】进行部署</li></ul><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><ul><li>图片格式如：<code>![hello](/data/images/2017/07/hello.png)</code></li><li>内部链接格式如：<code>[http://blog.aezo.cn/2017/01/16/arch/nginx/](/_posts/arch/nginx.md#基于编译安装tengine)</code>，其中<code>#</code>后面为完整子标题</li><li>hexo转义字符：<code>{: &amp;#123;</code>、<code>}: &amp;#125;</code> (如写vue代码的时会出现双括号导致hexo编译失败)</li></ul><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul><li>NexT主题本地搜索<ul><li>安装：<code>npm install --save hexo-generator-search</code></li><li>开启local_search</li><li>还可手动写本地搜索功能 <a href="http://www.hahack.com/codes/local-search-engine-for-hexo/" title="jQuery-based Local Search Engine for Hexo" target="_blank" rel="noopener">^1</a></li></ul></li><li>基于Swiftype的搜索</li></ul><h4 id="PlantUML"><a href="#PlantUML" class="headerlink" title="PlantUML"></a>PlantUML</h4><ul><li><code>npm install --save hexo-filter-plantuml</code> 安装插件(vscode可以再配合插件<code>PlantUML</code>使用)</li><li>markdown语法如下</li></ul><pre>&#x60;&#x60;&#x60;plantuml@startuml/' 样式(背景和波浪线条)和标题。这是代码注释，不会渲染 '/skinparam backgroundColor #EEEBDCskinparam handwritten truetitle  标题和水印 &lt;img:http://blog.aezo.cn/aezocn.png&gt;end titleBob->Alice : hello@enduml&#x60;&#x60;&#x60;</pre><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><h4 id="next"><a href="#next" class="headerlink" title="next"></a>next</h4><ul><li>自定义代码在<code>/themes/next/layout/_custom/</code>目录下</li><li>footer代码修改 <code>/themes/next/layout/_partials/footer.swig</code></li><li>部分图片禁用fancybox，可在img上加<code>class=&quot;nofancybox&quot;</code>。需要修改主题中的js文件，详细修改方法参考<a href="https://blog.csdn.net/cddchina/article/details/79764432" target="_blank" rel="noopener">https://blog.csdn.net/cddchina/article/details/79764432</a></li></ul><hr><p>参考文章</p>]]></content>
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> others </tag>
             
         </tags>
       

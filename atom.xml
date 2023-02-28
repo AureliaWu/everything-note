@@ -436,35 +436,6 @@
   </entry>
   
   <entry>
-    <title>Ofbiz</title>
-    <link href="http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/ofbiz/"/>
-    <id>http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/ofbiz/</id>
-    <published>2019-10-23T02:29:00.000Z</published>
-    <updated>2023-02-24T08:23:43.338Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p><h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Ofbiz权限设计&quot;&gt;&lt;a href=&quot;#Ofbiz权限设计&quot; class=&quot;headerlink&quot; title=&quot;Ofbiz权限设计&quot;&gt;&lt;/a&gt;Ofbiz权限设计&lt;/h1&gt;&lt;h2 id=&quot;相关表&quot;&gt;&lt;a href=&quot;#相关表&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-      <category term="framework,Ofbiz" scheme="http://garden.aezo.cn/categories/framework-Ofbiz/"/>
-    
-    
-      <category term="Computer Language" scheme="http://garden.aezo.cn/tags/Computer-Language/"/>
-    
-      <category term="framework" scheme="http://garden.aezo.cn/tags/framework/"/>
-    
-      <category term="Ofbiz" scheme="http://garden.aezo.cn/tags/Ofbiz/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Flutter</title>
     <link href="http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/flutter/"/>
     <id>http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/flutter/</id>
@@ -493,6 +464,35 @@
       <category term="framework" scheme="http://garden.aezo.cn/tags/framework/"/>
     
       <category term="Flutter" scheme="http://garden.aezo.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ofbiz</title>
+    <link href="http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/ofbiz/"/>
+    <id>http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/ofbiz/</id>
+    <published>2019-10-23T02:29:00.000Z</published>
+    <updated>2023-02-24T08:23:43.338Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p><h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Ofbiz权限设计&quot;&gt;&lt;a href=&quot;#Ofbiz权限设计&quot; class=&quot;headerlink&quot; title=&quot;Ofbiz权限设计&quot;&gt;&lt;/a&gt;Ofbiz权限设计&lt;/h1&gt;&lt;h2 id=&quot;相关表&quot;&gt;&lt;a href=&quot;#相关表&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="framework,Ofbiz" scheme="http://garden.aezo.cn/categories/framework-Ofbiz/"/>
+    
+    
+      <category term="Computer Language" scheme="http://garden.aezo.cn/tags/Computer-Language/"/>
+    
+      <category term="framework" scheme="http://garden.aezo.cn/tags/framework/"/>
+    
+      <category term="Ofbiz" scheme="http://garden.aezo.cn/tags/Ofbiz/"/>
     
   </entry>
   
