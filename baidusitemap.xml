@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://garden.aezo.cn/2020/08/10/computerLanguage/java/beforeArchitect/spring/</loc>
-    <lastmod>2023-05-24T09:41:38.123Z</lastmod>
+    <lastmod>2023-05-31T06:03:37.953Z</lastmod>
     <data>
         <display>
         <title>Spring</title>
@@ -379,28 +379,6 @@
 
     
   <url>
-    <loc>http://garden.aezo.cn/2020/10/27/computerLanguage/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</loc>
-    <lastmod>2023-02-24T08:23:43.347Z</lastmod>
-    <data>
-        <display>
-        <title>反射</title>
-        <pubTime>2020-10-27T13:31:00.000Z</pubTime>
-        
-        <tag>Computer Language</tag>
-         
-        <tag>反射</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://garden.aezo.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://garden.aezo.cn/2020/04/29/computerLanguage/java/beforeArchitect/springboot/</loc>
     <lastmod>2023-02-24T08:23:43.347Z</lastmod>
     <data>
@@ -418,6 +396,28 @@
            
              
               <breadCrumb title="framework,Springboot" url="http://garden.aezo.cn/categories/framework-Springboot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://garden.aezo.cn/2020/10/27/computerLanguage/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</loc>
+    <lastmod>2023-02-24T08:23:43.347Z</lastmod>
+    <data>
+        <display>
+        <title>反射</title>
+        <pubTime>2020-10-27T13:31:00.000Z</pubTime>
+        
+        <tag>Computer Language</tag>
+         
+        <tag>反射</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://garden.aezo.cn/categories/Java/"/>
           
         </display>
     </data>
@@ -449,28 +449,6 @@
 
     
   <url>
-    <loc>http://garden.aezo.cn/2020/10/25/computerLanguage/java/beforeArchitect/JDBC/</loc>
-    <lastmod>2023-02-24T08:23:43.344Z</lastmod>
-    <data>
-        <display>
-        <title>JDBC</title>
-        <pubTime>2020-10-25T14:54:00.000Z</pubTime>
-        
-        <tag>Computer Language</tag>
-         
-        <tag>JDBC</tag>
-         
-         
-           
-             
-              <breadCrumb title="Database" url="http://garden.aezo.cn/categories/Database/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://garden.aezo.cn/2020/08/17/computerLanguage/java/beforeArchitect/SpringMVC/</loc>
     <lastmod>2023-02-24T08:23:43.344Z</lastmod>
     <data>
@@ -488,6 +466,28 @@
            
              
               <breadCrumb title="framework,SpringMVC" url="http://garden.aezo.cn/categories/framework-SpringMVC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://garden.aezo.cn/2020/10/25/computerLanguage/java/beforeArchitect/JDBC/</loc>
+    <lastmod>2023-02-24T08:23:43.344Z</lastmod>
+    <data>
+        <display>
+        <title>JDBC</title>
+        <pubTime>2020-10-25T14:54:00.000Z</pubTime>
+        
+        <tag>Computer Language</tag>
+         
+        <tag>JDBC</tag>
+         
+         
+           
+             
+              <breadCrumb title="Database" url="http://garden.aezo.cn/categories/Database/"/>
           
         </display>
     </data>
@@ -528,9 +528,9 @@
         
         <tag>Computer Language</tag>
          
-        <tag>framework</tag>
-         
         <tag>UI</tag>
+         
+        <tag>framework</tag>
          
         <tag>Flutter</tag>
          
