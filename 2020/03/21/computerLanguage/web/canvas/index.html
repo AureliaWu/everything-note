@@ -1,0 +1,1388 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Computer Language,web,CSS,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="canvas最早由Apple引入WebKit，用于Mac OS X的dashboard，后来又在safari和Google Chrome被实现。基于Geoko 1.8的浏览器（如firefox1.5）支持此元素。 &amp;lt;canvas&amp;gt;元素是WhatWG Web applications 1.0规范的一部分，也包含于HTML5中。&amp;lt;canvas&amp;gt;不再是语义化标签，存在兼容性问题，">
+<meta name="keywords" content="Computer Language,web,CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础之canvas">
+<meta property="og:url" content="http://garden.aezo.cn/2020/03/21/computerLanguage/web/canvas/index.html">
+<meta property="og:site_name" content="奇天大圣的蟠桃园">
+<meta property="og:description" content="canvas最早由Apple引入WebKit，用于Mac OS X的dashboard，后来又在safari和Google Chrome被实现。基于Geoko 1.8的浏览器（如firefox1.5）支持此元素。 &amp;lt;canvas&amp;gt;元素是WhatWG Web applications 1.0规范的一部分，也包含于HTML5中。&amp;lt;canvas&amp;gt;不再是语义化标签，存在兼容性问题，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas尺寸样式.png">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas尺寸属性.png">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas手动闭合三角形.png">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas自动闭合三角形.png">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas填充三角形.png">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas绘制镂空正方形.png">
+<meta property="og:image" content="http://garden.aezo.cn/source/data/img/html/canvas/非零环绕规则图解.png">
+<meta property="og:updated_time" content="2023-02-24T08:23:43.359Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础之canvas">
+<meta name="twitter:description" content="canvas最早由Apple引入WebKit，用于Mac OS X的dashboard，后来又在safari和Google Chrome被实现。基于Geoko 1.8的浏览器（如firefox1.5）支持此元素。 &amp;lt;canvas&amp;gt;元素是WhatWG Web applications 1.0规范的一部分，也包含于HTML5中。&amp;lt;canvas&amp;gt;不再是语义化标签，存在兼容性问题，">
+<meta name="twitter:image" content="http://garden.aezo.cn/source/data/img/html/canvas/canvas尺寸样式.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://garden.aezo.cn/2020/03/21/computerLanguage/web/canvas/">
+
+
+
+
+
+  <title>前端基础之canvas | 奇天大圣的蟠桃园</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d82223039d601f2f819f8fe140a63468";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=cnzz_stat_icon_1276691827&web_id=cnzz_stat_icon_1276691827" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">奇天大圣的蟠桃园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">保持饥饿</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    <!-- 文章标题之上 -->
+
+
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://garden.aezo.cn/2020/03/21/computerLanguage/web/canvas/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aurelia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/30209089?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奇天大圣的蟠桃园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">前端基础之canvas</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T10:59:00+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">web,CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+      
+      
+        <!-- 文章标题之下，正文之上。只有在文章详情也显示 -->
+
+<div>
+	<!--
+	<a target="_blank" href="https://www.aliyun.com/acts/product-section-2019/new-users?userCode=oby5nolb">
+		<img class="nofancybox" 
+			src="https://ws1.sinaimg.cn/large/c35fb475gy1g0n87d1ofzj20o602o75u.jpg"
+			alt="【开年HI购季】爆款云产品5折" title="【开年HI购季】爆款云产品5折"/>
+	</a>
+	 -->
+</div>
+
+      
+
+      
+      
+
+      
+        <p>canvas最早由Apple引入WebKit，用于Mac OS X的dashboard，后来又在safari和Google Chrome被实现。基于Geoko 1.8的浏览器（如firefox1.5）支持此元素。</p>
+<p><code>&lt;canvas&gt;</code>元素是WhatWG Web applications 1.0规范的一部分，也包含于HTML5中。<code>&lt;canvas&gt;</code>不再是语义化标签，存在兼容性问题，因此使用语义化标签兼容插件无法解决兼容问题。</p>
+<h1 id="canvas体验"><a href="#canvas体验" class="headerlink" title="canvas体验"></a>canvas体验</h1><p>绘图步骤：</p>
+<ol>
+<li><p>准备画布</p>
+<p> 使用<code>&lt;canvas&gt;</code>标签定义一个画布，默认画布为透明色(<code>rgba(0, 0, 0, 0)</code>)，大小为300*150</p>
+<p> 可在<code>&lt;canvas&gt;</code>的样式中设置边框，但不设置大小，画布大小在<code>&lt;canvas&gt;</code>属性中设置</p>
+<h2 id="canvas尺寸设置"><a href="#canvas尺寸设置" class="headerlink" title="canvas尺寸设置"></a>canvas尺寸设置</h2><ul>
+<li><p>在样式中设置<code>canvas</code>尺寸：</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid pink;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  运行结果：</p>
+<p>  <img src="/source/data/img/html/canvas/canvas尺寸样式.png" alt="canvas使用样式设置尺寸"></p>
+</li>
+<li><p>使用<code>canvas</code>属性设置画布尺寸</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">width</span>=<span class="string">"600px"</span> <span class="attr">height</span>=<span class="string">"400px"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  运行结果：</p>
+<p>  <img src="/source/data/img/html/canvas/canvas尺寸属性.png" alt="canvas使用属性设置尺寸"></p>
+<p>可以看出虽然两种方法设置的画布最终大小是一致的，但画布中的内容却不一样。</p>
+<p><strong>使用样式设置画布大小，相当于对画布进行了放大操作，画布中的内容也会被拉伸；使用canvas自带属性设置画布大小设置的是画布的实际大小，内容不会有影响</strong></p>
+</li>
+</ul>
+</li>
+<li><p>准备绘图工具</p>
+<p> <code>&lt;canvas&gt;</code>标签中不能写内容，因此绘图工具只能在js中设置</p>
+</li>
+<li><p>利用工具绘图</p>
+<p> 绘图步骤也需写在JS中</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 获取canvas元素</span></span><br><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 获取上下文(此处上下文为canvas的回执工具箱)</span></span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 移动画笔</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 绘制直线(轨迹/绘制路径)</span></span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 描边</span></span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>canvas不支持3d效果，一般使用web gl绘制3d效果的网页</strong></p>
+<h1 id="绘制平行线"><a href="#绘制平行线" class="headerlink" title="绘制平行线"></a>绘制平行线</h1><h2 id="绘制两条平行线"><a href="#绘制两条平行线" class="headerlink" title="绘制两条平行线"></a>绘制两条平行线</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第一条线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第二条线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 描边</span></span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<h2 id="关于描边"><a href="#关于描边" class="headerlink" title="关于描边"></a>关于描边</h2><p>描边默认的宽度是1px,默认颜色为黑色，但实际在浏览器显示为2px,浅黑色</p>
+<p>描边线的中心位置与刻度线对齐，因此描边线会占据浏览器上下各0.5px，但浏览器无法解析0.5px，只能解析1px，因此最终显示结果是宽度为2px,颜色饱和度降低</p>
+<p>解决方案： 前后(Y轴)移动0.5px</p>
+<h3 id="绘制三条不同颜色的平行线"><a href="#绘制三条不同颜色的平行线" class="headerlink" title="绘制三条不同颜色的平行线"></a>绘制三条不同颜色的平行线</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第一条蓝线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">100</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'blue'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"><span class="comment">// 绘制第二条红线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'red'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">20</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"><span class="comment">// 绘制第三条绿线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">300</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">300</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'green'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">30</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<p>绘制不同属性的线条时，需要用<code>ctx.beginPath();</code>来开启新路径解决样式覆盖问题</p>
+<h1 id="绘制三角形"><a href="#绘制三角形" class="headerlink" title="绘制三角形"></a>绘制三角形</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<p>使用此方法绘制出的三角形会出现起始点和lineto的连接点无法闭合产生缺角的问题:</p>
+<p><img src="/source/data/img/html/canvas/canvas手动闭合三角形.png" alt="canvas绘制手动闭合三角形"></p>
+<p>解决方案：使用<code>ctx.closePath()</code>让canvas自动闭合</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line"><span class="comment">// ctx.lineTo(200,100);</span></span><br><span class="line">ctx.closePath();<span class="comment">// 关闭路径</span></span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;    </span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<p><img src="/source/data/img/html/canvas/canvas自动闭合三角形.png" alt="canvas绘制自动闭合三角形"></p>
+<h2 id="绘制填充的三角形"><a href="#绘制填充的三角形" class="headerlink" title="绘制填充的三角形"></a>绘制填充的三角形</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.fillStyle = <span class="string">'#FF4040'</span>;</span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
+<p>绘制结果：</p>
+<p><img src="/source/data/img/html/canvas/canvas填充三角形.png" alt="canvas绘制填充三角形"></p>
+<p><strong>填充时不再使用<code>ctx.stroke()</code>而是使用<code>ctx.fill()</code>,同样的，填充样式属性用的是<code>fillStyle</code>而不是<code>strokeStyle</code></strong></p>
+<h1 id="绘制镂空正方形"><a href="#绘制镂空正方形" class="headerlink" title="绘制镂空正方形"></a>绘制镂空正方形</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 顺时针绘制100*100小正方形</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 逆时针绘制200*200大正方形</span></span><br><span class="line">ctx.moveTo(<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>,<span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>,<span class="number">250</span>);</span><br><span class="line">ctx.lineTo(<span class="number">50</span>,<span class="number">250</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line">ctx.fill();<span class="comment">// 非零环绕填充规则进行填充</span></span><br></pre></td></tr></table></figure>
+<p>绘制结果：</p>
+<p><img src="/source/data/img/html/canvas/canvas绘制镂空正方形.png" alt="canvas绘制镂空正方形"></p>
+<p><strong>非零环绕规则</strong>：从区域内往外画一条足够长的线，线与顺时针路径相交，计数器+1，与逆时针路径相交，计数器-1，计数器最终不为0则填充</p>
+<p><img src="/source/data/img/html/canvas/非零环绕规则图解.png" alt="非零环绕规则图解"></p>
+<h2 id="与线条相关的属性-画笔状态"><a href="#与线条相关的属性-画笔状态" class="headerlink" title="与线条相关的属性(画笔状态)"></a>与线条相关的属性(画笔状态)</h2><ul>
+<li><p><code>lineWidth</code>: 线宽，默认1px</p>
+</li>
+<li><p><code>lineCap</code>: 线末端属性： butt、round、square</p>
+</li>
+<li><p><code>lineJoin</code>: 相交线的拐点： miter(默认)、round、bevel</p>
+</li>
+<li><p><code>strokeStyle</code>: 线的颜色</p>
+</li>
+<li><p><code>fillStyle</code>: 填充颜色</p>
+</li>
+<li><p><code>setLineDash()</code>: 设置虚线</p>
+<p>  <code>setLineDash()</code>方法中需要传一个数组，用来描述虚线的排列方式,如<code>ctx.setLineDash([5,10,15,20])</code></p>
+</li>
+</ul>
+<ul>
+<li><p><code>getLineDash()</code>: 获取虚线宽度集合</p>
+</li>
+<li><p><code>lineDashOffset</code>: 设置虚线偏移量(负值向右偏移)</p>
+</li>
+</ul>
+<h1 id="绘制渐变色矩形"><a href="#绘制渐变色矩形" class="headerlink" title="绘制渐变色矩形"></a>绘制渐变色矩形</h1><p>绘制思路： 绘制点组成线，为每个点上色</p>
+<h1 id="绘制折线图"><a href="#绘制折线图" class="headerlink" title="绘制折线图"></a>绘制折线图</h1><p>绘制流程： 绘制网格 –&gt; 绘制坐标系 –&gt; 绘制点 –&gt; 连点成线</p>
+<p>具体实现： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 构造函数</span></span><br><span class="line"><span class="keyword">var</span> LineChart = <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取绘制工具</span></span><br><span class="line">    <span class="keyword">this</span>.ctx = ctx || <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置画布大小</span></span><br><span class="line">    <span class="keyword">this</span>.canvasWidth = <span class="keyword">this</span>.ctx.canvas.width;</span><br><span class="line">    <span class="keyword">this</span>.canvasHeight = <span class="keyword">this</span>.ctx.canvas.height;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置网格大小</span></span><br><span class="line">    <span class="keyword">this</span>.gridSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置坐标系的间距</span></span><br><span class="line">    <span class="keyword">this</span>.space = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置坐标原点位置</span></span><br><span class="line">    <span class="keyword">this</span>.x0 = <span class="keyword">this</span>.space;</span><br><span class="line">    <span class="keyword">this</span>.y0 = <span class="keyword">this</span>.canvasHeight - <span class="keyword">this</span>.space;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置箭头大小</span></span><br><span class="line">    <span class="keyword">this</span>.arrowSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置点的大小</span></span><br><span class="line">    <span class="keyword">this</span>.dotSize = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 行为和方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化</span></span><br><span class="line">LineChart.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.drawGrid();</span><br><span class="line">    <span class="keyword">this</span>.drawCoordinate();</span><br><span class="line">    <span class="keyword">this</span>.drawDots(data);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制网格</span></span><br><span class="line">LineChart.prototype.drawGrid = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// X轴方向线条数 = 画布高度 / 网格大小  向下取整</span></span><br><span class="line">    <span class="keyword">var</span> xLine = <span class="built_in">Math</span>.floor(<span class="keyword">this</span>.canvasHeight / <span class="keyword">this</span>.gridSize);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制x轴方向线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= xLine; i++) &#123;</span><br><span class="line">       <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">       <span class="keyword">this</span>.ctx.moveTo(<span class="number">0</span>, i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth, i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'#eee'</span>;</span><br><span class="line">       <span class="keyword">this</span>.ctx.stroke();            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Y轴方向线条数 = 画布宽度 / 网格大小 向下取整</span></span><br><span class="line">    <span class="keyword">var</span> yLine = <span class="built_in">Math</span>.floor(<span class="keyword">this</span>.canvasWidth / <span class="keyword">this</span>.gridSize);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制Y轴方向线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= yLine; i++) &#123;</span><br><span class="line">       <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">       <span class="keyword">this</span>.ctx.moveTo(i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>, <span class="number">0</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.lineTo(i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>, <span class="keyword">this</span>.canvasHeight);</span><br><span class="line">       <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'#eee'</span>;</span><br><span class="line">       <span class="keyword">this</span>.ctx.stroke();            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制坐标系</span></span><br><span class="line">LineChart.prototype.drawCoordinate = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 绘制X轴</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">    <span class="keyword">this</span>.ctx.moveTo(<span class="keyword">this</span>.x0, <span class="keyword">this</span>.y0);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space, <span class="keyword">this</span>.y0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// X轴箭头</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space - <span class="keyword">this</span>.arrowSize, <span class="keyword">this</span>.y0 - <span class="keyword">this</span>.arrowSize / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space - <span class="keyword">this</span>.arrowSize, <span class="keyword">this</span>.y0 + <span class="keyword">this</span>.arrowSize / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space, <span class="keyword">this</span>.y0);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.ctx.fill();</span><br><span class="line">    <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'black'</span>;</span><br><span class="line">    <span class="keyword">this</span>.ctx.stroke();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制Y轴</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">    <span class="keyword">this</span>.ctx.moveTo(<span class="keyword">this</span>.x0, <span class="keyword">this</span>.y0);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.space, <span class="keyword">this</span>.space);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Y轴箭头</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.x0 + <span class="keyword">this</span>.arrowSize / <span class="number">2</span>, <span class="keyword">this</span>.space + <span class="keyword">this</span>.arrowSize);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.x0 - <span class="keyword">this</span>.arrowSize / <span class="number">2</span>, <span class="keyword">this</span>.space + <span class="keyword">this</span>.arrowSize);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.space, <span class="keyword">this</span>.space);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.ctx.fill();</span><br><span class="line">    <span class="keyword">this</span>.ctx.stroke();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制点</span></span><br><span class="line">LineChart.prototype.drawDots = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 传入数据的坐标不是canvas坐标，因此需要先转换成canvas坐标，再进行绘制和连线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> item = data[i];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> canvasX = _this.x0 + item.x;<span class="comment">// canvas x轴坐标 = canvas原点X轴坐标 + 数据X轴坐标</span></span><br><span class="line">        <span class="keyword">var</span> canvasY = _this.y0 - item.y;<span class="comment">// canvas y轴坐标 = canvas原点y轴坐标 - 数据Y轴坐标</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绘制点</span></span><br><span class="line">        _this.ctx.beginPath();</span><br><span class="line">        _this.ctx.moveTo(canvasX - _this.dotSize / <span class="number">2</span>, canvasY - _this.dotSize / <span class="number">2</span>);<span class="comment">// 起始位置为点的左上角位置</span></span><br><span class="line">        _this.ctx.lineTo(canvasX + _this.dotSize / <span class="number">2</span>, canvasY - _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.lineTo(canvasX + _this.dotSize / <span class="number">2</span>, canvasY + _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.lineTo(canvasX - _this.dotSize / <span class="number">2</span>, canvasY + _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.closePath();</span><br><span class="line"></span><br><span class="line">        _this.ctx.fill();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将点连成线 (第一个点起点为(x0,y0),其他坐标起点为上一个点)</span></span><br><span class="line">        _this.ctx.beginPath();</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>) &#123;</span><br><span class="line">            _this.ctx.moveTo( _this.x0,  _this.y0);                </span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            _this.ctx.moveTo( _this.x0 + data[i<span class="number">-1</span>].x, _this.y0 - data[i<span class="number">-1</span>].y);</span><br><span class="line">        &#125;</span><br><span class="line">        _this.ctx.lineTo(canvasX, canvasY);</span><br><span class="line"></span><br><span class="line">        _this.ctx.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 初始化</span></span><br><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">100</span>,</span><br><span class="line">        y: <span class="number">120</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">150</span>,</span><br><span class="line">        y: <span class="number">300</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">400</span>,</span><br><span class="line">        y: <span class="number">360</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">430</span>,</span><br><span class="line">        y: <span class="number">200</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">470</span>,</span><br><span class="line">        y: <span class="number">100</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> lineChart = <span class="keyword">new</span> LineChart();</span><br><span class="line">lineChart.init(data);</span><br></pre></td></tr></table></figure>
+<h1 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h1><p>矩形：</p>
+<ul>
+<li><p><code>rect(x轴坐标,Y轴坐标,长度,高度)</code> </p>
+<ul>
+<li><p>X轴坐标、Y轴坐标表示矩形左上角的点的位置</p>
+</li>
+<li><p>此方法绘制的是轨迹，要显示出来还必须使用<code>stroke()</code>或<code>fill()</code>进行描边或填充</p>
+</li>
+<li><p>绘制的路径不是独立路径</p>
+</li>
+</ul>
+</li>
+<li><p><code>strokeRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
+<ul>
+<li><p>绘制描边矩形</p>
+</li>
+<li><p>此方法绘制有自己的独立路径，即默认自带<code>beginPath()</code>，不会被其他路径样式覆盖</p>
+</li>
+</ul>
+</li>
+<li><p><code>fillRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
+<ul>
+<li><p>绘制填充矩形</p>
+</li>
+<li><p>此方法绘制有自己的独立路径，即默认自带<code>beginPath()</code>，不会被其他路径样式覆盖</p>
+</li>
+</ul>
+</li>
+<li><p><code>clearRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
+<ul>
+<li>清除矩形内容</li>
+</ul>
+</li>
+</ul>
+<h2 id="绘制渐变矩形"><a href="#绘制渐变矩形" class="headerlink" title="绘制渐变矩形"></a>绘制渐变矩形</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linearGradient = ctx.createLinearGradient(<span class="number">100</span>,<span class="number">100</span>,<span class="number">400</span>,<span class="number">100</span>);<span class="comment">// 设置渐变方向，以两点的坐标来定</span></span><br><span class="line">linearGradient.addColorStop(<span class="number">0</span>,<span class="string">'pink'</span>);<span class="comment">// 起始颜色，若中间需要加别的颜色可以调整第一个参数为0~1之间</span></span><br><span class="line">linearGradient.addColorStop(<span class="number">1</span>,<span class="string">'blue'</span>);<span class="comment">// 结束颜色</span></span><br><span class="line"></span><br><span class="line">ctx.fillStyle = linearGradient;</span><br><span class="line"></span><br><span class="line">ctx.fillRect(<span class="number">100</span>,<span class="number">100</span>,<span class="number">300</span>,<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="绘制曲线"><a href="#绘制曲线" class="headerlink" title="绘制曲线"></a>绘制曲线</h1><h2 id="弧形"><a href="#弧形" class="headerlink" title="弧形"></a>弧形</h2><p>一个弧度 = 一个半径的长度</p>
+<ul>
+<li><p><code>arc(圆心x轴,圆心y轴,起始弧度,结束弧度,绘制方向)</code></p>
+<ul>
+<li><p>圆心x轴,圆心y轴为圆心坐标，类型为<code>number</code></p>
+</li>
+<li><p>起始弧度与结束弧度类型为<code>number</code>,π用<code>Math.PI</code>表示</p>
+</li>
+<li><p>绘制方向类型为<code>boolean</code>，默认为顺时针</p>
+</li>
+<li><p>此方法绘制的是路径，需要使用描边才能显示</p>
+<h2 id="扇形"><a href="#扇形" class="headerlink" title="扇形"></a>扇形</h2></li>
+</ul>
+</li>
+</ul>
+<p>起始点放在弧线的圆心位置，绘制弧线，闭合路径</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">50</span>,<span class="built_in">Math</span>.PI * <span class="number">3</span> / <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
+<p>起始点若不设置直接闭合，则绘制出的为扇形</p>
+<h2 id="n等分随机颜色的圆"><a href="#n等分随机颜色的圆" class="headerlink" title="n等分随机颜色的圆"></a>n等分随机颜色的圆</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">8</span>;<span class="comment">// 等分数</span></span><br><span class="line"><span class="keyword">var</span> angle = <span class="built_in">Math</span>.PI * <span class="number">2</span> / num;<span class="comment">// 每份弧度</span></span><br><span class="line"><span class="keyword">var</span> startAngle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> w = ctx.canvas.width;<span class="comment">// 画布宽度</span></span><br><span class="line"><span class="keyword">var</span> h = ctx.canvas.height;<span class="comment">// 画布高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取随机颜色</span></span><br><span class="line"><span class="keyword">var</span> getRandomColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span>+ r + <span class="string">','</span> + g + <span class="string">','</span> + b +<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制随机等分圆形</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">    startAngle = i * angle;</span><br><span class="line">    <span class="keyword">var</span> endAngle = (i + <span class="number">1</span>) * angle;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(w / <span class="number">2</span>,h / <span class="number">2</span>);</span><br><span class="line">    ctx.arc(w / <span class="number">2</span>,h / <span class="number">2</span>, h / <span class="number">2</span>,startAngle,endAngle);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fillStyle = getRandomColor();</span><br><span class="line">    ctx.fill();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="根据数据绘制饼图"><a href="#根据数据绘制饼图" class="headerlink" title="根据数据绘制饼图"></a>根据数据绘制饼图</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> data = [<span class="number">5</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">3</span>];<span class="comment">// 动态数据    </span></span><br><span class="line"><span class="keyword">var</span> w = ctx.canvas.width;<span class="comment">// 画布宽度</span></span><br><span class="line"><span class="keyword">var</span> h = ctx.canvas.height;<span class="comment">// 画布高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取随机颜色</span></span><br><span class="line"><span class="keyword">var</span> getRandomColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span>+ r + <span class="string">','</span> + g + <span class="string">','</span> + b +<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取总数</span></span><br><span class="line"><span class="keyword">let</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">    total = total + data[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据每份比例绘制饼图</span></span><br><span class="line"><span class="keyword">var</span> startAngle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;      </span><br><span class="line">    <span class="keyword">var</span> endAngle = startAngle +  <span class="built_in">Math</span>.PI * <span class="number">2</span> * (data[i] / total);</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(w / <span class="number">2</span>,h / <span class="number">2</span>);</span><br><span class="line">    ctx.arc(w / <span class="number">2</span>,h / <span class="number">2</span>, h / <span class="number">2</span>,startAngle,endAngle);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fillStyle = getRandomColor();</span><br><span class="line">    ctx.fill();</span><br><span class="line"></span><br><span class="line">    startAngle = endAngle;<span class="comment">// 下一区域起始弧度为本区域结束弧度，此处必须要赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h1><ul>
+<li><p><code>strokeText(文本内容,x坐标,y坐标)</code></p>
+<ul>
+<li><p>文本绘制的起点在左下角，矩形绘制的起点在左上角</p>
+</li>
+<li><p><code>strokeText</code>绘制出的是描边的文字，字体为空心，若要实心则使用<code>fillText</code>绘制</p>
+</li>
+</ul>
+</li>
+<li><p><code>textAlign</code></p>
+<ul>
+<li>文本对齐方式，基于起始坐标的对齐方式</li>
+</ul>
+</li>
+<li><p><code>font</code></p>
+<ul>
+<li>设置文本大小、字体</li>
+</ul>
+</li>
+<li><p><code>textBaseline</code></p>
+<ul>
+<li><p>设置基线（垂直对齐方式），基于起始坐标的对齐方式</p>
+</li>
+<li><p>可取值： <code>top</code>、<code>middle</code>、 <code>bottom</code>、 <code>hanging</code>、 <code>alphabetic</code>、 <code>ideographic</code></p>
+</li>
+<li><p><code>hanging</code> 文本的基线处于文本的正上方并且和文本相粘合(适用于印度文)</p>
+</li>
+<li><p><code>alphabetic</code> 默认值，基线处于文本下方，并穿过文字(适用于英文)</p>
+</li>
+<li><p><code>ideographic</code> 与 <code>bottom</code> 相似(适用于中文)</p>
+</li>
+</ul>
+</li>
+<li><p><code>measureText(文本内容)</code></p>
+<ul>
+<li><p>获取文本的宽度对象</p>
+</li>
+<li><p><strong>若取文本长度则需要xxx.ctx.measureText(xx).width</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="绘制带文本的饼图"><a href="#绘制带文本的饼图" class="headerlink" title="绘制带文本的饼图"></a>绘制带文本的饼图</h1><p><a href="https://garden.aezo.cn/demos/canvas饼状图.html">https://garden.aezo.cn/demos/canvas饼状图.html</a></p>
+<h1 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h1><p>绘制图片使用方法<code>drawImage()</code>,可传三个参数、五个参数、九个参数</p>
+<h2 id="绘制思路"><a href="#绘制思路" class="headerlink" title="绘制思路"></a>绘制思路</h2><ol>
+<li><p>加载图片至内存,创建image对象</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法1</span></span><br><span class="line"><span class="keyword">var</span> img = doucment.createElement(<span class="string">'img'</span>);</span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法2</span></span><br><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> Image();<span class="comment">// Image()为JS提供的内置构造函数</span></span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片加载完成才能执行代码，因此必须写在onload函数里面</p>
+<p> <strong>部分浏览器如果有缓存时，图片可能会在onload函数触发之前就已经加载完毕，第一次加载图片时已经触发了onload事件，含有缓存时不再触发onload事件，为保证兼容性，最好把onload事件写在图片加载之前</strong></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> Image();<span class="comment">// Image()为JS提供的内置构造函数</span></span><br><span class="line">image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 此处实现图片绘制</span></span><br><span class="line">&#125;</span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="三种绘制方法"><a href="#三种绘制方法" class="headerlink" title="三种绘制方法"></a>三种绘制方法</h2><ul>
+<li><p>三个参数 <code>darwImage(img, x, y)</code></p>
+<ul>
+<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
+</li>
+<li><p><code>x</code>、<code>y</code> 图片绘制的左上角</p>
+</li>
+</ul>
+</li>
+<li><p>五个参数 <code>darwImage(img, x, y, w, h)</code></p>
+<ul>
+<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
+</li>
+<li><p><code>x</code>、<code>y</code> 图片绘制的左上角</p>
+</li>
+<li><p><code>w</code>、<code>h</code> 图片绘制尺寸设置，会对图片进行缩放而不是裁剪</p>
+</li>
+</ul>
+</li>
+<li><p>九个参数 <code>drawImage(img, x, y, w, h, x1, y1, w1, h1)</code></p>
+<ul>
+<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
+</li>
+<li><p><code>x</code>、<code>y</code>、<code>w</code>、<code>h</code> 图片中的一个矩形区域</p>
+</li>
+<li><p><code>x1</code>、<code>y1</code>、<code>w1</code>、<code>h1</code> 画布中的一个矩形区域, <code>w1</code>、<code>h1</code>是图片的缩放尺寸而不是裁剪</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h2><h3 id="绘制关键思路"><a href="#绘制关键思路" class="headerlink" title="绘制关键思路"></a>绘制关键思路</h3><ol>
+<li><p>动态获取当前图片的尺寸</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> imageWidth = image.width;</span><br><span class="line"><span class="keyword">var</span> imageHeight = image.height;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算出每个小人物的尺寸</p>
+</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><a href="https://garden.aezo.cn/demos/canvas帧动画.html">https://garden.aezo.cn/demos/canvas帧动画.html</a></p>
+<h3 id="方向键控制精灵行走的帧动画"><a href="#方向键控制精灵行走的帧动画" class="headerlink" title="方向键控制精灵行走的帧动画"></a>方向键控制精灵行走的帧动画</h3><p><a href="https://garden.aezo.cn/demos/canvas方向键控制行走动画.html">https://garden.aezo.cn/demos/canvas方向键控制行走动画.html</a></p>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><hr>
+<p>参考视频</p>
+<p> <a href="https://www.bilibili.com/video/av53813293?p=2" target="_blank" rel="noopener">https://www.bilibili.com/video/av53813293?p=2</a> (canvas视频【高级教程】)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Language/" rel="tag"># Computer Language</a>
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/26/others/UML/starUml/" rel="next" title="UML">
+                <i class="fa fa-chevron-left"></i> UML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/29/computerLanguage/java/beforeArchitect/springboot/" rel="prev" title="SpringBoot">
+                SpringBoot <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      <!-- 文章上一篇/下一篇切换之后 -->
+
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/30209089?s=460&v=4" alt="Aurelia">
+          <p class="site-author-name" itemprop="name">Aurelia</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#canvas体验"><span class="nav-number">1.</span> <span class="nav-text">canvas体验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas尺寸设置"><span class="nav-number">1.1.</span> <span class="nav-text">canvas尺寸设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制平行线"><span class="nav-number">2.</span> <span class="nav-text">绘制平行线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制两条平行线"><span class="nav-number">2.1.</span> <span class="nav-text">绘制两条平行线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于描边"><span class="nav-number">2.2.</span> <span class="nav-text">关于描边</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制三条不同颜色的平行线"><span class="nav-number">2.2.1.</span> <span class="nav-text">绘制三条不同颜色的平行线</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制三角形"><span class="nav-number">3.</span> <span class="nav-text">绘制三角形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制填充的三角形"><span class="nav-number">3.1.</span> <span class="nav-text">绘制填充的三角形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制镂空正方形"><span class="nav-number">4.</span> <span class="nav-text">绘制镂空正方形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与线条相关的属性-画笔状态"><span class="nav-number">4.1.</span> <span class="nav-text">与线条相关的属性(画笔状态)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制渐变色矩形"><span class="nav-number">5.</span> <span class="nav-text">绘制渐变色矩形</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制折线图"><span class="nav-number">6.</span> <span class="nav-text">绘制折线图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制图形"><span class="nav-number">7.</span> <span class="nav-text">绘制图形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制渐变矩形"><span class="nav-number">7.1.</span> <span class="nav-text">绘制渐变矩形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制曲线"><span class="nav-number">8.</span> <span class="nav-text">绘制曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#弧形"><span class="nav-number">8.1.</span> <span class="nav-text">弧形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扇形"><span class="nav-number">8.2.</span> <span class="nav-text">扇形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#n等分随机颜色的圆"><span class="nav-number">8.3.</span> <span class="nav-text">n等分随机颜色的圆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据数据绘制饼图"><span class="nav-number">8.4.</span> <span class="nav-text">根据数据绘制饼图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制文本"><span class="nav-number">9.</span> <span class="nav-text">绘制文本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制带文本的饼图"><span class="nav-number">10.</span> <span class="nav-text">绘制带文本的饼图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制图片"><span class="nav-number">11.</span> <span class="nav-text">绘制图片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制思路"><span class="nav-number">11.1.</span> <span class="nav-text">绘制思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种绘制方法"><span class="nav-number">11.2.</span> <span class="nav-text">三种绘制方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帧动画"><span class="nav-number">11.3.</span> <span class="nav-text">帧动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制关键思路"><span class="nav-number">11.3.1.</span> <span class="nav-text">绘制关键思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">11.3.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方向键控制精灵行走的帧动画"><span class="nav-number">11.3.3.</span> <span class="nav-text">方向键控制精灵行走的帧动画</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换"><span class="nav-number">11.4.</span> <span class="nav-text">转换</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2019 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aurelia</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  
+  <div class="powered-by">
+    由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <div class="powered-by">
+    主题 -
+    <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+  
+</div>
+
+
+
+
+
+        
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d82223039d601f2f819f8fe140a63468";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

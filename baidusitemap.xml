@@ -379,6 +379,28 @@
 
     
   <url>
+    <loc>http://garden.aezo.cn/2020/10/27/computerLanguage/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</loc>
+    <lastmod>2023-02-24T08:23:43.347Z</lastmod>
+    <data>
+        <display>
+        <title>反射</title>
+        <pubTime>2020-10-27T13:31:00.000Z</pubTime>
+        
+        <tag>Computer Language</tag>
+         
+        <tag>反射</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://garden.aezo.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://garden.aezo.cn/2020/04/29/computerLanguage/java/beforeArchitect/springboot/</loc>
     <lastmod>2023-02-24T08:23:43.347Z</lastmod>
     <data>
@@ -396,28 +418,6 @@
            
              
               <breadCrumb title="framework,Springboot" url="http://garden.aezo.cn/categories/framework-Springboot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://garden.aezo.cn/2020/10/27/computerLanguage/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</loc>
-    <lastmod>2023-02-24T08:23:43.347Z</lastmod>
-    <data>
-        <display>
-        <title>反射</title>
-        <pubTime>2020-10-27T13:31:00.000Z</pubTime>
-        
-        <tag>Computer Language</tag>
-         
-        <tag>反射</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://garden.aezo.cn/categories/Java/"/>
           
         </display>
     </data>
@@ -528,9 +528,9 @@
         
         <tag>Computer Language</tag>
          
-        <tag>UI</tag>
-         
         <tag>framework</tag>
+         
+        <tag>UI</tag>
          
         <tag>Flutter</tag>
          
