@@ -2,23 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://garden.aezo.cn/2020/08/10/computerLanguage/java/beforeArchitect/spring/</loc>
+    <loc>http://garden.aezo.cn/2020/08/18/algorithm/dataStructure&algorithm/</loc>
     
-    <lastmod>2023-05-31T06:03:37.953Z</lastmod>
+    <lastmod>2023-11-28T09:21:53.573Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/07/24/computerLanguage/database/oracle/</loc>
+    <loc>http://garden.aezo.cn/2019/10/13/tools/git/</loc>
+    
+    <lastmod>2023-11-22T03:15:41.623Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/11/09/frameworks/uniapp/</loc>
+    
+    <lastmod>2023-11-16T09:38:50.674Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2019/10/13/tools/vsCode/</loc>
+    
+    <lastmod>2023-11-10T06:19:04.101Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/06/27/tools/idea/</loc>
+    
+    <lastmod>2023-11-10T06:18:58.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/07/21/python/python%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2023-07-21T10:08:00.289Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2019/06/22/frontend/vue/</loc>
+    
+    <lastmod>2023-07-21T05:35:57.216Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/07/14/frontend/frontend/</loc>
+    
+    <lastmod>2023-07-19T09:55:51.441Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/06/06/projects/tank/</loc>
+    
+    <lastmod>2023-06-12T02:49:16.356Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/05/09/java/maven/</loc>
+    
+    <lastmod>2023-06-08T09:59:18.012Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2023/06/05/algorithm/bigData/</loc>
+    
+    <lastmod>2023-06-05T09:11:33.063Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2020/08/10/java/beforeArchitect/spring/</loc>
+    
+    <lastmod>2023-06-02T02:52:52.891Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://garden.aezo.cn/2019/07/24/database/oracle/</loc>
     
     <lastmod>2023-05-23T08:23:13.782Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://garden.aezo.cn/2023/05/09/computerLanguage/java/maven/</loc>
-    
-    <lastmod>2023-05-09T08:20:19.429Z</lastmod>
     
   </url>
   
@@ -93,163 +163,142 @@
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/08/25/computerLanguage/web/uni-app/</loc>
+    <loc>http://garden.aezo.cn/2019/08/25/frontend/uni-app/</loc>
     
     <lastmod>2023-02-24T08:23:43.362Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/06/22/computerLanguage/web/vue/</loc>
-    
-    <lastmod>2023-02-24T08:23:43.362Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://garden.aezo.cn/2019/07/21/computerLanguage/web/html5/</loc>
+    <loc>http://garden.aezo.cn/2019/07/21/frontend/html5/</loc>
     
     <lastmod>2023-02-24T08:23:43.361Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/10/13/computerLanguage/web/css/</loc>
+    <loc>http://garden.aezo.cn/2019/10/13/frontend/css/</loc>
     
     <lastmod>2023-02-24T08:23:43.360Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/03/21/computerLanguage/web/canvas/</loc>
+    <loc>http://garden.aezo.cn/2020/03/21/frontend/canvas/</loc>
     
     <lastmod>2023-02-24T08:23:43.359Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/02/04/computerLanguage/miniProgram/wechat_miniprogram/</loc>
+    <loc>http://garden.aezo.cn/2020/02/04/miniProgram/wechat_miniprogram/</loc>
     
     <lastmod>2023-02-24T08:23:43.357Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/06/13/computerLanguage/microservice/microservice/</loc>
+    <loc>http://garden.aezo.cn/2019/06/13/microservice/microservice/</loc>
     
     <lastmod>2023-02-24T08:23:43.354Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/06/13/computerLanguage/microservice/docker/</loc>
+    <loc>http://garden.aezo.cn/2019/06/13/microservice/docker/</loc>
     
     <lastmod>2023-02-24T08:23:43.353Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/08/18/computerLanguage/java/%E9%9D%A2%E5%90%91%E9%9D%A2%E8%AF%95%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</loc>
+    <loc>http://garden.aezo.cn/2020/08/18/java/%E9%9D%A2%E5%90%91%E9%9D%A2%E8%AF%95%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</loc>
     
     <lastmod>2023-02-24T08:23:43.351Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/05/12/computerLanguage/java/javase/</loc>
+    <loc>http://garden.aezo.cn/2019/05/12/java/javase/</loc>
     
     <lastmod>2023-02-24T08:23:43.349Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/10/27/computerLanguage/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</loc>
+    <loc>http://garden.aezo.cn/2020/04/29/java/beforeArchitect/springboot/</loc>
     
     <lastmod>2023-02-24T08:23:43.347Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/04/29/computerLanguage/java/beforeArchitect/springboot/</loc>
+    <loc>http://garden.aezo.cn/2020/10/27/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</loc>
     
     <lastmod>2023-02-24T08:23:43.347Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/08/10/computerLanguage/java/beforeArchitect/networkBase/</loc>
+    <loc>http://garden.aezo.cn/2020/08/10/java/beforeArchitect/networkBase/</loc>
     
     <lastmod>2023-02-24T08:23:43.345Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/08/17/computerLanguage/java/beforeArchitect/SpringMVC/</loc>
+    <loc>http://garden.aezo.cn/2020/08/17/java/beforeArchitect/SpringMVC/</loc>
     
     <lastmod>2023-02-24T08:23:43.344Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/10/25/computerLanguage/java/beforeArchitect/JDBC/</loc>
+    <loc>http://garden.aezo.cn/2020/10/25/java/beforeArchitect/JDBC/</loc>
     
     <lastmod>2023-02-24T08:23:43.344Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/ofbiz/</loc>
+    <loc>http://garden.aezo.cn/2019/10/23/frameworks/ofbiz/</loc>
     
     <lastmod>2023-02-24T08:23:43.338Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2019/10/23/computerLanguage/frameworks/flutter/</loc>
+    <loc>http://garden.aezo.cn/2019/10/23/frameworks/flutter/</loc>
     
     <lastmod>2023-02-24T08:23:43.336Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/10/31/computerLanguage/database/mysql/</loc>
+    <loc>http://garden.aezo.cn/2020/10/31/database/mysql/</loc>
     
     <lastmod>2023-02-24T08:23:43.329Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/10/25/computerLanguage/database/database/</loc>
+    <loc>http://garden.aezo.cn/2020/10/25/database/database/</loc>
     
     <lastmod>2023-02-24T08:23:43.328Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/08/18/computerLanguage/algorithm/dataStructure&algorithm/</loc>
-    
-    <lastmod>2023-02-24T08:23:43.326Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://garden.aezo.cn/2019/06/22/computerLanguage/UI/UI%E5%85%A5%E9%97%A8/</loc>
+    <loc>http://garden.aezo.cn/2019/06/22/UI/UI%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2023-02-24T08:23:43.325Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://garden.aezo.cn/2020/02/01/computerLanguage/Nginx/Nginx/</loc>
+    <loc>http://garden.aezo.cn/2020/02/01/Nginx/Nginx/</loc>
     
     <lastmod>2023-02-24T08:23:43.324Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://garden.aezo.cn/2019/10/13/IDEs/vsCode/</loc>
-    
-    <lastmod>2023-02-24T08:23:43.321Z</lastmod>
     
   </url>
   

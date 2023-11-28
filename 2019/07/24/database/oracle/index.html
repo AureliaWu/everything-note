@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Oracle数据库 - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,Oracle的安装数据库和数据仓库数据库： 对数据进行持久化存储，将数据直接存储到磁盘
+
+关系型数据库： 
+
+Mysql(最常用)
+
+Oracle(最安全)
+
+QLserver(.net)
+
+Db2,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Oracle数据库 - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,Oracle的安装数据库和数据仓库数据库： 对数据进行持久化存储，将数据直接存储到磁盘
+
+关系型数据库： 
+
+Mysql(最常用)
+
+Oracle(最安全)
+
+QLserver(.net)
+
+Db2,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Oracle数据库 - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,Oracle的安装数据库和数据仓库数据库： 对数据进行持久化存储，将数据直接存储到磁盘
+
+关系型数据库： 
+
+Mysql(最常用)
+
+Oracle(最安全)
+
+QLserver(.net)
+
+Db2,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Oracle数据库</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Oracle数据库</h1>
+        <div class="stuff">
+            <span>七月 24, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Database/">Database</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Oracle/">Oracle</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Oracle的安装"><a href="#Oracle的安装" class="headerlink" title="Oracle的安装"></a>Oracle的安装</h1><h2 id="数据库和数据仓库"><a href="#数据库和数据仓库" class="headerlink" title="数据库和数据仓库"></a>数据库和数据仓库</h2><p>数据库： 对数据进行持久化存储，将数据直接存储到磁盘</p>
+<ul>
+<li><p>关系型数据库： </p>
+<ul>
+<li><p>Mysql(最常用)</p>
+</li>
+<li><p>Oracle(最安全)</p>
+</li>
+<li><p>QLserver(.net)</p>
+</li>
+<li><p>Db2(金融、银行)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h1><ol>
+<li>登录：sqlplus / as sysdba</li>
+<li><p>创建表空间：<code>create tablespace aezocn datafile &#39;d:/tablespace/aezo&#39; size 800m extent management local segment space management auto;</code> ，需要先建好路径 <code>d:/tablespace</code> ，最终会在该目录下建一个 AEZO 的文件(表空间之后可以修改)</p>
+<ul>
+<li>删除表空间：<code>drop tablespace aezocn including contents and datafiles;</code></li>
+</ul>
+</li>
+<li>创建用户：<code>create user aezo identified by aezo default tablespace aezocn;</code></li>
+<li>授权<ul>
+<li><code>grant create session to aezo;</code></li>
+<li><code>grant unlimited tablespace to aezo;</code></li>
+<li><code>grant dba to aezo;</code> 导入导出时，只有dba权限的账户才能导入由dba账户导出的数据，因此不建议直接设置用户为dba</li>
+</ul>
+</li>
+</ol>
+<h1 id="导入导出"><a href="#导入导出" class="headerlink" title="导入导出"></a>导入导出</h1><p><code>.dmp</code>适合大数据导出，<code>.sql</code>适合小数据导出(表中含有CLOB类型字段则不能导出)</p>
+<h2 id="命令行-4"><a href="#命令行-4" class="headerlink" title="命令行 ^4"></a>命令行 ^4</h2><ul>
+<li>输入 <code>imp/exp</code> 用户名/密码 可根据提示导入导出。直接<code>cmd</code>运行。</li>
+<li>成功提示 <code>Export terminated successfully [with/without warnings]</code>；失败提示 <code>Export terminated unsuccessfully [with/without warnings]</code></li>
+</ul>
+<h2 id="dmp格式导出导入-cmd"><a href="#dmp格式导出导入-cmd" class="headerlink" title="dmp格式导出导入(cmd)"></a>dmp格式导出导入(cmd)</h2><h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><h4 id="用户模式"><a href="#用户模式" class="headerlink" title="用户模式"></a>用户模式</h4><ul>
+<li><p><code>exp system/manager file=d:/exp.dmp owner=scott</code> 导出scott用户的所有对象，前提是system有相关权限</p>
+</li>
+<li><p>远程导出：此时<code>system/manager</code>默认连接的是本地数据库。如果使用<code>exp system/manager@remote_orcl file=d:/exp.dmp owner=scott</code> (<code>remote_orcl</code>为在本地建立的远程数据库网络服务名. 即tnsnames.ora里面的配置项名称)则可导出远程数据库的相关数据，下同。或者<a href="mailto:`system/manager@192.168.1.1" target="_blank" rel="noopener">`system/manager@192.168.1.1</a>:1521/orcl`</p>
+<ul>
+<li>加上 <code>compress=y</code> 表示压缩数据</li>
+<li>加上 <code>rows=n</code> 表示不导出数据行，只导出结构</li>
+</ul>
+</li>
+</ul>
+<h4 id="表模式"><a href="#表模式" class="headerlink" title="表模式"></a>表模式</h4><ul>
+<li><p><code>exp scott/tiger file=d:/exp.dmp tables=emp</code> 导出<code>scott</code>的<code>emp</code>表</p>
+<ul>
+<li>导出其他用户的表：<code>exp system/manager file=d:/exp.dmp tables=scott.emp</code>, <code>scott.dept</code> 导出<code>scott</code>的<code>emp</code>、<code>dept</code>表，用户<code>system</code>需要相关权限</li>
+<li><p>导出部分表数据：<code>exp scott/tiger file=d:/exp.dmp tables=emp query=\&quot; where ename like &#39;%AR%&#39;\&quot;</code></p>
+</li>
+<li><p>常见错误(EXP-00011)：原因为11g默认创建一个表时不分配segment，只有在插入数据时才会产生。</p>
+</li>
+</ul>
+</li>
+<li><p>导出全部：<code>exp system/manager file=d:/exp.dmp full=y</code></p>
+<ul>
+<li>用户 <code>system/manager</code> 必须具有相关权限</li>
+<li>导出的是整个数据库，包括所有的表空间</li>
+</ul>
+</li>
+</ul>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><h4 id="用户模式："><a href="#用户模式：" class="headerlink" title="用户模式："></a>用户模式：</h4><ul>
+<li><code>imp system/manager file=d:/exp.dmp fromuser=scott touser=aezo ignore=y</code><ul>
+<li><code>ignore=y</code>忽略创建错误, 不少情况下要先将表彻底删除，然后导入</li>
+</ul>
+</li>
+</ul>
+<h4 id="表模式-1"><a href="#表模式-1" class="headerlink" title="表模式"></a>表模式</h4><ul>
+<li><p><code>imp system/manager file=d:/exp.dmp fromuser=scott tables=emp, dept touser=aezo ignore=y</code></p>
+<ul>
+<li>将<code>scott</code>的表<code>emp</code>、<code></code>dept导入到用户<code>aezo</code></li>
+<li>此处 <code>file/fromuser/touser</code> 都可以指定多个</li>
+</ul>
+</li>
+<li><p>导入全部：<code>imp system/manager file=d:/exp.dmp full=y ignore=y</code></p>
+<ul>
+<li>用户 <code>system/manager</code> 必须具有相关权限</li>
+<li>导入的是整个数据库，包括所有的表空间</li>
+</ul>
+</li>
+</ul>
+<h1 id="Oracle报错记录"><a href="#Oracle报错记录" class="headerlink" title="Oracle报错记录"></a>Oracle报错记录</h1><h2 id="EXP-00011"><a href="#EXP-00011" class="headerlink" title="EXP-00011"></a>EXP-00011</h2><p><code>EXP-00011: XXX does not exist</code></p>
+<ul>
+<li>报错内容： 表XXX不存在</li>
+<li>报错场景： 直接用命令行导出单张表时，执行命令 <code>exp user/psw file=d:/exp.dmp tables=emp;</code> 提示表<code>emp</code>不存在，而实际查询时此表存在且有数据</li>
+<li>报错原因之一：<code>exp</code>执行语句多加了一个’<code>;</code>‘ 网上还有记录其它原因，但实际只遇到的是多加了分号，所以暂不记他人的情况</li>
+<li>解决方案： 将命令中的分号去掉就好啦</li>
+</ul>
+<h2 id="ORA-01940"><a href="#ORA-01940" class="headerlink" title="ORA-01940"></a>ORA-01940</h2><p><code>ORA-01940: cannot drop a user that is currently connected</code></p>
+<ul>
+<li>报错内容： 无法删除当前已连接用户</li>
+<li>报错场景： 执行<code>drop user</code>时出现此报错</li>
+<li>报错原因： 有用户在连接，无法执行<code>drop</code></li>
+<li>解决方案： <ul>
+<li>锁定用户: <code>alter user XXX account lock;</code></li>
+<li>查询进程号: <code>SELECT * FROM V$SESSION WHERE USERNAME=&#39;xxx&#39;;</code></li>
+<li>删除对应的进程: <code>alter system kill session &#39;xx,xx&#39;;</code></li>
+<li>删除对应用户: <code>drop user xx cascade;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="Oracle-sql语句"><a href="#Oracle-sql语句" class="headerlink" title="Oracle sql语句"></a>Oracle sql语句</h1><h2 id="将查询结果存入新表"><a href="#将查询结果存入新表" class="headerlink" title="将查询结果存入新表"></a>将查询结果存入新表</h2><p><code>create table 临时表名 as select * from table_name</code></p>
+<ul>
+<li><code>select * from table_name</code>表示得到查询结果的查询语句</li>
+<li>此方法无需先创建表设置字段，而是会将查询结果的字段和字段类型直接赋予新表</li>
+<li>此方法创建的不属于临时表，可以根据需求作为缓存表，用完可以删除</li>
+</ul>
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><h2 id="使用plsql创建存储过程"><a href="#使用plsql创建存储过程" class="headerlink" title="使用plsql创建存储过程"></a>使用plsql创建存储过程</h2><ol>
+<li><p>plsql –&gt; Objects –&gt; Procedures 右键–&gt; 新建 –&gt; 弹出框中输入存储过程的名字</p>
+</li>
+<li><p>书写存储过程逻辑，以下为清理作废数据的存储过程</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> clear_ycama_lock_data <span class="keyword">is</span></span><br><span class="line"><span class="keyword">cursor</span> c <span class="keyword">is</span> <span class="keyword">select</span> t.id <span class="keyword">from</span> ycama_box_lock t <span class="keyword">where</span> t.yes_status <span class="keyword">in</span> (<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line">type tb_records is table of c%rowtype;</span><br><span class="line">rd_records tb_records;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  <span class="keyword">open</span> c;</span><br><span class="line">  loop</span><br><span class="line">    fetch c bulk collect into rd_records limit 500;</span><br><span class="line">    forall i in 1..rd_records.count</span><br><span class="line">     <span class="keyword">delete</span> <span class="keyword">from</span> ycama_box_lock c <span class="keyword">where</span> c.id = rd_records(i).id;</span><br><span class="line">    <span class="keyword">commit</span>;</span><br><span class="line">    exit when c%notfound;</span><br><span class="line">  <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">  close c;</span><br><span class="line"><span class="keyword">end</span> clear_ycama_lock_data;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>直接执行存储过程，执行完成后，在Procedures底下会出现此存储过程</p>
+</li>
+<li><p>调用存储过程： 在sql窗口输入以下命令后运行：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  CLEAR_YCAMA_LOCK_DATA(); // 此处为存储过程的名称，注意最后的分号;不能省略</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>参考文章</p>
+<p><a href="http://blog.aezo.cn/2016/10/12/db/oracle-dba/" target="_blank" rel="noopener">http://blog.aezo.cn/2016/10/12/db/oracle-dba/</a>  (aezo blog)</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

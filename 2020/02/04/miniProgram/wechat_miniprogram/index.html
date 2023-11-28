@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>微信小程序 - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,开发环境参考微信小程序官方文档： https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.htm,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="微信小程序 - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,开发环境参考微信小程序官方文档： https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.htm,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="微信小程序 - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,开发环境参考微信小程序官方文档： https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.htm,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">微信小程序</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">微信小程序</h1>
+        <div class="stuff">
+            <span>二月 04, 2020</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p>参考微信小程序官方文档： <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html</a></p>
+<ol>
+<li>注册账号</li>
+</ol>
+<ul>
+<li><p>每个邮箱仅能申请一个小程序</p>
+</li>
+<li><p>邮箱必须未被微信公众号注册且未被微信用户绑定</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>获取APPID</p>
+</li>
+<li><p>下载微信小程序开发工具，下载地址： <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html</a></p>
+</li>
+</ol>
+<h1 id="小程序Demo"><a href="#小程序Demo" class="headerlink" title="小程序Demo"></a>小程序Demo</h1><p>启动微信小程序开发工具，使用测试appid新建项目。</p>
+<h2 id="小程序结构目录"><a href="#小程序结构目录" class="headerlink" title="小程序结构目录"></a>小程序结构目录</h2><table>
+<thead>
+<tr>
+<th>结构</th>
+<th>传统web</th>
+<th>微信小程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构</td>
+<td>HTML</td>
+<td>WXML</td>
+</tr>
+<tr>
+<td>样式</td>
+<td>CSS</td>
+<td>WXSS</td>
+</tr>
+<tr>
+<td>逻辑</td>
+<td>JavaScript</td>
+<td>JavaScript</td>
+</tr>
+<tr>
+<td>配置</td>
+<td>无</td>
+<td>JSON</td>
+</tr>
+</tbody>
+</table>
+<p><strong>传统web是三层结构，微信小程序是四层结构，多了一层配置.json</strong></p>
+<h2 id="初始化demo结构分析"><a href="#初始化demo结构分析" class="headerlink" title="初始化demo结构分析"></a>初始化demo结构分析</h2><ul>
+<li><p>pages 用于存放页面</p>
+</li>
+<li><p>utils 存放工具类</p>
+</li>
+<li><p>app.js 小程序入口文件</p>
+</li>
+<li><p>app.json 公共配置文件，配置小程序大体结构(默认标题等)</p>
+</li>
+<li><p>app.wxss 全局样式</p>
+</li>
+<li><p>project.config.json 对应小程序开发工具详情中的内容</p>
+</li>
+</ul>
+<h2 id="配置文件介绍"><a href="#配置文件介绍" class="headerlink" title="配置文件介绍"></a>配置文件介绍</h2><p>一个小程序应用包括最基本的两种配置文件： 全局设置的app.json和页面自己的page.json</p>
+<p><strong>配置文件中不能出现注释</strong></p>
+<h3 id="全局配置文件app-json"><a href="#全局配置文件app-json" class="headerlink" title="全局配置文件app.json"></a>全局配置文件app.json</h3><p>全局配置文件可配置小程序的所有页面路径、界面表现、网络超时时间、底部tab等。</p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html</a></p>
+<p>Demo中的默认配置如下： </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [</span><br><span class="line">    <span class="string">"pages/index/index"</span>,</span><br><span class="line">    <span class="string">"pages/logs/logs"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"window"</span>: &#123;</span><br><span class="line">    <span class="attr">"backgroundTextStyle"</span>: <span class="string">"light"</span>,</span><br><span class="line">    <span class="attr">"navigationBarBackgroundColor"</span>: <span class="string">"#fff"</span>,</span><br><span class="line">    <span class="attr">"navigationBarTitleText"</span>: <span class="string">"WeChat"</span>,</span><br><span class="line">    <span class="attr">"navigationBarTextStyle"</span>: <span class="string">"black"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"style"</span>: <span class="string">"v2"</span>,</span><br><span class="line">  <span class="attr">"sitemapLocation"</span>: <span class="string">"sitemap.json"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>pages 整个小程序中拥有的页面路径</p>
+<p>  一般新增页面时需要进行两步操作： 1. 在指定位置新增页面 2. 将新增页面路径填入app.json的pages中</p>
+<p>  使用小程序开发工具，直接在app.json中添加pages路径，编译后会自动新增文件和文件夹</p>
+<p>  小程序加载顺序是根据页面路径的配置而来</p>
+</li>
+<li><p>window</p>
+<p>  设置小程序的状态栏、导航条、标题、窗口背景色等</p>
+<p>  <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window</a></p>
+</li>
+<li><p>tabBar </p>
+<p>  配置底部导航栏</p>
+<ul>
+<li><p><code>list</code>: tab的列表，最少 2 个、最多 5 个 tab<br>  tab 按数组的顺序排序，每个项都是一个对象，其属性值只有四个：<br>  <code>pagePath</code>、<code>text</code>、<code>iconPath</code>、<code>selectedIconPath</code></p>
+</li>
+<li><p><code>color</code>: tab 上的文字默认颜色，仅支持十六进制颜色</p>
+<p>示例： </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    &#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [<span class="string">"pages/index/index"</span>, <span class="string">"pages/logs/index"</span>],</span><br><span class="line">    <span class="attr">"window"</span>: &#123;</span><br><span class="line">        <span class="attr">"navigationBarTitleText"</span>: <span class="string">"Demo"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"tabBar"</span>: &#123;</span><br><span class="line">        <span class="attr">"list"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"pagePath"</span>: <span class="string">"pages/index/index"</span>,</span><br><span class="line">            <span class="attr">"text"</span>: <span class="string">"首页"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"pagePath"</span>: <span class="string">"pages/logs/logs"</span>,</span><br><span class="line">            <span class="attr">"text"</span>: <span class="string">"日志"</span></span><br><span class="line">        &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"networkTimeout"</span>: &#123;</span><br><span class="line">        <span class="attr">"request"</span>: <span class="number">10000</span>,</span><br><span class="line">        <span class="attr">"downloadFile"</span>: <span class="number">10000</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"debug"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"navigateToMiniProgramAppIdList"</span>: [<span class="string">"wxe5f52902cf4de896"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="页面配置文件"><a href="#页面配置文件" class="headerlink" title="页面配置文件"></a>页面配置文件</h3><p>用来表示页面目录下的<code>page.json</code>和小程序页面相关的配置，可以在此独立定义每个页面的一些属性，如顶部颜色、是否允许下拉刷新等。</p>
+<p>页面的配置只能设置app.json中部分<code>window</code>配置项的内容，页面中的配置项会覆盖<code>app.json</code>的<code>window</code>中相同的配置项</p>
+<h2 id="视图层"><a href="#视图层" class="headerlink" title="视图层"></a>视图层</h2><p><code>WXML(WeiXin Markup Language)</code>是框架设计的一套语言，集合基础组件、事件系统可以构建出页面的结构</p>
+<h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/view.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/view.html</a></p>
+<p>名称|    功能说明<br>-|-<br><code>cover-image</code>|    覆盖在原生组件之上的图片视图<br><code>cover-view</code>|    覆盖在原生组件之上的文本视图<br><code>movable-area</code>|    movable-view的可移动区域<br><code>movable-view</code>|    可移动的视图容器，在页面中可以拖拽滑动<br><code>scroll-view</code>|    可滚动视图区域<br><code>swiper</code>|    滑块视图容器<br><code>swiper-item</code>    |仅可放置在swiper组件中，宽高自动设置为100%<br><code>view</code>|    视图容器</p>
+</li>
+<li><p><code>view</code> 标签</p>
+<p>  类似于<code>div</code>，但有自己的属性</p>
+<p>  如<code>hover-class</code>表示 指定按下去的样式类</p>
+</li>
+<li><p><code>text</code>标签</p>
+<p>  显示普通的文本，只能嵌套text</p>
+<p>  <code>selectable</code> 表示文本是否可选，默认为否</p>
+<p>  <code>decode</code> 表示是否解码，默认为否</p>
+</li>
+<li><p><code>image</code>图片标签</p>
+<p>  默认宽度为320px,高度240px</p>
+<p>  <strong>此标签其实是web中的图片标签和背景图片的结合，并且不支持web中的背景图片的写法</strong></p>
+<p>  属性名| 类型 | 默认值 | 说明<br>  -|-|-|-<br>  src|string| |图片地址<br>  mode|String|’scaleToFill’|图片裁剪、缩放的模式<br>  lazy-load|Boolean|false|图片懒加载，只针对page与scroll-view下的image起作用</p>
+</li>
+<li><p><code>swiper</code>标签</p>
+<p>  轮播图组件，默认宽度100%,高度150%</p>
+<p>  子元素必须有<code>swiper-item</code></p>
+</li>
+<li><p><code>navigator</code>标签</p>
+<p>  导航组件，类似超链接标签</p>
+<p>  <code>target</code>: 在哪个目标发生跳转，默认当前小程序，可选值self/miniProgram</p>
+<p>  <code>url</code>: 当前小程序内跳转链接</p>
+<p>  <code>open-type</code>: 跳转方式</p>
+</li>
+<li><p><code>video</code></p>
+<p>  视频。原生组件，类似于web中的video</p>
+</li>
+<li><p>自定义组件</p>
+<p>  一个组件由<code>json</code> <code>wxml</code> <code>wxss</code> <code>js</code> 4个文件组成</p>
+<ol>
+<li><p>声明组件</p>
+<p> 需要在json文件中进行自定义组件声明</p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"component"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑组件</p>
+</li>
+<li><p>使用自定义组件</p>
+<p> 在页面的<code>json</code>文件中进行引用声明，并提供对应的组件名和组件路径</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // 引用声明</span><br><span class="line">    "usingComponents": &#123;</span><br><span class="line">        // 要使用的组件名称     // 组件的路径</span><br><span class="line">        "component-tag-name": "path/to/the/custom/component"</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><p>WXML文件中使用&#123;&#123;&#125;&#125;</p>
+<p>属性中要体现布尔类型的值，也必须加上两个大括号。</p>
+<p>错误写法: <code>&lt;checkbox checked=&quot;false&quot;&gt;&lt;/checkbox&gt;</code></p>
+<p>正确写法: <code>&lt;checkbox checked=&quot;&amp;#123;&amp;#123;false&amp;#125;&amp;#125flase&quot;&gt;&lt;/checkbox&gt;</code></p>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3></li>
+<li><p>三元运算</p>
+<p>  <code>&lt;view hidden=&quot;&amp;#123;&amp;#123; flag ? true : false &amp;#125;&amp;#125&quot;&gt;Hidden&lt;/view&gt;</code></p>
+</li>
+<li><p>算术运算</p>
+<p>  在&#123;&#123;&#125;&#125;中直接进行算术运算</p>
+</li>
+<li><p>逻辑判断</p>
+<p>  <code>wx:if</code> if条件</p>
+<p><strong>花括号和引号之间如果有空格，最终将被解析成字符串</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h3><p><code>wx:for</code></p>
+<p>项的变量名默认为<code>item</code>，<code>wx:for-item</code>可以指定数组当前元素的变量名</p>
+<p>下标变量名默认为<code>index</code>, <code>wx:for-inidex</code>可以指定数组当前下标的变量名</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;array&#125;&#125;"</span>&gt;</span></span><br><span class="line">    &#123;&#123;index&#125;&#125;: &#123;&#123;item.meaasge&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">    data: &#123;</span><br><span class="line">        array:[&#123;</span><br><span class="line">            message: 'hello'</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            message:'what'</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h3><p>WXSS(WeiXin Style Sheet)是一套样式语言，用于描述WXML的组件样式，与CSS相比，WXSS扩展的特性有： 尺寸单位、样式导入</p>
+<ul>
+<li><p>尺寸单位<code>rpx</code></p>
+<p>  <code>rpx</code>(responsive pixel): 可根据屏幕宽度进行自适应</p>
+</li>
+<li><p>样式导入</p>
+</li>
+</ul>
+<p>使用<code>import</code>语句导入</p>
+<p><code>@import &quot;被导入文件路径&quot;</code></p>
+<p><strong>样式文件wxss中的注释不能用<code>//</code>,只能用`/</strong>/`**</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

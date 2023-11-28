@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SpringBoot - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,SpringBoot基础框架介绍SpringBoot主要解决的是在微服务架构下简化配置（有快速配置）、前后端分离、快速开发
+优点： 
+
+提供了快速启动入门
+开箱即用、提供默认配置
+内嵌容器化web项,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SpringBoot - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,SpringBoot基础框架介绍SpringBoot主要解决的是在微服务架构下简化配置（有快速配置）、前后端分离、快速开发
+优点： 
+
+提供了快速启动入门
+开箱即用、提供默认配置
+内嵌容器化web项,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="SpringBoot - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,SpringBoot基础框架介绍SpringBoot主要解决的是在微服务架构下简化配置（有快速配置）、前后端分离、快速开发
+优点： 
+
+提供了快速启动入门
+开箱即用、提供默认配置
+内嵌容器化web项,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">SpringBoot</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">SpringBoot</h1>
+        <div class="stuff">
+            <span>四月 29, 2020</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Springboot/">Springboot</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/framework/">framework</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="SpringBoot基础"><a href="#SpringBoot基础" class="headerlink" title="SpringBoot基础"></a>SpringBoot基础</h1><h2 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h2><p>SpringBoot主要解决的是在微服务架构下简化配置（有快速配置）、前后端分离、快速开发</p>
+<p>优点： </p>
+<ul>
+<li>提供了快速启动入门</li>
+<li>开箱即用、提供默认配置</li>
+<li>内嵌容器化web项目</li>
+<li>没有冗余代码生成和XML配置要求</li>
+</ul>
+<h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><p>模板引擎： 如 <code>Thymeleaf</code>, <code>FreeMarker</code></p>
+<p>有嵌套和解析的过程，先加载静态页面，在静态页面上添加一些标记，模板引擎的内核会根据添加的标记动态渲染数据</p>
+<p><strong>计算向数据移动</strong></p>
+<h3 id="MVC架构思想"><a href="#MVC架构思想" class="headerlink" title="MVC架构思想"></a>MVC架构思想</h3><p>? JVM垃圾回收机制现在已经不是引入计数器的方式，改为GCroot</p>
+<p>? Spring不支持循环引用，主要是因为其自身结构问题。</p>
+<h3 id="基于SpringBoot的MVC"><a href="#基于SpringBoot的MVC" class="headerlink" title="基于SpringBoot的MVC"></a>基于SpringBoot的MVC</h3><ul>
+<li>数据的展示查询</li>
+</ul>
+<h3 id="分层解释"><a href="#分层解释" class="headerlink" title="分层解释"></a>分层解释</h3><ul>
+<li><p><code>Controller</code>层</p>
+<p>一般写业务逻辑跳转</p>
+</li>
+<li><p><code>Service</code>层</p>
+<p>业务层逻辑代码</p>
+</li>
+<li><p><code>DAO</code>层</p>
+<p>操作持久层</p>
+</li>
+</ul>
+<h3 id="各种依赖"><a href="#各种依赖" class="headerlink" title="各种依赖"></a>各种依赖</h3><h4 id="JPA-Java-Persistence-API"><a href="#JPA-Java-Persistence-API" class="headerlink" title="JPA(Java Persistence API)"></a>JPA(Java Persistence API)</h4><p>  添加依赖 <code>Spring-data-jpa</code>, 用于访问数据源的框架，可以把数据库的表映射成对象，一一对应</p>
+<h3 id="注释解说"><a href="#注释解说" class="headerlink" title="注释解说"></a>注释解说</h3><h4 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a><code>@RequestMapping</code></h4><p>请求路径</p>
+<h4 id="PathVariable-quot-key-quot"><a href="#PathVariable-quot-key-quot" class="headerlink" title="@PathVariable(&quot;key&quot;)"></a><code>@PathVariable(&quot;key&quot;)</code></h4><p>取URI中<code>key</code>对应的值</p>
+<h1 id="实践中报错记录"><a href="#实践中报错记录" class="headerlink" title="实践中报错记录"></a>实践中报错记录</h1><h2 id="下载依赖包速度过慢"><a href="#下载依赖包速度过慢" class="headerlink" title="下载依赖包速度过慢"></a>下载依赖包速度过慢</h2><p>解决方法： 配置阿里云镜像地址</p>
+<p>全局配置步骤： </p>
+<ol>
+<li>找到maven的<code>setting.xml</code>文件，若没有可以新建</li>
+<li><p>在<code>setting.xml</code>文件的<code>mirrors</code>节点下面添加子节点</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="运行成功并退出"><a href="#运行成功并退出" class="headerlink" title="运行成功并退出"></a>运行成功并退出</h2><p><code>Process finished with exit code 0</code></p>
+<p>原因： <code>Pom.xml</code>文件缺少依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="引入spring-security每次调用需要输入登录名密码"><a href="#引入spring-security每次调用需要输入登录名密码" class="headerlink" title="引入spring-security每次调用需要输入登录名密码"></a>引入<code>spring-security</code>每次调用需要输入登录名密码</h2><p>解决办法： 关闭验证</p>
+<ol>
+<li><p><code>springboot 2.0</code> 之前可通过yml配置关闭验证：</p>
+ <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">security.basic.enabled=false</span></span><br><span class="line"><span class="string">management.security.enabled=false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>springboot 2.x</code>后关闭验证</p>
+<p> <code>springboot 2.x</code> 后上述配置被废除，需要在启动类前的 <code>@SpringBootApplication</code> 注解中加入 <code>exclude</code> 属性 <code>scurityAutoConfiguration</code></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span>(exclude = SecurityAutoConfiguration.class)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="数据库连接报错"><a href="#数据库连接报错" class="headerlink" title="数据库连接报错"></a>数据库连接报错</h2><p>报错内容: <code>java.sql.SQLException: The server time zone value &#39;�й���׼ʱ��&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the &#39;serverTimezone&#39; configuration property) to use a more specifc time zone value if you want to utilize time zone support.</code></p>
+<p>报错原因： 数据库连接时区配置问题</p>
+<p>解决方法： 数据库配置添加时区配置 <code>serverTimezone=UTC</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">$&#123;MYSQL_USER:root&#125;</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">$&#123;MYSQL_PASSWORD:123456&#125;</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://$&#123;MYSQL_HOST:localhost&#125;:$&#123;MYSQL_PORT:3306&#125;/$&#123;MYSQL_DATABASE:dbname&#125;?serverTimezone=UTC&amp;useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>参考资料：</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

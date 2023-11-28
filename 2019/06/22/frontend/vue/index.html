@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vue - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,Vue使用使用Vue的两种方式：
+
+在页面中引入vue的js文件
+
+脚手架 
+
+官方脚手架vue-cli
+
+其他民间脚手架，如webpack-simple
+
+手动搭建
+
+
+
+
+ES6相关
+速写属性
+,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,Vue使用使用Vue的两种方式：
+
+在页面中引入vue的js文件
+
+脚手架 
+
+官方脚手架vue-cli
+
+其他民间脚手架，如webpack-simple
+
+手动搭建
+
+
+
+
+ES6相关
+速写属性
+,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Vue - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,Vue使用使用Vue的两种方式：
+
+在页面中引入vue的js文件
+
+脚手架 
+
+官方脚手架vue-cli
+
+其他民间脚手架，如webpack-simple
+
+手动搭建
+
+
+
+
+ES6相关
+速写属性
+,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Vue</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Vue</h1>
+        <div class="stuff">
+            <span>六月 22, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/vue/">vue</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/web/">web</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Vue使用"><a href="#Vue使用" class="headerlink" title="Vue使用"></a>Vue使用</h1><p>使用Vue的两种方式：</p>
+<ul>
+<li><p>在页面中引入vue的js文件</p>
+</li>
+<li><p>脚手架 </p>
+<ul>
+<li><p>官方脚手架vue-cli</p>
+</li>
+<li><p>其他民间脚手架，如<code>webpack-simple</code></p>
+</li>
+<li><p>手动搭建</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="ES6相关"><a href="#ES6相关" class="headerlink" title="ES6相关"></a>ES6相关</h1><ul>
+<li><p>速写属性</p>
+<p>语法糖,属性名和变量名相同时可简写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"测试"</span>;</span><br><span class="line"><span class="keyword">var</span> age = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: name,</span><br><span class="line">  age: age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// person对象可以简写成如下样子</span></span><br><span class="line">person = &#123;</span><br><span class="line">  name,</span><br><span class="line">  age</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>速写方法</p>
+<p>语法糖，在对象中写方法时可以简化写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"测试"</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sayHello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hellllo"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于如下写法</span></span><br><span class="line"></span><br><span class="line">person = &#123;</span><br><span class="line">  name: <span class="string">"测试"</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sayHello() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hellllo"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模板字符串</p>
+<p>为了解决字符串的拼接问题和转换问题</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">"测试"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    sayHello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"hellllo"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 普通写法</span></span><br><span class="line">  <span class="keyword">var</span> str1 = <span class="string">"my name is "</span> + person.name + <span class="string">"\n my age is "</span> + person.age;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模板字符串，可以简化拼接，支持换行</span></span><br><span class="line">  <span class="keyword">var</span> str2 = <span class="string">`my name is <span class="subst">$&#123;person.name&#125;</span> </span></span><br><span class="line"><span class="string">  my age is <span class="subst">$&#123;person.age&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="注入"><a href="#注入" class="headerlink" title="注入"></a>注入</h1><p>配置对象中的部分内容会被提取到vue实例中：</p>
+<ul>
+<li><p>data</p>
+</li>
+<li><p>methods</p>
+</li>
+</ul>
+<p>该过程称为注入</p>
+<p>注入的目的有两个：</p>
+<ul>
+<li><p>完成数据响应式</p>
+<p>vue2.0是通过<code>Object.defineProperty</code>方法完成了数据响应式，Vue3.0是通过<code>Class Proxy</code>完成的数据响应式</p>
+<p><code>Class Proxy</code>效率会高于<code>Object.defineProperty</code>，<code>Object.defineProperty</code>无法感知新增和删除的属性，会无法完成数据响应式</p>
+</li>
+<li><p>绑定<code>this</code></p>
+</li>
+</ul>
+<h1 id="虚拟DOM树"><a href="#虚拟DOM树" class="headerlink" title="虚拟DOM树"></a>虚拟DOM树</h1><p>为了提高渲染效率，vue会把模板编译成虚拟DOM树，然后再生成真实的Dom树</p>
+<p>对于vue而言，提升效率的重点在于：</p>
+<ul>
+<li><p>减少新的虚拟DOM的生成</p>
+</li>
+<li><p>保证对比之后只有必要的结点有变化</p>
+</li>
+</ul>
+<p>Vue提供了多种方式生成虚拟DOM树：</p>
+<ol>
+<li><p>在挂载的元素内部直接书写，此时将使用元素的outerHTML作为模板 </p>
+</li>
+<li><p>在template配置中书写</p>
+</li>
+<li><p>在render配置中用函数直接创建虚拟节点树，此时，完全脱离模板，将省略编译步骤</p>
+</li>
+</ol>
+<p>以上步骤从上到下，优先级逐步提升，写在render配置中的会覆盖前面两种情况生成的</p>
+<p><strong>虚拟节点树必须是单根的</strong></p>
+<h1 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h1><p>将生成的DOM树放置到某个元素位置，称之为挂载。</p>
+<p>挂载的方式： </p>
+<ol>
+<li><p>通过<code>el: &quot;css选择器&quot;</code>进行配置</p>
+</li>
+<li><p>通过<code>vue实例.$mount(&quot;css选择器&quot;)</code>进行配置</p>
+</li>
+</ol>
+<h1 id="完整流程"><a href="#完整流程" class="headerlink" title="完整流程"></a>完整流程</h1><p>实例被创建 –&gt; 注入 –&gt; 编译生成虚拟DOM树 –&gt; 挂载 –&gt; 已挂载</p>
+<p>数据变动时，已挂载的DOM会重新生成DOM树 –&gt; 对比新旧两树差异 –&gt; 将差异应用到真实DOM</p>
+<h1 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h1><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>vue中的元素内容使用mustache模板引擎进行解析</p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a><code>v-html</code></h3><p>设置元素的innerHtml，该指令会导致元素的模板内容失效</p>
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a><code>v-bind</code></h3><p>绑定动态属性，此指令因为十分常用，因此提供了简写<code>:</code></p>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a><code>v-on</code></h3><p>注册事件</p>
+<ul>
+<li><p>此功能非常常用，因此提供了简写<code>@</code></p>
+</li>
+<li><p>事件支持一些指令修饰符，如<code>prevent</code></p>
+</li>
+<li><p>事件参数会自动传递</p>
+</li>
+</ul>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a><code>v-for</code></h3><p>html代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-<span class="keyword">for</span>=<span class="string">"item in list"</span>&gt; &#123;&#123; item &#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+<p>javascript代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      list: [</span><br><span class="line">        &#123;<span class="attr">id</span> : <span class="number">1</span>, <span class="attr">name</span>: zs1&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span> : <span class="number">2</span>, <span class="attr">name</span>: zs2&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span> : <span class="number">3</span>, <span class="attr">name</span>: zs3&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span> : <span class="number">4</span>, <span class="attr">name</span>: zs4&#125;,</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>v-for</code>指令除了能遍历数组还能遍历对象，遍历对象时，要写成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-<span class="keyword">for</span>=<span class="string">"(value, key) in user"</span>&gt; 值是:&#123;&#123; value &#125;&#125; --- 键是&#123;&#123; key &#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+<p>除了value和key之外，在第三个位置还有索引。<code>v-for</code>指令中，<code>in</code>后面可以是普通数组、对象数组、对象、数字，若为数字时，<code>count in 10</code>的<code>count</code>从1开始</p>
+<p>注意事项： </p>
+<ol>
+<li>vue 2.20+ 版本中，使用v-for指令时，需要指定key，保证数据的唯一性</li>
+<li>key属性只能用number或者String</li>
+<li>key在使用时必须使用<code>v-bind</code>属性的形式绑定</li>
+</ol>
+<h3 id="v-if和-v-show指令"><a href="#v-if和-v-show指令" class="headerlink" title="v-if和 v-show指令"></a><code>v-if</code>和 <code>v-show</code>指令</h3><p><code>v-if</code> 每次都会重新删除或创建元素，有较高的切换性能消耗<br><code>v-show</code> 每次不会重新进行DOM的删除和创建操作，只是切换了元素的display:none样式，有较高的初始渲染消耗</p>
+<p>如果元素涉及到频繁的切换，最好不要用<code>v-if</code>,如果元素可能永远不会被显示出来，则推荐使用<code>v-if</code></p>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a><code>v-model</code></h3><p>双向数据绑定，常用语表单元素，该指令是<code>v-on</code>和<code>v-bind</code>的复合版</p>
+<h3 id="特殊属性"><a href="#特殊属性" class="headerlink" title="特殊属性"></a>特殊属性</h3><ul>
+<li><p><code>key</code> </p>
+<p>该属性可以干预diff算法，在同一层级，key值相同的节点会进行比对，key值不同的则不会</p>
+<p>虚拟dom生成真实dom使用的就是diff算法</p>
+<p>在循环生成的节点中，Vue强烈建议给予每个节点唯一且稳定的key值，建议key值用id而不是下标</p>
+</li>
+</ul>
+<h1 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h1><p>计算属性写在computed配置中，是本身不存在而需要靠计算出来的属性，与方法<code>methods</code>的区别在于：</p>
+<ol>
+<li><p>计算属性可以赋值，而方法不行</p>
+</li>
+<li><p>计算属性会进行缓存，只有其依赖的属性发生变化是才会变化，否则直接使用缓存结果，不会重新计算</p>
+</li>
+<li><p>方法只要调用一次，无论依赖的值有没有变化都会执行</p>
+</li>
+<li><p>凡是根据已有数据计算的到的新数据的无参函数，都应该尽量写成计算属性而不是方法</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="comment">// 仅访问器 写法</span></span><br><span class="line">  prop() &#123;</span><br><span class="line">    <span class="keyword">return</span> ...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 访问器 + 设置其器写法</span></span><br><span class="line">  fullProp: &#123;</span><br><span class="line">    get() &#123;</span><br><span class="line">      <span class="keyword">return</span> ...</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    set(val) &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数组的新方法"><a href="#数组的新方法" class="headerlink" title="数组的新方法"></a>数组的新方法</h1><p><code>forEach</code> <code>some</code> <code>filter</code> <code>findIndex</code> 都属于数组的新方法，都会对数组中的每一项进行遍历，执行相关操作 </p>
+<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><h2 id="过滤器调用时的格式"><a href="#过滤器调用时的格式" class="headerlink" title="过滤器调用时的格式"></a>过滤器调用时的格式</h2><figure class="highlight javascript"><figcaption><span>&#123;&#123; data | 过滤器的名称 &#125; ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 过滤器的定义语法</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">// 过滤器的第一个参数被定死，永远是管道符`</span>|<span class="string">`前面传递过来的数据</span></span><br><span class="line"><span class="string">Vue.filter('过滤器的名称', function(data) &#123;&#125;)</span></span><br></pre></td></tr></table></figure>
+<p><code>Vue.filter()</code>定义的是全局的过滤器，所有的vm实例共享</p>
+<h2 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#xx'</span>,</span><br><span class="line">  data: &#123;&#125;,</span><br><span class="line">  methods:&#123;&#125;,</span><br><span class="line">  filters: &#123;</span><br><span class="line">    <span class="comment">// 定义私有过滤器，过滤器两个条件 【过滤器名称和处理函数】</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>注： 过滤器调用的时候采用就近原则，如果私有过滤器和全局过滤器名称一致，优先调用私有过滤器</p>
+<h1 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h1><p>官方文档提供默认的按键修饰符，除此之外还可以自定义按键修饰符(2.x版本)：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Vue.config.keyCodes.自定义名称 = 对应键盘码码值</span></span><br><span class="line">Vue.config.keyCodes.f2 = <span class="number">113</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h1><p>vue中所有的指令，在调用时都以<code>v-</code>开头,自定义指令的时候，指令名称的前面不需要加<code>v-</code>前缀，但是调用时必须加上<code>v-</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用v-derective()定义全局的指令</span></span><br><span class="line">Vue.derective(指令的名称, &#123;</span><br><span class="line">  <span class="comment">// 在每个函数中，第一个参数永远是el,表示被绑定了指令的元素，这个el参数是一个原生的JS对象</span></span><br><span class="line">  bind: <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 每当指令绑定到元素上的时候，会立即执行这个bind函数，只执行一次</span></span><br><span class="line">    <span class="comment">// 和样式相关的可以放在bind中</span></span><br><span class="line">  &#125;,</span><br><span class="line">  inserted: <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 元素插入到DOM中的时候，会执行insert函数，只触发一次</span></span><br><span class="line">  &#125;,</span><br><span class="line">  updated: <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 当VNode更新的时候，会执行updated,可能会触发多次</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>更多钩子函数的参数具体可见官方文档: <a href="https://cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0</a></p>
+<h2 id="自定义私有指令"><a href="#自定义私有指令" class="headerlink" title="自定义私有指令"></a>自定义私有指令</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#xx'</span>,</span><br><span class="line">  data: &#123;&#125;,</span><br><span class="line">  methods:&#123;&#125;,</span><br><span class="line">  directive: &#123;</span><br><span class="line">    <span class="comment">// 定义私有指令</span></span><br><span class="line">    指令名: &#123;</span><br><span class="line">      bind: <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="函数简写"><a href="#函数简写" class="headerlink" title="函数简写"></a>函数简写</h2><p>在很多时候，你可能想在 bind 和 update 时触发相同行为，而不关心其它的钩子，可以简写成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'color-swatch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</span><br><span class="line">  el.style.backgroundColor = binding.value</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="Vue实例的生命周期"><a href="#Vue实例的生命周期" class="headerlink" title="Vue实例的生命周期"></a>Vue实例的生命周期</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>生命周期钩子 = 生命周期函数 = 生命周期时间 = Vue实例从创建、运行到销毁期间运行的各种各样的事件</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>创建期间的生命周期函数、运行期间的生命周期函数、销毁创建期间的生命周期函数</p>
+<p><img src="/data/img/vue/lifecycle.png" alt="Vue生命周期图解"> </p>
+<h3 id="创建生命周期"><a href="#创建生命周期" class="headerlink" title="创建生命周期"></a>创建生命周期</h3><p>第一个生命周期函数: <code>beforeCreate()</code>,与<code>data</code>和<code>methods</code>平级，在实例完全被创建出来之前执行，执行时，<code>data</code>和<code>methods</code>都还没初始化</p>
+<p>第二个生命周期函数： <code>created()</code>,与<code>data</code>和<code>methods</code>平级，此时<code>data</code>和<code>methods</code>已初始化，可以操作<code>data</code>中的数据，也可以调用<code>methods</code>中的方法</p>
+<p>第三个生命周期函数： <code>beforeMount()</code>,表示模板已经在内存中编译完成，但尚未把模板输出到页面中。<code>beforeMount()</code>执行时，页面中的元素没有被真正替换过来，只是之前写的一些模板字符，如在<code>beforeMount()</code>中打印对应页面中的<code>javascript </code>出现的结果是插值表达式<code>javascript </code>，而不是<code>data</code>中定义的<code>msg</code>的值</p>
+<p>第四个生命周期函数: <code>mounted()</code>，表示内存中的模板已经挂载到了页面中，用户可以看到渲染好的页面，在<code>mounted()</code>中打印对应页面中的<code>javascript </code>不再是差值表达式，而是<code>data</code>中定义的<code>msg</code>的值；<code>mounted()</code>是实例创建期间的最后一个生命周期函数，当执行完<code>mounted()</code>就表示实例已经被完全创建好了，此时组件已经脱离了创建阶段，进入运行阶段。如果要通过某些插件操作页面上的DOM节点，最早要在<code>mounted()</code>中进行。</p>
+<h3 id="运行期间的生命周期"><a href="#运行期间的生命周期" class="headerlink" title="运行期间的生命周期"></a>运行期间的生命周期</h3><p>运行期间的生命周期函数的触发条件是数据被改变</p>
+<ul>
+<li><p><code>beforeUpdate()</code> 界面还没有被更新，页面上显示的数据还是旧数据，但data中的数据被更新了，此时页面尚未和最新数据保持同步</p>
+</li>
+<li><p><code>updated()</code>,执行时，页面和data数据已经保持同步了，都是最新的</p>
+</li>
+</ul>
+<h3 id="销毁阶段的生命周期"><a href="#销毁阶段的生命周期" class="headerlink" title="销毁阶段的生命周期"></a>销毁阶段的生命周期</h3><ul>
+<li><p><code>beforeDestory()</code> 当执行此钩子函数时，Vue实例已经从运行阶段进入到了销毁阶段，此时所有的<code>data</code>和所有的<code>methods</code>以及过滤器、指令都处于可用状态，还没有真正执行销毁</p>
+</li>
+<li><p><code>destoryed()</code> 此时组件中所有的<code>data</code>和所有的<code>methods</code>以及过滤器、指令都处于不可用状态</p>
+</li>
+</ul>
+<h1 id="vue-resource实现get-post-jsonp请求"><a href="#vue-resource实现get-post-jsonp请求" class="headerlink" title="vue-resource实现get,post,jsonp请求"></a>vue-resource实现get,post,jsonp请求</h1><p>除了vue-resource之外，还可以使用叫做<code>axios</code>的第三方包实现数据的请求。目前使用<code>axios</code>比较多，<code>vue-resource</code>此部分只做了解，嘿嘿~</p>
+<h2 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$http.get(请求地址).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 通过result.body拿到服务器返回的成功数据</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$http.post(请求地址,请求数据,&#123; <span class="attr">emulateJSON</span>: <span class="literal">true</span> &#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 请求数据不能省略，手动发起的post请求默认没有表单格式，所以有的服务器接收不了</span></span><br><span class="line">    <span class="comment">// 将post的第三个参数 &#123; emulateJSON: true &#125;设置提交内容为普通表达数据格式，防止以上情况发生</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="jsonp请求"><a href="#jsonp请求" class="headerlink" title="jsonp请求"></a>jsonp请求</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$http.jsonp(请求地址).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="Vue中的动画-此部分先跳过，用到时再看"><a href="#Vue中的动画-此部分先跳过，用到时再看" class="headerlink" title="Vue中的动画(此部分先跳过，用到时再看)"></a>Vue中的动画(此部分先跳过，用到时再看)</h1><h2 id="使用第三方类实现动画-animate-css"><a href="#使用第三方类实现动画-animate-css" class="headerlink" title="使用第三方类实现动画(animate.css)"></a>使用第三方类实现动画(animate.css)</h2><p>引入<code>animate.css</code>后直接使用</p>
+<h2 id="动画钩子函数"><a href="#动画钩子函数" class="headerlink" title="动画钩子函数"></a>动画钩子函数</h2><ol>
+<li>动画钩子的第一个参数el，表示要执行动画的DOM元素，那个是原生的JS DOM 对象，可认为是通过document.getElementById(‘’)方式获取到的原生Js对象</li>
+<li>beforeEnter表示动画入场之前，此时，动画尚未开始，可以在beforeEnter中，设置元素开始动画之前的起始样式</li>
+</ol>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><ol>
+<li><p>箭头函数</p>
+<ul>
+<li><p>任何可以书写匿名函数的位置均可以书写箭头函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以写成：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当只有一个参数时，可以进一步简化成： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> print = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当返回语句只有一条内容时可以省略<code>{}</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> print = <span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">console</span>.log(data)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>箭头函数将会绑定<code>this</code>为函数书写位置的<code>this</code>值</p>
+</li>
+</ul>
+</li>
+<li><p>模块化</p>
+<ul>
+<li><p>没有模块化的世界：全局变量污染、难以管理依赖</p>
+</li>
+<li><p>常见的模块化标准： CommonJs、ES6 Module、AMD、CMD、UMD</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><p>每一个JS文件可以认为是一个模块，引入时加上<code>type=&quot;module&quot;</code>就能将此js文件模块化，此方式引入后，界面使用windows.xxx(xxx为引入js文件的方法名)将无法访问，以此保证不污染全局变量。</p>
+<p>使用<code>export default function...</code> 可以将自身模块暴露出去供别的模块使用，使用时需要用<code>import</code>进行导入</p>
+<p>为了拆分Vue实例的代码量，能以不同的组件来划分不同的功能模块。</p>
+<h3 id="组件化和模块化的区别"><a href="#组件化和模块化的区别" class="headerlink" title="组件化和模块化的区别"></a>组件化和模块化的区别</h3><ul>
+<li><p>模块化是从代码逻辑的角度进行划分的，方便代码分层开发，保证每个功能模块的职能单一</p>
+</li>
+<li><p>组件化是从UI界面的角度进行划分的，方便UI组件的重复利用</p>
+</li>
+</ul>
+<h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>一个完整的网页是复杂的，如果将其作为一个整体来进行开发，将会遇到以下困难：</p>
+<ul>
+<li><p>代码凌乱臃肿</p>
+</li>
+<li><p>不易协作</p>
+</li>
+<li><p>难以复用</p>
+</li>
+</ul>
+<p>vue推荐使用一种更加精细的控制方案——组件化开发</p>
+<p>所谓组件化就是吧一个页面中区域功能细分，每一个区域成为一个组件，每个组件包含：</p>
+<ul>
+<li><p>功能（js代码）</p>
+</li>
+<li><p>内容（模板代码）</p>
+</li>
+<li><p>样式（css代码）</p>
+</li>
+</ul>
+<p>由于没有构建工具的支撑，css代码暂时无法放到组件中</p>
+<h2 id="创建组件的方式"><a href="#创建组件的方式" class="headerlink" title="创建组件的方式"></a>创建组件的方式</h2><ol>
+<li>使用<code>Vue.extend</code>创建全局Vue组件，通过<code>template</code>属性指定组件要展示的html结构</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建组件模板对象</span></span><br><span class="line"><span class="keyword">var</span> com1 = Vue.extend(&#123;</span><br><span class="line">  template: <span class="string">'&lt;h3&gt;这是用 Vue.extend 创建的组件&lt;/h3&gt;'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用Vue.component('组件的名称', 创建出来的组件模板对象)</span></span><br><span class="line">Vue.component(<span class="string">'myCom1'</span>, com1);</span><br></pre></td></tr></table></figure>
+<p>如果要使用组件，直接把组件的名称以HTML标签的形式引用。如果使用<code>Vue.component</code>定义全局组件，组件名称使用了驼峰命名，在引用时，需要将大写的驼峰改成小写字母，并加上<code>-</code>。<br>例如： 组件名称<code>myCom1</code>,在引用时，页面的标签应为<code>&lt;my-com1&gt;&lt;/my-com1&gt;</code>;组件名称<code>mycom1</code>,在引用时，页面的标签应为<code>&lt;mycom1&gt;&lt;/mycom1&gt;</code></p>
+<p>简化写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Vue.component(<span class="string">'myCom1'</span>, Vue.extend(&#123;</span><br><span class="line">  template: <span class="string">'&lt;h3&gt;这是用 Vue.extend 创建的组件&lt;/h3&gt;'</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用<code>Vue.component</code>注册组件</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'myCom2'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;h3&gt;这是用 Vue.extend 创建的组件&lt;/h3&gt;'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="组件切换"><a href="#组件切换" class="headerlink" title="组件切换"></a>组件切换</h2><ol>
+<li>使用 <code>v-if</code>、<code>v-else</code> 实现组件的切换</li>
+<li>使用 <code>component</code> 标签控制组件的切换(Vue内置组件： <code>component</code> <code>template</code> <code>transition</code> <code>transitionGroup</code>)</li>
+<li>使用组件切换动画切换</li>
+</ol>
+<h2 id="父子组件传值"><a href="#父子组件传值" class="headerlink" title="父子组件传值"></a>父子组件传值</h2><h3 id="父组件向子组件传值-通过属性传值，通过事件绑定v-on传递方法"><a href="#父组件向子组件传值-通过属性传值，通过事件绑定v-on传递方法" class="headerlink" title="父组件向子组件传值(通过属性传值，通过事件绑定v-on传递方法)"></a>父组件向子组件传值(通过属性传值，通过事件绑定<code>v-on</code>传递方法)</h3><p>父组件可以在引用子组件时，通过属性绑定的形式(:)把需要传递给子组件的数据，以属性绑定的形式传递到子组件内部，供子组件使用。</p>
+<p>父组件传递的数据放在子组件的<code>props</code>数组中，组件中的所有<code>props</code>中的数据都是通过父组件传递给子组件的。 </p>
+<p>注： </p>
+<ol>
+<li>子组件中的<code>data</code>数据并不是通过父组件传递过来的，而是子组件本身私有的，比如子组件通过Ajax请求回来的数据都可以放在data中</li>
+<li><code>data</code>中的数据都是可读可写的，<code>props</code>中的数据都是只读的</li>
+</ol>
+<p>父组件传递方法给子组件，使用事件绑定机制<code>v-on</code>定义需要传递的方法，子组件通过<code>this.$emit(&#39;传递的方法名&#39;，&#39;参数1&#39;， &#39;参数2&#39;...)</code>进行调用。</p>
+<h3 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h3><p>通过事件回传</p>
+<h1 id="webpack-version-3-6"><a href="#webpack-version-3-6" class="headerlink" title="webpack(version 3.6)"></a>webpack(version 3.6)</h1><h2 id="webpack-dev-server-自动编译打包工具"><a href="#webpack-dev-server-自动编译打包工具" class="headerlink" title="webpack-dev-server(自动编译打包工具)"></a>webpack-dev-server(自动编译打包工具)</h2><p>用于实现自动打包编译功能，依赖于webpack，因此安装此工具前即使全局已经装过webpack，在本地项目中也必须安装webpack以保证正常使用。</p>
+<ol>
+<li>运行 <code>npm i webpack-dev-server -D</code>命令，将此工具安装到项目的本地开发依赖</li>
+<li>安装完毕后，在终端输入<code>webpack-dev-server</code>即可使用</li>
+<li><code>webpack-dev-server</code>安装在本地项目中，无法把它当成脚本命令，因此在<code>powershell</code>命令中无法直接使用，因此要在项目的<code>package.json</code>中加入依赖。</li>
+<li><code>webpack-dev-server</code>打包生成的<code>bundle.js</code>文件并没有存放到实际的物理磁盘中，而是直接托管到电脑的内存中，所以在项目的根目录中找不到这个打包好的<code>bundle.js</code></li>
+</ol>
+<h3 id="webpack-dev-server常用命令参数"><a href="#webpack-dev-server常用命令参数" class="headerlink" title="webpack-dev-server常用命令参数"></a>webpack-dev-server常用命令参数</h3><p>第一种方式（推荐写法）： 在<code>package.json</code>中配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span> : &#123;</span><br><span class="line">  <span class="string">"dev"</span> : <span class="string">"webpack-dev-server --open --port 3000 --contentBase src --hot"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>open</code>——编译完成后自动打开浏览器</p>
+<p><code>port</code>—— 自定义端口</p>
+<p><code>contentBase</code> —— 设置托管目录</p>
+<p><code>hot</code> —— 打补丁；热部署，实现浏览器的不刷新重载</p>
+<p>第二种方式（了解即可）：在<code>webpack.config.js</code>中配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);<span class="comment">// 启用热更新的第2步</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">...</span><br><span class="line">  devServer : &#123;</span><br><span class="line">    open: <span class="literal">true</span>,</span><br><span class="line">    port: <span class="number">3000</span>,</span><br><span class="line">    contBase: <span class="string">'src'</span>,</span><br><span class="line">    hot: <span class="literal">true</span> <span class="comment">// 启用热更新的第1步</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="comment">// 配置插件的节点</span></span><br><span class="line">    <span class="comment">// 启用热更新的第3步</span></span><br><span class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin()<span class="comment">// new一个热更新的模块对象</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="html-webpack-plugin"><a href="#html-webpack-plugin" class="headerlink" title="html-webpack-plugin"></a>html-webpack-plugin</h2><p>在内存中，根据index模板页面生成内存页面</p>
+<ol>
+<li>安装<code>html-webpack-plugin</code>插件(<code>npm i html-webpack-plugin -D</code>)</li>
+<li><p>在<code>webpack.config.js</code>中导入此插件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只要是插件，都需要放到plugins节点中</span></span><br><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">...</span><br><span class="line">  plugins: [<span class="comment">// 配置插件的节点</span></span><br><span class="line">    <span class="comment">// 创建一个在内存中生成html页面插件</span></span><br><span class="line">    <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">      <span class="comment">// 指定模板页面，将来会根据指定页面路径去生成内存中的页面</span></span><br><span class="line">      template: path.join(_dirname, <span class="string">'./src/index.html'</span>),</span><br><span class="line">      <span class="comment">// 指定生成的页面名称</span></span><br><span class="line">      filename: <span class="string">'index123.html'</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>html-webpack-plugin</code>会自动把打包好的<code>bundle.js</code>追加到页面中</p>
+</li>
+</ol>
+<h2 id="loader-第三方处理器"><a href="#loader-第三方处理器" class="headerlink" title="loader(第三方处理器)"></a>loader(第三方处理器)</h2><p>webpack默认只能打包处理js类型的文件，不能处理其它非js类型的文件，如果需要处理非js类型的文件，则需要手动安装一些合适的第三方loader加载器。如需要打包处理css文件，需要安装<code>style-loader</code>和<code>css-loader</code></p>
+<ol>
+<li>安装命令： <code>npm i style-loader css-loader -D</code></li>
+<li>在<code>webpack.config.js</code>的<code>module</code>节点中配置</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">...</span><br><span class="line">  <span class="built_in">module</span>: &#123;<span class="comment">// 此节点用于配置所有第三方木块加载器</span></span><br><span class="line">    rules: [</span><br><span class="line">      <span class="comment">// 配置处理.css文件第三方loader规则,webpack1.x版本的use中可省略-loader，2.x及以后的版本都不能省略</span></span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>webpack</code>处理第三方文件类型的过程：</p>
+<ol>
+<li>发现这个文件的类型不是js，去配置文件中查找是否有第三方loader规则</li>
+<li>若能找到对应规则，调用对应的loader处理此文件类型</li>
+<li>调用loader时，是从后往前调用(如上述<code>[&#39;style-loader&#39;, &#39;css-loader&#39;]</code>,先调用的是<code>css-loader</code>后调用<code>style-loader</code>)</li>
+<li>当最后一个loader调用完毕时，会把处理结果直接交给webpack进行打包合并，最终输出到<code>bundle.js</code>中</li>
+</ol>
+<h3 id="处理less文件的loader"><a href="#处理less文件的loader" class="headerlink" title="处理less文件的loader"></a>处理less文件的loader</h3><ol>
+<li>安装<code>less</code>: <code>npm i less</code></li>
+<li>安装<code>less-loader</code>: <code>npm i less-loader -D</code></li>
+<li>在上述<code>module.rules</code>中配置<code>less-loader</code>规则： <code>{test: /\.less$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;,&#39;less-loader&#39;]}</code></li>
+</ol>
+<p>注： less是less-loader内部依赖，因此需要先安装less，但无需将less配置到<code>webpack.config.js</code>中</p>
+<h3 id="处理scss文件的loader"><a href="#处理scss文件的loader" class="headerlink" title="处理scss文件的loader"></a>处理scss文件的loader</h3><p><code>node-sass</code>是<code>sass-loader</code>内部依赖，需要先安装<code>node-sass</code>，但无需将<code>node-sass</code>配置到<code>webpack.config.js</code>中</p>
+<ol>
+<li>安装<code>node-sass</code>: <code>cnpm i node-sass -D</code>(<code>node-sass</code>一般都用cnpm安装，npm一般比较难装成功)</li>
+<li>安装<code>sass-loader</code>:  <code>npm i sass-loader -D</code></li>
+<li>在<code>module.rules</code>中配置<code>sass-loader</code>规则：<code>{test: /\.scss$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;,&#39;sass-loader&#39;]}</code></li>
+</ol>
+<h3 id="处理css文件中的url地址的loader"><a href="#处理css文件中的url地址的loader" class="headerlink" title="处理css文件中的url地址的loader"></a>处理css文件中的url地址的loader</h3><p>默认情况下webpack无法处理文件中的url地址，无论是图片还是字体库，只要是url地址都处理不了，需要安装<code>url-loader</code></p>
+<p><code>file-loader</code>是<code>url-loader</code>内部依赖，需要先安装<code>file-loader</code>，但无需将<code>file-loader</code>配置到<code>webpack.config.js</code>中</p>
+<ol>
+<li>安装<code>file-loader</code>和<code>url-loader</code>: <code>cnpm i url-loader file-loader -D</code></li>
+<li>在<code>module.rules</code>中配置<code>url-loader</code>规则：<code>{test: /\.jpg|png|gif|bmp|jpeg$/, use: &#39;url-loader?limit=7631&amp;name=[name].[ext]&#39;}</code></li>
+</ol>
+<p>注： 配置<code>url-loader</code>时，<code>&#39;url-loader?limit=7631&amp;name=[name].[ext]&#39;</code>中:</p>
+<ul>
+<li><code>?</code>后面表示传参数</li>
+<li><code>limit=7631</code>表示limit给定的图片大小值，单位为kb; 当图片的大小&gt;7631kb时，图片路径会被base64加密，当图片大小&lt;=limit时，则不会被转为base64的字符串</li>
+<li><code>name=[name].[ext]</code> 表示文件名沿用原始名称，而不用自动生成的hash值</li>
+</ul>
+<h4 id="使用url-loader处理字体文件"><a href="#使用url-loader处理字体文件" class="headerlink" title="使用url-loader处理字体文件"></a>使用<code>url-loader</code>处理字体文件</h4><p>在<code>module.rules</code>中配置<code>url-loader</code>规则：<code>{test: /\.ttf|eot|svg|woff|woff2$/, use: &#39;url-loader&#39;}</code></p>
+<p>一般不要把图片文件和字体文件的url-loader配置写一起，而是分成两条规则写。</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><h2 id="填充字符串"><a href="#填充字符串" class="headerlink" title="填充字符串"></a>填充字符串</h2><p>ES6中的字符串新方法<code>String.prototype.padStart(maxLength, filterString= &#39; &#39;)</code> 或 <code>String.prototype.padEnd(maxLength, filterString= &#39; &#39;)</code>来填充字符串</p>
+<ul>
+<li><code>maxLength</code> 表示填充完毕的总长度</li>
+<li><code>filterString= &#39; &#39;</code> 表示填充的字符</li>
+<li><code>padStart</code>表示从前面填充，<code>padEnd</code>从后面填充</li>
+</ul>
+<p>例如填充时间格式中的月</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> m = ((<span class="keyword">new</span> <span class="built_in">Date</span>()).getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="使用脚手架搭建工程"><a href="#使用脚手架搭建工程" class="headerlink" title="使用脚手架搭建工程"></a>使用脚手架搭建工程</h2><p>vue-cli</p>
+<hr>
+<p>参考视频: <a href="https://www.bilibili.com/video/av27969216/?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/av27969216/?p=1</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

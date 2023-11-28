@@ -1,0 +1,874 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Java基础知识 - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,JDK12面向对象
+函数式编程 
+JVM： Java Virtual Machine
+虚拟的用于执行bytecode字节码的计算机
+JDK： Java Development Kit
+JRE: Ja,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Java基础知识 - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,JDK12面向对象
+函数式编程 
+JVM： Java Virtual Machine
+虚拟的用于执行bytecode字节码的计算机
+JDK： Java Development Kit
+JRE: Ja,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Java基础知识 - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,JDK12面向对象
+函数式编程 
+JVM： Java Virtual Machine
+虚拟的用于执行bytecode字节码的计算机
+JDK： Java Development Kit
+JRE: Ja,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Java基础知识</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Java基础知识</h1>
+        <div class="stuff">
+            <span>五月 12, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/javase/">javase</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="JDK12"><a href="#JDK12" class="headerlink" title="JDK12"></a>JDK12</h1><p>面向对象</p>
+<p>函数式编程 </p>
+<p>JVM： Java Virtual Machine</p>
+<p>虚拟的用于执行bytecode字节码的计算机</p>
+<p>JDK： Java Development Kit</p>
+<p>JRE: Java Runtime Environment</p>
+<h2 id="安装与配置环境变量"><a href="#安装与配置环境变量" class="headerlink" title="安装与配置环境变量"></a>安装与配置环境变量</h2><ul>
+<li><p>安装包地址 </p>
+<p>  链接：<a href="https://pan.baidu.com/s/19j-EKoXEQP_BnWTcu1fmiw" target="_blank" rel="noopener">https://pan.baidu.com/s/19j-EKoXEQP_BnWTcu1fmiw</a></p>
+<p>  提取码：9ys5</p>
+</li>
+<li><p>JDK12安装完成后不再自动生成<code>jre</code>文件夹，需要在JDK12安装目录下自行运行命令生成</p>
+<p>  命令行输入： <code>bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre</code></p>
+</li>
+<li><p>JDK 9版本之前类和资源文件存储在<code>lib/rt.jar</code>、<code>tools.jar</code>中，JDK 9版本开始 <code>lib/dt.jar</code> 和其他各种内部JAR文件都存储在一个更有效的格式在实现特定的文件lib目录。<br>因此<code>CLASS PATH</code>变量中不再需要配置<code>lib/rt.jar</code>、<code>tools.jar</code></p>
+</li>
+</ul>
+<h1 id="网络编程-IP、TCP、UDP"><a href="#网络编程-IP、TCP、UDP" class="headerlink" title="网络编程-IP、TCP、UDP"></a>网络编程-IP、TCP、UDP</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>网络： 一组相互连接的计算机</p>
+<ul>
+<li><p>多台计算机组成</p>
+</li>
+<li><p>使用物理线路进行连接</p>
+</li>
+</ul>
+<h3 id="网络编程三要素"><a href="#网络编程三要素" class="headerlink" title="网络编程三要素"></a>网络编程三要素</h3><ul>
+<li><p>IP地址： 唯一标识网络上的每一台计算机</p>
+<p>  两台计算机之间通信的必备要素</p>
+</li>
+<li><p>端口号： 计算机中应用的标号（代表一个应用程序）</p>
+<p>  0-1024系统使用或保留端口</p>
+<p>  有效端口0-65536</p>
+</li>
+<li><p>通信协议： 通信的规则</p>
+<p>  TCP，UDP</p>
+<h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><ul>
+<li><p>OSI参考模式： 开放系统互连参考模型（Open System Interconnect）</p>
+</li>
+<li><p>TCP/IP参考模型： 传输控制/网际协议 (Transfer Control Protocol/Internet Protocol)</p>
+</li>
+</ul>
+<p>OSI为逻辑上的参考模式，常用还是TCP/IP</p>
+<h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>32位，由4个8位二进制数组成</p>
+<p>表示方法： 点分十进制</p>
+<p>IP地址 = 网络ID + 主机ID</p>
+<ul>
+<li><p>网络ID: 标识计算机或网络设备所在的网段</p>
+</li>
+<li><p>主机ID：标识特定主机或网络设备</p>
+</li>
+</ul>
+<h4 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h4><ul>
+<li><p>地址类用于指定网络ID并在网络ID和主机ID之间提供分隔方法</p>
+</li>
+<li><p>IANA负责分配A，B， C类网络地址，具体主机地址由机构组织自行分配</p>
+</li>
+<li><p>IP地址包括A、B、C、D、E类</p>
+<p>A类地址供军方使用，范围： 1.0.0.0~126.0.0.0 </p>
+<p>B类地址供普通用户使用，范围： 128.0.0.0~1191.255.255.255</p>
+<p>C类地址供普通用户使用，范围： 192.0.0.0~223.255.255.255</p>
+<p>D类地址供广播地址或一些通用服务地址使用，范围： 224.0.0.0~239.255.255.255</p>
+<p>E类地址范围： 240.0.0.0~247.255.255.255</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="特殊的IP地址"><a href="#特殊的IP地址" class="headerlink" title="特殊的IP地址"></a>特殊的IP地址</h4><ul>
+<li><p><code>0.0.0.0</code>: 本机,阻断与外网通信</p>
+</li>
+<li><p><code>127.0.0.1</code>: 本机回环地址(Local Loopback)，用于本机测试</p>
+</li>
+<li><p><code>255.255.255.255</code>: 当前子网，一般用于向当前子网广播信息</p>
+</li>
+</ul>
+<h4 id="IP地址对应的对象"><a href="#IP地址对应的对象" class="headerlink" title="IP地址对应的对象"></a>IP地址对应的对象</h4><p>类<code>InetAddress</code></p>
+<ul>
+<li><code>getLocalHost()</code>: 获取本机主机名+IP地址</li>
+</ul>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>端口是一个虚拟的概念，通过端口可以在一个主机上运行多个网络应用程序</p>
+<h3 id="传输协议"><a href="#传输协议" class="headerlink" title="传输协议"></a>传输协议</h3><ul>
+<li><p>TCP</p>
+<p>  相当于打电话，需要建立连接，效率比较低，数据传输安全。</p>
+<p>  三次握手协议完成。</p>
+</li>
+<li><p>UDP</p>
+<p>  相当于发短信(有字数限制)，不需要建立连接，数据包的大小限制在64k内，效率高，不安全，容易丢包</p>
+</li>
+</ul>
+<h4 id="三次握手协议和四次分手协议"><a href="#三次握手协议和四次分手协议" class="headerlink" title="三次握手协议和四次分手协议"></a>三次握手协议和四次分手协议</h4><h3 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h3><ul>
+<li>网络上的两个程序</li>
+</ul>
+<h4 id="基于TCP协议的Socket编程"><a href="#基于TCP协议的Socket编程" class="headerlink" title="基于TCP协议的Socket编程"></a>基于TCP协议的Socket编程</h4><ol>
+<li><p>创建客户端</p>
+<p> new一个socket对象，开启实现IO的虚拟接口，发送数据</p>
+</li>
+<li><p>创建服务端</p>
+<ul>
+<li><p>new一个serverSocket对象，开放端口</p>
+</li>
+<li><p>创建服务端的一个搜socket对象</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>UDP传输方式和TCP不同，UDP传输的是数据包</p>
+<h1 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JDK8中最重要的新功能之一。使用lambda表达式可以替代只有一个抽象函数的接口实现，告别匿名内部类，使代码看起来简单易懂。</p>
+<p>Lambda表达式同时还提升了对集合、框架的迭代、遍历、过滤数据的操作</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li><p>函数式编程</p>
+</li>
+<li><p>参数类型自动推断</p>
+</li>
+<li><p>代码量少，简洁</p>
+</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>任何有<strong>函数式接口</strong>的地方</p>
+<h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>只有一个抽象方法(Object类中的方法除外)的接口是函数式接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">()-&gt;&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>java提供了一系列的函数式接口，用于接收后续传入的参数，但是对输入和输出类型有要求</p>
+<h2 id="方法的引用"><a href="#方法的引用" class="headerlink" title="方法的引用"></a>方法的引用</h2><p>方法引用是用来直接访问类或实例的已经存在的方法或者构造方法，方法引用提供了一种引用而不执行方法的方式，如果抽象方法的实现恰好可以使用调用另外一个方法来实现，就有可能可以使用方法引用。</p>
+<h3 id="方法引用的分类"><a href="#方法引用的分类" class="headerlink" title="方法引用的分类"></a>方法引用的分类</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>语法</th>
+<th>对应的Lambda表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态方法引用</td>
+<td>类名::staticMethod</td>
+<td>(args) -&gt; 类名.staticMethod(args)</td>
+</tr>
+<tr>
+<td>实例方法引用</td>
+<td>inst::instMethod</td>
+<td>(args) -&gt; inst.instMethod(args)</td>
+</tr>
+<tr>
+<td>对象方法引用</td>
+<td>类名::instMethod</td>
+<td>(inst.args) -&gt; 类名.instMethod(args)</td>
+</tr>
+<tr>
+<td>构造方法引用</td>
+<td>类名::new</td>
+<td>(args) -&gt; new 类名(args)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Stream-API"><a href="#Stream-API" class="headerlink" title="Stream API"></a>Stream API</h1><p>Stream是一组用来处理数组、集合的API</p>
+<p>JDK8引入函数式编程原因： </p>
+<ul>
+<li><p>代码简洁且意图明确，使用Stream接口让你从此告别for村换</p>
+</li>
+<li><p>多核友好</p>
+</li>
+</ul>
+<h2 id="Stream特性"><a href="#Stream特性" class="headerlink" title="Stream特性"></a>Stream特性</h2><ul>
+<li><p>不是数据结构，没有内部储存</p>
+</li>
+<li><p>不支持索引访问</p>
+</li>
+<li><p>延迟计算</p>
+</li>
+<li><p>支持并行</p>
+</li>
+<li><p>很容易生成数组或集合(List, Set)</p>
+</li>
+<li><p>支持过滤、查找、转换、汇总、聚合等操作</p>
+</li>
+</ul>
+<h2 id="Stream运行机制"><a href="#Stream运行机制" class="headerlink" title="Stream运行机制"></a>Stream运行机制</h2><p>Stream分为源source，中间操作，终止操作</p>
+<p>流的源可以是一个数组、一个集合、一个生成器方法、一个I/O通道等等</p>
+<p>一个留可以有零个和或者多个中间操作，每一个中间操作都会返回一个新的流供下一个操作使用。</p>
+<p>一个流只会有一个终止操作。</p>
+<p>Stream只有遇到终止操作，它的源才开始执行遍历操作</p>
+<h2 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h2><h3 id="三元运算符与if语句"><a href="#三元运算符与if语句" class="headerlink" title="三元运算符与if语句"></a>三元运算符与if语句</h3><p>三元运算符能实现的都可采用if语句实现，反之不成立。因为三元运算符不能执行输出语句。<br>若只需赋值，可用三元运算符简化代码。</p>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><h3 id="switch表达式可接收类型"><a href="#switch表达式可接收类型" class="headerlink" title="switch表达式可接收类型"></a>switch表达式可接收类型</h3><ol>
+<li>基本数据类型可以接收byte,short,char,int</li>
+<li>引用数据类型可以接收枚举(JDK1.5) String类型(JDK1.7)</li>
+</ol>
+<h3 id="swith语句注意事项"><a href="#swith语句注意事项" class="headerlink" title="swith语句注意事项"></a>swith语句注意事项</h3><ul>
+<li>case后面只能是常量，不能是变量。多个case的值不能相同</li>
+<li>每个case后面都要加break，否则会出现case穿透</li>
+<li>default可以放在任何位置，但建议放最后</li>
+</ul>
+<h2 id="if语句和switch语句的各自使用场景"><a href="#if语句和switch语句的各自使用场景" class="headerlink" title="if语句和switch语句的各自使用场景"></a>if语句和switch语句的各自使用场景</h2><p>switch在判断固定值时使用，if建议判断区间和范围时使用</p>
+<h2 id="for语句、while语句和do-while语句"><a href="#for语句、while语句和do-while语句" class="headerlink" title="for语句、while语句和do while语句"></a>for语句、while语句和do while语句</h2><h3 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h3><ul>
+<li>do while 先执行循环体再判断，至少会执行一次循环体</li>
+<li>for语句执行后，变量会被释放，不能再使用；while执行后，初始化变量还能继续使用</li>
+</ul>
+<p>如果想在循环结束后继续使用控制条件的变量，用while语句，否则尽量用for循环，以提高内存的使用效率</p>
+<h3 id="无限循环语句"><a href="#无限循环语句" class="headerlink" title="无限循环语句"></a>无限循环语句</h3><p>while语句无限循环：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">  System.out.println(<span class="string">"This is a loop"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>for语句的无限循环:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(; ;) &#123;</span><br><span class="line">  System.out.println(<span class="string">"This is a loop"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p><code>\x</code> x表示任意，\是转义符号，这种做法叫转义字符</p>
+<ul>
+<li><code>\t</code> 表示tab键(制表符)</li>
+<li><code>\r</code> 表示回车</li>
+<li><code>\n</code> 表示换行</li>
+<li><code>\&quot;</code> 表示转义双引号</li>
+<li><code>\&#39;</code> 表示转义单引号</li>
+</ul>
+<h2 id="方法的概述和格式说明"><a href="#方法的概述和格式说明" class="headerlink" title="方法的概述和格式说明"></a>方法的概述和格式说明</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 修饰符 返回值类型 方法名(参数类型 参数名1, 参数类型2 参数名2...) &#123;</span></span><br><span class="line"><span class="comment">*    方法体语句</span></span><br><span class="line"><span class="comment">*    return 返回值;</span></span><br><span class="line"><span class="comment">* &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="方法的注意事项"><a href="#方法的注意事项" class="headerlink" title="方法的注意事项"></a>方法的注意事项</h3><ul>
+<li>方法不调用不执行</li>
+<li>方法与方法是平级关系，不能嵌套定义</li>
+<li>方法定义的时候参数之间用逗号隔开</li>
+</ul>
+<h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><p>重载： 方法名相同，参数列表不同，与返回值类型无关<br>重载的分类： </p>
+<ul>
+<li>参数的个数不同</li>
+<li>参数的类型不同</li>
+<li>参数的顺序不同</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>同时存储同一种数据类型多个元素的集合，既可存储基本数据类型，也可存储引用数据类型。</p>
+<p>格式： <code>数据类型[] 数组名 = new 数据类型[数组的长度]</code></p>
+<h3 id="数组的初始化"><a href="#数组的初始化" class="headerlink" title="数组的初始化"></a>数组的初始化</h3><h4 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h4><p><code>数据类型[] 数组名 = new 数据类型[数组的长度]</code></p>
+<p>e.g: int[] arr = new int[5]</p>
+<p>相当于在内存中开辟5个连续的储存空间</p>
+<h3 id="java中的内存分配以及栈和堆的区别"><a href="#java中的内存分配以及栈和堆的区别" class="headerlink" title="java中的内存分配以及栈和堆的区别"></a>java中的内存分配以及栈和堆的区别</h3><p>栈： 存储局部变量(定义在方法声明上和方法中的变量)，每个方法是一个栈针形式<br>堆： 存储new出来的数组或对象<br>方法区：<br>本地方法区： 和系统相关<br>寄存器: 给CPU用</p>
+<h3 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h3><p>格式： <code>数据类型[] 数组名 = new 数据类型[]{元素1, 元素2, ...}</code><br>简化格式： <code>数据类型[] 数组名 = {元素1, 元素2, ...}</code></p>
+<p>简化格式的声明和赋值只能在同一行，否则编译不通过。  </p>
+<h3 id="参数传递问题"><a href="#参数传递问题" class="headerlink" title="参数传递问题"></a>参数传递问题</h3><p>基本数据类型的值传递，不改变原值，因为调用后会弹栈，局部变量随之消失<br>引用数据类型的值传递，改变原值，因为即使方法弹栈，但是堆内存数组对象还在，可以通过地址继续访问</p>
+<p>java中只有传值，因为地址值也是值</p>
+<h2 id="构造方法、static关键字-day-07"><a href="#构造方法、static关键字-day-07" class="headerlink" title="构造方法、static关键字 (day 07)"></a>构造方法、static关键字 (day 07)</h2><h3 id="构造方法特点"><a href="#构造方法特点" class="headerlink" title="构造方法特点"></a>构造方法特点</h3><ul>
+<li>方法名和类名相同</li>
+<li>没有返回值类型，连void也没有</li>
+<li>没有具体的返回值，直接return</li>
+<li>若无构造方法，系统会自动提供一个无参的构造方法</li>
+<li><p>若有有参构造方法，则必须自己写一个无参的构造方法</p>
+<h3 id="创建对象的步骤"><a href="#创建对象的步骤" class="headerlink" title="创建对象的步骤"></a>创建对象的步骤</h3><ol>
+<li>Student.class加载进内存</li>
+<li>声明一个Student类型引用s</li>
+<li>在堆内存创建对象</li>
+<li>给对象中属性默认初始化值</li>
+<li>属性进行显示初始化</li>
+<li>构造方法进栈，对对象中的属性赋值，构造方法弹栈</li>
+<li>将对象的地址赋值给s</li>
+</ol>
+<p><img src="/data/img/javase/创建对象的步骤.jpg" alt="创建对象步骤图解"></p>
+<h3 id="static关键字及内存图-day07-07-09"><a href="#static关键字及内存图-day07-07-09" class="headerlink" title="static关键字及内存图(day07 07.09)"></a>static关键字及内存图(day07 07.09)</h3><p><img src="/data/img/javase/static内存图.png" alt="static内存图"></p>
+<h4 id="static关键字的特点"><a href="#static关键字的特点" class="headerlink" title="static关键字的特点"></a>static关键字的特点</h4><ul>
+<li>随着类的加载而加载</li>
+<li>优先于对象存在</li>
+<li>被类的所有对象共享<br>当某个成员变量是被所有对象所共享，那么它就应该送一位静态的</li>
+<li>可以通过类名调用，推荐使用类名调用；静态修饰的内容，一般我们称其为与类相关的，类成员</li>
+</ul>
+<h4 id="static的注意事项"><a href="#static的注意事项" class="headerlink" title="static的注意事项"></a>static的注意事项</h4><p>a. 在静态方法中是没有this关键字的，因为静态是随着累的加载而加载，优先于对象的存在，而this是随着对象的创建而存在的<br>b. 静态方法只能访问静态的成员变量和静态的成员方法</p>
+</li>
+</ul>
+<h4 id="静态变量和成员变量的区别"><a href="#静态变量和成员变量的区别" class="headerlink" title="静态变量和成员变量的区别"></a>静态变量和成员变量的区别</h4><p>a. 所属不同</p>
+<pre><code>* 静态变量属于类，所以也称为类变量
+* 成员变量属于对象，所以也称为实例变量(对象变量)
+</code></pre><p>b. 内存中的位置不同</p>
+<pre><code>* 静态变量存储于方法区的静态区
+* 成员变量存储于堆内存
+</code></pre><p>c. 内存出现时间不同</p>
+<pre><code>* 静态变量随着类的加载而加载，随着类的消失而消失
+* 成员变量随着对象的创建而存在，随着对象的消失而消失
+</code></pre><p>d. 调用不同</p>
+<pre><code>* 静态变量可以通过类名调用，也可以通过对象调用
+* 成员变量只能通过对象名调用
+</code></pre><h3 id="main方法的格式和详细解释"><a href="#main方法的格式和详细解释" class="headerlink" title="main方法的格式和详细解释"></a>main方法的格式和详细解释</h3><p>public : 被jvm调用，所以需要权限足够大<br>static : 被jvm调用，不需要创建对象，直接类名.调用即可<br>void : 被jvm调用，不需要有任何的返回值<br>main : 只有这样写才能被jvm识别，main不是关键字<br>String[] args : 以前用来接收启动时的键盘录入，现在用System.Scanner(System.in)来接收键盘录入</p>
+<p> <img src="/data/img/javase/main方法String[].jpg" alt="main方法String[]"></p>
+<h3 id="工具类中使用静态"><a href="#工具类中使用静态" class="headerlink" title="工具类中使用静态"></a>工具类中使用静态</h3><p>工具类中使用静态方法，可不用创建对象直接调用；若一个类中所有的方法都为静态方法，则需要将构造方法私有化，目的是不让其他类创建本类，直接用类名.方法调用即可</p>
+<h3 id="说明书的制作过程"><a href="#说明书的制作过程" class="headerlink" title="说明书的制作过程"></a>说明书的制作过程</h3><ol>
+<li>使用多行注释在类和方法中进行注释，写明版本、作者、参数、返回值等信息</li>
+<li>对需要生成api的文件进行javadoc命令</li>
+</ol>
+<p><img src="/data/img/javase/generateApi.png" alt="生成说明文档"></p>
+<p><code>javadoc -d api -version -author ArrayTools.java</code></p>
+<ul>
+<li><code>javadoc</code> 生成文档命令</li>
+<li><code>-d api</code> 文件生成保存路径</li>
+<li><code>-version</code> 版本</li>
+<li><code>-author</code> 作者</li>
+<li><p><code>ArrayTools.java</code> 源文件类的名字</p>
+<p>文件生成后，直接打开<code>index.html</code>既可</p>
+</li>
+</ul>
+<h2 id="代码块、继承、方法重写、final关键字-day-08"><a href="#代码块、继承、方法重写、final关键字-day-08" class="headerlink" title="代码块、继承、方法重写、final关键字(day 08)"></a>代码块、继承、方法重写、final关键字(day 08)</h2><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>java中使用<code>{}</code>括起来的代码称为代码块，分为局部代码块、构造代码块、静态代码块、同步代码块</p>
+<ul>
+<li>局部代码块： 在方法中出现，限定变量的生命周期，及早释放，提高内存效率</li>
+<li>构造代码块(初始化代码块)：在类中方法外出现；多个构造方法中相同的代码存放到一起，每次调用构造都执行，并且在构造方法前执行</li>
+<li>静态代码块： 在类中方法外出现，加了static修饰；用于给类进行初始化，在加载时执行，并且只执行一次，一般用于加载驱动</li>
+</ul>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>关键字： extends<br>让类与类之间产生关系，子父类关系<br>好处： </p>
+<ul>
+<li>提高代码的复用性</li>
+<li>提高了代码的维护性</li>
+<li>让类与类之间产生了关系，是多态的前提<br>弊端：<ul>
+<li>增强类的耦合性</li>
+</ul>
+</li>
+</ul>
+<p>开发的原则： 高内聚，低耦合</p>
+<ul>
+<li>耦合是指类与类的关系</li>
+<li><p>内聚是指自己完成某件事情的能力</p>
+<h4 id="继承的特点"><a href="#继承的特点" class="headerlink" title="继承的特点"></a>继承的特点</h4><p>java只支持单继承不支持多继承，但支持多层继承(B extends A, C extends B)</p>
+<h4 id="继承的注意事项"><a href="#继承的注意事项" class="headerlink" title="继承的注意事项"></a>继承的注意事项</h4></li>
+<li>子类只能继承父类所有非私有成员(成员方法和成员变量)</li>
+<li>子类不能继承父类的构造方法，但是可以通过super关键字去访问父类构造方法</li>
+<li><p>不要为了部分功能而去继承</p>
+<h4 id="this和super的区别"><a href="#this和super的区别" class="headerlink" title="this和super的区别"></a>this和super的区别</h4><p><code>this.成员变量</code> ：既可以调用本类的成员变量，也可调用父类成员变量(本类无成员变量)<br><code>super.成员变量</code> : 调用父类成员变量</p>
+<h4 id="继承中构造方法的关系"><a href="#继承中构造方法的关系" class="headerlink" title="继承中构造方法的关系"></a>继承中构造方法的关系</h4><p>子类中所有的构造方法默认都会访问父类中空参数的构造方法。<br>每一个构造方法的第一条语句默认都是 super() Object类最顶层的父类</p>
+<h4 id="继承中构造方法的注意事项"><a href="#继承中构造方法的注意事项" class="headerlink" title="继承中构造方法的注意事项"></a>继承中构造方法的注意事项</h4><p>父类没有无参构造方法，子类只能通过super或者this来访问父类的有参构造方式。super和this不能共用，因为两者都必须放在构造器中的第一个语句。</p>
+<h3 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h3><p>子父类出现了一模一样的方法<br>子类可以重写父类中的方法，这样既沿袭了父类的功能，又定义了自己特有的功能</p>
+<h4 id="方法重写的注意事项"><a href="#方法重写的注意事项" class="headerlink" title="方法重写的注意事项"></a>方法重写的注意事项</h4></li>
+</ul>
+<ol>
+<li>父类的思想方法不能被重写</li>
+<li>子类重写父类方法时，访问权限不能更低</li>
+<li>父类静态方法，子类也必须通过静态方法重写(静态方法只能覆盖静态方法)</li>
+</ol>
+<h4 id="方法的重载-overload-和重写-overload"><a href="#方法的重载-overload-和重写-overload" class="headerlink" title="方法的重载(overload)和重写(overload)"></a>方法的重载(overload)和重写(overload)</h4><p>方法重写： 子父类出现一模一样的方法，与返回值类型有关，返回值是一致的<br>方法重载： 在本类中出现的方法名一样，参数列表不同，与返回值无关</p>
+<h3 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h3><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>修饰类，类不能被继承</li>
+<li>修饰变量， 变量变为常量，只能被赋值一次</li>
+<li>修饰方法， 方法不能被重写 </li>
+</ul>
+<p>final修饰基本数据类型，值不能被改变；<br>final修饰引用数据类型，地址值不能被改变，但对象中的属性可以改变。</p>
+<p>成员变量的从默认初始化值是无效值，因此final修饰的成员变量初始化时需要赋值或者利用构造方法初始化。</p>
+<h2 id="多态、抽象类"><a href="#多态、抽象类" class="headerlink" title="多态、抽象类"></a>多态、抽象类</h2><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><h4 id="多态的前提"><a href="#多态的前提" class="headerlink" title="多态的前提"></a>多态的前提</h4><ol>
+<li>要有继承关系</li>
+<li>要有方法重写</li>
+<li>要有父类引用指向子类方法</li>
+</ol>
+<h4 id="多态中的成员访问特点"><a href="#多态中的成员访问特点" class="headerlink" title="多态中的成员访问特点"></a>多态中的成员访问特点</h4><h5 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h5><p>编译看左边(父类)，运行看左边(父类)</p>
+<h5 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h5><p>编译看左边(父类)，运行看右边(子类)  (动态绑定)</p>
+<h5 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h5><p>编译看左边(父类)，运行看左边(父类)</p>
+<h4 id="向上转型和向下转型"><a href="#向上转型和向下转型" class="headerlink" title="向上转型和向下转型"></a>向上转型和向下转型</h4><p>引用数据类型会先向上转型，才能向下转型。</p>
+<h4 id="好处和弊端"><a href="#好处和弊端" class="headerlink" title="好处和弊端"></a>好处和弊端</h4><p>好处：</p>
+<ul>
+<li>提高代码的可维护性</li>
+<li>提高代码的扩展性</li>
+</ul>
+<p>弊端：</p>
+<ul>
+<li>不能使用子类的特有属性和行为<br>多态一般用于当做参数，因为其拓展性强</li>
+</ul>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>关键字abstract修饰</p>
+<ul>
+<li>抽象类不一定有抽象方法，有抽象方法的类一定是抽象类或接口</li>
+<li>抽象类不能实例化，只能通过子类实例化</li>
+<li>抽象的子类只能是抽象类或重写抽象类的所有方法</li>
+</ul>
+<h4 id="成员特点"><a href="#成员特点" class="headerlink" title="成员特点"></a>成员特点</h4><ul>
+<li>成员变量既可以是变量也可以是常量。</li>
+<li>有构造方法，便于子类访问父类数据的初始化</li>
+<li>成员方法，既可以是抽象也可以是非抽象(非抽象需要重写父类所有方法)</li>
+</ul>
+<h4 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h4><ol>
+<li>一个抽象类如果没有抽象方法，可以定义为抽象类，这样做是为了不让其他类创建本类的对象，只能通过此抽象的子类实例化</li>
+<li><p>abstract不能和那些关键字共存</p>
+<ul>
+<li><p><code>static</code></p>
+<p>被<code>abstract</code>修饰的方法没有方法体，被<code>static</code>修饰的可以用类名.调用，调用抽象方法是没有意义的</p>
+</li>
+<li><p><code>final</code></p>
+<p>被<code>abstract</code>修饰的方法强制子类重写，被<code>final</code>修饰的不让子类重写</p>
+</li>
+<li><p><code>private</code></p>
+<p>被<code>abstract</code>修饰的是为了让子类看到并强制重写，被<code>private</code>修饰不让子类访问</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口(interface)"></a>接口(interface)</h3><ol>
+<li>使用关键字<code>interface</code>表示，接口中的方法都是抽象的。</li>
+<li>类实现接口用<code>implement</code>表示： <code>class 类名 implement 接口名 {}</code></li>
+<li>接口不能实例化</li>
+<li>接口的子类可以是抽象类，也可以是具体类，但是具体类需要重写接口中的所有抽象方法</li>
+</ol>
+<h4 id="接口的成员特点"><a href="#接口的成员特点" class="headerlink" title="接口的成员特点"></a>接口的成员特点</h4><ol>
+<li>成员变量: 只能是常量，并且是静态、公共的，默认修饰符: <code>public static final</code>,建议手动给出</li>
+<li>构造方法： 接口没有构造方法</li>
+<li>成员方法： 只能是抽象方法，默认修饰符： <code>public abstract</code>，建议手动给出</li>
+</ol>
+<h3 id="类与类、类与接口、接口与接口的关系"><a href="#类与类、类与接口、接口与接口的关系" class="headerlink" title="类与类、类与接口、接口与接口的关系"></a>类与类、类与接口、接口与接口的关系</h3><p>类与类： 继承关系，只能是单继承，可以多层继承<br>类与接口： 实现关系，可以单实现，也可以多实现并且能在继承一个类的同时实现多个接口<br>接口与接口： 继承关系，可以是单继承，也可以是多继承</p>
+<h3 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h3><p>成员区别： </p>
+<ul>
+<li>成员变量： 抽象类的可以是变量，也可以是常量；接口的只能是常量</li>
+<li>构造方法： 抽象类有构造方法，接口无</li>
+<li>成员方法： 抽象类的可以是抽象方法，也可以是非抽象；接口的只可以是抽象</li>
+</ul>
+<p>设计理念区别：</p>
+<ul>
+<li>抽象类被继承，体现的是<code>is a</code>的关系，抽象类定义的是该继承体系的共性功能</li>
+<li>接口，被实现的是<code>like a</code>的关系，接口中定义的是该继承体系的扩展功能</li>
+</ul>
+<h2 id="day10"><a href="#day10" class="headerlink" title="day10"></a>day10</h2><h3 id="四种权限修饰符"><a href="#四种权限修饰符" class="headerlink" title="四种权限修饰符"></a>四种权限修饰符</h3><p><code>public</code>、<code>defalut</code>、 <code>protected</code>、 <code>private</code></p>
+<ul>
+<li><code>private</code> 只能在本类中访问</li>
+<li><code>default</code> 默认不写，能在本类和同包下访问</li>
+<li><code>protected</code>在不同包下的无关类无法访问</li>
+<li><code>public</code> 均能访问</li>
+</ul>
+<p>状态修饰符： <code>static</code>、 <code>final</code></p>
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><p>方法中的内部类；<br>局部内部类访问局部变量，局部变量需要用final修饰。(JDK 1.8中取消了此事)</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><p>匿名内部类只针对重写一个方法的时候使用。匿名内部类当做参数传递，本职是把匿名内部类看做一个对象。<br>链式编程，调用方法后还能继续调用方法，证明调用方法后返回的是一个对象</p>
+<h2 id="eclipse、Object类"><a href="#eclipse、Object类" class="headerlink" title="eclipse、Object类"></a>eclipse、Object类</h2><h3 id="eclipse快捷键"><a href="#eclipse快捷键" class="headerlink" title="eclipse快捷键"></a>eclipse快捷键</h3><p><code>alt + /</code> 提示代码<br><code>ctrl + n</code> 新建<br><code>ctrl + shift +f</code> 格式化<br><code>ctrl + shif +o</code> 整理包<br><code>ctrl + /</code>单行注释<br><code>ctrl+shift+/</code> 多行注释<br><code>ctrl + shift +\</code><br><code>alt + 上下箭头</code> 上下移动代码<br><code>F3</code>或按住<code>ctrl</code>点击类名可以查看源码<br><code>ctrl + shift + t</code> 查找具体的类<br><code>ctrl + o</code>查找具体类的具体方法<br><code>ctrl + d</code> 删除代码<br><code>ctrl + shift + m</code> 抽取方法<br><code>alt + shift + r</code> 改名<br><code>alt + shift + s</code> 快速生成getter、setter等方法<br><code>ctrl + alt + 上下键</code> 向上/下复制一行代码</p>
+<h3 id="打jar包"><a href="#打jar包" class="headerlink" title="打jar包"></a>打jar包</h3><p>选中项目–&gt;右键–&gt;Export–&gt;java–&gt;Jar–&gt;指定路径和名称–&gt;finish</p>
+<h3 id="导入jar包"><a href="#导入jar包" class="headerlink" title="导入jar包"></a>导入jar包</h3><p>选中jar包–&gt;右键–&gt;build path</p>
+<h3 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h3><ol>
+<li><p>hashcode()方法： 返回对象的地址值。</p>
+</li>
+<li><p>getClass()方法： 返回对象的class文件。</p>
+</li>
+<li><p>toString()方法： 更方便的显示属性值。如果直接打印对象的引用，会默认调用toString方法。</p>
+</li>
+<li><p>equals方法： 判断两个对象是否相等(比较的是地址值)，返回布尔值。Object的equals方法比较的是地址值，因此开发中没什么意义，一般都要重写此方法，重写后一般比较的是对象中的属性值。</p>
+</li>
+</ol>
+<h3 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="== 和equals的区别"></a>== 和equals的区别</h3><p>共同点： 都可以做比较，返回值都是布尔值<br>区别：</p>
+<ol>
+<li><p><code>==</code>是比较运算符，即可以比较基本数据类型，也可以比较引用数据类型。基本数据类型比较的是值，引用数据类型比较的是地址值</p>
+</li>
+<li><p>equals方法只能比较引用数据类型，equals方法在没重写之前比较的是地址值，底层依赖的是==号，但是比较地址值是没有意义的，需要重写equals方法比较对象中的属性值</p>
+</li>
+</ol>
+<h2 id="Scanner、String-类-day-12"><a href="#Scanner、String-类-day-12" class="headerlink" title="Scanner、String 类(day 12)"></a>Scanner、String 类(day 12)</h2><h3 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h3><p>一般方法：<br>hasNextXXX() 判断是否有下一个输入项，XXX可以是Int double等<br>nextXxx() 获取下一个输入项，nextLine()用于获取一个String类型的值</p>
+<p>nextLine()遇到键盘输入的/r/n时会自动停止，获取键盘输入自动会有/r/n</p>
+<h3 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h3><p>字符串是常量，一旦被赋值就不能被改变</p>
+<h4 id="常见构造方法"><a href="#常见构造方法" class="headerlink" title="常见构造方法"></a>常见构造方法</h4><ol>
+<li>空构造 String()</li>
+<li>把字节数组转成字符串 String(byte[] bytes)</li>
+<li>把字节数组的一部分转成字符串 Sting(byte[] bytes, int index, int length)</li>
+<li>把字符数组转成字符串 String(char[] value)</li>
+<li>把字符数组的一部分转成字符串 String(char[] value, int index, int length)</li>
+<li>把字符串常量值转成字符串 String(String original)</li>
+</ol>
+<h4 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h4><p>常量池中若无某字符串对象，则创建一个，如有则直接使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="keyword">new</span> String(<span class="string">"abc"</span>); <span class="comment">// 记录的是堆里面的地址值</span></span><br><span class="line">String s2 = <span class="string">"abc"</span>;<span class="comment">// 记录的是常量池里的地址值</span></span><br><span class="line">s1 == s2;<span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="String类的判断功能"><a href="#String类的判断功能" class="headerlink" title="String类的判断功能"></a>String类的判断功能</h4><ol>
+<li>比较字符串的内容是否相同，区分大小写: equals(Object obj)</li>
+<li>比较字符串的内容是否相同，忽略大小写: equalsIgnoreCase(String str)</li>
+<li>判断大字符串是否包含小字符串: contains(String str)</li>
+<li>判断字符串是否以某个指定的字符串开头: startsWith(String str)</li>
+<li>判断字符串是否以某个指定的字符串结尾: endsWith(String str)</li>
+<li>判断是否为空: isEmpty()</li>
+</ol>
+<h4 id="String类的获取功能"><a href="#String类的获取功能" class="headerlink" title="String类的获取功能"></a>String类的获取功能</h4><ol>
+<li>获取字符串的长度: int length();</li>
+<li>获取指定索引位置的字符: char charAt(int index)</li>
+<li>返回指定字符在此字符串中第一次出现处的索引: int indexOf(int ch)</li>
+<li>返回指定字符串在此字符串中第一次出现处的索引: int indexOf(String str)</li>
+<li>返回指定字符在此字符串中从指定位置后第一次出现处的索引: int indexOf(int ch, int fromIndex)</li>
+<li>返回指定字符串在此字符串中从指定位置后第一次出现处的索引: int indexOf(String str, int fromIndex)</li>
+<li>从后向前找，第一次出现指定字符的索引: lastIndexOf</li>
+<li>从指定位置开始截取字符串，默认到末尾 String substring(int start) (substring会产生新的字符串)</li>
+<li>从指定位置开始到指定位置结束截取字符串 String substring(int start, int end)</li>
+</ol>
+<h4 id="String类的转换功能"><a href="#String类的转换功能" class="headerlink" title="String类的转换功能"></a>String类的转换功能</h4><p>valueOf(Object obj); 将对象转为String<br>toLowerCase(): 把字符串转小写(返回新的字符串)<br>toUpperCase(): 把字符串转成大写(返回新的字符串)<br>concat(String str): 把字符串拼接</p>
+<h1 id="StringBuffer-amp-数组排序-Day13"><a href="#StringBuffer-amp-数组排序-Day13" class="headerlink" title="StringBuffer &amp; 数组排序 (Day13)"></a>StringBuffer &amp; 数组排序 (Day13)</h1><h2 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
+<li>无参构造方法 </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">sb.length();<span class="comment">// 0,容器中字符的个数，实际值</span></span><br><span class="line">sb.capacity();<span class="comment">// 16,容器的初始容量，理论值</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>指定容量</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer sb2 = <span class="keyword">new</span> StringBuffer(<span class="number">10</span>);</span><br><span class="line">sb2.length();<span class="comment">// 0</span></span><br><span class="line">ab2.capacity();<span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>指定字符串</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer sb3 = <span class="keyword">new</span> StringBuffer(<span class="string">"test"</span>);</span><br><span class="line">sb3.length();<span class="comment">// 5, 实际字符个数</span></span><br><span class="line">sb3.capacity();<span class="comment">// 20, 字符串的length + 初始容量</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h3><p>StringBuffer是字符串缓冲区，当new的时候，是在堆内存创建一个对象，底层是一个长度为16的字符数组，当调用添加方法时，不会再重新创建对象，在不断向原缓冲区添加字符;</p>
+<p>StringBuffer类中重写了toString方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 可以把任意类型数据添加到字符串缓冲区里面，并返回字符串返回区* 本身</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">append</span><span class="params">(String str)</span></span>;</span><br><span class="line"></span><br><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">StringBuffer sb2 = sb.append(<span class="keyword">true</span>);</span><br><span class="line">StringBuffer sb3 = sb.append(<span class="string">"test"</span>);</span><br><span class="line">StringBuffer sb4 = sb.append(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(sb.toString());<span class="comment">// truetest100</span></span><br><span class="line">System.out.println(sb2.toString());<span class="comment">// truetest100</span></span><br><span class="line">System.out.println(sb3.toString());<span class="comment">// truetest100</span></span><br><span class="line">System.out.println(sb4.toString());<span class="comment">// truetest100</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 在指定位置把任意类型的数据插入到字符串缓冲区里面，并返回字符* 串缓冲区本身</span></span><br><span class="line"><span class="comment">* 在指定位置添加元素，如果没有指定位置，则会报指针异常</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">insert</span><span class="params">(<span class="keyword">int</span> offser, String str)</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="删除功能"><a href="#删除功能" class="headerlink" title="删除功能"></a>删除功能</h3><p>当缓冲区中无索引时，报字符串越界异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 删除指定位置的字符，并返回本身</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuffer <span class="title">deleteCharAt</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br><span class="line"></span><br><span class="line">sb,delete(<span class="number">0</span>, sb.length());<span class="comment">// 清空缓冲区</span></span><br></pre></td></tr></table></figure>
+<h3 id="替换和反转"><a href="#替换和反转" class="headerlink" title="替换和反转"></a>替换和反转</h3><p>StringBuffer replace(int start, int end, String str);</p>
+<p>StringBuffer reverse();</p>
+<p>字符串的反转：</p>
+<ol>
+<li>将字符串转换成StringBuffer对象<br> StringBuffer sb = new StringBuffer(Str);</li>
+<li>使用reverse()方法反转<br> sb.reverse();</li>
+<li>将StringBuffer对象转换成String<br> sb.tostring();</li>
+</ol>
+<h3 id="截取"><a href="#截取" class="headerlink" title="截取"></a>截取</h3><p>String substring(int start);<br>String substring(int start, int end);</p>
+<p>注： 截取返回值不再是StringBuffer本身，而是String</p>
+<h3 id="StringBuffer和String的转换"><a href="#StringBuffer和String的转换" class="headerlink" title="StringBuffer和String的转换"></a>StringBuffer和String的转换</h3><ol>
+<li>String转StringBuffer</li>
+</ol>
+<ul>
+<li>通过构造方法<br>StringBuffer sb = new StringBuffer(“XXX”);</li>
+<li>通过append()方法<br>StringBuffer sb2 = new StringBuffer();<br>sb2.append(“XXX”);</li>
+</ul>
+<ol start="2">
+<li>StringBuffer转String</li>
+</ol>
+<ul>
+<li>通过构造方法<br>StringBuffer sb = new StringBuffer(“XXX”);<br>String s1 = new String(sb);</li>
+<li>通过toString()方法<br>String s2 = sb.toString();</li>
+<li>通过substring截取<br>String s3 = sb.substring(0, sb.length());</li>
+</ul>
+<h3 id="String和StringBuffer作为参数传递"><a href="#String和StringBuffer作为参数传递" class="headerlink" title="String和StringBuffer作为参数传递"></a>String和StringBuffer作为参数传递</h3><p>基本数据类型的值传递，不改变其值；<br>引用数据类型的值传递，改变其值；<br>String类虽然是引用数据类型，但是它作为参数传递时和基本数据类型是一样的，一旦被初始化，就不会被改变</p>
+<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><p>StringBuffer和StringBuilder类中的方法是一样的<br>StringBuffer是JDK1.0版本的，线程安全，效率低；<br>StringBuilder是JDK1.5版本的，线程不安全，效率高；<br>String是一个不可变的字符序列，StringBuffer和StringBuilder是可变的字符序列</p>
+<h2 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h2><h3 id="数组转成字符串"><a href="#数组转成字符串" class="headerlink" title="数组转成字符串"></a>数组转成字符串</h3><p>遍历时用StringBuffer接收，减少创建对象次数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">arrayToString</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">  StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">  sb.append(<span class="string">"["</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(i == arr.length - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 若写成sb.append(arr[i] + ", "), 在运行+的命令时，会在底层创建StringBuffer对象 </span></span><br><span class="line">      sb.append(arr[i].append(<span class="string">"]"</span>));</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      sb.append(arr[i].append(<span class="string">", "</span>));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="数组冒泡排序"><a href="#数组冒泡排序" class="headerlink" title="数组冒泡排序"></a>数组冒泡排序</h3><p>冒泡排序： 轻的上浮，沉的下降<br>原理： 两个相邻位置比较，如果前面的元素比后面的元素大，就换位置<br>代码思路： 使用嵌套循环，外层循环arr.length-1次，内循环arr.length-1-i次</p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>选择排序： 用一个索引位置上的元素，依次与其他索引位置上的元素比较，小在前面，大在后面</p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>前提： 数组有序<br>二分查找： 查找元素对应的索引</p>
+<h3 id="Arrays类的概述和方法使用"><a href="#Arrays类的概述和方法使用" class="headerlink" title="Arrays类的概述和方法使用"></a>Arrays类的概述和方法使用</h3><ol>
+<li>数组转字符串<br> Arrays.toString(arr);</li>
+<li>数组排序<br> Arrays.sort(arr);</li>
+<li>二分查找<br> Arrays.binarySearch(arr);// 此处的arr为已排序数组，若无所查值，返回负的插入点-1 </li>
+</ol>
+<h2 id="Integer和String类型的相互转换"><a href="#Integer和String类型的相互转换" class="headerlink" title="Integer和String类型的相互转换"></a>Integer和String类型的相互转换</h2><ol>
+<li>int转String<ul>
+<li>String.valueof</li>
+<li>toString</li>
+<li>int值+””</li>
+<li>int转换为Integer类，再调用Integer.toString()</li>
+</ul>
+</li>
+<li><p>String转int</p>
+<ul>
+<li>Integer.parseInt(str);// 推荐使用</li>
+</ul>
+<p>基本数据类型包装类有八种，其中七种都有parseXxx的方法，可以将这七种字符串表现形式转换成基本数据类型；char的包装类Character中没有parseXXX的方法</p>
+<h2 id="自动装箱和拆箱"><a href="#自动装箱和拆箱" class="headerlink" title="自动装箱和拆箱"></a>自动装箱和拆箱</h2><p>自动装箱： 把基本数据类型转换成对象<br>Integer i = 100;<br>自动拆箱： 把对象转换为基本数据类型<br>int z = i + 200;<br>注： Integer为null时，会出现空指针异常</p>
+<h2 id="Integer类相关"><a href="#Integer类相关" class="headerlink" title="Integer类相关"></a>Integer类相关</h2><p>byte的取值范围为-128~127：</p>
+<ul>
+<li>若在此取值范围内，自动装箱不会新创建对象，而是从常量池中获取</li>
+<li>若超过byte的取值范围，自动装箱会创建新对象<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = <span class="number">127</span>;</span><br><span class="line">Integer i2 = <span class="number">127</span>;</span><br><span class="line">i1 == i2;<span class="comment">// true</span></span><br><span class="line">i1.equals(i2);<span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">Integer i3 = <span class="number">128</span>;</span><br><span class="line">Integer i4 = <span class="number">128</span>;</span><br><span class="line">i3 == i4;<span class="comment">// false</span></span><br><span class="line">i3.equals(i4);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="正则表达式-day-14"><a href="#正则表达式-day-14" class="headerlink" title="正则表达式(day 14)"></a>正则表达式(day 14)</h1><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>一个用来描述或者匹配一系列符合某个语法规则的字符串的单个字符串</p>
+<h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3><ul>
+<li><code>[abc]</code>: []代表单个字符; 只能输入a、b或c</li>
+<li><code>[^abc]</code>: 代表除a、b、c以外的所有单个字符</li>
+<li><code>[a-zA-Z]</code>: a~z或A~Z,两头的字母包括在内</li>
+<li><code>[a-d[m-p]]</code>: a到d或m到p: <code>[a-dm-p]</code> (并集)</li>
+<li><code>[a-z&amp;&amp;[def]]</code>: d、e或f (交集)</li>
+<li><code>[a-z&amp;&amp;[^bc]]</code>: a到z，除了b和c: <code>[ad-z]</code> (减去)</li>
+<li><code>[a-z&amp;&amp;[^m-p]]</code>: a到z,而非m到p: <code>[a-lq-z]</code> (减去)</li>
+</ul>
+<h3 id="预定义字符"><a href="#预定义字符" class="headerlink" title="预定义字符"></a>预定义字符</h3><ul>
+<li><code>.</code> : 任何字符,转义时需要写成<code>\\.</code></li>
+<li><code>\d</code>: 数字：<code>[0-9]</code> (<code>\</code>代表转义字符，如果想表示\d的话，需要写成<code>\\d</code>)</li>
+<li><code>\D</code>: 非数字： <code>[^0-9]</code></li>
+<li><code>\s</code>: 空白字符： <code>[\t\n\x0B\f\r]</code></li>
+<li><code>\S</code>: 非空白字符： <code>[^\s]</code></li>
+<li><code>\w</code>: 单词字符: <code>[a-zA-Z_0-9]</code></li>
+<li><code>\W</code>: 非单词字符: <code>[^\w]</code></li>
+</ul>
+<h3 id="数量词"><a href="#数量词" class="headerlink" title="数量词"></a>数量词</h3><ul>
+<li><code>X?</code>: X一次或一次也没有(e.g.: <code>[abc]?</code> a、b、c出现1次或1次也没有)</li>
+<li><code>X*</code>: X, 0次到多次</li>
+<li><code>X+</code>: X, 1次或多次</li>
+<li><code>X{n}</code>: X，恰好n次</li>
+<li><code>X{n,}</code>: X, 至少n次</li>
+<li><code>X{n,m}</code>: X, 至少n次，但是不超过m次</li>
+</ul>
+<h3 id="分割功能"><a href="#分割功能" class="headerlink" title="分割功能"></a>分割功能</h3><p>String.split(String regex);根据正则分割</p>
+<h3 id="分组功能"><a href="#分组功能" class="headerlink" title="分组功能"></a>分组功能</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// \\1代表第一组又出现一次，\\2代表第二组又出现一次 (.)表示一个任意字符为一组</span></span><br><span class="line">String regex = <span class="string">"(.)\\1(.)\\2"</span>;</span><br><span class="line"></span><br><span class="line">String s = <span class="string">"我我....我...我.要...要要...学....学学..学.编.编编..编...程.程..程程..."</span>;</span><br><span class="line"><span class="comment">// 将所有.替换成空:我我我我要要要学学学学编编编编程程程程</span></span><br><span class="line">String s1 = s.replaceAll(<span class="string">"\\.+"</span>, <span class="string">""</span>);</span><br><span class="line"><span class="comment">// $1代表第一组中的内容，若有两个(),可以用$2</span></span><br><span class="line">String s2 = s1.replaceAll(<span class="string">"(.)\\1+"</span>, <span class="string">"$1"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Pattern和Matcher"><a href="#Pattern和Matcher" class="headerlink" title="Pattern和Matcher"></a>Pattern和Matcher</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Pattern p = Pattern.compile(<span class="string">"a*b"</span>);<span class="comment">// 获取正则表达式</span></span><br><span class="line">Mather m = p.matcher(<span class="string">"aaaaab"</span>);<span class="comment">// 获取匹配器</span></span><br><span class="line"><span class="keyword">boolean</span> b = m.matches();<span class="comment">// 是否匹配，匹配为true</span></span><br><span class="line"><span class="comment">// 以上写法等同于： "aaaaab".matches("a*b")</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取功能"><a href="#获取功能" class="headerlink" title="获取功能"></a>获取功能</h3><ul>
+<li>获取字符串中的手机号码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"我的手机号码是18988888888，曾用过18987654321，还用过18812345678"</span>;</span><br><span class="line">String regex = <span class="string">"1[3578]\\d&#123;9&#125;"</span>;<span class="comment">// 手机号码的正则表达式</span></span><br><span class="line">Pattern p = Pattern.compile(regex);<span class="comment">// 获取正则表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  m.find(),找到与正则相匹配的字符串</span></span><br><span class="line"><span class="keyword">while</span>(m.find())&#123;</span><br><span class="line">  <span class="comment">//  m.group(),获取匹配的字符串</span></span><br><span class="line">  System.out.println(m.group());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h2><p>成员方法:<br><code>abs(int a)</code> : 取绝对值<br><code>ceil(double)</code>: 向上取整，返回double<br><code>floor(double)</code>: 向下取整，返回double<br><code>max(int a, int b)</code>: 获取两者的最大值<br><code>pow(double a, double b)</code>: a为底数，b为指数<br><code>random()</code>: 生成[0.0, 1.0)的随机小数<br><code>round(float a)</code>: 四舍五入<br><code>sqrt(double a)</code>: 开平方</p>
+<h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><p>System.gc(); // 运行垃圾回收<br>System.exit(0);// 非0状态是异常中止，退出jvm<br>System.currentTimeMillis();// 获取1970年到当前时间的毫秒值</p>
+<h2 id="BigInteger类"><a href="#BigInteger类" class="headerlink" title="BigInteger类"></a>BigInteger类</h2><p>可以让超过Integer范围内的数据进行运算</p>
+<h2 id="Date类-util包"><a href="#Date类-util包" class="headerlink" title="Date类(util包)"></a>Date类(util包)</h2><p>1970年1月1日为UNIX TIME的纪元时间<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Date d1 = <span class="keyword">new</span> Date();<span class="comment">// 空参构造，代表当前时间</span></span><br><span class="line">Date d2 = <span class="keyword">new</span> Date(<span class="number">0</span>);<span class="comment">// 1970年1月1日8点，存在系统时间和本地时间的时差</span></span><br><span class="line">d1.getTime();<span class="comment">// 通过时间对象获取毫秒值</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="SimpleDateFormat类"><a href="#SimpleDateFormat类" class="headerlink" title="SimpleDateFormat类"></a>SimpleDateFormat类</h2><p>DateFormat类的子类，抽象类，不能被实例化。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();<span class="comment">// 获取当前时间</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">sdf.format(d);<span class="comment">// 格式化时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 将时间字符串转换成日期对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">String str = <span class="string">"2000年08月08日 08:08:08"</span>;</span><br><span class="line">SimpleDateFormat sdf1 = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">Date d1 = sdf1.parse(str);</span><br></pre></td></tr></table></figure></p>
+<p>时间毫秒值/1000/60/60/24 得到天数</p>
+<h2 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line">c.get(Calendar.Year);<span class="comment">// 通过字段获取年</span></span><br><span class="line">c.get(Calendar.Month);<span class="comment">//  通过字段获取月，但月是从0开始</span></span><br><span class="line">c.get(Calendar.DAY_OF_MONTH);<span class="comment">// 月中的第几天</span></span><br><span class="line">c.get(Calendar.DAY_OF_WEEK);<span class="comment">// 周中的第几天，周日为第一天，周六为最后一天</span></span><br><span class="line"></span><br><span class="line">c.add(Calendar.Year, -<span class="number">1</span>);<span class="comment">// 对指定字段进行向前减或向后加</span></span><br><span class="line">c.set(Calendar.Year, <span class="number">2008</span>);<span class="comment">// 修改指定字段</span></span><br></pre></td></tr></table></figure>
+<h1 id="Day15-Collection"><a href="#Day15-Collection" class="headerlink" title="Day15(Collection)"></a>Day15(Collection)</h1><h2 id="数组和集合的区别"><a href="#数组和集合的区别" class="headerlink" title="数组和集合的区别"></a>数组和集合的区别</h2><ul>
+<li>数组既可以存储基本数据类型又可以存储引用数据类型，基本数据类型存储的是值，引用数据类型存储的是地址值；集合只能存储引用数据类型(对象)，集合中也可以存储基本数据类型，但是在存储的时候会自动装箱变成对象。</li>
+<li>数组长度是固定的，不能自动增长；集合的长度是可变的，可以根据元素的增长而增长</li>
+<li>元素个数是固定的推荐用数组；元素个数不固定，推荐用集合；遵循此规则节约内存，集合底层是数组，但随着集合的自动增长，会把之前的数组作废掉，产生很多内存垃圾</li>
+</ul>
+<h2 id="集合继承体系"><a href="#集合继承体系" class="headerlink" title="集合继承体系"></a>集合继承体系</h2><p><img src="/data/img/javase/集合继承体系图.png" alt="集合继承体系"></p>
+<p>List集合中，add方法一定返回true,Set集合当存储重复元素时会返回false。</p>
+<h2 id="集合转数组遍历"><a href="#集合转数组遍历" class="headerlink" title="集合转数组遍历"></a>集合转数组遍历</h2><p><code>toArray()</code>方法，将集合转换成数组<br><code>containsAll(Collection A)</code>,判断是否包含集合A<br><code>retainAll(Collection A)</code>, 取与集合A的交集</p>
+<h2 id="迭代器原理"><a href="#迭代器原理" class="headerlink" title="迭代器原理"></a>迭代器原理</h2><p>迭代器是对集合进行遍历，而每一个集合内部的存储结构是不同的，所以每一个集合存和取是不一样的，那么就需要在每一个类中定义hasNext()和next()方法，这样做是可以的，但会使整个集合体系过于臃肿，迭代器是将这样的方法向上抽取出接口，然后在每个类的内部定义自己迭代方法，这样做的好处有而，第一规定了整个集合体系的遍历方式都是hasNext()和next()方法，第二，代码有底层内部实现，使用者不用管怎么实现的，会用即可</p>
+<h2 id="List集合的特有功能"><a href="#List集合的特有功能" class="headerlink" title="List集合的特有功能"></a>List集合的特有功能</h2><ol>
+<li><code>add(int index, E element)</code> 在指定位置添加元素；当存储时，出现不存在索引时，出现越界异常</li>
+<li><code>remove(int index)</code> 通过索引删除元素，将被删除的元素返回；删除时不会自动装箱</li>
+<li><code>get(int index)</code> 通过索引获取元素</li>
+<li><p><code>set(int index, E element)</code> 设置指定索引位置的值</p>
+<h2 id="并发修改异常"><a href="#并发修改异常" class="headerlink" title="并发修改异常"></a>并发修改异常</h2><p>遍历的同时在增加元素，出发并发修改异常。<br>解决方法：使用List特有的迭代器ListIterator,可在遍历时添加元素</p>
+<h2 id="List三个子类的特点"><a href="#List三个子类的特点" class="headerlink" title="List三个子类的特点"></a>List三个子类的特点</h2><ul>
+<li>ArrayList： 底层数据结构是数组，查询快，增删慢，线程不安全，效率高</li>
+<li>Vector: 底层数据结构是数组，查询快，增删慢，线程安全，效率低</li>
+<li>LinkedList： 底层数据结构是链表，查询慢，增删快，线程不安全，效率高</li>
+</ul>
+<p>综上，查询多时用ArrayList，增删多用LinkedList，如果都多，用ArrayList。</p>
+</li>
+</ol>
+<h1 id="Day016-List"><a href="#Day016-List" class="headerlink" title="Day016 (List)"></a>Day016 (List)</h1><p><code>contains</code>方法和<code>remove</code>方法，底层依赖的是equals方法</p>
+<h2 id="栈和队列数据结构"><a href="#栈和队列数据结构" class="headerlink" title="栈和队列数据结构"></a>栈和队列数据结构</h2><p>栈结构： 先进后出(类似纵向管道)<br>队列结构：先进先出(类似横向管道)</p>
+<h2 id="泛型generic"><a href="#泛型generic" class="headerlink" title="泛型generic"></a>泛型generic</h2><p>好处： </p>
+<ol>
+<li>提高安全性(将运行期的错误转到编译期)</li>
+<li>省去强转的麻烦</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>前后的泛型必须一致，或者后面的泛型可以省略不用写(1.7的新特性)</li>
+<li>泛型不要定义为Object，没有意义</li>
+</ol>
+<h2 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h2><ol>
+<li><code>&lt;?&gt;</code> 当右边泛型不确定时，左边可以用<code>?</code></li>
+<li><code>? extends E</code>  向下限定，E及其子类</li>
+<li><code>? super E</code> 向上限定, E及其父类</li>
+</ol>
+<h2 id="增强for循环-foreach"><a href="#增强for循环-foreach" class="headerlink" title="增强for循环(foreach)"></a>增强for循环(foreach)</h2><ol>
+<li>概述： 简化数组和Collection集合的遍历</li>
+<li>格式：<br>   for(元素数据类型 变量: 数组或Collection集合) {<pre><code>使用变量即可，该变量就是元素
+</code></pre>   }<br>增强for循环底层依赖的是迭代器Iterator</li>
+</ol>
+<h2 id="三种迭代的删除"><a href="#三种迭代的删除" class="headerlink" title="三种迭代的删除"></a>三种迭代的删除</h2><ol>
+<li>普通for循环的删除，通过索引删除，索引要用<code>i--</code></li>
+<li>迭代器删除，不能用集合的删除方法，会引发并发修改异常，只能用迭代器自带的remove方法。</li>
+<li>增强for循环，不能删除，只能遍历</li>
+</ol>
+<h2 id="静态导入-开发中不常用"><a href="#静态导入-开发中不常用" class="headerlink" title="静态导入(开发中不常用)"></a>静态导入(开发中不常用)</h2><p>概念： 导入类中的静态方法<br>格式： import static 包名···.类名.方法名<br>注意事项： 方法必须是静态的，如果有多个同名的静态方法，容易不知道使用谁，如果要使用，必须加前缀</p>
+<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><p>概述： 定义方法的时候不知道该定义多少个参数时使用可变参数<br>格式： 修饰符 返回值类型 方法名(数据类型… 变量名){}<br>注意事项： </p>
+<ul>
+<li>可变参数其实是一个数组</li>
+<li>如果一个方法有可变参数，并且有多个参数，那么可变参数肯定是最后一个</li>
+</ul>
+<h2 id="Arrays工具类"><a href="#Arrays工具类" class="headerlink" title="Arrays工具类"></a>Arrays工具类</h2><p><code>asList</code>： 数组转换成集合<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span>&#125;;</span><br><span class="line">List&lt;String&gt; list = Arrays.asList(arr);</span><br></pre></td></tr></table></figure></p>
+<p>注： </p>
+<ol>
+<li>数组用asList转为集合后，不能增加或减少元素，但是可以用集合的思想操作数组，可以用其它集合方法</li>
+<li>基本数据类型的数组转换成集合，会将整个数组当做一个对象转换；将数组转换成集合，必须是引用数据类型</li>
+</ol>
+<p><code>toArray</code>： 将集合转成数组<br>若数组的长度 &lt;= 集合的size,转换后的数组长度=集合的size<br>若数组长度 &gt; 集合的size,分配数组的长度=指定长度</p>
+<h1 id="Day017-Set"><a href="#Day017-Set" class="headerlink" title="Day017(Set)"></a>Day017(Set)</h1><p>Set集合无索引，不可重复，无序(存取不一致)</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>使用线程池管理线程好处： </p>
+<ol>
+<li><p>使用线程池可以重复利用已有的线程继续执行任务，避免线程在创建和销毁时造成的损耗</p>
+</li>
+<li><p>由于没有线程创建和销毁时的损耗，可以提高系统响应速度</p>
+</li>
+<li><p>通过线程可以对线程进行合理的管理，根据系统的承受能力调整可运行的线程数量大小</p>
+</li>
+</ol>
+<h3 id="线程池工作原理"><a href="#线程池工作原理" class="headerlink" title="线程池工作原理"></a>线程池工作原理</h3><h3 id="线程池的分类"><a href="#线程池的分类" class="headerlink" title="线程池的分类"></a>线程池的分类</h3><h4 id="ThreadPoolExecutor"><a href="#ThreadPoolExecutor" class="headerlink" title="ThreadPoolExecutor"></a><code>ThreadPoolExecutor</code></h4><ul>
+<li><p><code>newCacheThreadPool</code></p>
+<p>构造方法不带线程池容量，最大容量为<code>Integer.MAX_VALUE</code></p>
+</li>
+<li><p><code>newFixedThreadPool</code></p>
+<p>构造方法中需要设定线程池容量</p>
+</li>
+<li><p><code>newSingleThreadPool</code></p>
+<p>单个线程</p>
+</li>
+</ul>
+<h4 id="ScheduledThreadPoolExecutor"><a href="#ScheduledThreadPoolExecutor" class="headerlink" title="ScheduledThreadPoolExecutor"></a><code>ScheduledThreadPoolExecutor</code></h4><ul>
+<li><p><code>newSingleThreadScheduledExecutor</code></p>
+</li>
+<li><p><code>newScheduledThreadPool</code></p>
+</li>
+</ul>
+<h4 id="ForkJoinPool"><a href="#ForkJoinPool" class="headerlink" title="ForkJoinPool"></a><code>ForkJoinPool</code></h4><ul>
+<li><code>newWorkStealingPool</code></li>
+</ul>
+<h3 id="线程池的生命周期"><a href="#线程池的生命周期" class="headerlink" title="线程池的生命周期"></a>线程池的生命周期</h3><p>RUNNING –&gt; SHUTDOWN –&gt; TIDYING –&gt; TERMINATED</p>
+<p>或：</p>
+<p>RUNNING –&gt; STOP –&gt; TIDYING –&gt; TERMINATED</p>
+<p><code>RUNNING</code>: 能接受新提交的任务，并能处理阻塞队列中的任务</p>
+<p><code>SHUTDOWN</code>: 关闭状态，不再接受新提交的任务，但可以继续处理阻塞队列中以保存的任务</p>
+<p><code>STOP</code>: 不能接受新任务也不处理队列中的任务，会中断正在处理任务的线程</p>
+<p><code>TIDYING</code>: 如果所有的任务都已经终止了，workerCount(有效线程数)为0，线程池进入该状态后会调用<code>terminated()</code>方法进入<code>TERMINATED</code>状态</p>
+<p><code>TERMINATED</code>: 在<code>terminated()</code>方法执行完后进入该状态，默认<code>terminated()</code>方法中什么也没有做</p>
+<h3 id="ThreadPoolExecutor参数解析"><a href="#ThreadPoolExecutor参数解析" class="headerlink" title="ThreadPoolExecutor参数解析"></a>ThreadPoolExecutor参数解析</h3><p>线程池最终调用的都是<code>ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue&lt;Runnable&gt; workQueue)</code>方法</p>
+<ul>
+<li><p><code>corePoolSize</code> </p>
+<p>核心线程池数量</p>
+</li>
+<li><p><code>maximumPoolSize</code></p>
+</li>
+<li><p><code>keepAliveTime</code></p>
+</li>
+<li><p><code>unit</code></p>
+</li>
+<li><p><code>workQueue</code></p>
+</li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
