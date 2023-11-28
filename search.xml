@@ -41,74 +41,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ofbiz</title>
-    <url>/2019/10/23/frameworks/ofbiz/</url>
-    <content><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p>
-<h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
-      <categories>
-        <category>framework,Ofbiz</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>framework</tag>
-        <tag>Ofbiz</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Uniapp</title>
-    <url>/2023/11/09/frameworks/uniapp/</url>
-    <content><![CDATA[<h1 id="Uniapp开发安卓APP"><a href="#Uniapp开发安卓APP" class="headerlink" title="Uniapp开发安卓APP"></a>Uniapp开发安卓APP</h1><h2 id="离线缓存与数据持久化"><a href="#离线缓存与数据持久化" class="headerlink" title="离线缓存与数据持久化"></a>离线缓存与数据持久化</h2><p>离线缓存： 将网络请求的数据缓存到本地，用户在没有网络链接的情况下可以继续访问已缓存的数据。<br>Uniapp使用<code>uni.setStorageSync</code>和<code>uni.getStorageSync</code>来实现</p>
-<blockquote>
-<p>uni-app的Storage在不同端的实现不同, App端为原生的plus.storage，无大小限制，不是缓存，是持久化的</p>
-</blockquote>
-<h1 id="Uniapp离线打包安卓APK"><a href="#Uniapp离线打包安卓APK" class="headerlink" title="Uniapp离线打包安卓APK"></a>Uniapp离线打包安卓APK</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="一些下载"><a href="#一些下载" class="headerlink" title="一些下载"></a>一些下载</h3><ol>
-<li>下载安装<code>Android Studio</code>,<a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="noopener">下载地址</a></li>
-<li>下载HbuilderX最新的SDK,<a href="https://nativesupport.dcloud.net.cn/AppDocs/download/android.html#" target="_blank" rel="noopener">下载地址</a></li>
-</ol>
-<h3 id="HbuilderX离线打包"><a href="#HbuilderX离线打包" class="headerlink" title="HbuilderX离线打包"></a>HbuilderX离线打包</h3><ol>
-<li><code>HbuilderX</code>界面选择<code>发行 -&gt; 原生APP-本地打包 -&gt; 生成本地打包APP资源</code></li>
-<li>打包完成后会在控制台输出打包生成的文件地址<code>xxxx/__UNI__XXX/xxx</code>,<code>__UNI__XXX</code>是本项目对应的Appid</li>
-<li>将下载的HbuilderX最新的SDK解压，使用<code>Android Studio</code>打开包中的<code>HBuilder-Integrate-AS</code>文件夹</li>
-<li>将<code>HBuilder-Integrate-AS\simpleDemo\src\main\assets\apps\</code>下的所有文件删除，替换成步骤2中生成的整个<code>__UNI__XXX/</code>文件夹</li>
-<li>将<code>src/main/assets/data/dcloud_control.xml</code>中的<code>APPID</code>修改为上面的<code>__UNI__XXX</code></li>
-<li><code>Android Studio</code>界面选择<code>Build -&gt; Generate Signed Bundle/APK...</code>,在跳出的弹窗页面选择APK,选择<code>Next</code>,进入下一步</li>
-<li>首次生成选择<code>Create new ...</code>,<code>key store path</code>要在<code>simpleDemo</code>文件夹下，可以直接放在根目录；密码和别名都可以自定义，点击<code>ok</code>开始生成签名文件<br> 注：<ul>
-<li>此步骤是在生成签名文件，由于下载的Demo包是Gradle，可能会出现生成签名出错的问题，目前遇到的基本都是提示<code>invalid keystore format</code></li>
-<li><code>invalid keystore format</code>很可能是因为项目本身的JDK版本和电脑环境变量的JDK版本不一致，将两者调成JDK12是可以运行的</li>
-</ul>
-</li>
-<li>在<code>/simpleDemo/build.gradle</code>中配置信息，<code>keyAlias</code>为刚刚填写的key的别名，<code>keypassword</code>为自定义的密码，<code>StorageFile</code>为刚刚生成的文件名</li>
-<li>查看刚生成的签名文件(此处以<code>test.keystore</code>为例)的签名，进入到<code>test.keystore</code>文件夹，在命令行输入<code>keytool -list -v -keystore test.keystore</code></li>
-<li>步骤9中查看的签名可能只会有<code>SHA1</code>和<code>SHA256</code>两种，但实际配置时还需要<code>MD5</code>签名，则只能使用<a href="#jump">另一种方法</a>查看</li>
-<li>登录UniAPP开发者中心管理应用，进入相应的应用，选择<code>各平台信息</code>标签，如果没有则自己新建一个</li>
-<li>配置信息中的包名需要填写在<code>/simpleDemo/build.gradle</code>文件的<code>applicationId</code>中</li>
-<li>填写步骤10中的<code>MD5</code>信息、<code>SHA1</code>信息、<code>SHA256</code>信息，提交后会生成对应的APPKey</li>
-<li>将生成的APPKey填入<code>src/main/AndroidManifest.xml</code>的<code>android:value</code></li>
-<li><code>\src\main\res\drawable</code>文件夹下的<code>icon.png</code>、<code>push.png</code>、<code>splash.png</code>分别对应APP的logo、消息推送logo、启动页图片，可改成自定义</li>
-<li>在<code>\src\main\res\values\strings.xml</code>中修改APP的名称</li>
-<li><code>Android Studio</code>界面选择<code>Build -&gt; Build Bundle(s)/APK(s) -&gt; Build APK(s)</code>开始打包</li>
-<li>打包后的文件位置在<code>\build\outputs\apk\debug\simpleDemo-debug.apk</code>(<code>\release\simpleDemo-release.apk</code>不是自定义的apk包，为啥？？？有待继续研究)</li>
-</ol>
-<h4 id="查看签名文件的SHA1-SHA256-MD5信息"><a href="#查看签名文件的SHA1-SHA256-MD5信息" class="headerlink" title="查看签名文件的SHA1 SHA256 MD5信息"></a><span id="jump">查看签名文件的<code>SHA1</code> <code>SHA256</code> <code>MD5</code>信息</span></h4><p>生成<code>test.keystore</code>文件后，在<code>Android Studio</code>的<code>HBuilder-Integrate-AS</code>项目根目录下打开终端，输入<code>./gradlew signingReport</code>命令</p>
-<p>正常情况下能获取到<code>SHA1</code> <code>SHA256</code> <code>MD5</code>信息，如果报错则查看jdk版本是否一致</p>
-<p><strong>如果修改过环境变量，需要重启<code>Android Studio</code>再操作</strong></p>
-<h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><ol>
-<li><a href="https://blog.csdn.net/qq_26282869/article/details/127012224" target="_blank" rel="noopener">uniapp离线打包安卓APP全过程</a></li>
-<li><a href="https://nativesupport.dcloud.net.cn/AppDocs/download/android.html#" target="_blank" rel="noopener">HBuilderX离线SDK (Android)</a></li>
-<li><a href="https://blog.csdn.net/m0_62059090/article/details/127425912" target="_blank" rel="noopener">Android 连接第三方模拟器</a></li>
-<li><a href="https://blog.csdn.net/Ysmooth_Alone/article/details/130176427" target="_blank" rel="noopener">uniapp离线打包在Android Studio创建的jsk证书无法获取MD5的问题</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>framework,Uniapp</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>framework</tag>
-        <tag>Uniapp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大数据</title>
     <url>/2023/06/05/algorithm/bigData/</url>
     <content><![CDATA[<h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><p>内存寻址时间比IO寻址快10w倍</p>
@@ -283,6 +215,132 @@
       </tags>
   </entry>
   <entry>
+    <title>Maven</title>
+    <url>/2023/05/09/java/maven/</url>
+    <content><![CDATA[<p>Maven：</p>
+<p>项目对象模型POM</p>
+<p>核心配置文件： setting.xml</p>
+<p>Maven工程关系： 依赖关系、继承关系、聚合关系</p>
+<h2 id="常见的插件"><a href="#常见的插件" class="headerlink" title="常见的插件"></a>常见的插件</h2><h3 id="编译器插件"><a href="#编译器插件" class="headerlink" title="编译器插件"></a>编译器插件</h3><p><code>settings.xml</code>文件里面可配置全局默认的JDK版本,<code>settings.xml</code>文件中的id不能随便取名</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.4<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk14<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">name</span>&gt;</span>Repository for JDK 1.4 builds<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.myhost.com/maven/jdk14<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshotPolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">snapshotPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>若不想用setting.xml中默认的JDK，可以在项目的<code>pom.xml</code>文件中添加一个编译器插件的配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JDK编译插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--插件坐标--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码使用JDK版本--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码编译为class文件的版本，要与上面版本保持一致--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="资源拷贝插件"><a href="#资源拷贝插件" class="headerlink" title="资源拷贝插件"></a>资源拷贝插件</h3><p>配置文件一般都放在<code>src/main/resources</code>目录下，打包后配置文件会在<code>target/classes</code>目录中,默认情况下不放在<code>src/main/resources</code>的配置文件打包后不会存在<code>target/classes</code>目录中，若想要把指定路径下的配置文件打包到<code>target/classes</code>目录中需要添加以下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述配置表示<code>src/main/java</code>目录下的xml文件和<code>src/main/resources</code>目录下的xml文件、properties文件都会被打包到<code>target/classes</code>中</p>
+<h3 id="Tomcat插件"><a href="#Tomcat插件" class="headerlink" title="Tomcat插件"></a>Tomcat插件</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 配置Tomcat插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置Tomcat监听端口--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置项目的访问路径(Application Context)--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用Tomcat插件发布部署并执行war工程的时候，需要使用启动命令，启动命令为: <code>tomcat7:run</code>.命令中的tomcat7是插件命名，由插件提供商决定。run为插件中的具体功能。</p>
+<p>Tomcat是可运行插件，必须要通过命令来运行控制</p>
+<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><p><code>mvn install</code></p>
+<p>本地安装，包含编译、打包、安装到本地仓库</p>
+<p><code>mvn clean</code></p>
+<p>清除已编译信息，删除工程中的target目录</p>
+<p>常用的命令在IDEA都有可视化界面可以操作</p>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ofbiz</title>
+    <url>/2019/10/23/frameworks/ofbiz/</url>
+    <content><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p>
+<h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
+      <categories>
+        <category>framework,Ofbiz</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>framework</tag>
+        <tag>Ofbiz</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Uniapp</title>
+    <url>/2023/11/09/frameworks/uniapp/</url>
+    <content><![CDATA[<h1 id="Uniapp开发安卓APP"><a href="#Uniapp开发安卓APP" class="headerlink" title="Uniapp开发安卓APP"></a>Uniapp开发安卓APP</h1><h2 id="离线缓存与数据持久化"><a href="#离线缓存与数据持久化" class="headerlink" title="离线缓存与数据持久化"></a>离线缓存与数据持久化</h2><p>离线缓存： 将网络请求的数据缓存到本地，用户在没有网络链接的情况下可以继续访问已缓存的数据。<br>Uniapp使用<code>uni.setStorageSync</code>和<code>uni.getStorageSync</code>来实现</p>
+<blockquote>
+<p>uni-app的Storage在不同端的实现不同, App端为原生的plus.storage，无大小限制，不是缓存，是持久化的</p>
+</blockquote>
+<h1 id="Uniapp离线打包安卓APK"><a href="#Uniapp离线打包安卓APK" class="headerlink" title="Uniapp离线打包安卓APK"></a>Uniapp离线打包安卓APK</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="一些下载"><a href="#一些下载" class="headerlink" title="一些下载"></a>一些下载</h3><ol>
+<li>下载安装<code>Android Studio</code>,<a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="noopener">下载地址</a></li>
+<li>下载HbuilderX最新的SDK,<a href="https://nativesupport.dcloud.net.cn/AppDocs/download/android.html#" target="_blank" rel="noopener">下载地址</a></li>
+</ol>
+<h3 id="HbuilderX离线打包"><a href="#HbuilderX离线打包" class="headerlink" title="HbuilderX离线打包"></a>HbuilderX离线打包</h3><ol>
+<li><code>HbuilderX</code>界面选择<code>发行 -&gt; 原生APP-本地打包 -&gt; 生成本地打包APP资源</code></li>
+<li>打包完成后会在控制台输出打包生成的文件地址<code>xxxx/__UNI__XXX/xxx</code>,<code>__UNI__XXX</code>是本项目对应的Appid</li>
+<li>将下载的HbuilderX最新的SDK解压，使用<code>Android Studio</code>打开包中的<code>HBuilder-Integrate-AS</code>文件夹</li>
+<li>将<code>HBuilder-Integrate-AS\simpleDemo\src\main\assets\apps\</code>下的所有文件删除，替换成步骤2中生成的整个<code>__UNI__XXX/</code>文件夹</li>
+<li>将<code>src/main/assets/data/dcloud_control.xml</code>中的<code>APPID</code>修改为上面的<code>__UNI__XXX</code></li>
+<li><code>Android Studio</code>界面选择<code>Build -&gt; Generate Signed Bundle/APK...</code>,在跳出的弹窗页面选择APK,选择<code>Next</code>,进入下一步</li>
+<li>首次生成选择<code>Create new ...</code>,<code>key store path</code>要在<code>simpleDemo</code>文件夹下，可以直接放在根目录；密码和别名都可以自定义，点击<code>ok</code>开始生成签名文件<br> 注：<ul>
+<li>此步骤是在生成签名文件，由于下载的Demo包是Gradle，可能会出现生成签名出错的问题，目前遇到的基本都是提示<code>invalid keystore format</code></li>
+<li><code>invalid keystore format</code>很可能是因为项目本身的JDK版本和电脑环境变量的JDK版本不一致，将两者调成JDK12是可以运行的</li>
+</ul>
+</li>
+<li>在<code>/simpleDemo/build.gradle</code>中配置信息，<code>keyAlias</code>为刚刚填写的key的别名，<code>keypassword</code>为自定义的密码，<code>StorageFile</code>为刚刚生成的文件名</li>
+<li>查看刚生成的签名文件(此处以<code>test.keystore</code>为例)的签名，进入到<code>test.keystore</code>文件夹，在命令行输入<code>keytool -list -v -keystore test.keystore</code></li>
+<li>步骤9中查看的签名可能只会有<code>SHA1</code>和<code>SHA256</code>两种，但实际配置时还需要<code>MD5</code>签名，则只能使用<a href="#jump">另一种方法</a>查看</li>
+<li>登录UniAPP开发者中心管理应用，进入相应的应用，选择<code>各平台信息</code>标签，如果没有则自己新建一个</li>
+<li>配置信息中的包名需要填写在<code>/simpleDemo/build.gradle</code>文件的<code>applicationId</code>中</li>
+<li>填写步骤10中的<code>MD5</code>信息、<code>SHA1</code>信息、<code>SHA256</code>信息，提交后会生成对应的APPKey</li>
+<li>将生成的APPKey填入<code>src/main/AndroidManifest.xml</code>的<code>android:value</code></li>
+<li><code>\src\main\res\drawable</code>文件夹下的<code>icon.png</code>、<code>push.png</code>、<code>splash.png</code>分别对应APP的logo、消息推送logo、启动页图片，可改成自定义</li>
+<li>在<code>\src\main\res\values\strings.xml</code>中修改APP的名称</li>
+<li><code>Android Studio</code>界面选择<code>Build -&gt; Build Bundle(s)/APK(s) -&gt; Build APK(s)</code>开始打包</li>
+<li>打包后的文件位置在<code>\build\outputs\apk\debug\simpleDemo-debug.apk</code>(<code>\release\simpleDemo-release.apk</code>不是自定义的apk包，为啥？？？有待继续研究)</li>
+</ol>
+<h4 id="查看签名文件的SHA1-SHA256-MD5信息"><a href="#查看签名文件的SHA1-SHA256-MD5信息" class="headerlink" title="查看签名文件的SHA1 SHA256 MD5信息"></a><span id="jump">查看签名文件的<code>SHA1</code> <code>SHA256</code> <code>MD5</code>信息</span></h4><p>生成<code>test.keystore</code>文件后，在<code>Android Studio</code>的<code>HBuilder-Integrate-AS</code>项目根目录下打开终端，输入<code>./gradlew signingReport</code>命令</p>
+<p>正常情况下能获取到<code>SHA1</code> <code>SHA256</code> <code>MD5</code>信息，如果报错则查看jdk版本是否一致</p>
+<p><strong>如果修改过环境变量，需要重启<code>Android Studio</code>再操作</strong></p>
+<h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><ol>
+<li><a href="https://blog.csdn.net/qq_26282869/article/details/127012224" target="_blank" rel="noopener">uniapp离线打包安卓APP全过程</a></li>
+<li><a href="https://nativesupport.dcloud.net.cn/AppDocs/download/android.html#" target="_blank" rel="noopener">HBuilderX离线SDK (Android)</a></li>
+<li><a href="https://blog.csdn.net/m0_62059090/article/details/127425912" target="_blank" rel="noopener">Android 连接第三方模拟器</a></li>
+<li><a href="https://blog.csdn.net/Ysmooth_Alone/article/details/130176427" target="_blank" rel="noopener">uniapp离线打包在Android Studio创建的jsk证书无法获取MD5的问题</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>framework,Uniapp</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>framework</tag>
+        <tag>Uniapp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向面试查漏补缺</title>
+    <url>/2020/08/18/java/%E9%9D%A2%E5%90%91%E9%9D%A2%E8%AF%95%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</url>
+    <content><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组相当于是一种数据结构，很多数据在进行存储的时候需要使用数组</p>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>时间复杂度： <code>O(n^2)</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 冒泡排序: 前一个数字与后一个数字比较，若后者大于前者，两者交换</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length -<span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="comment">// 交换位置</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>平均时间复杂度：O(n2)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 选择排序:</span></span><br><span class="line"><span class="comment">* 在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；</span></span><br><span class="line"><span class="comment">* 第二次遍历n-2个数，找到最小的数值与第二个元素交换；</span></span><br><span class="line"><span class="comment">* ...</span></span><br><span class="line"><span class="comment">* 第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> k = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            <span class="comment">// 获取最小值下标</span></span><br><span class="line">            <span class="keyword">if</span>(arr[k] &gt; arr[j]) &#123;</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &gt; arr[k]) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">            arr[i] = arr[k];</span><br><span class="line">            arr[k] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>平均时间复杂度：O(n2)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">* 插入排序：</span></span><br><span class="line"><span class="comment">* 假定前n-1个数已经排好序，现在将第n个数插到前面的有序数列中，使得这n个数也是排好顺序的。</span></span><br><span class="line"><span class="comment">* 如此反复循环，直到全部排好顺序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j+<span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                <span class="comment">// 第n个数小于前n-1已排好序的数组的最后一位，换位</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 第n个数大于前n-1已排好序的数组的最后一位，直接跳过进入第n+1个数</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 快速排序：</span></span><br><span class="line"><span class="comment"> * 采用分治策略</span></span><br><span class="line"><span class="comment"> * 1．先从数列中取出一个数作为基准数。</span></span><br><span class="line"><span class="comment"> * 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。</span></span><br><span class="line"><span class="comment"> * 3．再对左右区间重复第二步，直到各区间只有一个数。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arr 需要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> begin 排序起始位置</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> end 排序最终位置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = arr[begin];<span class="comment">// 定义数组最左边一个数为基准值</span></span><br><span class="line">    <span class="keyword">boolean</span> rtl = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">int</span> left = begin;</span><br><span class="line">    <span class="keyword">int</span> right = end;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; end+<span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(rtl) &#123;</span><br><span class="line">            <span class="comment">// 从右往左移动，将右边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[right] &lt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若右边的值小于基准值，将右边的值填入左边的位置上，左指针向后移动</span></span><br><span class="line">                arr[left] = arr[right];</span><br><span class="line">                left++;</span><br><span class="line">                rtl = <span class="keyword">false</span>;<span class="comment">// 移动左指针</span></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 右边的值大于基准值，右指针向前移动</span></span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 从左往右，将左边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[left] &gt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若左边的值大于基准值，将左边的值填入右指针位置，右指针向前移动</span></span><br><span class="line">                arr[right] = arr[left];</span><br><span class="line">                right--;</span><br><span class="line">                rtl = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left == right) &#123;</span><br><span class="line">            arr[left] = pivot;</span><br><span class="line">            <span class="comment">// 分别对左右数组排序</span></span><br><span class="line">            <span class="keyword">if</span>(left-<span class="number">1</span> &gt;= begin) &#123;</span><br><span class="line">                quickSort(arr, begin, left-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(right+<span class="number">1</span> &lt;= end) &#123;</span><br><span class="line">                quickSort(arr, right+<span class="number">1</span>, end);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="常用的消息队列"><a href="#常用的消息队列" class="headerlink" title="常用的消息队列"></a>常用的消息队列</h2><p><code>ActiveMQ</code> <code>rabbitMQ</code> <code>rocketMQ</code> <code>kafka</code></p>
+<h3 id="activeMQ"><a href="#activeMQ" class="headerlink" title="activeMQ"></a>activeMQ</h3><h3 id="面试题剖析"><a href="#面试题剖析" class="headerlink" title="面试题剖析"></a>面试题剖析</h3><h4 id="为什么要用消息队列"><a href="#为什么要用消息队列" class="headerlink" title="为什么要用消息队列"></a>为什么要用消息队列</h4><p>答题思路： 你们公司有什么业务场景，这个场景有什么技术挑战，如果不用MQ可能会很麻烦，但是你现在用了MQ之后带给了你很多好处</p>
+<p><strong>面试技巧</strong>： 考虑下你负责的系统中是否有类似场景，就是一个系统或者一个模块调用了多个系统或者模块，互相之间的调用很复杂， 维护起来很麻烦。但是其实这个调用是不需要直接同步调用接口的，如果用MQ给他异步化解耦，也是可以的。你就需要去考虑在你的项目中，是不是可以运用这个MQ去进行系统的解释</p>
+<ul>
+<li>消息队列的常用场景： 解耦、异步、削峰</li>
+</ul>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>basic</tag>
+        <tag>others</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker</title>
     <url>/2019/06/13/microservice/docker/</url>
     <content><![CDATA[<h1 id="下载、安装及设置-win10"><a href="#下载、安装及设置-win10" class="headerlink" title="下载、安装及设置(win10)"></a>下载、安装及设置(win10)</h1><ol>
@@ -338,6 +396,24 @@
         <tag>Computer Language</tag>
         <tag>microservice</tag>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微服务</title>
+    <url>/2019/06/13/microservice/microservice/</url>
+    <content><![CDATA[<h1 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h1><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><p>SOA： Service Oriented Architecture，面向服务的架构<br>业务服务(business service)</p>
+<p>前台访问服务：<br>客户端UI–&gt;API Gateway –&gt;访问后台服务</p>
+<p>服务之间互相调用：<br>IPC(Inter Process Communication)</p>
+<p>REST（JAX-RS，Spring Boot）</p>
+<p>RPC（Thrift, Dubbo）</p>
+<p>异步消息调用(Kafka, Notify)</p>
+]]></content>
+      <categories>
+        <category>microservice</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>microservice</tag>
       </tags>
   </entry>
   <entry>
@@ -436,73 +512,6 @@
       </tags>
   </entry>
   <entry>
-    <title>微服务</title>
-    <url>/2019/06/13/microservice/microservice/</url>
-    <content><![CDATA[<h1 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h1><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><p>SOA： Service Oriented Architecture，面向服务的架构<br>业务服务(business service)</p>
-<p>前台访问服务：<br>客户端UI–&gt;API Gateway –&gt;访问后台服务</p>
-<p>服务之间互相调用：<br>IPC(Inter Process Communication)</p>
-<p>REST（JAX-RS，Spring Boot）</p>
-<p>RPC（Thrift, Dubbo）</p>
-<p>异步消息调用(Kafka, Notify)</p>
-]]></content>
-      <categories>
-        <category>microservice</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>microservice</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面向面试查漏补缺</title>
-    <url>/2020/08/18/java/%E9%9D%A2%E5%90%91%E9%9D%A2%E8%AF%95%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</url>
-    <content><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组相当于是一种数据结构，很多数据在进行存储的时候需要使用数组</p>
-<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>时间复杂度： <code>O(n^2)</code></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 冒泡排序: 前一个数字与后一个数字比较，若后者大于前者，两者交换</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length -<span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="comment">// 交换位置</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>平均时间复杂度：O(n2)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 选择排序:</span></span><br><span class="line"><span class="comment">* 在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；</span></span><br><span class="line"><span class="comment">* 第二次遍历n-2个数，找到最小的数值与第二个元素交换；</span></span><br><span class="line"><span class="comment">* ...</span></span><br><span class="line"><span class="comment">* 第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> k = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            <span class="comment">// 获取最小值下标</span></span><br><span class="line">            <span class="keyword">if</span>(arr[k] &gt; arr[j]) &#123;</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &gt; arr[k]) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">            arr[i] = arr[k];</span><br><span class="line">            arr[k] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>平均时间复杂度：O(n2)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">* 插入排序：</span></span><br><span class="line"><span class="comment">* 假定前n-1个数已经排好序，现在将第n个数插到前面的有序数列中，使得这n个数也是排好顺序的。</span></span><br><span class="line"><span class="comment">* 如此反复循环，直到全部排好顺序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j+<span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                <span class="comment">// 第n个数小于前n-1已排好序的数组的最后一位，换位</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 第n个数大于前n-1已排好序的数组的最后一位，直接跳过进入第n+1个数</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 快速排序：</span></span><br><span class="line"><span class="comment"> * 采用分治策略</span></span><br><span class="line"><span class="comment"> * 1．先从数列中取出一个数作为基准数。</span></span><br><span class="line"><span class="comment"> * 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。</span></span><br><span class="line"><span class="comment"> * 3．再对左右区间重复第二步，直到各区间只有一个数。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arr 需要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> begin 排序起始位置</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> end 排序最终位置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = arr[begin];<span class="comment">// 定义数组最左边一个数为基准值</span></span><br><span class="line">    <span class="keyword">boolean</span> rtl = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">int</span> left = begin;</span><br><span class="line">    <span class="keyword">int</span> right = end;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; end+<span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(rtl) &#123;</span><br><span class="line">            <span class="comment">// 从右往左移动，将右边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[right] &lt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若右边的值小于基准值，将右边的值填入左边的位置上，左指针向后移动</span></span><br><span class="line">                arr[left] = arr[right];</span><br><span class="line">                left++;</span><br><span class="line">                rtl = <span class="keyword">false</span>;<span class="comment">// 移动左指针</span></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 右边的值大于基准值，右指针向前移动</span></span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 从左往右，将左边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[left] &gt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若左边的值大于基准值，将左边的值填入右指针位置，右指针向前移动</span></span><br><span class="line">                arr[right] = arr[left];</span><br><span class="line">                right--;</span><br><span class="line">                rtl = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left == right) &#123;</span><br><span class="line">            arr[left] = pivot;</span><br><span class="line">            <span class="comment">// 分别对左右数组排序</span></span><br><span class="line">            <span class="keyword">if</span>(left-<span class="number">1</span> &gt;= begin) &#123;</span><br><span class="line">                quickSort(arr, begin, left-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(right+<span class="number">1</span> &lt;= end) &#123;</span><br><span class="line">                quickSort(arr, right+<span class="number">1</span>, end);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="常用的消息队列"><a href="#常用的消息队列" class="headerlink" title="常用的消息队列"></a>常用的消息队列</h2><p><code>ActiveMQ</code> <code>rabbitMQ</code> <code>rocketMQ</code> <code>kafka</code></p>
-<h3 id="activeMQ"><a href="#activeMQ" class="headerlink" title="activeMQ"></a>activeMQ</h3><h3 id="面试题剖析"><a href="#面试题剖析" class="headerlink" title="面试题剖析"></a>面试题剖析</h3><h4 id="为什么要用消息队列"><a href="#为什么要用消息队列" class="headerlink" title="为什么要用消息队列"></a>为什么要用消息队列</h4><p>答题思路： 你们公司有什么业务场景，这个场景有什么技术挑战，如果不用MQ可能会很麻烦，但是你现在用了MQ之后带给了你很多好处</p>
-<p><strong>面试技巧</strong>： 考虑下你负责的系统中是否有类似场景，就是一个系统或者一个模块调用了多个系统或者模块，互相之间的调用很复杂， 维护起来很麻烦。但是其实这个调用是不需要直接同步调用接口的，如果用MQ给他异步化解耦，也是可以的。你就需要去考虑在你的项目中，是不是可以运用这个MQ去进行系统的解释</p>
-<ul>
-<li>消息队列的常用场景： 解耦、异步、削峰</li>
-</ul>
-]]></content>
-      <categories>
-        <category>others</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>basic</tag>
-        <tag>others</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/2019/10/13/tools/git/</url>
-    <content><![CDATA[<h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>git clone xxx(远程仓库地址)</code> 克隆远程仓库至本地</p>
-<p><code>git branch</code> 查看本地分支</p>
-<p><code>git branch -r</code> 查看远程分支</p>
-<p><code>git branch &lt;分支名&gt;</code> 创建本地分支</p>
-<p><code>git status</code> 查看当前状态</p>
-<p><code>git add .</code> 将所有文件添加到暂存区</p>
-<p><code>git commit am &quot;代码提交备注&quot;</code> 提交代码并添加注释</p>
-<p><code>git push</code> 将分支推送至远程</p>
-<p><code>git pull</code> 拉取远程分支</p>
-<h2 id="一套代码关联多个远程仓库"><a href="#一套代码关联多个远程仓库" class="headerlink" title="一套代码关联多个远程仓库"></a>一套代码关联多个远程仓库</h2><p><code>git remote -v</code></p>
-]]></content>
-      <categories>
-        <category>Tools, Git</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python3</title>
     <url>/2023/07/21/python/python%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="在Mac上安装Python3"><a href="#在Mac上安装Python3" class="headerlink" title="在Mac上安装Python3"></a>在Mac上安装Python3</h2><p>方法一： 从Python官网下载Python3 <code>https://www.python.org/downloads/</code>，下载完成后双击运行并安装</p>
@@ -593,37 +602,6 @@
         <tag>Computer Language</tag>
         <tag>basic</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Maven</title>
-    <url>/2023/05/09/java/maven/</url>
-    <content><![CDATA[<p>Maven：</p>
-<p>项目对象模型POM</p>
-<p>核心配置文件： setting.xml</p>
-<p>Maven工程关系： 依赖关系、继承关系、聚合关系</p>
-<h2 id="常见的插件"><a href="#常见的插件" class="headerlink" title="常见的插件"></a>常见的插件</h2><h3 id="编译器插件"><a href="#编译器插件" class="headerlink" title="编译器插件"></a>编译器插件</h3><p><code>settings.xml</code>文件里面可配置全局默认的JDK版本,<code>settings.xml</code>文件中的id不能随便取名</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.4<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk14<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">name</span>&gt;</span>Repository for JDK 1.4 builds<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.myhost.com/maven/jdk14<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshotPolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">snapshotPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>若不想用setting.xml中默认的JDK，可以在项目的<code>pom.xml</code>文件中添加一个编译器插件的配置</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JDK编译插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--插件坐标--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码使用JDK版本--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码编译为class文件的版本，要与上面版本保持一致--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="资源拷贝插件"><a href="#资源拷贝插件" class="headerlink" title="资源拷贝插件"></a>资源拷贝插件</h3><p>配置文件一般都放在<code>src/main/resources</code>目录下，打包后配置文件会在<code>target/classes</code>目录中,默认情况下不放在<code>src/main/resources</code>的配置文件打包后不会存在<code>target/classes</code>目录中，若想要把指定路径下的配置文件打包到<code>target/classes</code>目录中需要添加以下配置：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上述配置表示<code>src/main/java</code>目录下的xml文件和<code>src/main/resources</code>目录下的xml文件、properties文件都会被打包到<code>target/classes</code>中</p>
-<h3 id="Tomcat插件"><a href="#Tomcat插件" class="headerlink" title="Tomcat插件"></a>Tomcat插件</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 配置Tomcat插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置Tomcat监听端口--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置项目的访问路径(Application Context)--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用Tomcat插件发布部署并执行war工程的时候，需要使用启动命令，启动命令为: <code>tomcat7:run</code>.命令中的tomcat7是插件命名，由插件提供商决定。run为插件中的具体功能。</p>
-<p>Tomcat是可运行插件，必须要通过命令来运行控制</p>
-<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><p><code>mvn install</code></p>
-<p>本地安装，包含编译、打包、安装到本地仓库</p>
-<p><code>mvn clean</code></p>
-<p>清除已编译信息，删除工程中的target目录</p>
-<p>常用的命令在IDEA都有可视化界面可以操作</p>
-]]></content>
-      <categories>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
@@ -831,37 +809,6 @@ Bob->Alice : hello
       <tags>
         <tag>Computer Language</tag>
         <tag>实战</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IntelliJ IDEA</title>
-    <url>/2023/06/27/tools/idea/</url>
-    <content><![CDATA[<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
-<li><code>Alt + insert</code> 生成构造方法、getset方法、mybatis文件等</li>
-</ul>
-<h2 id="实用插件"><a href="#实用插件" class="headerlink" title="实用插件"></a>实用插件</h2><h3 id="MyBatisCodeHelperPro-Marketplace-Edition"><a href="#MyBatisCodeHelperPro-Marketplace-Edition" class="headerlink" title="MyBatisCodeHelperPro (Marketplace Edition)"></a>MyBatisCodeHelperPro (Marketplace Edition)</h3><ul>
-<li><p><a href="https://www.cnblogs.com/equals/p/15391453.html" target="_blank" rel="noopener">安装说明</a></p>
-</li>
-<li><p><a href="https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/" target="_blank" rel="noopener">使用说明</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/av50632948/?vd_source=8a67383411f69921887ca2f40f490a83" target="_blank" rel="noopener">操作视频</a></p>
-</li>
-<li><p>支持实体生成建表语句</p>
-</li>
-<li><p>支持基于表生成实体/Mapper/服务等</p>
-</li>
-<li><p>支持生成Mybatis执行日志</p>
-</li>
-<li><p>支持预执行SQL</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools, IDEA</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1121,6 +1068,234 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
+    <title>Git</title>
+    <url>/2019/10/13/tools/git/</url>
+    <content><![CDATA[<h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>git clone xxx(远程仓库地址)</code> 克隆远程仓库至本地</p>
+<p><code>git branch</code> 查看本地分支</p>
+<p><code>git branch -r</code> 查看远程分支</p>
+<p><code>git branch &lt;分支名&gt;</code> 创建本地分支</p>
+<p><code>git status</code> 查看当前状态</p>
+<p><code>git add .</code> 将所有文件添加到暂存区</p>
+<p><code>git commit am &quot;代码提交备注&quot;</code> 提交代码并添加注释</p>
+<p><code>git push</code> 将分支推送至远程</p>
+<p><code>git pull</code> 拉取远程分支</p>
+<h2 id="一套代码关联多个远程仓库"><a href="#一套代码关联多个远程仓库" class="headerlink" title="一套代码关联多个远程仓库"></a>一套代码关联多个远程仓库</h2><p><code>git remote -v</code></p>
+]]></content>
+      <categories>
+        <category>Tools, Git</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vsCode</title>
+    <url>/2019/10/13/tools/vsCode/</url>
+    <content><![CDATA[<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>安装主题插件，个人偏好 <code>One Dark Pro</code></p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="键入提示"><a href="#键入提示" class="headerlink" title="键入提示"></a>键入提示</h2><p>vsCode安装成功后，内置了Emmet插件，用于对一些代码进行补全</p>
+<p><code>h1*6 + tab/enter键</code>: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>h1*6&gt;{1级标题} + tab/enter键</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>h$*6&gt;{$级标题} + tab/enter键</code>: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>3级标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>4级标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>5级标题<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6级标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>lorem</code>： 乱数假文，没有任何实际含义的数字</p>
+<p>例如： </p>
+<p><code>p*6&gt;lorem + tab/enter键</code> ： 生成六段乱数假文，用于写静态页面时测试排版</p>
+<p><code>p*6&gt;lorem1 + tab/enter键</code>： 生成六段乱数假文，每段只有一个单词</p>
+<p><code>p*6&gt;lorem1000 + tab/enter键</code>： 生成六段乱数假文，每段只有1000个单词</p>
+<p><code>(h2&gt;{章节1})+p&gt;lorem</code> : </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit veritatis perferendis sint ipsa consectetur eligendi fugiat magni officiis! Nisi repellendus dignissimos dolorem a adipisci odit omnis, id nobis in quod.   </span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>(h2[id=&quot;chapter$&quot;]&gt;{章节$})*6</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter1"</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter2"</span>&gt;</span>章节2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter3"</span>&gt;</span>章节3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter4"</span>&gt;</span>章节4<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter5"</span>&gt;</span>章节5<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter6"</span>&gt;</span>章节6<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h2><p><code>ctrl + enter键</code>： 光标切换至下一行<br><code>ctrl + shift + enter键</code>： 光标切换至上一行</p>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><p>按住鼠标中间上下移动，可将光标选中多行进行编辑</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Tools, vsCode</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>vsCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IntelliJ IDEA</title>
+    <url>/2023/06/27/tools/idea/</url>
+    <content><![CDATA[<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
+<li><code>Alt + insert</code> 生成构造方法、getset方法、mybatis文件等</li>
+</ul>
+<h2 id="实用插件"><a href="#实用插件" class="headerlink" title="实用插件"></a>实用插件</h2><h3 id="MyBatisCodeHelperPro-Marketplace-Edition"><a href="#MyBatisCodeHelperPro-Marketplace-Edition" class="headerlink" title="MyBatisCodeHelperPro (Marketplace Edition)"></a>MyBatisCodeHelperPro (Marketplace Edition)</h3><ul>
+<li><p><a href="https://www.cnblogs.com/equals/p/15391453.html" target="_blank" rel="noopener">安装说明</a></p>
+</li>
+<li><p><a href="https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/" target="_blank" rel="noopener">使用说明</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/av50632948/?vd_source=8a67383411f69921887ca2f40f490a83" target="_blank" rel="noopener">操作视频</a></p>
+</li>
+<li><p>支持实体生成建表语句</p>
+</li>
+<li><p>支持基于表生成实体/Mapper/服务等</p>
+</li>
+<li><p>支持生成Mybatis执行日志</p>
+</li>
+<li><p>支持预执行SQL</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools, IDEA</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构与算法基础</title>
+    <url>/2020/08/18/algorithm/dataStructure&amp;algorithm/</url>
+    <content><![CDATA[<h1 id="复杂度、对数器、二分法、异或运算"><a href="#复杂度、对数器、二分法、异或运算" class="headerlink" title="复杂度、对数器、二分法、异或运算"></a>复杂度、对数器、二分法、异或运算</h1><p>常见的评估算法优劣的核心指标：</p>
+<ul>
+<li>时间复杂度(流程决定)</li>
+<li>额外空间复杂度(流程决定)</li>
+<li>常数项时间(实现细节决定)</li>
+</ul>
+<h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><p>什么是常数时间的操作？<br>如果一个操作的执行时间不以具体样本量为转移，每次执行时间都是固定时间，这样的操作被称为常数时间的操作。</p>
+<p>常见的常数时间操作：</p>
+<ul>
+<li>算数运算(+ - * % /)等</li>
+<li>常见的位运算(&gt;&gt; &gt;&gt;&gt; &lt;&lt; | &amp; ^)等</li>
+<li>赋值、比较、自增、自减操作</li>
+<li>数组寻址操作</li>
+</ul>
+<p><strong>执行时间固定的操作都是常数时间的操作，执行时间不固定的操作，都不是常数时间的操作</strong></p>
+<blockquote>
+<p>JAVA中LinkedList的get(i)就不是常数时间的操作</p>
+</blockquote>
+<p>如何确定算法流程的总操作数量与样本数量之间的表达式关系？</p>
+<ol>
+<li>想象该算法流程所处理的数据状况，要按照最差情况来</li>
+<li>把整个流程彻底拆分为一个个基本动作，保证<strong>每个动作都是常数时间的操作</strong></li>
+<li>如果数据为N,看看基本动作的数量和N是什么关系</li>
+</ol>
+<p>如何确定算法流程的时间复杂度？<br>当完成了表达式的建立，只要把最高阶项留下即可。低阶项都去掉，高阶项的系数也去掉。<br>记为O(忽略掉系数的高阶项)</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>时间复杂度就是来衡量在整个流程中发生了多少次的常数操作这件事.</p>
+<p>时间复杂度的意义：<br>当我们要处理的样本很大很大时，我们会发现低阶项是什么不是最重要的；每一项的系数是什么，不是最重要的；真正重要的是最高阶项</p>
+<p>时间复杂度是衡量算法流程的复杂度的一种指标，该指标只与数据量有关，与过程之外的优化无关</p>
+<p>常见的时间复杂度排序(从好到差): O(1) &gt; O(logN) &gt; O(N) &gt; O(N*logN) &gt; O(N²)  O(N³)… O(N^k) &gt; O(2^N) O(3^N)… O(k^N) &gt; O(N!)</p>
+<h2 id="基本排序"><a href="#基本排序" class="headerlink" title="基本排序"></a>基本排序</h2><ul>
+<li>选择排序O(n²)： 轮询数组，将最小的数放到最前面</li>
+<li>冒泡排序O(n²)： 数组之间两两元素顺序交换，大的值放后面</li>
+<li>插入排序：将i位置上的数与前面的数相比较，只要前面的数比它大，就交换</li>
+</ul>
+<p>注：</p>
+<ul>
+<li>算法的过程和具体的语言无关</li>
+<li>想分析一个算法流程的时间复杂度的前提，是对该流程非常熟悉</li>
+<li>一定要确保在拆分算法的流程时，拆分出来的所有行为都是常数时间的操作。这意味着你写算法时，对自己用过的每一个系统api都是非常熟悉，否则会影响你对时间复杂度的估算</li>
+</ul>
+<h2 id="额外空间复杂度"><a href="#额外空间复杂度" class="headerlink" title="额外空间复杂度"></a>额外空间复杂度</h2><p>实现算法流程的过程中，你需要开辟一些新的空间来支持你的算法流程</p>
+<p>作为输入参数的空间，不算额外空间<br>作为输出结果的空间，不算额外空间</p>
+<p>因为输入参数和输出结果都是必要的、和现实目标有关的，所以都不算额外空间</p>
+<p>除上述以外，你的流程中如果还需要开辟空间才能继续下去，这部分的空间就是额外空间</p>
+<p>如果你的流程只需要开辟有限几个变量，额外空间复杂度就是O(1)</p>
+<h2 id="常数项时间"><a href="#常数项时间" class="headerlink" title="常数项时间"></a>常数项时间</h2><p>时间复杂度这个指标是忽略低阶项和所有常数系数的。<br>但同样的时间复杂度的流程，运行时实际也并不是一样好。<br>时间复杂度只是一个重要指标，如果两个时间复杂度一样的算法还要咋时间上拼优劣，就进入到拼常数时间的阶段，简称拼常数项。</p>
+<p>两个流程的常数项时间进行比拼不采用理论分析，直接生成随机数据测试</p>
+<h2 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h2><p>一般情况下认为，解决一个问题的算法流程，在时间复杂度的指标上，一定要尽可能的低，先满足了时间复杂度最低这个指标之后，使用最少的空间的算法流程，叫这个问题的最优解</p>
+<p>一般最优解都是忽略掉常数项的，因为常数项这个因素只决定了实现层次的优化和考虑，和怎么解决整个问题的思想无关。</p>
+<h2 id="对数器"><a href="#对数器" class="headerlink" title="对数器"></a>对数器</h2><ol>
+<li>你想要测的方法a</li>
+<li>实现复杂度不好，但是容易实现的方法b</li>
+<li>实现一个随机样本产生器</li>
+<li>把方法a和方法b跑相同的随机样本，看看得到的结果是否一样</li>
+<li>如果有一个随机样本使得比对结果不一致，打印样本进行人工干预，改对方法a和方法b</li>
+<li>当样本数量很多时，比对测试依然正确，可以确定方法a已经正确</li>
+</ol>
+<h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><blockquote>
+<p>算术运算怎么转换成位运算？</p>
+</blockquote>
+<ul>
+<li>在一个有序数组中，找某个数是否存在</li>
+<li>在一个有序数组中，找&gt;=某个数最左侧的位置</li>
+<li>在一个有序数组中，找&lt;=某个数最右侧的位置</li>
+<li>局部最小值问题</li>
+</ul>
+<h2 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a>异或运算</h2><p>异或运算： 相同为0，不同为1<br>同或运算： 相同为1，不同为0</p>
+<p>异或运算其实就是无进位的相加，即产生了进位则忽略成0</p>
+<p>异或运算的性质:</p>
+<ol>
+<li>0 ^ N == N  N ^ N == 0</li>
+<li>异或运算满足交换律和结合律</li>
+</ol>
+<h3 id="异或运算的应用"><a href="#异或运算的应用" class="headerlink" title="异或运算的应用"></a>异或运算的应用</h3><ol>
+<li><p>如何不用额外变量交换两个数？<br> int a = m;<br> int b = n;<br> a = a ^ b;<br> b = a ^ b;<br> a = a ^ b;</p>
+<p> 最终结果： a = n; b = m;</p>
+<p> 以上的交换只能a b的值为两个不同的内存空间才能操作，若a=b=arr[i]则不能用以上方法，因此实际使用时还是使用临时变量temp进行交换</p>
+</li>
+<li><p>一个数组中有一种数出现了奇数次，其他都出现了偶数次，怎么找到并打印这种数？</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> eor = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	eor = eor ^ arr[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 以上代码运行出来最终得到的eor的值就是出现了奇数次的数</p>
+</li>
+<li><p>如何把一个int类型的数提取出最右侧的1来？</p>
+<p> 例如：int N = 00…1101010000</p>
+<p> 将最右侧的1提取出来的结果是：00…0000010000</p>
+<p> N &amp; ((~N) + 1)</p>
+<p> 先将N取反，取反后的值+1，最后将这个值与N进行与运算得到的结果就是只保留最右侧的1其他位为0</p>
+</li>
+<li><p>一个数组中有两种数出现了奇数次，其他都出现了偶数次，怎么找到并打印这两种数？</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	</span><br><span class="line"><span class="comment">// 使用eor=0将所有数都^一遍，最终得到的结果 eor = a ^ b</span></span><br><span class="line"><span class="comment">// 且eor != 0,表示eor必然有一个位置上是1</span></span><br><span class="line"><span class="keyword">int</span> eor = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	eor ^= arr[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提取eor中最右侧的1</span></span><br><span class="line"><span class="keyword">int</span> rightOne = eor ^ ((~eor) + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个新的变量onlyOne=0,将所有与eor最右侧是1同类的数进行操作</span></span><br><span class="line"><span class="keyword">int</span> onlyOne = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	<span class="keyword">if</span>((arr[i] &amp; rightOne) != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">// (arr[i] &amp; rightOne) != 0表示arr[i]在rightOne中为1的位数上也是1</span></span><br><span class="line">		onlyOne ^= arr[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上得到的onlyOne的结果是a或者b</span></span><br><span class="line"><span class="comment">// 出现奇数次的两个数a b 分别是 onlyOne和 eor^onlyOne</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="链表结构、栈、队列、递归行为、哈希表"><a href="#链表结构、栈、队列、递归行为、哈希表" class="headerlink" title="链表结构、栈、队列、递归行为、哈希表"></a>链表结构、栈、队列、递归行为、哈希表</h1><h2 id="链表结构"><a href="#链表结构" class="headerlink" title="链表结构"></a>链表结构</h2><ul>
+<li><p>单向链表节点结构(可以实现成范型)</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">        value = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双向链表节点结构</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> DoubleNode last;</span><br><span class="line">    <span class="keyword">public</span> DoubleNode next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DoubleNode</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">        value = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="单向链表和双向链表最简单的练习"><a href="#单向链表和双向链表最简单的练习" class="headerlink" title="单向链表和双向链表最简单的练习"></a>单向链表和双向链表最简单的练习</h3><ul>
+<li><p>单链表和双链表如何反转</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Code_ReverseList</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单向链表单反转 */</span></span><br><span class="line">    <span class="comment">// 1. 定义单向链表</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">        <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            value = date;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 反转单向链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">reverseLinkedList</span><span class="params">(Node head)</span> </span>&#123;</span><br><span class="line">        Node pre = <span class="keyword">null</span>;</span><br><span class="line">        Node next = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            next = head.next;</span><br><span class="line">            head.next = pre;</span><br><span class="line">            pre = head;</span><br><span class="line">            head = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*双向链表反转*/</span></span><br><span class="line">    <span class="comment">// 1. 定义双向链表</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">DoubleNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">        <span class="keyword">public</span> DoubleNode last;</span><br><span class="line">        <span class="keyword">public</span> DoubleNode next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">DoubleNode</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            value = data;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 反转双向链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DoubleNode <span class="title">reverseDoubleList</span><span class="params">(DoubleNode head)</span> </span>&#123;</span><br><span class="line">        DoubleNode pre = <span class="keyword">null</span>;</span><br><span class="line">        DoubleNode next = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            next = head.next;</span><br><span class="line">            head.next = pre;</span><br><span class="line">            head.last = next;</span><br><span class="line">            pre = head;</span><br><span class="line">            head = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>删除给定值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 指定删除head中值为num的节点</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">removeValue</span><span class="params">(Node head, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 首次遍历，过滤头节点为num的情况</span></span><br><span class="line">    <span class="comment">// 找到第一个不需要删的位置</span></span><br><span class="line">    <span class="keyword">while</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head.value != num) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Node pre = head;</span><br><span class="line">    Node cur = head;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.value == num) &#123;</span><br><span class="line">            <span class="comment">// 当前值为num,将当前值的下一位赋于pre.next</span></span><br><span class="line">            pre.next = cur.next;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 当前值保留,记录当前值</span></span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        cur = cur.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h2><h3 id="逻辑概念"><a href="#逻辑概念" class="headerlink" title="逻辑概念"></a>逻辑概念</h3><ul>
+<li><p>栈： 先进后出</p>
+</li>
+<li><p>堆： 先进先出</p>
+</li>
+</ul>
+<h3 id="实际实现"><a href="#实际实现" class="headerlink" title="实际实现"></a>实际实现</h3><ul>
+<li><p>双向链表实现</p>
+</li>
+<li><p>数组实现</p>
+</li>
+</ul>
+<h3 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h3><ol>
+<li><p>怎么用数组实现不超过固定大小的队列和栈</p>
+<p>栈： 正常使用</p>
+<p>队列： 环形数组</p>
+</li>
+<li><p>实现一个特殊的栈，在基本功能的基础上再实现返回栈中最小元素的功能</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>algorithm</tag>
+        <tag>basic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据库</title>
     <url>/2020/10/25/database/database/</url>
     <content><![CDATA[<h1 id="数据库表的创建、表的约束、索引、数据库"><a href="#数据库表的创建、表的约束、索引、数据库" class="headerlink" title="数据库表的创建、表的约束、索引、数据库"></a>数据库表的创建、表的约束、索引、数据库</h1><h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><h3 id="标准的建表语法"><a href="#标准的建表语法" class="headerlink" title="标准的建表语法"></a>标准的建表语法</h3><p>数据库连接池： <code>C3P0</code> <code>DBCP</code> <code>druid</code></p>
@@ -1272,146 +1447,153 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
-    <title>数据结构与算法基础</title>
-    <url>/2020/08/18/algorithm/dataStructure&amp;algorithm/</url>
-    <content><![CDATA[<h1 id="复杂度、对数器、二分法、异或运算"><a href="#复杂度、对数器、二分法、异或运算" class="headerlink" title="复杂度、对数器、二分法、异或运算"></a>复杂度、对数器、二分法、异或运算</h1><p>常见的评估算法优劣的核心指标：</p>
+    <title>前端基础</title>
+    <url>/2023/07/14/frontend/frontend/</url>
+    <content><![CDATA[<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><h2 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h2><p>进程： 程序运行需要自己专属的内存空间，这块内存空间可以简单理解成为进程</p>
+<p>每个应用至少有一个进程，进程之间相互独立，即使需要通信也需要双方同意</p>
+<p>线程： 运行代码的“人”称之为“线程”，一个进程至少有一个线程，所以在进程开启之后会主动创建一个线程来运行代码，该线程称之为主线程。如果程序需要同时执行多块代码，主线程就会启动更多的线程来执行代码，所以一个进程中可以包含多个线程。</p>
+<h3 id="浏览器的进程和线程"><a href="#浏览器的进程和线程" class="headerlink" title="浏览器的进程和线程"></a>浏览器的进程和线程</h3><p>浏览器是一个多进程多线程的应用程序。</p>
+<p>浏览器内部工作机器复杂，为了避免互相影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。</p>
+<p>谷歌浏览器 –&gt; 点击更多 –&gt; 选择更多工具 –&gt; 任务管理器</p>
+<p>能看到浏览器的多个进程，即使一个网页都没打开也会有很多进程</p>
+<p>浏览器中的主要进程包括：浏览器进程、网络进程、渲染进程</p>
+<p>浏览器进程： 负责界面显示、用户交互、子进程管理等。浏览器进程内部会启动多个线程处理不同的任务。</p>
+<p>浏览器进程负责的页面展示指的是浏览器本身的界面，如标签页、前进后退刷新按钮、导航栏等的展示</p>
+<p>网络进程： 负责加载网络资源</p>
+<p>渲染进程：</p>
+<p>渲染进程启动后会开启一个渲染主线程，主线程负责执行HTML、CSS、JS代码。</p>
+<p>默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不互相影响。</p>
+<p><strong>将来此默认模式可能会有所改变，有可能会变成一个站点开启一个进程，而不是一个标签页一个进程，但目前还是一个标签页一个进程的模式，具体可以参见chrome官方文档说明</strong></p>
+<p><strong>最新版的chrome(114.0.5735.199)已经有所改动，新增了一个性能模块，需要自动开启，开启后会自动释放已有一段时间未使用的标签页占用的内存，以让使用中的标签页和其他应用获得更多计算机资源，并让 Chrome 保持快速运行。可在“设置”页面中管理省内存模式以及选择要释放哪些网站占用的内存</strong></p>
+<h2 id="渲染主线程是如何工作的"><a href="#渲染主线程是如何工作的" class="headerlink" title="渲染主线程是如何工作的"></a>渲染主线程是如何工作的</h2><p>渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：</p>
 <ul>
-<li>时间复杂度(流程决定)</li>
-<li>额外空间复杂度(流程决定)</li>
-<li>常数项时间(实现细节决定)</li>
+<li><p>解析HTML</p>
+</li>
+<li><p>解析CSS</p>
+</li>
+<li><p>计算样式</p>
+</li>
+<li><p>布局</p>
+</li>
+<li><p>处理图层</p>
+</li>
+<li><p>每秒把页面画60次</p>
+</li>
+<li><p>执行全局js代码</p>
+</li>
+<li><p>执行事件处理函数</p>
+</li>
+<li><p>执行计时器的回调函数</p>
+</li>
 </ul>
-<h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><p>什么是常数时间的操作？<br>如果一个操作的执行时间不以具体样本量为转移，每次执行时间都是固定时间，这样的操作被称为常数时间的操作。</p>
-<p>常见的常数时间操作：</p>
-<ul>
-<li>算数运算(+ - * % /)等</li>
-<li>常见的位运算(&gt;&gt; &gt;&gt;&gt; &lt;&lt; | &amp; ^)等</li>
-<li>赋值、比较、自增、自减操作</li>
-<li>数组寻址操作</li>
-</ul>
-<p><strong>执行时间固定的操作都是常数时间的操作，执行时间不固定的操作，都不是常数时间的操作</strong></p>
-<blockquote>
-<p>JAVA中LinkedList的get(i)就不是常数时间的操作</p>
-</blockquote>
-<p>如何确定算法流程的总操作数量与样本数量之间的表达式关系？</p>
+<p>渲染主线程调度任务：排队</p>
+<p>将需要执行的任务放在消息队列中进行排队</p>
 <ol>
-<li>想象该算法流程所处理的数据状况，要按照最差情况来</li>
-<li>把整个流程彻底拆分为一个个基本动作，保证<strong>每个动作都是常数时间的操作</strong></li>
-<li>如果数据为N,看看基本动作的数量和N是什么关系</li>
+<li><p>最开始的时候，渲染总线程会进入一个无限循环</p>
+</li>
+<li><p>每一次循环会检查消息队列中是否有任务存在。如果有就取出第一个任务执行，执行完一个后进入下一次循环；如果没有则进入休眠状态</p>
+</li>
+<li><p>其他所有线程（包括其他进程的线程）可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务时，如果主线程是休眠状态，则会将其唤醒继续循环拿取任务</p>
+</li>
 </ol>
-<p>如何确定算法流程的时间复杂度？<br>当完成了表达式的建立，只要把最高阶项留下即可。低阶项都去掉，高阶项的系数也去掉。<br>记为O(忽略掉系数的高阶项)</p>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>时间复杂度就是来衡量在整个流程中发生了多少次的常数操作这件事.</p>
-<p>时间复杂度的意义：<br>当我们要处理的样本很大很大时，我们会发现低阶项是什么不是最重要的；每一项的系数是什么，不是最重要的；真正重要的是最高阶项</p>
-<p>时间复杂度是衡量算法流程的复杂度的一种指标，该指标只与数据量有关，与过程之外的优化无关</p>
-<p>常见的时间复杂度排序(从好到差): O(1) &gt; O(logN) &gt; O(N) &gt; O(N*logN) &gt; O(N²)  O(N³)… O(N^k) &gt; O(2^N) O(3^N)… O(k^N) &gt; O(N!)</p>
-<h2 id="基本排序"><a href="#基本排序" class="headerlink" title="基本排序"></a>基本排序</h2><ul>
-<li>选择排序O(n²)： 轮询数组，将最小的数放到最前面</li>
-<li>冒泡排序O(n²)： 数组之间两两元素顺序交换，大的值放后面</li>
-<li>插入排序：将i位置上的数与前面的数相比较，只要前面的数比它大，就交换</li>
-</ul>
-<p>注：</p>
+<p>以上整个过程被称为事件循环(event loop)，又叫做消息循环（message loop）</p>
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><p>代码在执行过程中会遇到一些无法立即处理的任务，如：</p>
 <ul>
-<li>算法的过程和具体的语言无关</li>
-<li>想分析一个算法流程的时间复杂度的前提，是对该流程非常熟悉</li>
-<li>一定要确保在拆分算法的流程时，拆分出来的所有行为都是常数时间的操作。这意味着你写算法时，对自己用过的每一个系统api都是非常熟悉，否则会影响你对时间复杂度的估算</li>
+<li><p>计时完成后需要执行的任务： setTimeout setInterval</p>
+</li>
+<li><p>网络通信完成后需要执行的任务： XHR、Fetch</p>
+</li>
+<li><p>用户操作后需要执行的任务： addEventListener</p>
+</li>
 </ul>
-<h2 id="额外空间复杂度"><a href="#额外空间复杂度" class="headerlink" title="额外空间复杂度"></a>额外空间复杂度</h2><p>实现算法流程的过程中，你需要开辟一些新的空间来支持你的算法流程</p>
-<p>作为输入参数的空间，不算额外空间<br>作为输出结果的空间，不算额外空间</p>
-<p>因为输入参数和输出结果都是必要的、和现实目标有关的，所以都不算额外空间</p>
-<p>除上述以外，你的流程中如果还需要开辟空间才能继续下去，这部分的空间就是额外空间</p>
-<p>如果你的流程只需要开辟有限几个变量，额外空间复杂度就是O(1)</p>
-<h2 id="常数项时间"><a href="#常数项时间" class="headerlink" title="常数项时间"></a>常数项时间</h2><p>时间复杂度这个指标是忽略低阶项和所有常数系数的。<br>但同样的时间复杂度的流程，运行时实际也并不是一样好。<br>时间复杂度只是一个重要指标，如果两个时间复杂度一样的算法还要咋时间上拼优劣，就进入到拼常数时间的阶段，简称拼常数项。</p>
-<p>两个流程的常数项时间进行比拼不采用理论分析，直接生成随机数据测试</p>
-<h2 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h2><p>一般情况下认为，解决一个问题的算法流程，在时间复杂度的指标上，一定要尽可能的低，先满足了时间复杂度最低这个指标之后，使用最少的空间的算法流程，叫这个问题的最优解</p>
-<p>一般最优解都是忽略掉常数项的，因为常数项这个因素只决定了实现层次的优化和考虑，和怎么解决整个问题的思想无关。</p>
-<h2 id="对数器"><a href="#对数器" class="headerlink" title="对数器"></a>对数器</h2><ol>
-<li>你想要测的方法a</li>
-<li>实现复杂度不好，但是容易实现的方法b</li>
-<li>实现一个随机样本产生器</li>
-<li>把方法a和方法b跑相同的随机样本，看看得到的结果是否一样</li>
-<li>如果有一个随机样本使得比对结果不一致，打印样本进行人工干预，改对方法a和方法b</li>
-<li>当样本数量很多时，比对测试依然正确，可以确定方法a已经正确</li>
-</ol>
-<h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><blockquote>
-<p>算术运算怎么转换成位运算？</p>
-</blockquote>
+<p>如果让渲染主线程等待这些任务执行完，就会导致主线程长期处于阻塞状态，从而导致浏览器卡死</p>
+<h2 id="JS为何会阻碍渲染"><a href="#JS为何会阻碍渲染" class="headerlink" title="JS为何会阻碍渲染"></a>JS为何会阻碍渲染</h2><p>因为JS和渲染都在浏览器的渲染主线程中，执行JS渲染就需要等着，执行渲染，JS就要等着</p>
+<h2 id="任务优先级"><a href="#任务优先级" class="headerlink" title="任务优先级"></a>任务优先级</h2><p>任务没有优先级，在消息队列中先进先出</p>
+<p><strong>但是消息队列是有优先级的</strong></p>
 <ul>
-<li>在一个有序数组中，找某个数是否存在</li>
-<li>在一个有序数组中，找&gt;=某个数最左侧的位置</li>
-<li>在一个有序数组中，找&lt;=某个数最右侧的位置</li>
-<li>局部最小值问题</li>
-</ul>
-<h2 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a>异或运算</h2><p>异或运算： 相同为0，不同为1<br>同或运算： 相同为1，不同为0</p>
-<p>异或运算其实就是无进位的相加，即产生了进位则忽略成0</p>
-<p>异或运算的性质:</p>
-<ol>
-<li>0 ^ N == N  N ^ N == 0</li>
-<li>异或运算满足交换律和结合律</li>
-</ol>
-<h3 id="异或运算的应用"><a href="#异或运算的应用" class="headerlink" title="异或运算的应用"></a>异或运算的应用</h3><ol>
-<li><p>如何不用额外变量交换两个数？<br> int a = m;<br> int b = n;<br> a = a ^ b;<br> b = a ^ b;<br> a = a ^ b;</p>
-<p> 最终结果： a = n; b = m;</p>
-<p> 以上的交换只能a b的值为两个不同的内存空间才能操作，若a=b=arr[i]则不能用以上方法，因此实际使用时还是使用临时变量temp进行交换</p>
+<li><p>每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行</p>
 </li>
-<li><p>一个数组中有一种数出现了奇数次，其他都出现了偶数次，怎么找到并打印这种数？</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> eor = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	eor = eor ^ arr[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 以上代码运行出来最终得到的eor的值就是出现了奇数次的数</p>
-</li>
-<li><p>如何把一个int类型的数提取出最右侧的1来？</p>
-<p> 例如：int N = 00…1101010000</p>
-<p> 将最右侧的1提取出来的结果是：00…0000010000</p>
-<p> N &amp; ((~N) + 1)</p>
-<p> 先将N取反，取反后的值+1，最后将这个值与N进行与运算得到的结果就是只保留最右侧的1其他位为0</p>
-</li>
-<li><p>一个数组中有两种数出现了奇数次，其他都出现了偶数次，怎么找到并打印这两种数？</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	</span><br><span class="line"><span class="comment">// 使用eor=0将所有数都^一遍，最终得到的结果 eor = a ^ b</span></span><br><span class="line"><span class="comment">// 且eor != 0,表示eor必然有一个位置上是1</span></span><br><span class="line"><span class="keyword">int</span> eor = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	eor ^= arr[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提取eor中最右侧的1</span></span><br><span class="line"><span class="keyword">int</span> rightOne = eor ^ ((~eor) + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个新的变量onlyOne=0,将所有与eor最右侧是1同类的数进行操作</span></span><br><span class="line"><span class="keyword">int</span> onlyOne = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	<span class="keyword">if</span>((arr[i] &amp; rightOne) != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">// (arr[i] &amp; rightOne) != 0表示arr[i]在rightOne中为1的位数上也是1</span></span><br><span class="line">		onlyOne ^= arr[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上得到的onlyOne的结果是a或者b</span></span><br><span class="line"><span class="comment">// 出现奇数次的两个数a b 分别是 onlyOne和 eor^onlyOne</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="链表结构、栈、队列、递归行为、哈希表"><a href="#链表结构、栈、队列、递归行为、哈希表" class="headerlink" title="链表结构、栈、队列、递归行为、哈希表"></a>链表结构、栈、队列、递归行为、哈希表</h1><h2 id="链表结构"><a href="#链表结构" class="headerlink" title="链表结构"></a>链表结构</h2><ul>
-<li><p>单向链表节点结构(可以实现成范型)</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">        value = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>双向链表节点结构</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> DoubleNode last;</span><br><span class="line">    <span class="keyword">public</span> DoubleNode next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DoubleNode</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">        value = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>浏览器必须准备好一个微队列(microtask queue)，微队列中的任务优先所有其他任务队列</p>
 </li>
 </ul>
-<h3 id="单向链表和双向链表最简单的练习"><a href="#单向链表和双向链表最简单的练习" class="headerlink" title="单向链表和双向链表最简单的练习"></a>单向链表和双向链表最简单的练习</h3><ul>
-<li><p>单链表和双链表如何反转</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Code_ReverseList</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单向链表单反转 */</span></span><br><span class="line">    <span class="comment">// 1. 定义单向链表</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">        <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            value = date;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 反转单向链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">reverseLinkedList</span><span class="params">(Node head)</span> </span>&#123;</span><br><span class="line">        Node pre = <span class="keyword">null</span>;</span><br><span class="line">        Node next = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            next = head.next;</span><br><span class="line">            head.next = pre;</span><br><span class="line">            pre = head;</span><br><span class="line">            head = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*双向链表反转*/</span></span><br><span class="line">    <span class="comment">// 1. 定义双向链表</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">DoubleNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">        <span class="keyword">public</span> DoubleNode last;</span><br><span class="line">        <span class="keyword">public</span> DoubleNode next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">DoubleNode</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            value = data;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 反转双向链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DoubleNode <span class="title">reverseDoubleList</span><span class="params">(DoubleNode head)</span> </span>&#123;</span><br><span class="line">        DoubleNode pre = <span class="keyword">null</span>;</span><br><span class="line">        DoubleNode next = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            next = head.next;</span><br><span class="line">            head.next = pre;</span><br><span class="line">            head.last = next;</span><br><span class="line">            pre = head;</span><br><span class="line">            head = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>Chrome的实现中，至少包含一下队列：</p>
 <ul>
-<li><p>删除给定值</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 指定删除head中值为num的节点</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">removeValue</span><span class="params">(Node head, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 首次遍历，过滤头节点为num的情况</span></span><br><span class="line">    <span class="comment">// 找到第一个不需要删的位置</span></span><br><span class="line">    <span class="keyword">while</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head.value != num) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Node pre = head;</span><br><span class="line">    Node cur = head;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.value == num) &#123;</span><br><span class="line">            <span class="comment">// 当前值为num,将当前值的下一位赋于pre.next</span></span><br><span class="line">            pre.next = cur.next;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 当前值保留,记录当前值</span></span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        cur = cur.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>延时队列： 用于存放计时器到达后的回调任务，优先级 中</p>
+</li>
+<li><p>交互队列： 用于存放用户操作后产生的事件处理任务，优先级 高</p>
+</li>
+<li><p>微队列： 用户存放需要最快执行的任务，优先级 最高</p>
 </li>
 </ul>
-<h2 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h2><h3 id="逻辑概念"><a href="#逻辑概念" class="headerlink" title="逻辑概念"></a>逻辑概念</h3><ul>
-<li><p>栈： 先进后出</p>
+<p>添加任务到微队列的主要方式是使用Promise、MutationObserver</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 立即把一个函数添加到微队列</span></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(函数)</span><br></pre></td></tr></table></figure>
+<p>以下代码的执行顺序：<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<p>输出的顺序应该是2， 1</p>
+<p>以下代码的执行顺序：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>输出顺序应该是3 2 1</p>
+<p>console.log(3)属于全局函数，所以是先执行，console.log(2)在微队列，优先级高于console.log(1)的延时队列</p>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="如何理解JS的异步"><a href="#如何理解JS的异步" class="headerlink" title="如何理解JS的异步"></a>如何理解JS的异步</h3><p>JS是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个。<br>渲染主线程承担着诸多工作，页面渲染、执行js都在其中运行。<br>如果使用同步的方式，极有可能导致主线程产生阻塞，从而导致消息队列中的很多其他任务无法执行。<br>这样一来，一方面会导致繁忙的主线程白白消耗时间，另一方面会导致页面无法即使更新，给用户造成卡死的现象。</p>
+<p>所以浏览器采用异步的方式来避免。<br>具体做法是，当某些任务，如计时器、网络、事件监听，主线程将任务交给其他线程处理，自身立即结束任务的执行，转而执行后续代码。当其他线程完成时，将事先传递的回调函数包装成任务，加入到消息队列的末尾排队，等待主线程进行调用执行。</p>
+<p>异步模式下浏览器永不阻塞，从而最大限度保障了单线程的执行。</p>
+<h3 id="阐述下JS的事件循环"><a href="#阐述下JS的事件循环" class="headerlink" title="阐述下JS的事件循环"></a>阐述下JS的事件循环</h3><p>事件循环又叫消息循环，是浏览器渲染主线程的工作方式。<br>在Chrome源码中，它开启一个不会结束的for循环，每次循环从消息队列中取出第一个任务执行，其他线程只需要在合适的时候将任务加入到队列末尾即可</p>
+<p>过去把消息队列简单分为虹队列和微队列，这种说法已经无法满足现在的复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。</p>
+<p>根据W3C官方的解释，每个任务具有不同的类型，同类型的任务必须在同一个队列，不同的任务可以属于不同的队列。不同任务队列有不同的优先级，在一次事件循环中，由浏览器自行决定取哪一个队列的任务。但浏览器必须有一个微队列，微队列的任务一定具有最高优先级，必须优先调度执行</p>
+<h3 id="JS中的计时器能做到精确计时吗？为什么？"><a href="#JS中的计时器能做到精确计时吗？为什么？" class="headerlink" title="JS中的计时器能做到精确计时吗？为什么？"></a>JS中的计时器能做到精确计时吗？为什么？</h3><p>不能。</p>
+<ul>
+<li>计算机硬件没有原子钟，无法做到精确计时</li>
+<li>操作系统的计时函数本身就有少量偏差，由于JS的计时器最终调用的是操作系统的函数，也就携带了这些偏差</li>
+<li>按照W3C的标准，浏览器实现计时器时，如果嵌套层级超过5层，则会带有4毫秒的最少时间，这样在计时时间少于4毫秒时又带来偏差</li>
+<li>受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此又会带来偏差</li>
+</ul>
+<h1 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h1><p>绘制Paint –&gt; 分块Tiling –&gt; 光栅化 Raster –&gt; 画 Draw</p>
+<h2 id="光栅化"><a href="#光栅化" class="headerlink" title="光栅化"></a>光栅化</h2><p>将每个块变成位图，优先处理靠近视口的块  </p>
+<p>此过程会使用GPU进行加速</p>
+<h2 id="画"><a href="#画" class="headerlink" title="画"></a>画</h2><p>合成线程及选出每个位图在屏幕上的位置，交给GPU进行最终呈现。 GPU是浏览器的进程，不是显卡的进程</p>
+<p>此部分会进行transform等变形属性的计算，这就是transform效率高的根本原因，因为它发生在合成线程，与渲染主线程无关</p>
+<p>合成线程会把quad交给渲染主线程</p>
+<h2 id="面试题-1"><a href="#面试题-1" class="headerlink" title="面试题"></a>面试题</h2><h3 id="浏览器是如何渲染页面的"><a href="#浏览器是如何渲染页面的" class="headerlink" title="浏览器是如何渲染页面的"></a>浏览器是如何渲染页面的</h3><h3 id="什么是reflow"><a href="#什么是reflow" class="headerlink" title="什么是reflow"></a>什么是reflow</h3><p>reflow的本质是重新计算Layout树。</p>
+<p>当进行了会影响布局树的操作之后，需要重新计算布局树，会引发layout.</p>
+<p>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后在进行统一计算，所以改动属性造成的reflow是异步完成的。</p>
+<p>当JS获取布局属性时就有可能造成无法获取到最新的布局信息。</p>
+<p>浏览器在反复的权衡下，最终决定获取属性立即reflow。</p>
+<h3 id="什么是repaint"><a href="#什么是repaint" class="headerlink" title="什么是repaint"></a>什么是repaint</h3><p>repaint本质上是重新根据分层信息计算了绘制指令。</p>
+<p>当改动了可见样式之后，就需要重新计算，会引发repaint。</p>
+<p>由于元素的布局信息也属于可见样式，所以reflow一定会引起repaint。</p>
+<h3 id="为什么transform的效率高"><a href="#为什么transform的效率高" class="headerlink" title="为什么transform的效率高"></a>为什么transform的效率高</h3><p>因为transform既不会影响布局也不会影响绘制指令，它只会影响渲染流程的最后一个Draw阶段。</p>
+<p>由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌也不会影响transform的变化</p>
+<h1 id="实战——歌词滚动效果"><a href="#实战——歌词滚动效果" class="headerlink" title="实战——歌词滚动效果"></a>实战——歌词滚动效果</h1><p><code>transition</code>表示变化过渡时间，只针对数值类的属性有效，比如颜色、宽高、透明度等</p>
+<p>JS 先做数据逻辑，再做界面逻辑，最后才是事件逻辑</p>
+<h1 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h1><p>得到属性描述符：</p>
+<p><code>Object.getOwnPropertyDescriptor(对象, 对象的属性属性名称)</code></p>
+<p>设置属性描述符：</p>
+<p><code>Object.defineProperty(对象, 对象的属性名, {需要设置的属性：属性对应的属性值})</code></p>
+<p><code>Object.freeze(obj)</code> 冻结对象，对象冻结后不能修改和增删属性</p>
+<p><code>obj = {...obj}</code> 克隆对象</p>
+<p><code>obj.seal(obj)</code> 密封对象</p>
+<p>属性描述符有：</p>
+<ul>
+<li><p><code>value</code> 属性值</p>
 </li>
-<li><p>堆： 先进先出</p>
+<li><p><code>writable</code> 是否可以重写</p>
+</li>
+<li><p><code>enumerable</code> 是否可遍历</p>
+</li>
+<li><p><code>configurable</code> 是否可修改描述符本身，设置为false之后就不能再次修改属性符了</p>
 </li>
 </ul>
-<h3 id="实际实现"><a href="#实际实现" class="headerlink" title="实际实现"></a>实际实现</h3><ul>
-<li><p>双向链表实现</p>
-</li>
-<li><p>数组实现</p>
-</li>
-</ul>
-<h3 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h3><ol>
-<li><p>怎么用数组实现不超过固定大小的队列和栈</p>
-<p>栈： 正常使用</p>
-<p>队列： 环形数组</p>
-</li>
-<li><p>实现一个特殊的栈，在基本功能的基础上再实现返回栈中最小元素的功能</p>
-</li>
-</ol>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><p>前端学习路线： h5+css3 –&gt; es6 -&gt; 网络 –&gt; 第三方库 –&gt; 工程化 –&gt; Vue react等框架 –&gt; …</p>
+<p>Vue的data中是界面数据</p>
+<p>数据响应式： 数据的变化会引发界面的更新，其本质是当数据变化时，会自动运行相关函数</p>
+<p>Vue中的computed表示计算属性，本身不存在，要靠计算出来</p>
 ]]></content>
       <categories>
-        <category>algorithm</category>
+        <category>frontend,js</category>
       </categories>
       <tags>
         <tag>Computer Language</tag>
-        <tag>algorithm</tag>
-        <tag>basic</tag>
+        <tag>frontend</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -1643,188 +1825,6 @@ Bob->Alice : hello
         <tag>Computer Language</tag>
         <tag>web</tag>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端基础</title>
-    <url>/2023/07/14/frontend/frontend/</url>
-    <content><![CDATA[<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><h2 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h2><p>进程： 程序运行需要自己专属的内存空间，这块内存空间可以简单理解成为进程</p>
-<p>每个应用至少有一个进程，进程之间相互独立，即使需要通信也需要双方同意</p>
-<p>线程： 运行代码的“人”称之为“线程”，一个进程至少有一个线程，所以在进程开启之后会主动创建一个线程来运行代码，该线程称之为主线程。如果程序需要同时执行多块代码，主线程就会启动更多的线程来执行代码，所以一个进程中可以包含多个线程。</p>
-<h3 id="浏览器的进程和线程"><a href="#浏览器的进程和线程" class="headerlink" title="浏览器的进程和线程"></a>浏览器的进程和线程</h3><p>浏览器是一个多进程多线程的应用程序。</p>
-<p>浏览器内部工作机器复杂，为了避免互相影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。</p>
-<p>谷歌浏览器 –&gt; 点击更多 –&gt; 选择更多工具 –&gt; 任务管理器</p>
-<p>能看到浏览器的多个进程，即使一个网页都没打开也会有很多进程</p>
-<p>浏览器中的主要进程包括：浏览器进程、网络进程、渲染进程</p>
-<p>浏览器进程： 负责界面显示、用户交互、子进程管理等。浏览器进程内部会启动多个线程处理不同的任务。</p>
-<p>浏览器进程负责的页面展示指的是浏览器本身的界面，如标签页、前进后退刷新按钮、导航栏等的展示</p>
-<p>网络进程： 负责加载网络资源</p>
-<p>渲染进程：</p>
-<p>渲染进程启动后会开启一个渲染主线程，主线程负责执行HTML、CSS、JS代码。</p>
-<p>默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不互相影响。</p>
-<p><strong>将来此默认模式可能会有所改变，有可能会变成一个站点开启一个进程，而不是一个标签页一个进程，但目前还是一个标签页一个进程的模式，具体可以参见chrome官方文档说明</strong></p>
-<p><strong>最新版的chrome(114.0.5735.199)已经有所改动，新增了一个性能模块，需要自动开启，开启后会自动释放已有一段时间未使用的标签页占用的内存，以让使用中的标签页和其他应用获得更多计算机资源，并让 Chrome 保持快速运行。可在“设置”页面中管理省内存模式以及选择要释放哪些网站占用的内存</strong></p>
-<h2 id="渲染主线程是如何工作的"><a href="#渲染主线程是如何工作的" class="headerlink" title="渲染主线程是如何工作的"></a>渲染主线程是如何工作的</h2><p>渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：</p>
-<ul>
-<li><p>解析HTML</p>
-</li>
-<li><p>解析CSS</p>
-</li>
-<li><p>计算样式</p>
-</li>
-<li><p>布局</p>
-</li>
-<li><p>处理图层</p>
-</li>
-<li><p>每秒把页面画60次</p>
-</li>
-<li><p>执行全局js代码</p>
-</li>
-<li><p>执行事件处理函数</p>
-</li>
-<li><p>执行计时器的回调函数</p>
-</li>
-</ul>
-<p>渲染主线程调度任务：排队</p>
-<p>将需要执行的任务放在消息队列中进行排队</p>
-<ol>
-<li><p>最开始的时候，渲染总线程会进入一个无限循环</p>
-</li>
-<li><p>每一次循环会检查消息队列中是否有任务存在。如果有就取出第一个任务执行，执行完一个后进入下一次循环；如果没有则进入休眠状态</p>
-</li>
-<li><p>其他所有线程（包括其他进程的线程）可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务时，如果主线程是休眠状态，则会将其唤醒继续循环拿取任务</p>
-</li>
-</ol>
-<p>以上整个过程被称为事件循环(event loop)，又叫做消息循环（message loop）</p>
-<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><p>代码在执行过程中会遇到一些无法立即处理的任务，如：</p>
-<ul>
-<li><p>计时完成后需要执行的任务： setTimeout setInterval</p>
-</li>
-<li><p>网络通信完成后需要执行的任务： XHR、Fetch</p>
-</li>
-<li><p>用户操作后需要执行的任务： addEventListener</p>
-</li>
-</ul>
-<p>如果让渲染主线程等待这些任务执行完，就会导致主线程长期处于阻塞状态，从而导致浏览器卡死</p>
-<h2 id="JS为何会阻碍渲染"><a href="#JS为何会阻碍渲染" class="headerlink" title="JS为何会阻碍渲染"></a>JS为何会阻碍渲染</h2><p>因为JS和渲染都在浏览器的渲染主线程中，执行JS渲染就需要等着，执行渲染，JS就要等着</p>
-<h2 id="任务优先级"><a href="#任务优先级" class="headerlink" title="任务优先级"></a>任务优先级</h2><p>任务没有优先级，在消息队列中先进先出</p>
-<p><strong>但是消息队列是有优先级的</strong></p>
-<ul>
-<li><p>每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行</p>
-</li>
-<li><p>浏览器必须准备好一个微队列(microtask queue)，微队列中的任务优先所有其他任务队列</p>
-</li>
-</ul>
-<p>Chrome的实现中，至少包含一下队列：</p>
-<ul>
-<li><p>延时队列： 用于存放计时器到达后的回调任务，优先级 中</p>
-</li>
-<li><p>交互队列： 用于存放用户操作后产生的事件处理任务，优先级 高</p>
-</li>
-<li><p>微队列： 用户存放需要最快执行的任务，优先级 最高</p>
-</li>
-</ul>
-<p>添加任务到微队列的主要方式是使用Promise、MutationObserver</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 立即把一个函数添加到微队列</span></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(函数)</span><br></pre></td></tr></table></figure>
-<p>以下代码的执行顺序：<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出的顺序应该是2， 1</p>
-<p>以下代码的执行顺序：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p>输出顺序应该是3 2 1</p>
-<p>console.log(3)属于全局函数，所以是先执行，console.log(2)在微队列，优先级高于console.log(1)的延时队列</p>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="如何理解JS的异步"><a href="#如何理解JS的异步" class="headerlink" title="如何理解JS的异步"></a>如何理解JS的异步</h3><p>JS是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个。<br>渲染主线程承担着诸多工作，页面渲染、执行js都在其中运行。<br>如果使用同步的方式，极有可能导致主线程产生阻塞，从而导致消息队列中的很多其他任务无法执行。<br>这样一来，一方面会导致繁忙的主线程白白消耗时间，另一方面会导致页面无法即使更新，给用户造成卡死的现象。</p>
-<p>所以浏览器采用异步的方式来避免。<br>具体做法是，当某些任务，如计时器、网络、事件监听，主线程将任务交给其他线程处理，自身立即结束任务的执行，转而执行后续代码。当其他线程完成时，将事先传递的回调函数包装成任务，加入到消息队列的末尾排队，等待主线程进行调用执行。</p>
-<p>异步模式下浏览器永不阻塞，从而最大限度保障了单线程的执行。</p>
-<h3 id="阐述下JS的事件循环"><a href="#阐述下JS的事件循环" class="headerlink" title="阐述下JS的事件循环"></a>阐述下JS的事件循环</h3><p>事件循环又叫消息循环，是浏览器渲染主线程的工作方式。<br>在Chrome源码中，它开启一个不会结束的for循环，每次循环从消息队列中取出第一个任务执行，其他线程只需要在合适的时候将任务加入到队列末尾即可</p>
-<p>过去把消息队列简单分为虹队列和微队列，这种说法已经无法满足现在的复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。</p>
-<p>根据W3C官方的解释，每个任务具有不同的类型，同类型的任务必须在同一个队列，不同的任务可以属于不同的队列。不同任务队列有不同的优先级，在一次事件循环中，由浏览器自行决定取哪一个队列的任务。但浏览器必须有一个微队列，微队列的任务一定具有最高优先级，必须优先调度执行</p>
-<h3 id="JS中的计时器能做到精确计时吗？为什么？"><a href="#JS中的计时器能做到精确计时吗？为什么？" class="headerlink" title="JS中的计时器能做到精确计时吗？为什么？"></a>JS中的计时器能做到精确计时吗？为什么？</h3><p>不能。</p>
-<ul>
-<li>计算机硬件没有原子钟，无法做到精确计时</li>
-<li>操作系统的计时函数本身就有少量偏差，由于JS的计时器最终调用的是操作系统的函数，也就携带了这些偏差</li>
-<li>按照W3C的标准，浏览器实现计时器时，如果嵌套层级超过5层，则会带有4毫秒的最少时间，这样在计时时间少于4毫秒时又带来偏差</li>
-<li>受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此又会带来偏差</li>
-</ul>
-<h1 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h1><p>绘制Paint –&gt; 分块Tiling –&gt; 光栅化 Raster –&gt; 画 Draw</p>
-<h2 id="光栅化"><a href="#光栅化" class="headerlink" title="光栅化"></a>光栅化</h2><p>将每个块变成位图，优先处理靠近视口的块  </p>
-<p>此过程会使用GPU进行加速</p>
-<h2 id="画"><a href="#画" class="headerlink" title="画"></a>画</h2><p>合成线程及选出每个位图在屏幕上的位置，交给GPU进行最终呈现。 GPU是浏览器的进程，不是显卡的进程</p>
-<p>此部分会进行transform等变形属性的计算，这就是transform效率高的根本原因，因为它发生在合成线程，与渲染主线程无关</p>
-<p>合成线程会把quad交给渲染主线程</p>
-<h2 id="面试题-1"><a href="#面试题-1" class="headerlink" title="面试题"></a>面试题</h2><h3 id="浏览器是如何渲染页面的"><a href="#浏览器是如何渲染页面的" class="headerlink" title="浏览器是如何渲染页面的"></a>浏览器是如何渲染页面的</h3><h3 id="什么是reflow"><a href="#什么是reflow" class="headerlink" title="什么是reflow"></a>什么是reflow</h3><p>reflow的本质是重新计算Layout树。</p>
-<p>当进行了会影响布局树的操作之后，需要重新计算布局树，会引发layout.</p>
-<p>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后在进行统一计算，所以改动属性造成的reflow是异步完成的。</p>
-<p>当JS获取布局属性时就有可能造成无法获取到最新的布局信息。</p>
-<p>浏览器在反复的权衡下，最终决定获取属性立即reflow。</p>
-<h3 id="什么是repaint"><a href="#什么是repaint" class="headerlink" title="什么是repaint"></a>什么是repaint</h3><p>repaint本质上是重新根据分层信息计算了绘制指令。</p>
-<p>当改动了可见样式之后，就需要重新计算，会引发repaint。</p>
-<p>由于元素的布局信息也属于可见样式，所以reflow一定会引起repaint。</p>
-<h3 id="为什么transform的效率高"><a href="#为什么transform的效率高" class="headerlink" title="为什么transform的效率高"></a>为什么transform的效率高</h3><p>因为transform既不会影响布局也不会影响绘制指令，它只会影响渲染流程的最后一个Draw阶段。</p>
-<p>由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌也不会影响transform的变化</p>
-<h1 id="实战——歌词滚动效果"><a href="#实战——歌词滚动效果" class="headerlink" title="实战——歌词滚动效果"></a>实战——歌词滚动效果</h1><p><code>transition</code>表示变化过渡时间，只针对数值类的属性有效，比如颜色、宽高、透明度等</p>
-<p>JS 先做数据逻辑，再做界面逻辑，最后才是事件逻辑</p>
-<h1 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h1><p>得到属性描述符：</p>
-<p><code>Object.getOwnPropertyDescriptor(对象, 对象的属性属性名称)</code></p>
-<p>设置属性描述符：</p>
-<p><code>Object.defineProperty(对象, 对象的属性名, {需要设置的属性：属性对应的属性值})</code></p>
-<p><code>Object.freeze(obj)</code> 冻结对象，对象冻结后不能修改和增删属性</p>
-<p><code>obj = {...obj}</code> 克隆对象</p>
-<p><code>obj.seal(obj)</code> 密封对象</p>
-<p>属性描述符有：</p>
-<ul>
-<li><p><code>value</code> 属性值</p>
-</li>
-<li><p><code>writable</code> 是否可以重写</p>
-</li>
-<li><p><code>enumerable</code> 是否可遍历</p>
-</li>
-<li><p><code>configurable</code> 是否可修改描述符本身，设置为false之后就不能再次修改属性符了</p>
-</li>
-</ul>
-<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><p>前端学习路线： h5+css3 –&gt; es6 -&gt; 网络 –&gt; 第三方库 –&gt; 工程化 –&gt; Vue react等框架 –&gt; …</p>
-<p>Vue的data中是界面数据</p>
-<p>数据响应式： 数据的变化会引发界面的更新，其本质是当数据变化时，会自动运行相关函数</p>
-<p>Vue中的computed表示计算属性，本身不存在，要靠计算出来</p>
-]]></content>
-      <categories>
-        <category>frontend,js</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>frontend</tag>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vsCode</title>
-    <url>/2019/10/13/tools/vsCode/</url>
-    <content><![CDATA[<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>安装主题插件，个人偏好 <code>One Dark Pro</code></p>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="键入提示"><a href="#键入提示" class="headerlink" title="键入提示"></a>键入提示</h2><p>vsCode安装成功后，内置了Emmet插件，用于对一些代码进行补全</p>
-<p><code>h1*6 + tab/enter键</code>: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>h1*6&gt;{1级标题} + tab/enter键</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>h$*6&gt;{$级标题} + tab/enter键</code>: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>3级标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>4级标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>5级标题<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6级标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>lorem</code>： 乱数假文，没有任何实际含义的数字</p>
-<p>例如： </p>
-<p><code>p*6&gt;lorem + tab/enter键</code> ： 生成六段乱数假文，用于写静态页面时测试排版</p>
-<p><code>p*6&gt;lorem1 + tab/enter键</code>： 生成六段乱数假文，每段只有一个单词</p>
-<p><code>p*6&gt;lorem1000 + tab/enter键</code>： 生成六段乱数假文，每段只有1000个单词</p>
-<p><code>(h2&gt;{章节1})+p&gt;lorem</code> : </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit veritatis perferendis sint ipsa consectetur eligendi fugiat magni officiis! Nisi repellendus dignissimos dolorem a adipisci odit omnis, id nobis in quod.   </span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>(h2[id=&quot;chapter$&quot;]&gt;{章节$})*6</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter1"</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter2"</span>&gt;</span>章节2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter3"</span>&gt;</span>章节3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter4"</span>&gt;</span>章节4<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter5"</span>&gt;</span>章节5<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter6"</span>&gt;</span>章节6<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h2><p><code>ctrl + enter键</code>： 光标切换至下一行<br><code>ctrl + shift + enter键</code>： 光标切换至上一行</p>
-<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><p>按住鼠标中间上下移动，可将光标选中多行进行编辑</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Tools, vsCode</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-        <tag>vsCode</tag>
       </tags>
   </entry>
   <entry>
@@ -3239,246 +3239,6 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
-    <title>JDBC</title>
-    <url>/2020/10/25/java/beforeArchitect/JDBC/</url>
-    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
-<li><p><code>ODBC</code>: 一套连接数据源的标准</p>
-</li>
-<li><p><code>JDBC</code>: <code>Java Database Connectivity</code></p>
-<p>  基于Java语言访问数据库的一种技术。</p>
-<p>  JDBC是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问，由一组用Java语言编写的类和接口组成。JDBC提供了一种基准，据此可以构建更高级的工具和接口，使数据库开发人员能够编写数据库应用程序，同时JDBC也是个商标名</p>
-<p>  JDBC设计思想： 由SUN公司提供访问数据库的接口，由数据库厂商提供对这些接口的实现，程序员编程时都是针对接口进行编程的。</p>
-<p>  JDBC包括一套JDBC的API和一套程序员和数据库厂商都必须去遵守的规范。</p>
-<pre><code>- java.sql包： 提供访问数据库基本的功能
-- javax.sql包： 提供扩展的功能
-</code></pre><p>  JDBC是数据库的中间件</p>
-<p>  JDBC可以做什么？</p>
-<pre><code>- 连接到数据库
-- 在java app中执行SQL命令
-- 处理结果
-</code></pre></li>
-<li><p><code>SPI</code></p>
-<p><code>Service Provider Interface</code><br>。是JDK内置的一种服务提供发现机制，SPI是一种动态替换发现的机制，比如有个接口，想运行时动态给它添加实现，你只需要添加一个实现。我们经常遇到的就是<code>java.sql.Driver</code>接口，其他不同厂商可以针对同一接口做出不同的实现，<code>mysql</code>和<code>posthresql</code>都有不同的实现提供给客户，而Java的SPI机制可以为某个接口寻找服务实现</p>
-</li>
-</ul>
-<h2 id="面向接口编程-java-sql"><a href="#面向接口编程-java-sql" class="headerlink" title="面向接口编程 java.sql"></a>面向接口编程 java.sql</h2><p>如果需要建立连接，java中提供了一套标准，数据库厂商来进行实现，包含实现子类，实现子类的jar文件一般放在数据库安装目录下</p>
-<ol>
-<li>java.sql.Driver 驱动</li>
-<li>java.sql.Connection 连接</li>
-<li><p>java.sql.Statement 静态处理快</p>
-<p>java.sql.PreparedStatement 预处理块</p>
-</li>
-<li><p>java.sql.ResultSet 结果集</p>
-</li>
-<li>java.sql.ResultSetMetaData 结果集元数据</li>
-</ol>
-<h3 id="JDBC连接数据库"><a href="#JDBC连接数据库" class="headerlink" title="JDBC连接数据库"></a>JDBC连接数据库</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 加载驱动</span></span><br><span class="line"><span class="comment">/* 当执行了当前代码之后，会返回一个class对象，在此对象的创建过程中，会调用具体类的静态代码块 */</span></span><br><span class="line"></span><br><span class="line">Class.forName(<span class="string">"oracle.jdbc.driver.OracleDriver"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 建立连接</span></span><br><span class="line"><span class="comment">/** 第一步已经将driver对象注册到了drivermanager中，所以此时可以直接通过DriverManager来获取数据库连接</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">需要输入连接数据库的参数：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- url: 数据库的地址</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- username： 用户名</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- password： 密码</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line">Connection connection = DriverManager.getConnection(<span class="string">"jdbc:oracle:thin:@localhost:1521:orcl"</span>, <span class="string">"scott"</span>, <span class="string">"123456"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 测试连接是否成功</span></span><br><span class="line">System.out.println(connection);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 定义sql语句</span></span><br><span class="line">String sql = <span class="string">"select * from emp"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 准备静态处理块对象，需要一个对象来存放sql语句，将对象进行执行的时候调用的是数据库的服务，数据库会从当前对象中拿到对应的sql语句进行执行</span></span><br><span class="line">Statement statement = connection.createStatement();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6. 执行sql语句，返回值对象是结果集合</span></span><br><span class="line">ResultSet resultSet = statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7. 循环处理</span></span><br><span class="line"><span class="keyword">while</span>(resultSet.next()) &#123;</span><br><span class="line">    <span class="comment">// 通过下标索引编号获取值，索引从1开始</span></span><br><span class="line">    <span class="keyword">int</span> anInt = resultSet.getInt(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过列名获取值</span></span><br><span class="line">    String ename = resultSet.getString(<span class="string">"ename"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 8. 关闭连接</span></span><br><span class="line">statement.close();</span><br><span class="line">connection.close();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Database</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>JDBC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringMVC</title>
-    <url>/2020/08/17/java/beforeArchitect/SpringMVC/</url>
-    <content><![CDATA[<h1 id="SpringMVC初识"><a href="#SpringMVC初识" class="headerlink" title="SpringMVC初识"></a>SpringMVC初识</h1><h2 id="什么是MVC？"><a href="#什么是MVC？" class="headerlink" title="什么是MVC？"></a>什么是MVC？</h2><p><code>MVC</code>是模型(Model)、视图(View)、控制器(Controller)的简写，是一种软件设计规范。将业务逻辑、数据、显示分离方法来组织代码。MVC主要作用是降低了视图与业务逻辑间的双向耦合。是一种<strong>架构模式</strong></p>
-<p><code>Model</code>(模型): 数据模型。提供要展示的数据，因此包含数据和行为，可以认为是领域模型或JavaBean组件（包含数据和行为），不过现在一般都是分离开来： Value Object（数据DAO） 和服务层（行为Service），也就是模型提供了模型数据查询和模型数据的状态更新等功能，包括数据和业务。</p>
-<p><code>View</code>(视图)： 负责进行模型的展示，一般就是我们见到的用户界面，客户想看到的东西</p>
-<p><code>Controller</code>（控制器）： 接收用户请求、委托给模型进行处理（状态改变），处理完毕后把返回的模型数据返回给视图，由视图负责展示。控制器做了个调度员的工作</p>
-<p><strong>最典型MVC: JSP + Servlet + JavaBean</strong></p>
-<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>SpringMVC是Spring框架的一个模块</p>
-<p>SpringMVC运行流程：</p>
-]]></content>
-      <categories>
-        <category>framework,SpringMVC</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>framework</tag>
-        <tag>SpringMVC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络基础知识</title>
-    <url>/2020/08/10/java/beforeArchitect/networkBase/</url>
-    <content><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>什么是服务器？</p>
-<p>服务器又称伺服器，只要是一台功能、性能差不多的电脑就能作为服务器。</p>
-<p>服务器的主要作用是提供数据来源</p>
-<p>Apache服务器： 世界排名第一的Web服务器软件</p>
-<p>Nginx服务器： 高性能Http和反向代理web服务器</p>
-<h2 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h2><p>域名解析： 目的是让服务器认识域名，让域名也认识服务器</p>
-<h2 id="超文本传输协议-HTTP协议"><a href="#超文本传输协议-HTTP协议" class="headerlink" title="超文本传输协议(HTTP协议)"></a>超文本传输协议(HTTP协议)</h2><h3 id="认知HTTP协议"><a href="#认知HTTP协议" class="headerlink" title="认知HTTP协议"></a>认知HTTP协议</h3><p>在网络请求别人网站的时候，地址(URL)必须以HTTP或HTTPs开头</p>
-<h3 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题"></a>经典面试题</h3><ol>
-<li><p>当用户在浏览器地址栏中输入网址(URL)后按回车后到底发生了什么？</p>
-<p> 用户输入地址按回车 –&gt; 浏览器向服务器端发起一次<strong>上行请求</strong> –&gt; 服务器收到上行请求做出<strong>下行响应</strong> –&gt; 浏览器拿到下行响应渲染页面</p>
-</li>
-<li><p>HTTP与HTTP有何异同</p>
-<p> 相同点： 都是超文本传输协议，但是HTTPS相对更安全一点</p>
-</li>
-</ol>
-<ol start="3">
-<li><p>一个网址的URL是由什么组成的</p>
-<ul>
-<li><p><code>http</code>: 超文本传输协议</p>
-</li>
-<li><p><code>www</code>: 别名</p>
-</li>
-<li><p><code>taobao</code>: 域名</p>
-</li>
-<li><p><code>.com</code>: 域名尾缀</p>
-</li>
-</ul>
-<p>常用的域名尾缀</p>
-<p> | 域名尾缀 | 描述 |<br> | – | — |<br> | .cn | 中国国家顶级域名 |<br> | .gov | 政府机构域名尾缀 |<br> | .com | 盈利商业组织（公司） |<br> | .me | 前南斯拉夫地区西南部的国家黑山共和国的国家域名 (饿了么网站使用的域名尾缀就是.me)</p>
-<ul>
-<li><p><code>:8080</code> :端口号,范围（0~65535）</p>
-<p>  服务器默认端口8080</p>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>network,basic</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>basic</tag>
-        <tag>network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringBoot</title>
-    <url>/2020/04/29/java/beforeArchitect/springboot/</url>
-    <content><![CDATA[<h1 id="SpringBoot基础"><a href="#SpringBoot基础" class="headerlink" title="SpringBoot基础"></a>SpringBoot基础</h1><h2 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h2><p>SpringBoot主要解决的是在微服务架构下简化配置（有快速配置）、前后端分离、快速开发</p>
-<p>优点： </p>
-<ul>
-<li>提供了快速启动入门</li>
-<li>开箱即用、提供默认配置</li>
-<li>内嵌容器化web项目</li>
-<li>没有冗余代码生成和XML配置要求</li>
-</ul>
-<h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><p>模板引擎： 如 <code>Thymeleaf</code>, <code>FreeMarker</code></p>
-<p>有嵌套和解析的过程，先加载静态页面，在静态页面上添加一些标记，模板引擎的内核会根据添加的标记动态渲染数据</p>
-<p><strong>计算向数据移动</strong></p>
-<h3 id="MVC架构思想"><a href="#MVC架构思想" class="headerlink" title="MVC架构思想"></a>MVC架构思想</h3><p>? JVM垃圾回收机制现在已经不是引入计数器的方式，改为GCroot</p>
-<p>? Spring不支持循环引用，主要是因为其自身结构问题。</p>
-<h3 id="基于SpringBoot的MVC"><a href="#基于SpringBoot的MVC" class="headerlink" title="基于SpringBoot的MVC"></a>基于SpringBoot的MVC</h3><ul>
-<li>数据的展示查询</li>
-</ul>
-<h3 id="分层解释"><a href="#分层解释" class="headerlink" title="分层解释"></a>分层解释</h3><ul>
-<li><p><code>Controller</code>层</p>
-<p>一般写业务逻辑跳转</p>
-</li>
-<li><p><code>Service</code>层</p>
-<p>业务层逻辑代码</p>
-</li>
-<li><p><code>DAO</code>层</p>
-<p>操作持久层</p>
-</li>
-</ul>
-<h3 id="各种依赖"><a href="#各种依赖" class="headerlink" title="各种依赖"></a>各种依赖</h3><h4 id="JPA-Java-Persistence-API"><a href="#JPA-Java-Persistence-API" class="headerlink" title="JPA(Java Persistence API)"></a>JPA(Java Persistence API)</h4><p>  添加依赖 <code>Spring-data-jpa</code>, 用于访问数据源的框架，可以把数据库的表映射成对象，一一对应</p>
-<h3 id="注释解说"><a href="#注释解说" class="headerlink" title="注释解说"></a>注释解说</h3><h4 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a><code>@RequestMapping</code></h4><p>请求路径</p>
-<h4 id="PathVariable-quot-key-quot"><a href="#PathVariable-quot-key-quot" class="headerlink" title="@PathVariable(&quot;key&quot;)"></a><code>@PathVariable(&quot;key&quot;)</code></h4><p>取URI中<code>key</code>对应的值</p>
-<h1 id="实践中报错记录"><a href="#实践中报错记录" class="headerlink" title="实践中报错记录"></a>实践中报错记录</h1><h2 id="下载依赖包速度过慢"><a href="#下载依赖包速度过慢" class="headerlink" title="下载依赖包速度过慢"></a>下载依赖包速度过慢</h2><p>解决方法： 配置阿里云镜像地址</p>
-<p>全局配置步骤： </p>
-<ol>
-<li>找到maven的<code>setting.xml</code>文件，若没有可以新建</li>
-<li><p>在<code>setting.xml</code>文件的<code>mirrors</code>节点下面添加子节点</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="运行成功并退出"><a href="#运行成功并退出" class="headerlink" title="运行成功并退出"></a>运行成功并退出</h2><p><code>Process finished with exit code 0</code></p>
-<p>原因： <code>Pom.xml</code>文件缺少依赖</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="引入spring-security每次调用需要输入登录名密码"><a href="#引入spring-security每次调用需要输入登录名密码" class="headerlink" title="引入spring-security每次调用需要输入登录名密码"></a>引入<code>spring-security</code>每次调用需要输入登录名密码</h2><p>解决办法： 关闭验证</p>
-<ol>
-<li><p><code>springboot 2.0</code> 之前可通过yml配置关闭验证：</p>
- <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">security.basic.enabled=false</span></span><br><span class="line"><span class="string">management.security.enabled=false</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>springboot 2.x</code>后关闭验证</p>
-<p> <code>springboot 2.x</code> 后上述配置被废除，需要在启动类前的 <code>@SpringBootApplication</code> 注解中加入 <code>exclude</code> 属性 <code>scurityAutoConfiguration</code></p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span>(exclude = SecurityAutoConfiguration.class)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="数据库连接报错"><a href="#数据库连接报错" class="headerlink" title="数据库连接报错"></a>数据库连接报错</h2><p>报错内容: <code>java.sql.SQLException: The server time zone value &#39;�й���׼ʱ��&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the &#39;serverTimezone&#39; configuration property) to use a more specifc time zone value if you want to utilize time zone support.</code></p>
-<p>报错原因： 数据库连接时区配置问题</p>
-<p>解决方法： 数据库配置添加时区配置 <code>serverTimezone=UTC</code></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">$&#123;MYSQL_USER:root&#125;</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">$&#123;MYSQL_PASSWORD:123456&#125;</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://$&#123;MYSQL_HOST:localhost&#125;:$&#123;MYSQL_PORT:3306&#125;/$&#123;MYSQL_DATABASE:dbname&#125;?serverTimezone=UTC&amp;useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>参考资料：</p>
-]]></content>
-      <categories>
-        <category>framework,Springboot</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>framework</tag>
-        <tag>Springboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>反射</title>
-    <url>/2020/10/27/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</url>
-    <content><![CDATA[<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>JAVA反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法；对于任意一个对象，都能调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法功能称为Java语言的反射机制。 </p>
-<p>想要解剖一个类，必须先要获取到该类的字节码文件对象。而而解剖使用的就是Class类中的方法，所以现在要获取到每一个字节码文件对应的Class类型的对象。</p>
-<h2 id="获取Class对象"><a href="#获取Class对象" class="headerlink" title="获取Class对象"></a>获取Class对象</h2><ol>
-<li><p>通过class.forName()来获取Class对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class clazz = Class.forName(<span class="string">"com.xx.entity.Emp"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过<code>类名.class</code>来获取</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;Emp&gt; <span class="class"><span class="keyword">class</span> </span>= Emp.class;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过对象的<code>getClass()</code>来获取</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;? extends Emp&gt; clazz = <span class="keyword">new</span> Emp().getClass();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>基本数据类型可以通过TYPE的方式获取class</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;Integer&gt; type = Integer.TYPE;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>推荐第1、2种方式</p>
-<h2 id="Class对象方法"><a href="#Class对象方法" class="headerlink" title="Class对象方法"></a>Class对象方法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;?&gt; clazz = Class.forName(<span class="string">"com.xx.xx.类名"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><code>getFields()</code></p>
-<p>获取成员变量，包括子类、父类，同时只能包含公共的方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] fields = clazz.getFields();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(Field field: fields) &#123;</span><br><span class="line">    <span class="comment">// 字段名称</span></span><br><span class="line">    field.getName();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 字段类型</span></span><br><span class="line">    field.getType();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 字段修饰符</span></span><br><span class="line">    field.getModifiers();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>getDeclaredFields()</code></p>
-<p>获取当前类的所有属性，不仅仅是公共访问修饰符，所有的访问修饰符都可以拿到</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] declaredFields = clazz.getDeclaredFields();</span><br><span class="line"></span><br><span class="line"><span class="comment">// xx表示该类中的某个字段名</span></span><br><span class="line">Field xx = clazz.getDeclaredField(<span class="string">"xx"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为对象设值</p>
-<p>假设有一个类<code>Student</code>，含有私有属性<code>address</code>(用<code>private</code>修饰的字段)，正常情况下<code>private</code>修饰的属性无法被外界访问，但是通过反射能够为<code>address</code>字段设值</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class clazz = Class.forName(<span class="string">"com.xx.entity.Student"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取address字段</span></span><br><span class="line">Field address = clazz.getDeclaredField(<span class="string">"address"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将address字段的访问权限设置为可访问，true表示能访问</span></span><br><span class="line">address.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为address字段赋值</span></span><br><span class="line">Object o = clazz.newInstance();</span><br><span class="line">address.set(o, <span class="string">"上海市"</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>反射在一定程度上破坏了封装性，需要合理使用</strong></p>
-</li>
-<li><p><code>getMethods()</code></p>
-<p>获取对象中的普通方法，包含当前对象和父类对象的公共方法</p>
-</li>
-<li><p><code>getDeclaredMethods()</code></p>
-<p>获取当前类中的所有方法，包括私有方法</p>
-</li>
-<li><p><code>getConstructors()</code></p>
-<p>获取对象所有的公有构造方法,不包含父类构造方法</p>
-</li>
-<li><p><code>getDeclaredConstructors()</code></p>
-<p>获取对象的所有构造方法，包括私有,不包含父类构造方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Constructor&lt;?&gt;[] declaredConstructors = clazz.getDeclaredConstructors();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用私有的构造方法</span></span><br><span class="line">Constructor declaredConstructor = clazz.getDeclaredConstructor(String.class, <span class="keyword">int</span>.class);</span><br><span class="line"></span><br><span class="line">declaredConstructor.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">Object o2 = declaredConstructor.newInstance(<span class="string">"参数1"</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>反射</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue</title>
     <url>/2019/06/22/frontend/vue/</url>
     <content><![CDATA[<h1 id="Vue使用"><a href="#Vue使用" class="headerlink" title="Vue使用"></a>Vue使用</h1><p>使用Vue的两种方式：</p>
@@ -3808,6 +3568,107 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
+    <title>JDBC</title>
+    <url>/2020/10/25/java/beforeArchitect/JDBC/</url>
+    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
+<li><p><code>ODBC</code>: 一套连接数据源的标准</p>
+</li>
+<li><p><code>JDBC</code>: <code>Java Database Connectivity</code></p>
+<p>  基于Java语言访问数据库的一种技术。</p>
+<p>  JDBC是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问，由一组用Java语言编写的类和接口组成。JDBC提供了一种基准，据此可以构建更高级的工具和接口，使数据库开发人员能够编写数据库应用程序，同时JDBC也是个商标名</p>
+<p>  JDBC设计思想： 由SUN公司提供访问数据库的接口，由数据库厂商提供对这些接口的实现，程序员编程时都是针对接口进行编程的。</p>
+<p>  JDBC包括一套JDBC的API和一套程序员和数据库厂商都必须去遵守的规范。</p>
+<pre><code>- java.sql包： 提供访问数据库基本的功能
+- javax.sql包： 提供扩展的功能
+</code></pre><p>  JDBC是数据库的中间件</p>
+<p>  JDBC可以做什么？</p>
+<pre><code>- 连接到数据库
+- 在java app中执行SQL命令
+- 处理结果
+</code></pre></li>
+<li><p><code>SPI</code></p>
+<p><code>Service Provider Interface</code><br>。是JDK内置的一种服务提供发现机制，SPI是一种动态替换发现的机制，比如有个接口，想运行时动态给它添加实现，你只需要添加一个实现。我们经常遇到的就是<code>java.sql.Driver</code>接口，其他不同厂商可以针对同一接口做出不同的实现，<code>mysql</code>和<code>posthresql</code>都有不同的实现提供给客户，而Java的SPI机制可以为某个接口寻找服务实现</p>
+</li>
+</ul>
+<h2 id="面向接口编程-java-sql"><a href="#面向接口编程-java-sql" class="headerlink" title="面向接口编程 java.sql"></a>面向接口编程 java.sql</h2><p>如果需要建立连接，java中提供了一套标准，数据库厂商来进行实现，包含实现子类，实现子类的jar文件一般放在数据库安装目录下</p>
+<ol>
+<li>java.sql.Driver 驱动</li>
+<li>java.sql.Connection 连接</li>
+<li><p>java.sql.Statement 静态处理快</p>
+<p>java.sql.PreparedStatement 预处理块</p>
+</li>
+<li><p>java.sql.ResultSet 结果集</p>
+</li>
+<li>java.sql.ResultSetMetaData 结果集元数据</li>
+</ol>
+<h3 id="JDBC连接数据库"><a href="#JDBC连接数据库" class="headerlink" title="JDBC连接数据库"></a>JDBC连接数据库</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 加载驱动</span></span><br><span class="line"><span class="comment">/* 当执行了当前代码之后，会返回一个class对象，在此对象的创建过程中，会调用具体类的静态代码块 */</span></span><br><span class="line"></span><br><span class="line">Class.forName(<span class="string">"oracle.jdbc.driver.OracleDriver"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 建立连接</span></span><br><span class="line"><span class="comment">/** 第一步已经将driver对象注册到了drivermanager中，所以此时可以直接通过DriverManager来获取数据库连接</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">需要输入连接数据库的参数：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- url: 数据库的地址</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- username： 用户名</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- password： 密码</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line">Connection connection = DriverManager.getConnection(<span class="string">"jdbc:oracle:thin:@localhost:1521:orcl"</span>, <span class="string">"scott"</span>, <span class="string">"123456"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 测试连接是否成功</span></span><br><span class="line">System.out.println(connection);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 定义sql语句</span></span><br><span class="line">String sql = <span class="string">"select * from emp"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 准备静态处理块对象，需要一个对象来存放sql语句，将对象进行执行的时候调用的是数据库的服务，数据库会从当前对象中拿到对应的sql语句进行执行</span></span><br><span class="line">Statement statement = connection.createStatement();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6. 执行sql语句，返回值对象是结果集合</span></span><br><span class="line">ResultSet resultSet = statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7. 循环处理</span></span><br><span class="line"><span class="keyword">while</span>(resultSet.next()) &#123;</span><br><span class="line">    <span class="comment">// 通过下标索引编号获取值，索引从1开始</span></span><br><span class="line">    <span class="keyword">int</span> anInt = resultSet.getInt(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过列名获取值</span></span><br><span class="line">    String ename = resultSet.getString(<span class="string">"ename"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 8. 关闭连接</span></span><br><span class="line">statement.close();</span><br><span class="line">connection.close();</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Database</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>JDBC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>反射</title>
+    <url>/2020/10/27/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>JAVA反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法；对于任意一个对象，都能调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法功能称为Java语言的反射机制。 </p>
+<p>想要解剖一个类，必须先要获取到该类的字节码文件对象。而而解剖使用的就是Class类中的方法，所以现在要获取到每一个字节码文件对应的Class类型的对象。</p>
+<h2 id="获取Class对象"><a href="#获取Class对象" class="headerlink" title="获取Class对象"></a>获取Class对象</h2><ol>
+<li><p>通过class.forName()来获取Class对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class clazz = Class.forName(<span class="string">"com.xx.entity.Emp"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过<code>类名.class</code>来获取</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;Emp&gt; <span class="class"><span class="keyword">class</span> </span>= Emp.class;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过对象的<code>getClass()</code>来获取</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;? extends Emp&gt; clazz = <span class="keyword">new</span> Emp().getClass();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本数据类型可以通过TYPE的方式获取class</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;Integer&gt; type = Integer.TYPE;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>推荐第1、2种方式</p>
+<h2 id="Class对象方法"><a href="#Class对象方法" class="headerlink" title="Class对象方法"></a>Class对象方法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;?&gt; clazz = Class.forName(<span class="string">"com.xx.xx.类名"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>getFields()</code></p>
+<p>获取成员变量，包括子类、父类，同时只能包含公共的方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] fields = clazz.getFields();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(Field field: fields) &#123;</span><br><span class="line">    <span class="comment">// 字段名称</span></span><br><span class="line">    field.getName();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 字段类型</span></span><br><span class="line">    field.getType();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 字段修饰符</span></span><br><span class="line">    field.getModifiers();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>getDeclaredFields()</code></p>
+<p>获取当前类的所有属性，不仅仅是公共访问修饰符，所有的访问修饰符都可以拿到</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] declaredFields = clazz.getDeclaredFields();</span><br><span class="line"></span><br><span class="line"><span class="comment">// xx表示该类中的某个字段名</span></span><br><span class="line">Field xx = clazz.getDeclaredField(<span class="string">"xx"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为对象设值</p>
+<p>假设有一个类<code>Student</code>，含有私有属性<code>address</code>(用<code>private</code>修饰的字段)，正常情况下<code>private</code>修饰的属性无法被外界访问，但是通过反射能够为<code>address</code>字段设值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class clazz = Class.forName(<span class="string">"com.xx.entity.Student"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取address字段</span></span><br><span class="line">Field address = clazz.getDeclaredField(<span class="string">"address"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将address字段的访问权限设置为可访问，true表示能访问</span></span><br><span class="line">address.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为address字段赋值</span></span><br><span class="line">Object o = clazz.newInstance();</span><br><span class="line">address.set(o, <span class="string">"上海市"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>反射在一定程度上破坏了封装性，需要合理使用</strong></p>
+</li>
+<li><p><code>getMethods()</code></p>
+<p>获取对象中的普通方法，包含当前对象和父类对象的公共方法</p>
+</li>
+<li><p><code>getDeclaredMethods()</code></p>
+<p>获取当前类中的所有方法，包括私有方法</p>
+</li>
+<li><p><code>getConstructors()</code></p>
+<p>获取对象所有的公有构造方法,不包含父类构造方法</p>
+</li>
+<li><p><code>getDeclaredConstructors()</code></p>
+<p>获取对象的所有构造方法，包括私有,不包含父类构造方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Constructor&lt;?&gt;[] declaredConstructors = clazz.getDeclaredConstructors();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用私有的构造方法</span></span><br><span class="line">Constructor declaredConstructor = clazz.getDeclaredConstructor(String.class, <span class="keyword">int</span>.class);</span><br><span class="line"></span><br><span class="line">declaredConstructor.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">Object o2 = declaredConstructor.newInstance(<span class="string">"参数1"</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>反射</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>UML</title>
     <url>/2020/02/26/others/UML/starUml/</url>
     <content><![CDATA[<h1 id="UML基础-1"><a href="#UML基础-1" class="headerlink" title="UML基础 ^1"></a>UML基础 <a href="https://www.bilibili.com/video/av34973179?from=search&amp;seid=955581513016587565" title="熟练使用UML" target="_blank" rel="noopener">^1</a></h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
@@ -4061,6 +3922,145 @@ Bob->Alice : hello
       </categories>
       <tags>
         <tag>others</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot</title>
+    <url>/2020/04/29/java/beforeArchitect/springboot/</url>
+    <content><![CDATA[<h1 id="SpringBoot基础"><a href="#SpringBoot基础" class="headerlink" title="SpringBoot基础"></a>SpringBoot基础</h1><h2 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h2><p>SpringBoot主要解决的是在微服务架构下简化配置（有快速配置）、前后端分离、快速开发</p>
+<p>优点： </p>
+<ul>
+<li>提供了快速启动入门</li>
+<li>开箱即用、提供默认配置</li>
+<li>内嵌容器化web项目</li>
+<li>没有冗余代码生成和XML配置要求</li>
+</ul>
+<h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><p>模板引擎： 如 <code>Thymeleaf</code>, <code>FreeMarker</code></p>
+<p>有嵌套和解析的过程，先加载静态页面，在静态页面上添加一些标记，模板引擎的内核会根据添加的标记动态渲染数据</p>
+<p><strong>计算向数据移动</strong></p>
+<h3 id="MVC架构思想"><a href="#MVC架构思想" class="headerlink" title="MVC架构思想"></a>MVC架构思想</h3><p>? JVM垃圾回收机制现在已经不是引入计数器的方式，改为GCroot</p>
+<p>? Spring不支持循环引用，主要是因为其自身结构问题。</p>
+<h3 id="基于SpringBoot的MVC"><a href="#基于SpringBoot的MVC" class="headerlink" title="基于SpringBoot的MVC"></a>基于SpringBoot的MVC</h3><ul>
+<li>数据的展示查询</li>
+</ul>
+<h3 id="分层解释"><a href="#分层解释" class="headerlink" title="分层解释"></a>分层解释</h3><ul>
+<li><p><code>Controller</code>层</p>
+<p>一般写业务逻辑跳转</p>
+</li>
+<li><p><code>Service</code>层</p>
+<p>业务层逻辑代码</p>
+</li>
+<li><p><code>DAO</code>层</p>
+<p>操作持久层</p>
+</li>
+</ul>
+<h3 id="各种依赖"><a href="#各种依赖" class="headerlink" title="各种依赖"></a>各种依赖</h3><h4 id="JPA-Java-Persistence-API"><a href="#JPA-Java-Persistence-API" class="headerlink" title="JPA(Java Persistence API)"></a>JPA(Java Persistence API)</h4><p>  添加依赖 <code>Spring-data-jpa</code>, 用于访问数据源的框架，可以把数据库的表映射成对象，一一对应</p>
+<h3 id="注释解说"><a href="#注释解说" class="headerlink" title="注释解说"></a>注释解说</h3><h4 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a><code>@RequestMapping</code></h4><p>请求路径</p>
+<h4 id="PathVariable-quot-key-quot"><a href="#PathVariable-quot-key-quot" class="headerlink" title="@PathVariable(&quot;key&quot;)"></a><code>@PathVariable(&quot;key&quot;)</code></h4><p>取URI中<code>key</code>对应的值</p>
+<h1 id="实践中报错记录"><a href="#实践中报错记录" class="headerlink" title="实践中报错记录"></a>实践中报错记录</h1><h2 id="下载依赖包速度过慢"><a href="#下载依赖包速度过慢" class="headerlink" title="下载依赖包速度过慢"></a>下载依赖包速度过慢</h2><p>解决方法： 配置阿里云镜像地址</p>
+<p>全局配置步骤： </p>
+<ol>
+<li>找到maven的<code>setting.xml</code>文件，若没有可以新建</li>
+<li><p>在<code>setting.xml</code>文件的<code>mirrors</code>节点下面添加子节点</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="运行成功并退出"><a href="#运行成功并退出" class="headerlink" title="运行成功并退出"></a>运行成功并退出</h2><p><code>Process finished with exit code 0</code></p>
+<p>原因： <code>Pom.xml</code>文件缺少依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="引入spring-security每次调用需要输入登录名密码"><a href="#引入spring-security每次调用需要输入登录名密码" class="headerlink" title="引入spring-security每次调用需要输入登录名密码"></a>引入<code>spring-security</code>每次调用需要输入登录名密码</h2><p>解决办法： 关闭验证</p>
+<ol>
+<li><p><code>springboot 2.0</code> 之前可通过yml配置关闭验证：</p>
+ <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">security.basic.enabled=false</span></span><br><span class="line"><span class="string">management.security.enabled=false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>springboot 2.x</code>后关闭验证</p>
+<p> <code>springboot 2.x</code> 后上述配置被废除，需要在启动类前的 <code>@SpringBootApplication</code> 注解中加入 <code>exclude</code> 属性 <code>scurityAutoConfiguration</code></p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span>(exclude = SecurityAutoConfiguration.class)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="数据库连接报错"><a href="#数据库连接报错" class="headerlink" title="数据库连接报错"></a>数据库连接报错</h2><p>报错内容: <code>java.sql.SQLException: The server time zone value &#39;�й���׼ʱ��&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the &#39;serverTimezone&#39; configuration property) to use a more specifc time zone value if you want to utilize time zone support.</code></p>
+<p>报错原因： 数据库连接时区配置问题</p>
+<p>解决方法： 数据库配置添加时区配置 <code>serverTimezone=UTC</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">$&#123;MYSQL_USER:root&#125;</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">$&#123;MYSQL_PASSWORD:123456&#125;</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://$&#123;MYSQL_HOST:localhost&#125;:$&#123;MYSQL_PORT:3306&#125;/$&#123;MYSQL_DATABASE:dbname&#125;?serverTimezone=UTC&amp;useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>参考资料：</p>
+]]></content>
+      <categories>
+        <category>framework,Springboot</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>framework</tag>
+        <tag>Springboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringMVC</title>
+    <url>/2020/08/17/java/beforeArchitect/SpringMVC/</url>
+    <content><![CDATA[<h1 id="SpringMVC初识"><a href="#SpringMVC初识" class="headerlink" title="SpringMVC初识"></a>SpringMVC初识</h1><h2 id="什么是MVC？"><a href="#什么是MVC？" class="headerlink" title="什么是MVC？"></a>什么是MVC？</h2><p><code>MVC</code>是模型(Model)、视图(View)、控制器(Controller)的简写，是一种软件设计规范。将业务逻辑、数据、显示分离方法来组织代码。MVC主要作用是降低了视图与业务逻辑间的双向耦合。是一种<strong>架构模式</strong></p>
+<p><code>Model</code>(模型): 数据模型。提供要展示的数据，因此包含数据和行为，可以认为是领域模型或JavaBean组件（包含数据和行为），不过现在一般都是分离开来： Value Object（数据DAO） 和服务层（行为Service），也就是模型提供了模型数据查询和模型数据的状态更新等功能，包括数据和业务。</p>
+<p><code>View</code>(视图)： 负责进行模型的展示，一般就是我们见到的用户界面，客户想看到的东西</p>
+<p><code>Controller</code>（控制器）： 接收用户请求、委托给模型进行处理（状态改变），处理完毕后把返回的模型数据返回给视图，由视图负责展示。控制器做了个调度员的工作</p>
+<p><strong>最典型MVC: JSP + Servlet + JavaBean</strong></p>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>SpringMVC是Spring框架的一个模块</p>
+<p>SpringMVC运行流程：</p>
+]]></content>
+      <categories>
+        <category>framework,SpringMVC</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>framework</tag>
+        <tag>SpringMVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络基础知识</title>
+    <url>/2020/08/10/java/beforeArchitect/networkBase/</url>
+    <content><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>什么是服务器？</p>
+<p>服务器又称伺服器，只要是一台功能、性能差不多的电脑就能作为服务器。</p>
+<p>服务器的主要作用是提供数据来源</p>
+<p>Apache服务器： 世界排名第一的Web服务器软件</p>
+<p>Nginx服务器： 高性能Http和反向代理web服务器</p>
+<h2 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h2><p>域名解析： 目的是让服务器认识域名，让域名也认识服务器</p>
+<h2 id="超文本传输协议-HTTP协议"><a href="#超文本传输协议-HTTP协议" class="headerlink" title="超文本传输协议(HTTP协议)"></a>超文本传输协议(HTTP协议)</h2><h3 id="认知HTTP协议"><a href="#认知HTTP协议" class="headerlink" title="认知HTTP协议"></a>认知HTTP协议</h3><p>在网络请求别人网站的时候，地址(URL)必须以HTTP或HTTPs开头</p>
+<h3 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题"></a>经典面试题</h3><ol>
+<li><p>当用户在浏览器地址栏中输入网址(URL)后按回车后到底发生了什么？</p>
+<p> 用户输入地址按回车 –&gt; 浏览器向服务器端发起一次<strong>上行请求</strong> –&gt; 服务器收到上行请求做出<strong>下行响应</strong> –&gt; 浏览器拿到下行响应渲染页面</p>
+</li>
+<li><p>HTTP与HTTP有何异同</p>
+<p> 相同点： 都是超文本传输协议，但是HTTPS相对更安全一点</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>一个网址的URL是由什么组成的</p>
+<ul>
+<li><p><code>http</code>: 超文本传输协议</p>
+</li>
+<li><p><code>www</code>: 别名</p>
+</li>
+<li><p><code>taobao</code>: 域名</p>
+</li>
+<li><p><code>.com</code>: 域名尾缀</p>
+</li>
+</ul>
+<p>常用的域名尾缀</p>
+<p> | 域名尾缀 | 描述 |<br> | – | — |<br> | .cn | 中国国家顶级域名 |<br> | .gov | 政府机构域名尾缀 |<br> | .com | 盈利商业组织（公司） |<br> | .me | 前南斯拉夫地区西南部的国家黑山共和国的国家域名 (饿了么网站使用的域名尾缀就是.me)</p>
+<ul>
+<li><p><code>:8080</code> :端口号,范围（0~65535）</p>
+<p>  服务器默认端口8080</p>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>network,basic</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>basic</tag>
+        <tag>network</tag>
       </tags>
   </entry>
   <entry>
@@ -5198,8 +5198,8 @@ Bob->Alice : hello
       </categories>
       <tags>
         <tag>Computer Language</tag>
-        <tag>framework</tag>
         <tag>Spring</tag>
+        <tag>framework</tag>
       </tags>
   </entry>
   <entry>
