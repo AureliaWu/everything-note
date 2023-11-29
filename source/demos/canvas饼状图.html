@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas饼状图</title>
+</head>
+<body>
+    <canvas width="600px" height="400px"></canvas>
+</body>
+</html>
+<style>
+    canvas {
+        border: 1px solid royalblue;
+    }
+</style>
+<script>
+    var ctx = document.querySelector('canvas').getContext('2d');    
+
+    // 创建饼状图构造函数
+    var PieChart = function(ctx) {
+        this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+        this.width = this.ctx.canvas.width;// 画布宽度
+        this.height = this.ctx.canvas.height;// 画布高度
+        this.x0 = this.width / 2 + 60;
+        this.y0 = this.height / 2 + 20;
+        this.radius = this.width / 4;
+        this.outLine = 20;// 文本线超出圆弧长度
+        this.rectWidth = 40;
+        this.rectHeight = 20;
+        this.rectLeft = 10;
+        this.rectRight = 10;
+        this.rectTop = 20;
+        this.recSpace = 20;
+    }
+
+    // 饼状图初始化
+    PieChart.prototype.init = function(data) {
+        this.drawPieChart(data);
+    }
+
+    // 绘制饼状图
+    PieChart.prototype.drawPieChart = function(data) {
+        // 获取带有angle属性的新数据
+        let _this = this;
+        let angleList = _this.transferAngle(data);
+
+        // 绘制饼图,当前结束弧度 = 下一次起始弧度
+        let startAngle = 0;
+        for (let i = 0; i < angleList.length; i++) {
+            // 1. 填充饼状图
+            let endAngle = startAngle + angleList[i].angle;
+            ctx.beginPath();
+            ctx.moveTo(_this.x0, _this.y0);
+            ctx.arc(_this.x0, _this.y0, _this.radius, startAngle, endAngle);
+            ctx.closePath();
+            let color = getRandomColor();
+            ctx.fillStyle = color;
+            ctx.fill();
+
+            // 2. 绘制标题,标题的角度为上一个角度 + 当前扇形角度一半
+            _this.drawTitle(startAngle + (angleList[i].angle) / 2, color, angleList[i].title);
+
+            // 3. 绘制饼状图描述
+            _this.drawDesc(_this.rectLeft, _this.rectTop + i * (_this.rectHeight + _this.recSpace), color, angleList[i].title);
+            
+            startAngle = endAngle; 
+        }
+    }
+
+    // 转换数据占比所对应的弧度
+    PieChart.prototype.transferAngle = function(data) {
+        // 获取数据总数
+        let _this = this;
+        // 获取总数
+        let total = 0;
+        for (let i = 0; i < data.length; i++) {
+            total = total + data[i].num;
+        }
+
+        // 计算弧度并将计算的弧度追加到当前对象内容(给data对象添加一个属性angle)
+        data.forEach(function (item, i) {
+            let angle = item.num / total * Math.PI * 2;
+            item.angle = angle;
+        });
+
+        return data;
+    }
+
+    // 绘制饼状图标题
+    PieChart.prototype.drawTitle = function(angle, lineColor, title) {
+        // 从每个区域内拉出一条比半径稍长的线
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x0, this.y0);
+        var x = (this.radius + this.outLine) * Math.cos(angle) + this.x0;
+        var y = (this.radius + this.outLine) * Math.sin(angle) + this.y0;
+        this.ctx.lineTo(x, y);
+        this.ctx.strokeStyle = lineColor || 'black';
+
+        // 绘制文字和下划线
+        // 1. 文字下划线方向需要进行判断，如果伸出弧线段x方向坐标 > 圆心x0的坐标则向右划线，否则向左
+        // 2. 下划线的长度与文字的长度有关系
+        let textWidth = this.ctx.measureText(title).width;// 文字长度
+        if(x > this.x0) {
+            this.ctx.lineTo(x + textWidth, y);
+            this.ctx.textAlign = 'left';
+        }else {
+            this.ctx.lineTo(x - textWidth, y);
+            this.ctx.textAlign = 'right';
+        }
+
+        this.ctx.stroke(); 
+        this.ctx.textBaseline = 'ideographic';
+        this.ctx.fillText(title, x, y);
+    }
+
+    // 绘制饼状图说明
+    // 1. 说明部分矩形的大小
+    // 2. 矩形距离画布左边的边距
+    // 3. 矩形距离文字的边距
+    // 4. 矩形上下间距
+    PieChart.prototype.drawDesc = function(x, y, color, title) {
+        // 绘制矩形
+        this.ctx.textAlign = 'left';
+        this.ctx.textBaseline = 'middle';
+        this.ctx.fillStyle = color;
+        this.ctx.fillRect(x, y, this.rectWidth, this.rectHeight);
+        this.ctx.fillText(title, x + this.rectWidth + this.rectRight, y + this.rectHeight / 2);
+    }
+
+    // 动态数据
+    var data = [
+        {
+            title: '动物之森',
+            num: 500
+        },
+        {
+            title: '塞尔达传说之旷野之息',
+            num: 480
+        },
+        {
+            title: '异度之刃2',
+            num: 300
+        },
+        {
+            title: '任天堂大乱斗',
+            num: 322
+        },
+        {
+            title: '路易吉洋馆2',
+            num: 200
+        }
+    ];    
+   
+
+    // 获取随机颜色
+    var getRandomColor = function() {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+
+        return 'rgb('+ r + ',' + g + ',' + b +')';
+    };
+
+   var pieChart =  new PieChart();
+   pieChart.init(data);    
+
+</script>

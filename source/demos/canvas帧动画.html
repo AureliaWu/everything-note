@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas图片</title>
+</head>
+<body>
+    <canvas width="600px" height="400px"></canvas>
+</body>
+</html>
+<style>
+    canvas {
+        border: 1px solid royalblue;
+    }
+</style>
+<script>
+    var ctx = document.querySelector('canvas').getContext('2d');
+
+    var image = new Image();
+    image.onload = function() {
+        console.log(image);
+        // 绘制图片的三种方式
+        /* 1. 三个参数
+        ctx.drawImage(image, 100, 100);*/
+    
+        /* 2. 五个参数
+
+        ctx.drawImage(image, 100, 100, 100, 100); */
+
+        /* 3. 九个参数
+        ctx.drawImage(image, 10, 10, 10, 10, 100, 100, 100, 100); */
+
+        // 绘制帧动画
+
+        // 获取图片大小
+        var imageWidth = image.width;
+        var imageHeight = image.height;
+
+        // 获取单个精灵大小(本例为 9 * 1 布局)
+        var spriteWidth = imageWidth / 9;
+        var spriteHeight = imageHeight;
+
+        // 截取图片，在固定的时间间隔根据索引更换显示的图片来制作帧动画
+        var index = 0;
+
+        // 绘制在画布的最中心
+        var x0 = ctx.canvas.width / 2 - spriteWidth / 2;
+        var y0 = ctx.canvas.height / 2 - spriteHeight / 2;
+
+        ctx.drawImage(image, 0, 0, spriteWidth, spriteHeight, x0, y0, spriteWidth, spriteHeight);
+
+        // 设置定时器
+        setInterval(function() {
+            index++;
+            // 清除上一次的绘制，否则会出现重影
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            ctx.drawImage(image, index * spriteWidth, 0, spriteWidth, spriteHeight, x0, y0, spriteWidth, spriteHeight);
+            
+            // 元素只有9个，超出则取不到图片会显示白色，需要将索引归零
+            if(index >= 8) {
+                index = 0;
+            }
+       }, 100);
+        
+    }
+    image.src = 'image/dude.png';
+</script>

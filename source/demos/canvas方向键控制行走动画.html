@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas图片</title>
+</head>
+<body>
+    <canvas width="600px" height="400px"></canvas>
+</body>
+</html>
+<style>
+    canvas {
+        border: 1px solid royalblue;
+    }
+</style>
+<script>
+    // 创建精灵对象
+    var Sprite = function(ctx) {
+        // 绘制工具
+        this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+        this.imageSrc = 'image/dude.png';
+        this.canvasWidth = this.ctx.canvas.width;
+        this.canvasHeight = this.ctx.canvas.height;
+
+        // 行走相关参数
+        this.stepSize = 10;// 默认行走步伐大小
+        this.direction = 0;// 默认行走方向 0 为向左走 
+
+        this.init();
+    }
+
+    // 初始化
+    Sprite.prototype.init = function() {
+        /* 初始化图片
+            1. 加载图片
+            2. 默认绘制在中心位置正面朝外
+            3. 绑定方向键控制行走
+        */
+        var _this = this;
+        this.loadImage(function(image) {
+            // 上述2 3的业务在此处实现
+            // 获取图片大小
+            _this.imageWidth = image.width;
+            _this.imageHeight = image.height;
+
+            // 获取人物的大小
+            _this.spriteWidth = _this.imageWidth / 9;
+            _this.spriteHeight = _this.imageHeight;
+
+            // 定位绘制图片的起点
+            _this.x0 = _this.canvasWidth / 2 - _this.spriteWidth / 2;
+            _this.y0 = _this.canvasHeight / 2 - _this.spriteHeight / 2;
+
+            // 绘制默认图片，中心位置正面朝外
+            // 示例中引用的图片正面朝外为第五个元素
+            _this.ctx.drawImage(image, _this.spriteWidth * 4, 0, _this.spriteWidth, _this.spriteHeight, _this.x0, _this.y0, _this.spriteWidth, _this.spriteHeight);
+
+            // 绑定按键的事件
+            _this.index = 0;
+            document.onkeydown = function(e) {
+                console.log(e.keyCode);
+                // 根据keyCode值判断方向：  37=键盘方向左键 38=键盘方向上键 39=键盘方向右键 40=键盘方向下键
+                if(e.keyCode == 37) {
+                    // 向左走
+                    _this.index++;
+                    _this.drawSprite(image);
+                }else if(e.keyCode == 38) {
+                    // 向上跳
+                    _this.index++;
+                }else if(e.keyCode == 39) {
+                    // 向右走
+                    _this.index++;
+                    _this.drawSprite(image);
+                }else if(e.keyCode == 40) {
+                    // 向下跳
+                    _this.index++;
+                }
+            }
+        });
+    }
+
+    // 加载图片
+    Sprite.prototype.loadImage = function(callback) {
+        var image = new Image();
+        image.onload = function() {
+            callback && callback(image);
+        }
+        image.src = this.imageSrc;
+    }
+
+    // 绘制图片
+    Sprite.prototype.drawSprite = function(image) {
+        // 绘图前需要先清除画布，否则会绘制多次图片会出现重影
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+
+        // 在精灵图上的定位
+        this.ctx.drawImage(image, this.index * this.spriteWidth, this.direction * this.spriteHeight,
+            this.x0, this.y0,
+            this.spriteWidth,this.spriteHeight
+        );
+
+        // 如果索引超出了需要重新开始
+    }
+
+   new Sprite();
+</script>
