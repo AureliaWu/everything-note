@@ -186,15 +186,16 @@ tags: [Computer Language, algorithm, basic]
 - 双向链表节点结构
   
   ```java
-  public class DoubleNode {
-      public int value;
-      public DoubleNode last;
-      public DoubleNode next;
+  
+	public class DoubleNode {
+		public int value;
+		public DoubleNode last;
+		public DoubleNode next;
 
-      public DoubleNode(int data) {
-          value = data;
-      }
-  }
+		public DoubleNode(int data) {
+			value = data;
+		}
+	}
 
   ```
 
@@ -203,6 +204,7 @@ tags: [Computer Language, algorithm, basic]
   - 单链表和双链表如何反转
 
     ```java
+	
     public class Code_ReverseList {
         /* 单向链表单反转 */
         // 1. 定义单向链表
@@ -317,8 +319,39 @@ tags: [Computer Language, algorithm, basic]
 
 2. 实现一个特殊的栈，在基本功能的基础上再实现返回栈中最小元素的功能
 
+## 递归
+
+$$
+T(N) = a * T(\frac{N}{b}) + O(N^d)
+$$
+
+* a b d 均为常数
+
+假设整个递归的数据量是N，递归行为的所有子问题的规模一律能变成更小的规模（N/b）(如果有一次递归行为的子规模不能变成N/b，则不适用上述公式),将子规模调用了a次，除去子规模调用之外的时间复杂度是$O(N^d)$。只要满足上述规则的递归就适用上述公式。
+
+对于满足上述公式的递归有以下结论：
+  
+  - $\log_{b}^{a} > d$ 时间复杂度为$O(N^(\log_{b}^{a}))$
+  - $\log_{b}^{a} < d$ 时间复杂度为$O(N^d)$
+  - $\log_{b}^{a} = d$ 时间复杂度为$O(N^d * logN)$
 
 
+## 哈希表
+
+哈希表增删改查在使用时时间复杂度都是O(1)
+
+哈希表在使用层面上可以理解为一种集合结构
+- 如果只有key没有value，可以使用HashSet结构
+- 如果既有key又有value，可以使用HashMap结构
+- HashMap和HashSet实际结构是一样的
+- 放入哈希表的东西，如果是基础类型，内部按照值传递，内存占用是这个东西的大小
+- 放入哈希表的东西，如果不是基础类型，内部按照引用传递，内存占用是8字节
 
 
+### 有序表
+java中的treeMap是有序表
+
+有序表的增删查改的时间复杂度是O(logN)
+
+# 归并排序与随机快排
  
