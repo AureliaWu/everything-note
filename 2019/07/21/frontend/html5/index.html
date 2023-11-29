@@ -1,73 +1,447 @@
+<!doctype html>
 
-<!DOCTYPE html>
-<html lang="zh-Hans" class="loading">
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>前端基础之HTML5 - 奇天大圣的蟠桃园</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="记录当下！,概述超~~~基础概念（各种缩写）HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么CSS： Cascading Style Sheets 层叠样式表；,"> 
-    <meta name="author" content="Aurelia"> 
-    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="前端基础之HTML5 - 奇天大圣的蟠桃园">
-    <meta name="twitter:description" content="记录当下！,概述超~~~基础概念（各种缩写）HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么CSS： Cascading Style Sheets 层叠样式表；,">
     
-    
-    
-    
-    <meta property="og:site_name" content="奇天大圣的蟠桃园">
-    <meta property="og:type" content="object">
-    <meta property="og:title" content="前端基础之HTML5 - 奇天大圣的蟠桃园">
-    <meta property="og:description" content="记录当下！,概述超~~~基础概念（各种缩写）HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么CSS： Cascading Style Sheets 层叠样式表；,">
-    <link rel="stylesheet" href="/css/diaspora.css">
-    <script>window.searchDbPath = "/search.xml";</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Computer Language,web,html,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="概述超~~~基础概念（各种缩写）HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么CSS： Cascading Style Sheets 层叠样式表；定义网页中的东西长什么样 VSCode： Visual Studio Code 通用编辑器MD： MarkDown，文档格式标准 Web： 互联网W3C: 万维网联盟，非营利性组织: w3.org 为互">
+<meta name="keywords" content="Computer Language,web,html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础之HTML5">
+<meta property="og:url" content="http://garden.aezo.cn/2019/07/21/frontend/html5/index.html">
+<meta property="og:site_name" content="奇天大圣的蟠桃园">
+<meta property="og:description" content="概述超~~~基础概念（各种缩写）HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么CSS： Cascading Style Sheets 层叠样式表；定义网页中的东西长什么样 VSCode： Visual Studio Code 通用编辑器MD： MarkDown，文档格式标准 Web： 互联网W3C: 万维网联盟，非营利性组织: w3.org 为互">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-02-24T08:23:43.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础之HTML5">
+<meta name="twitter:description" content="概述超~~~基础概念（各种缩写）HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么CSS： Cascading Style Sheets 层叠样式表；定义网页中的东西长什么样 VSCode： Visual Studio Code 通用编辑器MD： MarkDown，文档格式标准 Web： 互联网W3C: 万维网联盟，非营利性组织: w3.org 为互">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://garden.aezo.cn/2019/07/21/frontend/html5/">
+
+
+
+
+
+  <title>前端基础之HTML5 | 奇天大圣的蟠桃园</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d82223039d601f2f819f8fe140a63468";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=cnzz_stat_icon_1276691827&web_id=cnzz_stat_icon_1276691827" language="JavaScript"></script>
+  </div>
+
+
+
+
+
 </head>
-</html>
-<body class="loading">
-    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">前端基础之HTML5</h3>
-    <div class="social">
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">奇天大圣的蟠桃园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scrollbar"></div>
+      
+        <h1 class="site-subtitle" itemprop="description">保持饥饿</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">前端基础之HTML5</h1>
-        <div class="stuff">
-            <span>七月 21, 2019</span>
-            
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/html/">html</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/web/">web</a></li></ul>
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    <!-- 文章标题之上 -->
+
+
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://garden.aezo.cn/2019/07/21/frontend/html5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aurelia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/30209089?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奇天大圣的蟠桃园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">前端基础之HTML5</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-21T14:26:05+08:00">
+                2019-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-html/" itemprop="url" rel="index">
+                    <span itemprop="name">web,html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-        <div class="content markdown">
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="超-基础概念（各种缩写）"><a href="#超-基础概念（各种缩写）" class="headerlink" title="超~~~基础概念（各种缩写）"></a>超~~~基础概念（各种缩写）</h2><p>HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么<br>CSS： Cascading Style Sheets 层叠样式表；定义网页中的东西长什么样</p>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+      
+      
+        <!-- 文章标题之下，正文之上。只有在文章详情也显示 -->
+
+<div>
+	<!--
+	<a target="_blank" href="https://www.aliyun.com/acts/product-section-2019/new-users?userCode=oby5nolb">
+		<img class="nofancybox" 
+			src="https://ws1.sinaimg.cn/large/c35fb475gy1g0n87d1ofzj20o602o75u.jpg"
+			alt="【开年HI购季】爆款云产品5折" title="【开年HI购季】爆款云产品5折"/>
+	</a>
+	 -->
+</div>
+
+      
+
+      
+      
+
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="超-基础概念（各种缩写）"><a href="#超-基础概念（各种缩写）" class="headerlink" title="超~~~基础概念（各种缩写）"></a>超~~~基础概念（各种缩写）</h2><p>HTML: Hyper Text Markup Language 超文本标记语言；定义网页中有什么<br>CSS： Cascading Style Sheets 层叠样式表；定义网页中的东西长什么样</p>
 <p>VSCode： Visual Studio Code 通用编辑器<br>MD： MarkDown，文档格式标准</p>
 <p>Web： 互联网<br>W3C: 万维网联盟，非营利性组织: w3.org 为互联网提供各种标准<br>XML: Extension markup language 可扩展标记语言，用于定义文档结构<br>MDN： Mozilla Development Network, Mozilla开发者社区</p>
 <h2 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML"></a>什么是HTML</h2><p>HTML是W3C组织定义的语言标准： 用于描述页面结构的语言</p>
@@ -286,107 +660,712 @@
 <p>参考视频</p>
 <p> <a href="https://www.bilibili.com/video/av57100756?from=search&amp;seid=2646463889570770154" target="_blank" rel="noopener">https://www.bilibili.com/video/av57100756?from=search&amp;seid=2646463889570770154</a> (2019年 HTML+CSS 零基础权威入学宝典【渡一教育】p1~p15)</p>
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                        
-                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                </ul>
-            
-        </div>
-        
-        
-    <div id="gitalk-container" class="comment link"
-		data-enable="false"
-        data-ae="false"
-        data-ci=""
-        data-cs=""
-        data-r=""
-        data-o=""
-        data-a=""
-        data-d="false"
-    >查看评论</div>
-
-
+      
     </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Language/" rel="tag"># Computer Language</a>
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/22/frontend/vue/" rel="next" title="Vue">
+                <i class="fa fa-chevron-left"></i> Vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/24/database/oracle/" rel="prev" title="Oracle数据库">
+                Oracle数据库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      <!-- 文章上一篇/下一篇切换之后 -->
+
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-</div>
+  </div>
 
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/30209089?s=460&v=4" alt="Aurelia">
+          <p class="site-author-name" itemprop="name">Aurelia</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#超-基础概念（各种缩写）"><span class="nav-number">1.1.</span> <span class="nav-text">超~~~基础概念（各种缩写）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是HTML"><span class="nav-number">1.2.</span> <span class="nav-text">什么是HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是CSS"><span class="nav-number">1.3.</span> <span class="nav-text">什么是CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行HTML-CSS"><span class="nav-number">1.4.</span> <span class="nav-text">执行HTML CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本和兼容性"><span class="nav-number">1.5.</span> <span class="nav-text">版本和兼容性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个页面"><span class="nav-number">2.</span> <span class="nav-text">第一个页面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码注释"><span class="nav-number">2.1.</span> <span class="nav-text">代码注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素-标签、标记、element"><span class="nav-number">2.2.</span> <span class="nav-text">元素(标签、标记、element)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语义化"><span class="nav-number">3.</span> <span class="nav-text">语义化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是语义化"><span class="nav-number">3.1.</span> <span class="nav-text">什么是语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要语义化？"><span class="nav-number">3.2.</span> <span class="nav-text">为什么需要语义化？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本元素"><span class="nav-number">4.</span> <span class="nav-text">文本元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#h"><span class="nav-number">4.1.</span> <span class="nav-text">h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#p"><span class="nav-number">4.2.</span> <span class="nav-text">p</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#span【无语义】"><span class="nav-number">4.3.</span> <span class="nav-text">span【无语义】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pre"><span class="nav-number">4.4.</span> <span class="nav-text">pre</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML实体"><span class="nav-number">5.</span> <span class="nav-text">HTML实体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a元素"><span class="nav-number">6.</span> <span class="nav-text">a元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#href属性"><span class="nav-number">6.1.</span> <span class="nav-text">href属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target属性"><span class="nav-number">6.2.</span> <span class="nav-text">target属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路径的写法"><span class="nav-number">7.</span> <span class="nav-text">路径的写法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#站内资源和站外资源"><span class="nav-number">7.1.</span> <span class="nav-text">站内资源和站外资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对路径和相对路径"><span class="nav-number">7.2.</span> <span class="nav-text">绝对路径和相对路径</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片元素"><span class="nav-number">8.</span> <span class="nav-text">图片元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#img元素"><span class="nav-number">8.1.</span> <span class="nav-text">img元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和a元素的联用"><span class="nav-number">8.2.</span> <span class="nav-text">和a元素的联用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和map元素联用"><span class="nav-number">8.3.</span> <span class="nav-text">和map元素联用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和figure元素联用"><span class="nav-number">8.4.</span> <span class="nav-text">和figure元素联用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多媒体元素"><span class="nav-number">9.</span> <span class="nav-text">多媒体元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#video"><span class="nav-number">9.1.</span> <span class="nav-text">video</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#audio"><span class="nav-number">9.2.</span> <span class="nav-text">audio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容性"><span class="nav-number">9.3.</span> <span class="nav-text">兼容性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表元素"><span class="nav-number">10.</span> <span class="nav-text">列表元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有序列表"><span class="nav-number">10.1.</span> <span class="nav-text">有序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用属性"><span class="nav-number">10.1.1.</span> <span class="nav-text">常用属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无序列表"><span class="nav-number">10.2.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义列表"><span class="nav-number">10.3.</span> <span class="nav-text">定义列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器元素"><span class="nav-number">11.</span> <span class="nav-text">容器元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#div元素"><span class="nav-number">11.1.</span> <span class="nav-text">div元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语义化容器元素"><span class="nav-number">11.2.</span> <span class="nav-text">语义化容器元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元素包含关系"><span class="nav-number">12.</span> <span class="nav-text">元素包含关系</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
 
     </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2019 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aurelia</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  
+  <div class="powered-by">
+    由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <div class="powered-by">
+    主题 -
+    <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+  
 </div>
+
+
+
+
+
+        
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d82223039d601f2f819f8fe140a63468";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
 </html>

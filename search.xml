@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>大数据</title>
-    <url>/2023/11/29/algorithm/bigData/</url>
-    <content><![CDATA[<h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><p>内存寻址时间比IO寻址快10w倍</p>
-<p>单机处理大数据的Io速度太慢，内存也太小</p>
-<p>大数据技术关心的重点： </p>
-<ul>
-<li>分而治之</li>
-<li>并行计算</li>
-<li>计算向数据移动</li>
-<li>数据本地化读取 </li>
-</ul>
-<h2 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h2><p>Hadoop Distributed File System 分布式文件系统，与其他的分布式文件系统相比，Hadoop能更好的支持分布式计算。</p>
-<h3 id="存储模型"><a href="#存储模型" class="headerlink" title="存储模型"></a>存储模型</h3><ul>
-<li>文件线性按字节切割成块（block），具有offset, id</li>
-<li>文件与文件的block大小可以不一样</li>
-<li>一个文件除最后一个block，其他block大小一致</li>
-<li>block的大小依据硬件的I/O特性调整</li>
-<li>block被分散存放在集群的节点中，具有location</li>
-<li>Block具有副本(replication),没有主从概念，副本不能出现在同一个节点</li>
-<li>副本是满足可靠性和性能的关键</li>
-<li>文件上传可以指定block的大小和副本数，上传后只能修改副本数</li>
-<li>一次写入多次读取，不支持修改</li>
-<li>支持追加数据</li>
-</ul>
-]]></content>
-      <categories>
-        <category>algorithm</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>algorithm</tag>
-        <tag>basic</tag>
-        <tag>bigData</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>UI</title>
     <url>/2019/06/22/UI/UI%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="UI入门"><a href="#UI入门" class="headerlink" title="UI入门"></a>UI入门</h1><h2 id="UI设计场景"><a href="#UI设计场景" class="headerlink" title="UI设计场景"></a>UI设计场景</h2><p>网页设计、管理界面、电脑软件、车载系统、智能终端</p>
@@ -74,20 +38,6 @@
       <tags>
         <tag>Computer Language</tag>
         <tag>UI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ofbiz</title>
-    <url>/2019/10/23/frameworks/ofbiz/</url>
-    <content><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p>
-<h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
-      <categories>
-        <category>framework,Ofbiz</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>framework</tag>
-        <tag>Ofbiz</tag>
       </tags>
   </entry>
   <entry>
@@ -226,6 +176,56 @@
         <tag>Computer Language</tag>
         <tag>Database</tag>
         <tag>Oracle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据</title>
+    <url>/2023/11/29/algorithm/bigData/</url>
+    <content><![CDATA[<h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><p>内存寻址时间比IO寻址快10w倍</p>
+<p>单机处理大数据的Io速度太慢，内存也太小</p>
+<p>大数据技术关心的重点： </p>
+<ul>
+<li>分而治之</li>
+<li>并行计算</li>
+<li>计算向数据移动</li>
+<li>数据本地化读取 </li>
+</ul>
+<h2 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h2><p>Hadoop Distributed File System 分布式文件系统，与其他的分布式文件系统相比，Hadoop能更好的支持分布式计算。</p>
+<h3 id="存储模型"><a href="#存储模型" class="headerlink" title="存储模型"></a>存储模型</h3><ul>
+<li>文件线性按字节切割成块（block），具有offset, id</li>
+<li>文件与文件的block大小可以不一样</li>
+<li>一个文件除最后一个block，其他block大小一致</li>
+<li>block的大小依据硬件的I/O特性调整</li>
+<li>block被分散存放在集群的节点中，具有location</li>
+<li>Block具有副本(replication),没有主从概念，副本不能出现在同一个节点</li>
+<li>副本是满足可靠性和性能的关键</li>
+<li>文件上传可以指定block的大小和副本数，上传后只能修改副本数</li>
+<li>一次写入多次读取，不支持修改</li>
+<li>支持追加数据</li>
+</ul>
+]]></content>
+      <categories>
+        <category>algorithm</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>algorithm</tag>
+        <tag>basic</tag>
+        <tag>bigData</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ofbiz</title>
+    <url>/2019/10/23/frameworks/ofbiz/</url>
+    <content><![CDATA[<h1 id="Ofbiz权限设计"><a href="#Ofbiz权限设计" class="headerlink" title="Ofbiz权限设计"></a>Ofbiz权限设计</h1><h2 id="相关表"><a href="#相关表" class="headerlink" title="相关表"></a>相关表</h2><h2 id="用户登录表-user-login"><a href="#用户登录表-user-login" class="headerlink" title="用户登录表 user_login"></a>用户登录表 <code>user_login</code></h2><h2 id="安全组列表-security-group"><a href="#安全组列表-security-group" class="headerlink" title="安全组列表 security_group"></a>安全组列表 <code>security_group</code></h2><h2 id="登录用户和安全组关系表-user-login-security-group"><a href="#登录用户和安全组关系表-user-login-security-group" class="headerlink" title="登录用户和安全组关系表 user_login_security_group"></a>登录用户和安全组关系表 <code>user_login_security_group</code></h2><h2 id="权限组列表-security-permission"><a href="#权限组列表-security-permission" class="headerlink" title="权限组列表 security_permission"></a>权限组列表 <code>security_permission</code></h2><p>‘security_permission’中的数据是在 <code>xxxSecurityPermissionSeedData.xml</code>文件中配置的，<code>xxx</code>表示组件名称</p>
+<h2 id="安全组与权限关系表-security-group-permission"><a href="#安全组与权限关系表-security-group-permission" class="headerlink" title="安全组与权限关系表 security_group_permission"></a>安全组与权限关系表 <code>security_group_permission</code></h2>]]></content>
+      <categories>
+        <category>framework,Ofbiz</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>framework</tag>
+        <tag>Ofbiz</tag>
       </tags>
   </entry>
   <entry>
@@ -378,64 +378,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Maven</title>
-    <url>/2023/11/29/java/maven/</url>
-    <content><![CDATA[<p>Maven：</p>
-<p>项目对象模型POM</p>
-<p>核心配置文件： setting.xml</p>
-<p>Maven工程关系： 依赖关系、继承关系、聚合关系</p>
-<h2 id="常见的插件"><a href="#常见的插件" class="headerlink" title="常见的插件"></a>常见的插件</h2><h3 id="编译器插件"><a href="#编译器插件" class="headerlink" title="编译器插件"></a>编译器插件</h3><p><code>settings.xml</code>文件里面可配置全局默认的JDK版本,<code>settings.xml</code>文件中的id不能随便取名</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.4<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk14<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">name</span>&gt;</span>Repository for JDK 1.4 builds<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.myhost.com/maven/jdk14<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshotPolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">snapshotPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>若不想用setting.xml中默认的JDK，可以在项目的<code>pom.xml</code>文件中添加一个编译器插件的配置</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JDK编译插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--插件坐标--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码使用JDK版本--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码编译为class文件的版本，要与上面版本保持一致--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="资源拷贝插件"><a href="#资源拷贝插件" class="headerlink" title="资源拷贝插件"></a>资源拷贝插件</h3><p>配置文件一般都放在<code>src/main/resources</code>目录下，打包后配置文件会在<code>target/classes</code>目录中,默认情况下不放在<code>src/main/resources</code>的配置文件打包后不会存在<code>target/classes</code>目录中，若想要把指定路径下的配置文件打包到<code>target/classes</code>目录中需要添加以下配置：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上述配置表示<code>src/main/java</code>目录下的xml文件和<code>src/main/resources</code>目录下的xml文件、properties文件都会被打包到<code>target/classes</code>中</p>
-<h3 id="Tomcat插件"><a href="#Tomcat插件" class="headerlink" title="Tomcat插件"></a>Tomcat插件</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 配置Tomcat插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置Tomcat监听端口--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置项目的访问路径(Application Context)--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用Tomcat插件发布部署并执行war工程的时候，需要使用启动命令，启动命令为: <code>tomcat7:run</code>.命令中的tomcat7是插件命名，由插件提供商决定。run为插件中的具体功能。</p>
-<p>Tomcat是可运行插件，必须要通过命令来运行控制</p>
-<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><p><code>mvn install</code></p>
-<p>本地安装，包含编译、打包、安装到本地仓库</p>
-<p><code>mvn clean</code></p>
-<p>清除已编译信息，删除工程中的target目录</p>
-<p>常用的命令在IDEA都有可视化界面可以操作</p>
-]]></content>
-      <categories>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面向面试查漏补缺</title>
-    <url>/2020/08/18/java/%E9%9D%A2%E5%90%91%E9%9D%A2%E8%AF%95%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</url>
-    <content><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组相当于是一种数据结构，很多数据在进行存储的时候需要使用数组</p>
-<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>时间复杂度： <code>O(n^2)</code></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 冒泡排序: 前一个数字与后一个数字比较，若后者大于前者，两者交换</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length -<span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="comment">// 交换位置</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>平均时间复杂度：O(n2)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 选择排序:</span></span><br><span class="line"><span class="comment">* 在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；</span></span><br><span class="line"><span class="comment">* 第二次遍历n-2个数，找到最小的数值与第二个元素交换；</span></span><br><span class="line"><span class="comment">* ...</span></span><br><span class="line"><span class="comment">* 第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> k = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            <span class="comment">// 获取最小值下标</span></span><br><span class="line">            <span class="keyword">if</span>(arr[k] &gt; arr[j]) &#123;</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &gt; arr[k]) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">            arr[i] = arr[k];</span><br><span class="line">            arr[k] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>平均时间复杂度：O(n2)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">* 插入排序：</span></span><br><span class="line"><span class="comment">* 假定前n-1个数已经排好序，现在将第n个数插到前面的有序数列中，使得这n个数也是排好顺序的。</span></span><br><span class="line"><span class="comment">* 如此反复循环，直到全部排好顺序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j+<span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                <span class="comment">// 第n个数小于前n-1已排好序的数组的最后一位，换位</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 第n个数大于前n-1已排好序的数组的最后一位，直接跳过进入第n+1个数</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 快速排序：</span></span><br><span class="line"><span class="comment"> * 采用分治策略</span></span><br><span class="line"><span class="comment"> * 1．先从数列中取出一个数作为基准数。</span></span><br><span class="line"><span class="comment"> * 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。</span></span><br><span class="line"><span class="comment"> * 3．再对左右区间重复第二步，直到各区间只有一个数。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arr 需要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> begin 排序起始位置</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> end 排序最终位置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = arr[begin];<span class="comment">// 定义数组最左边一个数为基准值</span></span><br><span class="line">    <span class="keyword">boolean</span> rtl = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">int</span> left = begin;</span><br><span class="line">    <span class="keyword">int</span> right = end;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; end+<span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(rtl) &#123;</span><br><span class="line">            <span class="comment">// 从右往左移动，将右边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[right] &lt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若右边的值小于基准值，将右边的值填入左边的位置上，左指针向后移动</span></span><br><span class="line">                arr[left] = arr[right];</span><br><span class="line">                left++;</span><br><span class="line">                rtl = <span class="keyword">false</span>;<span class="comment">// 移动左指针</span></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 右边的值大于基准值，右指针向前移动</span></span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 从左往右，将左边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[left] &gt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若左边的值大于基准值，将左边的值填入右指针位置，右指针向前移动</span></span><br><span class="line">                arr[right] = arr[left];</span><br><span class="line">                right--;</span><br><span class="line">                rtl = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left == right) &#123;</span><br><span class="line">            arr[left] = pivot;</span><br><span class="line">            <span class="comment">// 分别对左右数组排序</span></span><br><span class="line">            <span class="keyword">if</span>(left-<span class="number">1</span> &gt;= begin) &#123;</span><br><span class="line">                quickSort(arr, begin, left-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(right+<span class="number">1</span> &lt;= end) &#123;</span><br><span class="line">                quickSort(arr, right+<span class="number">1</span>, end);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="常用的消息队列"><a href="#常用的消息队列" class="headerlink" title="常用的消息队列"></a>常用的消息队列</h2><p><code>ActiveMQ</code> <code>rabbitMQ</code> <code>rocketMQ</code> <code>kafka</code></p>
-<h3 id="activeMQ"><a href="#activeMQ" class="headerlink" title="activeMQ"></a>activeMQ</h3><h3 id="面试题剖析"><a href="#面试题剖析" class="headerlink" title="面试题剖析"></a>面试题剖析</h3><h4 id="为什么要用消息队列"><a href="#为什么要用消息队列" class="headerlink" title="为什么要用消息队列"></a>为什么要用消息队列</h4><p>答题思路： 你们公司有什么业务场景，这个场景有什么技术挑战，如果不用MQ可能会很麻烦，但是你现在用了MQ之后带给了你很多好处</p>
-<p><strong>面试技巧</strong>： 考虑下你负责的系统中是否有类似场景，就是一个系统或者一个模块调用了多个系统或者模块，互相之间的调用很复杂， 维护起来很麻烦。但是其实这个调用是不需要直接同步调用接口的，如果用MQ给他异步化解耦，也是可以的。你就需要去考虑在你的项目中，是不是可以运用这个MQ去进行系统的解释</p>
-<ul>
-<li>消息队列的常用场景： 解耦、异步、削峰</li>
-</ul>
-]]></content>
-      <categories>
-        <category>others</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>basic</tag>
-        <tag>others</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker</title>
     <url>/2019/06/13/microservice/docker/</url>
     <content><![CDATA[<h1 id="下载、安装及设置-win10"><a href="#下载、安装及设置-win10" class="headerlink" title="下载、安装及设置(win10)"></a>下载、安装及设置(win10)</h1><ol>
@@ -494,118 +436,60 @@
       </tags>
   </entry>
   <entry>
-    <title>你好，世界</title>
-    <url>/2019/05/12/others/hello-world/</url>
-    <content><![CDATA[<p>我的第一篇文章</p>
-
-<h2 id="github-jeykll-markdown个人书写习惯"><a href="#github-jeykll-markdown个人书写习惯" class="headerlink" title="github-jeykll-markdown个人书写习惯"></a>github-jeykll-markdown个人书写习惯</h2><blockquote>
-<p>2017-07-01 之后使用hexo书写博客, 格式依然可用</p>
-</blockquote>
-<h3 id="元信息"><a href="#元信息" class="headerlink" title="元信息"></a>元信息</h3><p>categories和tags都可以有多个</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">categories: [cat1, cat2]</span><br><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
-<h3 id="md语法"><a href="#md语法" class="headerlink" title="md语法"></a>md语法</h3><ul>
-<li>md文件中可以使用html标签</li>
-<li><code>---</code>代表分割线</li>
-</ul>
-<h3 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h3><p>正文的第一级标题用h2(<code>##</code>)，标题和字段间要有换行</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
-<li><p>列表（有序/无序）下面显示 <strong>代码、引用、图片</strong> 时：相对列表的该子项代码需要多缩进一个Tab（4个空格），且中间要空行，如：</p>
-<pre>
-- 标题
-
-  &#x60;&#x60;&#x60;html
-    ...
-  &#x60;&#x60;&#x60;
-</pre></li>
-<li><p>引用需要上下都空一行，列表只需要在上面空一行</p>
-</li>
-<li><p>子列表基于父列表要有一个Tab缩进（4个空格），中间无需空行</p>
-</li>
-</ul>
-<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>脚注支持链接跳转，注意脚注与被批注文本之间有一个空格</p>
-<pre>
-标题或者文字 [^1]
-
----
-
-参考文章
-
-[^1]: [http://blog.aezo.cn](http://blog.aezo.cn)
-</pre>
-
-
-<h2 id="github-hexo-markdown个人书写习惯"><a href="#github-hexo-markdown个人书写习惯" class="headerlink" title="github-hexo-markdown个人书写习惯"></a>github-hexo-markdown个人书写习惯</h2><h3 id="修改文章后保存源码并更新博客"><a href="#修改文章后保存源码并更新博客" class="headerlink" title="修改文章后保存源码并更新博客"></a>修改文章后保存源码并更新博客</h3><ul>
-<li><p><strong>更新步骤如下</strong> (或者直接执行项目目录下的<strong>blog-deploy.sh</strong>文件)</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean # 有时候修改了静态文件需要先clean一下</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -am "update blog"</span><br><span class="line"><span class="meta">$</span> git push origin master:source</span><br><span class="line"><span class="meta">$</span> hexo g &amp;&amp; gulp &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="博客源码管理和博客更新"><a href="#博客源码管理和博客更新" class="headerlink" title="博客源码管理和博客更新"></a>博客源码管理和博客更新</h3><ul>
-<li>本地处于master分支，远程有master(为博客渲染后的代码)和source(博客源码, 可设为远程默认分支)两个分支</li>
-<li><p>更新博客 <code>hexo d -g</code></p>
+    <title>Maven</title>
+    <url>/2023/11/29/java/maven/</url>
+    <content><![CDATA[<p>Maven：</p>
+<p>项目对象模型POM</p>
+<p>核心配置文件： setting.xml</p>
+<p>Maven工程关系： 依赖关系、继承关系、聚合关系</p>
+<h2 id="常见的插件"><a href="#常见的插件" class="headerlink" title="常见的插件"></a>常见的插件</h2><h3 id="编译器插件"><a href="#编译器插件" class="headerlink" title="编译器插件"></a>编译器插件</h3><p><code>settings.xml</code>文件里面可配置全局默认的JDK版本,<code>settings.xml</code>文件中的id不能随便取名</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.4<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk14<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">name</span>&gt;</span>Repository for JDK 1.4 builds<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.myhost.com/maven/jdk14<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshotPolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">snapshotPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>若不想用setting.xml中默认的JDK，可以在项目的<code>pom.xml</code>文件中添加一个编译器插件的配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JDK编译插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--插件坐标--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码使用JDK版本--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--源代码编译为class文件的版本，要与上面版本保持一致--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="资源拷贝插件"><a href="#资源拷贝插件" class="headerlink" title="资源拷贝插件"></a>资源拷贝插件</h3><p>配置文件一般都放在<code>src/main/resources</code>目录下，打包后配置文件会在<code>target/classes</code>目录中,默认情况下不放在<code>src/main/resources</code>的配置文件打包后不会存在<code>target/classes</code>目录中，若想要把指定路径下的配置文件打包到<code>target/classes</code>目录中需要添加以下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述配置表示<code>src/main/java</code>目录下的xml文件和<code>src/main/resources</code>目录下的xml文件、properties文件都会被打包到<code>target/classes</code>中</p>
+<h3 id="Tomcat插件"><a href="#Tomcat插件" class="headerlink" title="Tomcat插件"></a>Tomcat插件</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 配置Tomcat插件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置Tomcat监听端口--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--配置项目的访问路径(Application Context)--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用Tomcat插件发布部署并执行war工程的时候，需要使用启动命令，启动命令为: <code>tomcat7:run</code>.命令中的tomcat7是插件命名，由插件提供商决定。run为插件中的具体功能。</p>
+<p>Tomcat是可运行插件，必须要通过命令来运行控制</p>
+<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><p><code>mvn install</code></p>
+<p>本地安装，包含编译、打包、安装到本地仓库</p>
+<p><code>mvn clean</code></p>
+<p>清除已编译信息，删除工程中的target目录</p>
+<p>常用的命令在IDEA都有可视化界面可以操作</p>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向面试查漏补缺</title>
+    <url>/2020/08/18/java/%E9%9D%A2%E5%90%91%E9%9D%A2%E8%AF%95%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</url>
+    <content><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组相当于是一种数据结构，很多数据在进行存储的时候需要使用数组</p>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>时间复杂度： <code>O(n^2)</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 冒泡排序: 前一个数字与后一个数字比较，若后者大于前者，两者交换</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length -<span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="comment">// 交换位置</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>平均时间复杂度：O(n2)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 选择排序:</span></span><br><span class="line"><span class="comment">* 在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；</span></span><br><span class="line"><span class="comment">* 第二次遍历n-2个数，找到最小的数值与第二个元素交换；</span></span><br><span class="line"><span class="comment">* ...</span></span><br><span class="line"><span class="comment">* 第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> k = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            <span class="comment">// 获取最小值下标</span></span><br><span class="line">            <span class="keyword">if</span>(arr[k] &gt; arr[j]) &#123;</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &gt; arr[k]) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">            arr[i] = arr[k];</span><br><span class="line">            arr[k] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>平均时间复杂度：O(n2)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">* 插入排序：</span></span><br><span class="line"><span class="comment">* 假定前n-1个数已经排好序，现在将第n个数插到前面的有序数列中，使得这n个数也是排好顺序的。</span></span><br><span class="line"><span class="comment">* 如此反复循环，直到全部排好顺序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j+<span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                <span class="comment">// 第n个数小于前n-1已排好序的数组的最后一位，换位</span></span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 第n个数大于前n-1已排好序的数组的最后一位，直接跳过进入第n+1个数</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 快速排序：</span></span><br><span class="line"><span class="comment"> * 采用分治策略</span></span><br><span class="line"><span class="comment"> * 1．先从数列中取出一个数作为基准数。</span></span><br><span class="line"><span class="comment"> * 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。</span></span><br><span class="line"><span class="comment"> * 3．再对左右区间重复第二步，直到各区间只有一个数。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arr 需要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> begin 排序起始位置</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> end 排序最终位置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = arr[begin];<span class="comment">// 定义数组最左边一个数为基准值</span></span><br><span class="line">    <span class="keyword">boolean</span> rtl = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">int</span> left = begin;</span><br><span class="line">    <span class="keyword">int</span> right = end;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; end+<span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(rtl) &#123;</span><br><span class="line">            <span class="comment">// 从右往左移动，将右边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[right] &lt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若右边的值小于基准值，将右边的值填入左边的位置上，左指针向后移动</span></span><br><span class="line">                arr[left] = arr[right];</span><br><span class="line">                left++;</span><br><span class="line">                rtl = <span class="keyword">false</span>;<span class="comment">// 移动左指针</span></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 右边的值大于基准值，右指针向前移动</span></span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 从左往右，将左边的值与基准值比较</span></span><br><span class="line">            <span class="keyword">if</span>(arr[left] &gt; pivot) &#123;</span><br><span class="line">                <span class="comment">// 若左边的值大于基准值，将左边的值填入右指针位置，右指针向前移动</span></span><br><span class="line">                arr[right] = arr[left];</span><br><span class="line">                right--;</span><br><span class="line">                rtl = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(left == right) &#123;</span><br><span class="line">            arr[left] = pivot;</span><br><span class="line">            <span class="comment">// 分别对左右数组排序</span></span><br><span class="line">            <span class="keyword">if</span>(left-<span class="number">1</span> &gt;= begin) &#123;</span><br><span class="line">                quickSort(arr, begin, left-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(right+<span class="number">1</span> &lt;= end) &#123;</span><br><span class="line">                quickSort(arr, right+<span class="number">1</span>, end);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h2 id="常用的消息队列"><a href="#常用的消息队列" class="headerlink" title="常用的消息队列"></a>常用的消息队列</h2><p><code>ActiveMQ</code> <code>rabbitMQ</code> <code>rocketMQ</code> <code>kafka</code></p>
+<h3 id="activeMQ"><a href="#activeMQ" class="headerlink" title="activeMQ"></a>activeMQ</h3><h3 id="面试题剖析"><a href="#面试题剖析" class="headerlink" title="面试题剖析"></a>面试题剖析</h3><h4 id="为什么要用消息队列"><a href="#为什么要用消息队列" class="headerlink" title="为什么要用消息队列"></a>为什么要用消息队列</h4><p>答题思路： 你们公司有什么业务场景，这个场景有什么技术挑战，如果不用MQ可能会很麻烦，但是你现在用了MQ之后带给了你很多好处</p>
+<p><strong>面试技巧</strong>： 考虑下你负责的系统中是否有类似场景，就是一个系统或者一个模块调用了多个系统或者模块，互相之间的调用很复杂， 维护起来很麻烦。但是其实这个调用是不需要直接同步调用接口的，如果用MQ给他异步化解耦，也是可以的。你就需要去考虑在你的项目中，是不是可以运用这个MQ去进行系统的解释</p>
 <ul>
-<li><p><code>_config.yml</code>文件中需要指向master分支</p>
-  <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/aezocn/aezocn.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>消息队列的常用场景： 解耦、异步、削峰</li>
 </ul>
-</li>
-</ul>
-<h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><ul>
-<li><code>hexo clean</code> 清除缓存(如果未修改配置文件可不运行)</li>
-<li><code>hexo g</code>/<code>hexo generate</code> 静态文件生成(修改主题文件可不用重新启动服务)</li>
-<li><code>hexo s -p 5000</code>(<code>hexo server</code>) <strong>启动本地服务器(本地测试)</strong></li>
-<li><code>hexo d</code>/<code>hexo deploy</code> 部署到github</li>
-</ul>
-<h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><ul>
-<li>clone远程source分支到本地master分支</li>
-<li><code>npm install -g hexo-cli</code> 全局安装hexo</li>
-<li><code>npm install</code> 初始化</li>
-<li>按照上述【修改文章后保存源码并更新博客】进行部署</li>
-</ul>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><ul>
-<li>图片格式如：<code>![hello](/data/images/2017/07/hello.png)</code></li>
-<li>内部链接格式如：<code>[http://blog.aezo.cn/2017/01/16/arch/nginx/](/_posts/arch/nginx.md#基于编译安装tengine)</code>，其中<code>#</code>后面为完整子标题</li>
-<li>hexo转义字符：<code>{: &amp;#123;</code>、<code>}: &amp;#125;</code> (如写vue代码的时会出现双括号导致hexo编译失败)</li>
-</ul>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul>
-<li>NexT主题本地搜索<ul>
-<li>安装：<code>npm install --save hexo-generator-search</code></li>
-<li>开启local_search</li>
-<li>还可手动写本地搜索功能 <a href="http://www.hahack.com/codes/local-search-engine-for-hexo/" title="jQuery-based Local Search Engine for Hexo" target="_blank" rel="noopener">^1</a></li>
-</ul>
-</li>
-<li>基于Swiftype的搜索</li>
-</ul>
-<h4 id="PlantUML"><a href="#PlantUML" class="headerlink" title="PlantUML"></a>PlantUML</h4><ul>
-<li><code>npm install --save hexo-filter-plantuml</code> 安装插件(vscode可以再配合插件<code>PlantUML</code>使用)</li>
-<li>markdown语法如下</li>
-</ul>
-<pre>
-&#x60;&#x60;&#x60;plantuml
-@startuml
-/' 样式(背景和波浪线条)和标题。这是代码注释，不会渲染 '/
-skinparam backgroundColor #EEEBDC
-skinparam handwritten true
-title
-  标题和水印 &lt;img:http://blog.aezo.cn/aezocn.png&gt;
-end title
-
-Bob->Alice : hello
-@enduml
-&#x60;&#x60;&#x60;
-</pre>
-
-<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><h4 id="next"><a href="#next" class="headerlink" title="next"></a>next</h4><ul>
-<li>自定义代码在<code>/themes/next/layout/_custom/</code>目录下</li>
-<li>footer代码修改 <code>/themes/next/layout/_partials/footer.swig</code></li>
-<li>部分图片禁用fancybox，可在img上加<code>class=&quot;nofancybox&quot;</code>。需要修改主题中的js文件，详细修改方法参考<a href="https://blog.csdn.net/cddchina/article/details/79764432" target="_blank" rel="noopener">https://blog.csdn.net/cddchina/article/details/79764432</a></li>
-</ul>
-<hr>
-<p>参考文章</p>
 ]]></content>
       <categories>
         <category>others</category>
       </categories>
       <tags>
+        <tag>Computer Language</tag>
+        <tag>basic</tag>
         <tag>others</tag>
       </tags>
   </entry>
@@ -625,6 +509,97 @@ Bob->Alice : hello
       <tags>
         <tag>Computer Language</tag>
         <tag>microservice</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>坦克大战</title>
+    <url>/2023/11/29/projects/tank/</url>
+    <content><![CDATA[<h1 id="Frame类"><a href="#Frame类" class="headerlink" title="Frame类"></a>Frame类</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Frame f = <span class="keyword">new</span> Frame(); <span class="comment">// 新建Frame类</span></span><br><span class="line">f.setSize(<span class="number">800</span>, <span class="number">600</span>);<span class="comment">// 设置窗口大小</span></span><br><span class="line">f.setResizable(<span class="keyword">false</span>);<span class="comment">// 设置窗口不能调整大小</span></span><br><span class="line">f.setTitle(<span class="string">"Tank War"</span>);<span class="comment">// 设置窗口名称</span></span><br><span class="line">f.setVisible(<span class="keyword">true</span>);<span class="comment">// 设置窗口可见</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加窗口监听事件</span></span><br><span class="line">f.addWindowListener(<span class="keyword">new</span> WindowAdapter() &#123;</span><br><span class="line">    <span class="comment">// 添加窗口关闭事件</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="坦克大战"><a href="#坦克大战" class="headerlink" title="坦克大战"></a>坦克大战</h1><h2 id="创建TankFrame类继承Frame类"><a href="#创建TankFrame类继承Frame类" class="headerlink" title="创建TankFrame类继承Frame类"></a>创建TankFrame类继承Frame类</h2><p><code>public class TankFrame extends Frame {}</code></p>
+<h2 id="在构造函数中设置默认值"><a href="#在构造函数中设置默认值" class="headerlink" title="在构造函数中设置默认值"></a>在构造函数中设置默认值</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">TankFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    setSize(<span class="number">800</span>, <span class="number">600</span>);</span><br><span class="line">    setResizable(<span class="keyword">false</span>);</span><br><span class="line">    setTitle(<span class="string">"Tank War"</span>);</span><br><span class="line">    setVisible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">    addKeyListener(<span class="keyword">new</span> KeyListener());<span class="comment">// 监听键盘按键事件</span></span><br><span class="line"></span><br><span class="line">    addWindowListener(<span class="keyword">new</span> WindowAdapter() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建内部类KeyListener控制键盘按键"><a href="#创建内部类KeyListener控制键盘按键" class="headerlink" title="创建内部类KeyListener控制键盘按键"></a>创建内部类KeyListener控制键盘按键</h2><p><code>class KeyListener extends KeyAdapter {}</code></p>
+<p>重写KeyAdapter类中的<code>keyPressed()</code>和<code>keyReleased()</code>方法</p>
+<h2 id="判断两个方块相交"><a href="#判断两个方块相交" class="headerlink" title="判断两个方块相交"></a>判断两个方块相交</h2><p>使用工具类Rectangle,<code>Rectangle.intersects()</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Rectangle rect1 = <span class="keyword">new</span> Rectangle(x, y, WIDTH, HEIGHT);</span><br><span class="line">Rectangle rect2 = <span class="keyword">new</span> Rectangle(x2, y2, WIDTH2, HEIGHT2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(rect1.intersects(rect2)) System.out.println(<span class="string">"两者相交"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="坦克大战中的设计模式"><a href="#坦克大战中的设计模式" class="headerlink" title="坦克大战中的设计模式"></a>坦克大战中的设计模式</h2><ol>
+<li><p>单例模式</p>
+<p> 应用场景：只需要一个实例 比如各种各样的manager、Factory</p>
+<ul>
+<li><p>饿汉式</p>
+<p>  类加载到内存后就实例化一个单例，JVM保证线程安全，缺点是无论是否会用都会在类装载完成时完成实例化</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> SingletonDemo INSTANCE = <span class="keyword">new</span> SingletonDemo();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonDemo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonDemo <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> INSTANCE; &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>- 懒汉式
+
+    按需使用
+
+    - 多线程使用不安全写法
+
+    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonDemo INSTANCE = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonDemo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonDemo <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(INSTANCE == <span class="keyword">null</span>) INSTANCE = <span class="keyword">new</span> SingletonDemo();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    - 多线程使用安全写法
+
+        类加载时不会产生实例，只有在调用`getInstance()`时调用静态内部类会实例化对象
+
+    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonDemo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemoHolder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> SingletonDemo INSTANCE = <span class="keyword">new</span> SingletonDemo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonDemo <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonDemoHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    - 目前语法上最完美的写法，既能解决线程同步问题，还能防止反序列化
+
+        调用时直接使用 `SingletonDemo.INSTANCE`
+
+    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> SingletonDemo &#123;</span><br><span class="line">    INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    枚举类没有构造方法，所以能防止反序列化
+
+实际使用时常用的还是饿汉式
+</code></pre><ol start="2">
+<li><p>策略模式</p>
+<p> <code>Comparator</code>接口 和 <code>Comparable</code>接口</p>
+<ul>
+<li><p><code>Comparator</code>接口是java.util包内的接口，包含两个抽象方法： <code>compare(o1，o2)</code>和<code>equals(obj)</code></p>
+</li>
+<li><p><code>Comparable</code>接口是java.lang包内的接口，只有一个方法： <code>compareTo(obj)</code></p>
+<p>开闭原则： 对修改关闭，对扩展开放</p>
+<p>实现<code>Comparable</code>接口时只能有一个compareTo方法</p>
+</li>
+</ul>
+</li>
+<li><p>工厂模式</p>
+<p> 简单工厂和静态工厂</p>
+<p> 任何产生对象的方法或类都可以称为工厂</p>
+<p> 形容词用接口，名词用抽象类</p>
+<p> 工厂模式更好的方法是spring里面的bean工厂</p>
+<p> 坦克大战里面利用抽象工厂完成一键风格替换</p>
+<p> 父类抽象方法时，方法要尽量少，因为父类方法越多实现时子类就会要覆写越多</p>
+<p> 生产一系列的类是抽象工厂</p>
+<p> 抽象工厂在实际的开发过程中使用的不是特别多</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>facade模式（门面模式）</p>
+</li>
+<li><p>Mediator模式(调停者模式)</p>
+</li>
+<li><p>责任链模式</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>面向对象设计时，慎用继承关系，因为继承是一种强关系，父类变了，子类必须变。</li>
+</ol>
+<p>强关系对于代码的扩展性是有局限的。</p>
+<ol start="2">
+<li>Java转exe需要java虚拟机、jar包和转换工具</li>
+</ol>
+]]></content>
+      <categories>
+        <category>实战</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>实战</tag>
       </tags>
   </entry>
   <entry>
@@ -884,179 +859,119 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
-    <title>坦克大战</title>
-    <url>/2023/11/29/projects/tank/</url>
-    <content><![CDATA[<h1 id="Frame类"><a href="#Frame类" class="headerlink" title="Frame类"></a>Frame类</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Frame f = <span class="keyword">new</span> Frame(); <span class="comment">// 新建Frame类</span></span><br><span class="line">f.setSize(<span class="number">800</span>, <span class="number">600</span>);<span class="comment">// 设置窗口大小</span></span><br><span class="line">f.setResizable(<span class="keyword">false</span>);<span class="comment">// 设置窗口不能调整大小</span></span><br><span class="line">f.setTitle(<span class="string">"Tank War"</span>);<span class="comment">// 设置窗口名称</span></span><br><span class="line">f.setVisible(<span class="keyword">true</span>);<span class="comment">// 设置窗口可见</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加窗口监听事件</span></span><br><span class="line">f.addWindowListener(<span class="keyword">new</span> WindowAdapter() &#123;</span><br><span class="line">    <span class="comment">// 添加窗口关闭事件</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="坦克大战"><a href="#坦克大战" class="headerlink" title="坦克大战"></a>坦克大战</h1><h2 id="创建TankFrame类继承Frame类"><a href="#创建TankFrame类继承Frame类" class="headerlink" title="创建TankFrame类继承Frame类"></a>创建TankFrame类继承Frame类</h2><p><code>public class TankFrame extends Frame {}</code></p>
-<h2 id="在构造函数中设置默认值"><a href="#在构造函数中设置默认值" class="headerlink" title="在构造函数中设置默认值"></a>在构造函数中设置默认值</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">TankFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    setSize(<span class="number">800</span>, <span class="number">600</span>);</span><br><span class="line">    setResizable(<span class="keyword">false</span>);</span><br><span class="line">    setTitle(<span class="string">"Tank War"</span>);</span><br><span class="line">    setVisible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">    addKeyListener(<span class="keyword">new</span> KeyListener());<span class="comment">// 监听键盘按键事件</span></span><br><span class="line"></span><br><span class="line">    addWindowListener(<span class="keyword">new</span> WindowAdapter() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">windowClosing</span><span class="params">(WindowEvent e)</span> </span>&#123;</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="创建内部类KeyListener控制键盘按键"><a href="#创建内部类KeyListener控制键盘按键" class="headerlink" title="创建内部类KeyListener控制键盘按键"></a>创建内部类KeyListener控制键盘按键</h2><p><code>class KeyListener extends KeyAdapter {}</code></p>
-<p>重写KeyAdapter类中的<code>keyPressed()</code>和<code>keyReleased()</code>方法</p>
-<h2 id="判断两个方块相交"><a href="#判断两个方块相交" class="headerlink" title="判断两个方块相交"></a>判断两个方块相交</h2><p>使用工具类Rectangle,<code>Rectangle.intersects()</code></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Rectangle rect1 = <span class="keyword">new</span> Rectangle(x, y, WIDTH, HEIGHT);</span><br><span class="line">Rectangle rect2 = <span class="keyword">new</span> Rectangle(x2, y2, WIDTH2, HEIGHT2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(rect1.intersects(rect2)) System.out.println(<span class="string">"两者相交"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="坦克大战中的设计模式"><a href="#坦克大战中的设计模式" class="headerlink" title="坦克大战中的设计模式"></a>坦克大战中的设计模式</h2><ol>
-<li><p>单例模式</p>
-<p> 应用场景：只需要一个实例 比如各种各样的manager、Factory</p>
+    <title>你好，世界</title>
+    <url>/2019/05/12/others/hello-world/</url>
+    <content><![CDATA[<p>我的第一篇文章</p>
+
+<h2 id="github-jeykll-markdown个人书写习惯"><a href="#github-jeykll-markdown个人书写习惯" class="headerlink" title="github-jeykll-markdown个人书写习惯"></a>github-jeykll-markdown个人书写习惯</h2><blockquote>
+<p>2017-07-01 之后使用hexo书写博客, 格式依然可用</p>
+</blockquote>
+<h3 id="元信息"><a href="#元信息" class="headerlink" title="元信息"></a>元信息</h3><p>categories和tags都可以有多个</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">categories: [cat1, cat2]</span><br><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure>
+<h3 id="md语法"><a href="#md语法" class="headerlink" title="md语法"></a>md语法</h3><ul>
+<li>md文件中可以使用html标签</li>
+<li><code>---</code>代表分割线</li>
+</ul>
+<h3 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h3><p>正文的第一级标题用h2(<code>##</code>)，标题和字段间要有换行</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
+<li><p>列表（有序/无序）下面显示 <strong>代码、引用、图片</strong> 时：相对列表的该子项代码需要多缩进一个Tab（4个空格），且中间要空行，如：</p>
+<pre>
+- 标题
+
+  &#x60;&#x60;&#x60;html
+    ...
+  &#x60;&#x60;&#x60;
+</pre></li>
+<li><p>引用需要上下都空一行，列表只需要在上面空一行</p>
+</li>
+<li><p>子列表基于父列表要有一个Tab缩进（4个空格），中间无需空行</p>
+</li>
+</ul>
+<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>脚注支持链接跳转，注意脚注与被批注文本之间有一个空格</p>
+<pre>
+标题或者文字 [^1]
+
+---
+
+参考文章
+
+[^1]: [http://blog.aezo.cn](http://blog.aezo.cn)
+</pre>
+
+
+<h2 id="github-hexo-markdown个人书写习惯"><a href="#github-hexo-markdown个人书写习惯" class="headerlink" title="github-hexo-markdown个人书写习惯"></a>github-hexo-markdown个人书写习惯</h2><h3 id="修改文章后保存源码并更新博客"><a href="#修改文章后保存源码并更新博客" class="headerlink" title="修改文章后保存源码并更新博客"></a>修改文章后保存源码并更新博客</h3><ul>
+<li><p><strong>更新步骤如下</strong> (或者直接执行项目目录下的<strong>blog-deploy.sh</strong>文件)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean # 有时候修改了静态文件需要先clean一下</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -am "update blog"</span><br><span class="line"><span class="meta">$</span> git push origin master:source</span><br><span class="line"><span class="meta">$</span> hexo g &amp;&amp; gulp &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="博客源码管理和博客更新"><a href="#博客源码管理和博客更新" class="headerlink" title="博客源码管理和博客更新"></a>博客源码管理和博客更新</h3><ul>
+<li>本地处于master分支，远程有master(为博客渲染后的代码)和source(博客源码, 可设为远程默认分支)两个分支</li>
+<li><p>更新博客 <code>hexo d -g</code></p>
 <ul>
-<li><p>饿汉式</p>
-<p>  类加载到内存后就实例化一个单例，JVM保证线程安全，缺点是无论是否会用都会在类装载完成时完成实例化</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> SingletonDemo INSTANCE = <span class="keyword">new</span> SingletonDemo();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonDemo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonDemo <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> INSTANCE; &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p><code>_config.yml</code>文件中需要指向master分支</p>
+  <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/aezocn/aezocn.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-</ol>
-<pre><code>- 懒汉式
-
-    按需使用
-
-    - 多线程使用不安全写法
-
-    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonDemo INSTANCE = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonDemo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonDemo <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(INSTANCE == <span class="keyword">null</span>) INSTANCE = <span class="keyword">new</span> SingletonDemo();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    - 多线程使用安全写法
-
-        类加载时不会产生实例，只有在调用`getInstance()`时调用静态内部类会实例化对象
-
-    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonDemo</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonDemoHolder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> SingletonDemo INSTANCE = <span class="keyword">new</span> SingletonDemo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonDemo <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonDemoHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    - 目前语法上最完美的写法，既能解决线程同步问题，还能防止反序列化
-
-        调用时直接使用 `SingletonDemo.INSTANCE`
-
-    <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> SingletonDemo &#123;</span><br><span class="line">    INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    枚举类没有构造方法，所以能防止反序列化
-
-实际使用时常用的还是饿汉式
-</code></pre><ol start="2">
-<li><p>策略模式</p>
-<p> <code>Comparator</code>接口 和 <code>Comparable</code>接口</p>
-<ul>
-<li><p><code>Comparator</code>接口是java.util包内的接口，包含两个抽象方法： <code>compare(o1，o2)</code>和<code>equals(obj)</code></p>
-</li>
-<li><p><code>Comparable</code>接口是java.lang包内的接口，只有一个方法： <code>compareTo(obj)</code></p>
-<p>开闭原则： 对修改关闭，对扩展开放</p>
-<p>实现<code>Comparable</code>接口时只能有一个compareTo方法</p>
-</li>
+</ul>
+<h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><ul>
+<li><code>hexo clean</code> 清除缓存(如果未修改配置文件可不运行)</li>
+<li><code>hexo g</code>/<code>hexo generate</code> 静态文件生成(修改主题文件可不用重新启动服务)</li>
+<li><code>hexo s -p 5000</code>(<code>hexo server</code>) <strong>启动本地服务器(本地测试)</strong></li>
+<li><code>hexo d</code>/<code>hexo deploy</code> 部署到github</li>
+</ul>
+<h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><ul>
+<li>clone远程source分支到本地master分支</li>
+<li><code>npm install -g hexo-cli</code> 全局安装hexo</li>
+<li><code>npm install</code> 初始化</li>
+<li>按照上述【修改文章后保存源码并更新博客】进行部署</li>
+</ul>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><ul>
+<li>图片格式如：<code>![hello](/data/images/2017/07/hello.png)</code></li>
+<li>内部链接格式如：<code>[http://blog.aezo.cn/2017/01/16/arch/nginx/](/_posts/arch/nginx.md#基于编译安装tengine)</code>，其中<code>#</code>后面为完整子标题</li>
+<li>hexo转义字符：<code>{: &amp;#123;</code>、<code>}: &amp;#125;</code> (如写vue代码的时会出现双括号导致hexo编译失败)</li>
+</ul>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul>
+<li>NexT主题本地搜索<ul>
+<li>安装：<code>npm install --save hexo-generator-search</code></li>
+<li>开启local_search</li>
+<li>还可手动写本地搜索功能 <a href="http://www.hahack.com/codes/local-search-engine-for-hexo/" title="jQuery-based Local Search Engine for Hexo" target="_blank" rel="noopener">^1</a></li>
 </ul>
 </li>
-<li><p>工厂模式</p>
-<p> 简单工厂和静态工厂</p>
-<p> 任何产生对象的方法或类都可以称为工厂</p>
-<p> 形容词用接口，名词用抽象类</p>
-<p> 工厂模式更好的方法是spring里面的bean工厂</p>
-<p> 坦克大战里面利用抽象工厂完成一键风格替换</p>
-<p> 父类抽象方法时，方法要尽量少，因为父类方法越多实现时子类就会要覆写越多</p>
-<p> 生产一系列的类是抽象工厂</p>
-<p> 抽象工厂在实际的开发过程中使用的不是特别多</p>
-</li>
-</ol>
-<ol start="4">
-<li><p>facade模式（门面模式）</p>
-</li>
-<li><p>Mediator模式(调停者模式)</p>
-</li>
-<li><p>责任链模式</p>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li>面向对象设计时，慎用继承关系，因为继承是一种强关系，父类变了，子类必须变。</li>
-</ol>
-<p>强关系对于代码的扩展性是有局限的。</p>
-<ol start="2">
-<li>Java转exe需要java虚拟机、jar包和转换工具</li>
-</ol>
-]]></content>
-      <categories>
-        <category>实战</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>实战</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/2019/10/13/tools/git/</url>
-    <content><![CDATA[<h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>git clone xxx(远程仓库地址)</code> 克隆远程仓库至本地</p>
-<p><code>git branch</code> 查看本地分支</p>
-<p><code>git branch -r</code> 查看远程分支</p>
-<p><code>git branch &lt;分支名&gt;</code> 创建本地分支</p>
-<p><code>git status</code> 查看当前状态</p>
-<p><code>git add .</code> 将所有文件添加到暂存区</p>
-<p><code>git commit am &quot;代码提交备注&quot;</code> 提交代码并添加注释</p>
-<p><code>git push</code> 将分支推送至远程</p>
-<p><code>git pull</code> 拉取远程分支</p>
-<h2 id="一套代码关联多个远程仓库"><a href="#一套代码关联多个远程仓库" class="headerlink" title="一套代码关联多个远程仓库"></a>一套代码关联多个远程仓库</h2><p><code>git remote -v</code></p>
-]]></content>
-      <categories>
-        <category>Tools, Git</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vsCode</title>
-    <url>/2019/10/13/tools/vsCode/</url>
-    <content><![CDATA[<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>安装主题插件，个人偏好 <code>One Dark Pro</code></p>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="键入提示"><a href="#键入提示" class="headerlink" title="键入提示"></a>键入提示</h2><p>vsCode安装成功后，内置了Emmet插件，用于对一些代码进行补全</p>
-<p><code>h1*6 + tab/enter键</code>: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>h1*6&gt;{1级标题} + tab/enter键</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>h$*6&gt;{$级标题} + tab/enter键</code>: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>3级标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>4级标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>5级标题<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6级标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>lorem</code>： 乱数假文，没有任何实际含义的数字</p>
-<p>例如： </p>
-<p><code>p*6&gt;lorem + tab/enter键</code> ： 生成六段乱数假文，用于写静态页面时测试排版</p>
-<p><code>p*6&gt;lorem1 + tab/enter键</code>： 生成六段乱数假文，每段只有一个单词</p>
-<p><code>p*6&gt;lorem1000 + tab/enter键</code>： 生成六段乱数假文，每段只有1000个单词</p>
-<p><code>(h2&gt;{章节1})+p&gt;lorem</code> : </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit veritatis perferendis sint ipsa consectetur eligendi fugiat magni officiis! Nisi repellendus dignissimos dolorem a adipisci odit omnis, id nobis in quod.   </span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>(h2[id=&quot;chapter$&quot;]&gt;{章节$})*6</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter1"</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter2"</span>&gt;</span>章节2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter3"</span>&gt;</span>章节3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter4"</span>&gt;</span>章节4<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter5"</span>&gt;</span>章节5<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter6"</span>&gt;</span>章节6<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h2><p><code>ctrl + enter键</code>： 光标切换至下一行<br><code>ctrl + shift + enter键</code>： 光标切换至上一行</p>
-<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><p>按住鼠标中间上下移动，可将光标选中多行进行编辑</p>
+<li>基于Swiftype的搜索</li>
+</ul>
+<h4 id="PlantUML"><a href="#PlantUML" class="headerlink" title="PlantUML"></a>PlantUML</h4><ul>
+<li><code>npm install --save hexo-filter-plantuml</code> 安装插件(vscode可以再配合插件<code>PlantUML</code>使用)</li>
+<li>markdown语法如下</li>
+</ul>
+<pre>
+&#x60;&#x60;&#x60;plantuml
+@startuml
+/' 样式(背景和波浪线条)和标题。这是代码注释，不会渲染 '/
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+title
+  标题和水印 &lt;img:http://blog.aezo.cn/aezocn.png&gt;
+end title
+
+Bob->Alice : hello
+@enduml
+&#x60;&#x60;&#x60;
+</pre>
+
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><h4 id="next"><a href="#next" class="headerlink" title="next"></a>next</h4><ul>
+<li>自定义代码在<code>/themes/next/layout/_custom/</code>目录下</li>
+<li>footer代码修改 <code>/themes/next/layout/_partials/footer.swig</code></li>
+<li>部分图片禁用fancybox，可在img上加<code>class=&quot;nofancybox&quot;</code>。需要修改主题中的js文件，详细修改方法参考<a href="https://blog.csdn.net/cddchina/article/details/79764432" target="_blank" rel="noopener">https://blog.csdn.net/cddchina/article/details/79764432</a></li>
+</ul>
 <hr>
+<p>参考文章</p>
 ]]></content>
       <categories>
-        <category>Tools, vsCode</category>
+        <category>others</category>
       </categories>
       <tags>
-        <tag>Tools</tag>
-        <tag>vsCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IntelliJ IDEA</title>
-    <url>/2023/06/27/tools/idea/</url>
-    <content><![CDATA[<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
-<li><code>Alt + insert</code> 生成构造方法、getset方法、mybatis文件等</li>
-</ul>
-<h2 id="实用插件"><a href="#实用插件" class="headerlink" title="实用插件"></a>实用插件</h2><h3 id="MyBatisCodeHelperPro-Marketplace-Edition"><a href="#MyBatisCodeHelperPro-Marketplace-Edition" class="headerlink" title="MyBatisCodeHelperPro (Marketplace Edition)"></a>MyBatisCodeHelperPro (Marketplace Edition)</h3><ul>
-<li><p><a href="https://www.cnblogs.com/equals/p/15391453.html" target="_blank" rel="noopener">安装说明</a></p>
-</li>
-<li><p><a href="https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/" target="_blank" rel="noopener">使用说明</a></p>
-</li>
-<li><p><a href="https://www.bilibili.com/video/av50632948/?vd_source=8a67383411f69921887ca2f40f490a83" target="_blank" rel="noopener">操作视频</a></p>
-</li>
-<li><p>支持实体生成建表语句</p>
-</li>
-<li><p>支持基于表生成实体/Mapper/服务等</p>
-</li>
-<li><p>支持生成Mybatis执行日志</p>
-</li>
-<li><p>支持预执行SQL</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools, IDEA</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-        <tag>IDEA</tag>
+        <tag>others</tag>
       </tags>
   </entry>
   <entry>
@@ -1150,6 +1065,91 @@ Bob->Alice : hello
         <tag>Computer Language</tag>
         <tag>basic</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IntelliJ IDEA</title>
+    <url>/2023/06/27/tools/idea/</url>
+    <content><![CDATA[<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
+<li><code>Alt + insert</code> 生成构造方法、getset方法、mybatis文件等</li>
+</ul>
+<h2 id="实用插件"><a href="#实用插件" class="headerlink" title="实用插件"></a>实用插件</h2><h3 id="MyBatisCodeHelperPro-Marketplace-Edition"><a href="#MyBatisCodeHelperPro-Marketplace-Edition" class="headerlink" title="MyBatisCodeHelperPro (Marketplace Edition)"></a>MyBatisCodeHelperPro (Marketplace Edition)</h3><ul>
+<li><p><a href="https://www.cnblogs.com/equals/p/15391453.html" target="_blank" rel="noopener">安装说明</a></p>
+</li>
+<li><p><a href="https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/" target="_blank" rel="noopener">使用说明</a></p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/av50632948/?vd_source=8a67383411f69921887ca2f40f490a83" target="_blank" rel="noopener">操作视频</a></p>
+</li>
+<li><p>支持实体生成建表语句</p>
+</li>
+<li><p>支持基于表生成实体/Mapper/服务等</p>
+</li>
+<li><p>支持生成Mybatis执行日志</p>
+</li>
+<li><p>支持预执行SQL</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools, IDEA</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2019/10/13/tools/git/</url>
+    <content><![CDATA[<h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>git clone xxx(远程仓库地址)</code> 克隆远程仓库至本地</p>
+<p><code>git branch</code> 查看本地分支</p>
+<p><code>git branch -r</code> 查看远程分支</p>
+<p><code>git branch &lt;分支名&gt;</code> 创建本地分支</p>
+<p><code>git status</code> 查看当前状态</p>
+<p><code>git add .</code> 将所有文件添加到暂存区</p>
+<p><code>git commit am &quot;代码提交备注&quot;</code> 提交代码并添加注释</p>
+<p><code>git push</code> 将分支推送至远程</p>
+<p><code>git pull</code> 拉取远程分支</p>
+<h2 id="一套代码关联多个远程仓库"><a href="#一套代码关联多个远程仓库" class="headerlink" title="一套代码关联多个远程仓库"></a>一套代码关联多个远程仓库</h2><p><code>git remote -v</code></p>
+]]></content>
+      <categories>
+        <category>Tools, Git</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vsCode</title>
+    <url>/2019/10/13/tools/vsCode/</url>
+    <content><![CDATA[<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>安装主题插件，个人偏好 <code>One Dark Pro</code></p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="键入提示"><a href="#键入提示" class="headerlink" title="键入提示"></a>键入提示</h2><p>vsCode安装成功后，内置了Emmet插件，用于对一些代码进行补全</p>
+<p><code>h1*6 + tab/enter键</code>: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>h1*6&gt;{1级标题} + tab/enter键</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>h$*6&gt;{$级标题} + tab/enter键</code>: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2级标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>3级标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>4级标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>5级标题<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6级标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>lorem</code>： 乱数假文，没有任何实际含义的数字</p>
+<p>例如： </p>
+<p><code>p*6&gt;lorem + tab/enter键</code> ： 生成六段乱数假文，用于写静态页面时测试排版</p>
+<p><code>p*6&gt;lorem1 + tab/enter键</code>： 生成六段乱数假文，每段只有一个单词</p>
+<p><code>p*6&gt;lorem1000 + tab/enter键</code>： 生成六段乱数假文，每段只有1000个单词</p>
+<p><code>(h2&gt;{章节1})+p&gt;lorem</code> : </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit veritatis perferendis sint ipsa consectetur eligendi fugiat magni officiis! Nisi repellendus dignissimos dolorem a adipisci odit omnis, id nobis in quod.   </span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>(h2[id=&quot;chapter$&quot;]&gt;{章节$})*6</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter1"</span>&gt;</span>章节1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter2"</span>&gt;</span>章节2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter3"</span>&gt;</span>章节3<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter4"</span>&gt;</span>章节4<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter5"</span>&gt;</span>章节5<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"chapter6"</span>&gt;</span>章节6<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h2><p><code>ctrl + enter键</code>： 光标切换至下一行<br><code>ctrl + shift + enter键</code>： 光标切换至上一行</p>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><p>按住鼠标中间上下移动，可将光标选中多行进行编辑</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Tools, vsCode</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>vsCode</tag>
       </tags>
   </entry>
   <entry>
@@ -2591,6 +2591,246 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
+    <title>前端基础之canvas</title>
+    <url>/2020/03/21/frontend/canvas/</url>
+    <content><![CDATA[<p>canvas最早由Apple引入WebKit，用于Mac OS X的dashboard，后来又在safari和Google Chrome被实现。基于Geoko 1.8的浏览器（如firefox1.5）支持此元素。</p>
+<p><code>&lt;canvas&gt;</code>元素是WhatWG Web applications 1.0规范的一部分，也包含于HTML5中。<code>&lt;canvas&gt;</code>不再是语义化标签，存在兼容性问题，因此使用语义化标签兼容插件无法解决兼容问题。</p>
+<h1 id="canvas体验"><a href="#canvas体验" class="headerlink" title="canvas体验"></a>canvas体验</h1><p>绘图步骤：</p>
+<ol>
+<li><p>准备画布</p>
+<p> 使用<code>&lt;canvas&gt;</code>标签定义一个画布，默认画布为透明色(<code>rgba(0, 0, 0, 0)</code>)，大小为300*150</p>
+<p> 可在<code>&lt;canvas&gt;</code>的样式中设置边框，但不设置大小，画布大小在<code>&lt;canvas&gt;</code>属性中设置</p>
+<h2 id="canvas尺寸设置"><a href="#canvas尺寸设置" class="headerlink" title="canvas尺寸设置"></a>canvas尺寸设置</h2><ul>
+<li><p>在样式中设置<code>canvas</code>尺寸：</p>
+  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid pink;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  运行结果：</p>
+<p>  <img src="/source/data/img/html/canvas/canvas尺寸样式.png" alt="canvas使用样式设置尺寸"></p>
+</li>
+<li><p>使用<code>canvas</code>属性设置画布尺寸</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">width</span>=<span class="string">"600px"</span> <span class="attr">height</span>=<span class="string">"400px"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  运行结果：</p>
+<p>  <img src="/source/data/img/html/canvas/canvas尺寸属性.png" alt="canvas使用属性设置尺寸"></p>
+<p>可以看出虽然两种方法设置的画布最终大小是一致的，但画布中的内容却不一样。</p>
+<p><strong>使用样式设置画布大小，相当于对画布进行了放大操作，画布中的内容也会被拉伸；使用canvas自带属性设置画布大小设置的是画布的实际大小，内容不会有影响</strong></p>
+</li>
+</ul>
+</li>
+<li><p>准备绘图工具</p>
+<p> <code>&lt;canvas&gt;</code>标签中不能写内容，因此绘图工具只能在js中设置</p>
+</li>
+<li><p>利用工具绘图</p>
+<p> 绘图步骤也需写在JS中</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 获取canvas元素</span></span><br><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 获取上下文(此处上下文为canvas的回执工具箱)</span></span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 移动画笔</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 绘制直线(轨迹/绘制路径)</span></span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 描边</span></span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>canvas不支持3d效果，一般使用web gl绘制3d效果的网页</strong></p>
+<h1 id="绘制平行线"><a href="#绘制平行线" class="headerlink" title="绘制平行线"></a>绘制平行线</h1><h2 id="绘制两条平行线"><a href="#绘制两条平行线" class="headerlink" title="绘制两条平行线"></a>绘制两条平行线</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第一条线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第二条线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 描边</span></span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<h2 id="关于描边"><a href="#关于描边" class="headerlink" title="关于描边"></a>关于描边</h2><p>描边默认的宽度是1px,默认颜色为黑色，但实际在浏览器显示为2px,浅黑色</p>
+<p>描边线的中心位置与刻度线对齐，因此描边线会占据浏览器上下各0.5px，但浏览器无法解析0.5px，只能解析1px，因此最终显示结果是宽度为2px,颜色饱和度降低</p>
+<p>解决方案： 前后(Y轴)移动0.5px</p>
+<h3 id="绘制三条不同颜色的平行线"><a href="#绘制三条不同颜色的平行线" class="headerlink" title="绘制三条不同颜色的平行线"></a>绘制三条不同颜色的平行线</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第一条蓝线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">100</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'blue'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"><span class="comment">// 绘制第二条红线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'red'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">20</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"><span class="comment">// 绘制第三条绿线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">300</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">300</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'green'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">30</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<p>绘制不同属性的线条时，需要用<code>ctx.beginPath();</code>来开启新路径解决样式覆盖问题</p>
+<h1 id="绘制三角形"><a href="#绘制三角形" class="headerlink" title="绘制三角形"></a>绘制三角形</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<p>使用此方法绘制出的三角形会出现起始点和lineto的连接点无法闭合产生缺角的问题:</p>
+<p><img src="/source/data/img/html/canvas/canvas手动闭合三角形.png" alt="canvas绘制手动闭合三角形"></p>
+<p>解决方案：使用<code>ctx.closePath()</code>让canvas自动闭合</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line"><span class="comment">// ctx.lineTo(200,100);</span></span><br><span class="line">ctx.closePath();<span class="comment">// 关闭路径</span></span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;    </span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+<p><img src="/source/data/img/html/canvas/canvas自动闭合三角形.png" alt="canvas绘制自动闭合三角形"></p>
+<h2 id="绘制填充的三角形"><a href="#绘制填充的三角形" class="headerlink" title="绘制填充的三角形"></a>绘制填充的三角形</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.fillStyle = <span class="string">'#FF4040'</span>;</span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
+<p>绘制结果：</p>
+<p><img src="/source/data/img/html/canvas/canvas填充三角形.png" alt="canvas绘制填充三角形"></p>
+<p><strong>填充时不再使用<code>ctx.stroke()</code>而是使用<code>ctx.fill()</code>,同样的，填充样式属性用的是<code>fillStyle</code>而不是<code>strokeStyle</code></strong></p>
+<h1 id="绘制镂空正方形"><a href="#绘制镂空正方形" class="headerlink" title="绘制镂空正方形"></a>绘制镂空正方形</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 顺时针绘制100*100小正方形</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 逆时针绘制200*200大正方形</span></span><br><span class="line">ctx.moveTo(<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>,<span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>,<span class="number">250</span>);</span><br><span class="line">ctx.lineTo(<span class="number">50</span>,<span class="number">250</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line">ctx.fill();<span class="comment">// 非零环绕填充规则进行填充</span></span><br></pre></td></tr></table></figure>
+<p>绘制结果：</p>
+<p><img src="/source/data/img/html/canvas/canvas绘制镂空正方形.png" alt="canvas绘制镂空正方形"></p>
+<p><strong>非零环绕规则</strong>：从区域内往外画一条足够长的线，线与顺时针路径相交，计数器+1，与逆时针路径相交，计数器-1，计数器最终不为0则填充</p>
+<p><img src="/source/data/img/html/canvas/非零环绕规则图解.png" alt="非零环绕规则图解"></p>
+<h2 id="与线条相关的属性-画笔状态"><a href="#与线条相关的属性-画笔状态" class="headerlink" title="与线条相关的属性(画笔状态)"></a>与线条相关的属性(画笔状态)</h2><ul>
+<li><p><code>lineWidth</code>: 线宽，默认1px</p>
+</li>
+<li><p><code>lineCap</code>: 线末端属性： butt、round、square</p>
+</li>
+<li><p><code>lineJoin</code>: 相交线的拐点： miter(默认)、round、bevel</p>
+</li>
+<li><p><code>strokeStyle</code>: 线的颜色</p>
+</li>
+<li><p><code>fillStyle</code>: 填充颜色</p>
+</li>
+<li><p><code>setLineDash()</code>: 设置虚线</p>
+<p>  <code>setLineDash()</code>方法中需要传一个数组，用来描述虚线的排列方式,如<code>ctx.setLineDash([5,10,15,20])</code></p>
+</li>
+</ul>
+<ul>
+<li><p><code>getLineDash()</code>: 获取虚线宽度集合</p>
+</li>
+<li><p><code>lineDashOffset</code>: 设置虚线偏移量(负值向右偏移)</p>
+</li>
+</ul>
+<h1 id="绘制渐变色矩形"><a href="#绘制渐变色矩形" class="headerlink" title="绘制渐变色矩形"></a>绘制渐变色矩形</h1><p>绘制思路： 绘制点组成线，为每个点上色</p>
+<h1 id="绘制折线图"><a href="#绘制折线图" class="headerlink" title="绘制折线图"></a>绘制折线图</h1><p>绘制流程： 绘制网格 –&gt; 绘制坐标系 –&gt; 绘制点 –&gt; 连点成线</p>
+<p>具体实现： </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 构造函数</span></span><br><span class="line"><span class="keyword">var</span> LineChart = <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取绘制工具</span></span><br><span class="line">    <span class="keyword">this</span>.ctx = ctx || <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置画布大小</span></span><br><span class="line">    <span class="keyword">this</span>.canvasWidth = <span class="keyword">this</span>.ctx.canvas.width;</span><br><span class="line">    <span class="keyword">this</span>.canvasHeight = <span class="keyword">this</span>.ctx.canvas.height;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置网格大小</span></span><br><span class="line">    <span class="keyword">this</span>.gridSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置坐标系的间距</span></span><br><span class="line">    <span class="keyword">this</span>.space = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置坐标原点位置</span></span><br><span class="line">    <span class="keyword">this</span>.x0 = <span class="keyword">this</span>.space;</span><br><span class="line">    <span class="keyword">this</span>.y0 = <span class="keyword">this</span>.canvasHeight - <span class="keyword">this</span>.space;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置箭头大小</span></span><br><span class="line">    <span class="keyword">this</span>.arrowSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置点的大小</span></span><br><span class="line">    <span class="keyword">this</span>.dotSize = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 行为和方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化</span></span><br><span class="line">LineChart.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.drawGrid();</span><br><span class="line">    <span class="keyword">this</span>.drawCoordinate();</span><br><span class="line">    <span class="keyword">this</span>.drawDots(data);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制网格</span></span><br><span class="line">LineChart.prototype.drawGrid = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// X轴方向线条数 = 画布高度 / 网格大小  向下取整</span></span><br><span class="line">    <span class="keyword">var</span> xLine = <span class="built_in">Math</span>.floor(<span class="keyword">this</span>.canvasHeight / <span class="keyword">this</span>.gridSize);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制x轴方向线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= xLine; i++) &#123;</span><br><span class="line">       <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">       <span class="keyword">this</span>.ctx.moveTo(<span class="number">0</span>, i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth, i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'#eee'</span>;</span><br><span class="line">       <span class="keyword">this</span>.ctx.stroke();            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Y轴方向线条数 = 画布宽度 / 网格大小 向下取整</span></span><br><span class="line">    <span class="keyword">var</span> yLine = <span class="built_in">Math</span>.floor(<span class="keyword">this</span>.canvasWidth / <span class="keyword">this</span>.gridSize);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制Y轴方向线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= yLine; i++) &#123;</span><br><span class="line">       <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">       <span class="keyword">this</span>.ctx.moveTo(i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>, <span class="number">0</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.lineTo(i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>, <span class="keyword">this</span>.canvasHeight);</span><br><span class="line">       <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'#eee'</span>;</span><br><span class="line">       <span class="keyword">this</span>.ctx.stroke();            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制坐标系</span></span><br><span class="line">LineChart.prototype.drawCoordinate = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 绘制X轴</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">    <span class="keyword">this</span>.ctx.moveTo(<span class="keyword">this</span>.x0, <span class="keyword">this</span>.y0);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space, <span class="keyword">this</span>.y0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// X轴箭头</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space - <span class="keyword">this</span>.arrowSize, <span class="keyword">this</span>.y0 - <span class="keyword">this</span>.arrowSize / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space - <span class="keyword">this</span>.arrowSize, <span class="keyword">this</span>.y0 + <span class="keyword">this</span>.arrowSize / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space, <span class="keyword">this</span>.y0);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.ctx.fill();</span><br><span class="line">    <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'black'</span>;</span><br><span class="line">    <span class="keyword">this</span>.ctx.stroke();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制Y轴</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">    <span class="keyword">this</span>.ctx.moveTo(<span class="keyword">this</span>.x0, <span class="keyword">this</span>.y0);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.space, <span class="keyword">this</span>.space);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Y轴箭头</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.x0 + <span class="keyword">this</span>.arrowSize / <span class="number">2</span>, <span class="keyword">this</span>.space + <span class="keyword">this</span>.arrowSize);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.x0 - <span class="keyword">this</span>.arrowSize / <span class="number">2</span>, <span class="keyword">this</span>.space + <span class="keyword">this</span>.arrowSize);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.space, <span class="keyword">this</span>.space);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.ctx.fill();</span><br><span class="line">    <span class="keyword">this</span>.ctx.stroke();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制点</span></span><br><span class="line">LineChart.prototype.drawDots = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 传入数据的坐标不是canvas坐标，因此需要先转换成canvas坐标，再进行绘制和连线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> item = data[i];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> canvasX = _this.x0 + item.x;<span class="comment">// canvas x轴坐标 = canvas原点X轴坐标 + 数据X轴坐标</span></span><br><span class="line">        <span class="keyword">var</span> canvasY = _this.y0 - item.y;<span class="comment">// canvas y轴坐标 = canvas原点y轴坐标 - 数据Y轴坐标</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绘制点</span></span><br><span class="line">        _this.ctx.beginPath();</span><br><span class="line">        _this.ctx.moveTo(canvasX - _this.dotSize / <span class="number">2</span>, canvasY - _this.dotSize / <span class="number">2</span>);<span class="comment">// 起始位置为点的左上角位置</span></span><br><span class="line">        _this.ctx.lineTo(canvasX + _this.dotSize / <span class="number">2</span>, canvasY - _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.lineTo(canvasX + _this.dotSize / <span class="number">2</span>, canvasY + _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.lineTo(canvasX - _this.dotSize / <span class="number">2</span>, canvasY + _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.closePath();</span><br><span class="line"></span><br><span class="line">        _this.ctx.fill();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将点连成线 (第一个点起点为(x0,y0),其他坐标起点为上一个点)</span></span><br><span class="line">        _this.ctx.beginPath();</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>) &#123;</span><br><span class="line">            _this.ctx.moveTo( _this.x0,  _this.y0);                </span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            _this.ctx.moveTo( _this.x0 + data[i<span class="number">-1</span>].x, _this.y0 - data[i<span class="number">-1</span>].y);</span><br><span class="line">        &#125;</span><br><span class="line">        _this.ctx.lineTo(canvasX, canvasY);</span><br><span class="line"></span><br><span class="line">        _this.ctx.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 初始化</span></span><br><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">100</span>,</span><br><span class="line">        y: <span class="number">120</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">150</span>,</span><br><span class="line">        y: <span class="number">300</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">400</span>,</span><br><span class="line">        y: <span class="number">360</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">430</span>,</span><br><span class="line">        y: <span class="number">200</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">470</span>,</span><br><span class="line">        y: <span class="number">100</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> lineChart = <span class="keyword">new</span> LineChart();</span><br><span class="line">lineChart.init(data);</span><br></pre></td></tr></table></figure>
+<h1 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h1><p>矩形：</p>
+<ul>
+<li><p><code>rect(x轴坐标,Y轴坐标,长度,高度)</code> </p>
+<ul>
+<li><p>X轴坐标、Y轴坐标表示矩形左上角的点的位置</p>
+</li>
+<li><p>此方法绘制的是轨迹，要显示出来还必须使用<code>stroke()</code>或<code>fill()</code>进行描边或填充</p>
+</li>
+<li><p>绘制的路径不是独立路径</p>
+</li>
+</ul>
+</li>
+<li><p><code>strokeRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
+<ul>
+<li><p>绘制描边矩形</p>
+</li>
+<li><p>此方法绘制有自己的独立路径，即默认自带<code>beginPath()</code>，不会被其他路径样式覆盖</p>
+</li>
+</ul>
+</li>
+<li><p><code>fillRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
+<ul>
+<li><p>绘制填充矩形</p>
+</li>
+<li><p>此方法绘制有自己的独立路径，即默认自带<code>beginPath()</code>，不会被其他路径样式覆盖</p>
+</li>
+</ul>
+</li>
+<li><p><code>clearRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
+<ul>
+<li>清除矩形内容</li>
+</ul>
+</li>
+</ul>
+<h2 id="绘制渐变矩形"><a href="#绘制渐变矩形" class="headerlink" title="绘制渐变矩形"></a>绘制渐变矩形</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> linearGradient = ctx.createLinearGradient(<span class="number">100</span>,<span class="number">100</span>,<span class="number">400</span>,<span class="number">100</span>);<span class="comment">// 设置渐变方向，以两点的坐标来定</span></span><br><span class="line">linearGradient.addColorStop(<span class="number">0</span>,<span class="string">'pink'</span>);<span class="comment">// 起始颜色，若中间需要加别的颜色可以调整第一个参数为0~1之间</span></span><br><span class="line">linearGradient.addColorStop(<span class="number">1</span>,<span class="string">'blue'</span>);<span class="comment">// 结束颜色</span></span><br><span class="line"></span><br><span class="line">ctx.fillStyle = linearGradient;</span><br><span class="line"></span><br><span class="line">ctx.fillRect(<span class="number">100</span>,<span class="number">100</span>,<span class="number">300</span>,<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="绘制曲线"><a href="#绘制曲线" class="headerlink" title="绘制曲线"></a>绘制曲线</h1><h2 id="弧形"><a href="#弧形" class="headerlink" title="弧形"></a>弧形</h2><p>一个弧度 = 一个半径的长度</p>
+<ul>
+<li><p><code>arc(圆心x轴,圆心y轴,起始弧度,结束弧度,绘制方向)</code></p>
+<ul>
+<li><p>圆心x轴,圆心y轴为圆心坐标，类型为<code>number</code></p>
+</li>
+<li><p>起始弧度与结束弧度类型为<code>number</code>,π用<code>Math.PI</code>表示</p>
+</li>
+<li><p>绘制方向类型为<code>boolean</code>，默认为顺时针</p>
+</li>
+<li><p>此方法绘制的是路径，需要使用描边才能显示</p>
+<h2 id="扇形"><a href="#扇形" class="headerlink" title="扇形"></a>扇形</h2></li>
+</ul>
+</li>
+</ul>
+<p>起始点放在弧线的圆心位置，绘制弧线，闭合路径</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">50</span>,<span class="built_in">Math</span>.PI * <span class="number">3</span> / <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
+<p>起始点若不设置直接闭合，则绘制出的为扇形</p>
+<h2 id="n等分随机颜色的圆"><a href="#n等分随机颜色的圆" class="headerlink" title="n等分随机颜色的圆"></a>n等分随机颜色的圆</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">8</span>;<span class="comment">// 等分数</span></span><br><span class="line"><span class="keyword">var</span> angle = <span class="built_in">Math</span>.PI * <span class="number">2</span> / num;<span class="comment">// 每份弧度</span></span><br><span class="line"><span class="keyword">var</span> startAngle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> w = ctx.canvas.width;<span class="comment">// 画布宽度</span></span><br><span class="line"><span class="keyword">var</span> h = ctx.canvas.height;<span class="comment">// 画布高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取随机颜色</span></span><br><span class="line"><span class="keyword">var</span> getRandomColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span>+ r + <span class="string">','</span> + g + <span class="string">','</span> + b +<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制随机等分圆形</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">    startAngle = i * angle;</span><br><span class="line">    <span class="keyword">var</span> endAngle = (i + <span class="number">1</span>) * angle;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(w / <span class="number">2</span>,h / <span class="number">2</span>);</span><br><span class="line">    ctx.arc(w / <span class="number">2</span>,h / <span class="number">2</span>, h / <span class="number">2</span>,startAngle,endAngle);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fillStyle = getRandomColor();</span><br><span class="line">    ctx.fill();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="根据数据绘制饼图"><a href="#根据数据绘制饼图" class="headerlink" title="根据数据绘制饼图"></a>根据数据绘制饼图</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> data = [<span class="number">5</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">3</span>];<span class="comment">// 动态数据    </span></span><br><span class="line"><span class="keyword">var</span> w = ctx.canvas.width;<span class="comment">// 画布宽度</span></span><br><span class="line"><span class="keyword">var</span> h = ctx.canvas.height;<span class="comment">// 画布高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取随机颜色</span></span><br><span class="line"><span class="keyword">var</span> getRandomColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span>+ r + <span class="string">','</span> + g + <span class="string">','</span> + b +<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取总数</span></span><br><span class="line"><span class="keyword">let</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">    total = total + data[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据每份比例绘制饼图</span></span><br><span class="line"><span class="keyword">var</span> startAngle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;      </span><br><span class="line">    <span class="keyword">var</span> endAngle = startAngle +  <span class="built_in">Math</span>.PI * <span class="number">2</span> * (data[i] / total);</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(w / <span class="number">2</span>,h / <span class="number">2</span>);</span><br><span class="line">    ctx.arc(w / <span class="number">2</span>,h / <span class="number">2</span>, h / <span class="number">2</span>,startAngle,endAngle);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fillStyle = getRandomColor();</span><br><span class="line">    ctx.fill();</span><br><span class="line"></span><br><span class="line">    startAngle = endAngle;<span class="comment">// 下一区域起始弧度为本区域结束弧度，此处必须要赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h1><ul>
+<li><p><code>strokeText(文本内容,x坐标,y坐标)</code></p>
+<ul>
+<li><p>文本绘制的起点在左下角，矩形绘制的起点在左上角</p>
+</li>
+<li><p><code>strokeText</code>绘制出的是描边的文字，字体为空心，若要实心则使用<code>fillText</code>绘制</p>
+</li>
+</ul>
+</li>
+<li><p><code>textAlign</code></p>
+<ul>
+<li>文本对齐方式，基于起始坐标的对齐方式</li>
+</ul>
+</li>
+<li><p><code>font</code></p>
+<ul>
+<li>设置文本大小、字体</li>
+</ul>
+</li>
+<li><p><code>textBaseline</code></p>
+<ul>
+<li><p>设置基线（垂直对齐方式），基于起始坐标的对齐方式</p>
+</li>
+<li><p>可取值： <code>top</code>、<code>middle</code>、 <code>bottom</code>、 <code>hanging</code>、 <code>alphabetic</code>、 <code>ideographic</code></p>
+</li>
+<li><p><code>hanging</code> 文本的基线处于文本的正上方并且和文本相粘合(适用于印度文)</p>
+</li>
+<li><p><code>alphabetic</code> 默认值，基线处于文本下方，并穿过文字(适用于英文)</p>
+</li>
+<li><p><code>ideographic</code> 与 <code>bottom</code> 相似(适用于中文)</p>
+</li>
+</ul>
+</li>
+<li><p><code>measureText(文本内容)</code></p>
+<ul>
+<li><p>获取文本的宽度对象</p>
+</li>
+<li><p><strong>若取文本长度则需要xxx.ctx.measureText(xx).width</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="绘制带文本的饼图"><a href="#绘制带文本的饼图" class="headerlink" title="绘制带文本的饼图"></a>绘制带文本的饼图</h1><p><a href="https://garden.aezo.cn/demos/canvas饼状图.html">https://garden.aezo.cn/demos/canvas饼状图.html</a></p>
+<h1 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h1><p>绘制图片使用方法<code>drawImage()</code>,可传三个参数、五个参数、九个参数</p>
+<h2 id="绘制思路"><a href="#绘制思路" class="headerlink" title="绘制思路"></a>绘制思路</h2><ol>
+<li><p>加载图片至内存,创建image对象</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法1</span></span><br><span class="line"><span class="keyword">var</span> img = doucment.createElement(<span class="string">'img'</span>);</span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法2</span></span><br><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> Image();<span class="comment">// Image()为JS提供的内置构造函数</span></span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片加载完成才能执行代码，因此必须写在onload函数里面</p>
+<p> <strong>部分浏览器如果有缓存时，图片可能会在onload函数触发之前就已经加载完毕，第一次加载图片时已经触发了onload事件，含有缓存时不再触发onload事件，为保证兼容性，最好把onload事件写在图片加载之前</strong></p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> Image();<span class="comment">// Image()为JS提供的内置构造函数</span></span><br><span class="line">image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 此处实现图片绘制</span></span><br><span class="line">&#125;</span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="三种绘制方法"><a href="#三种绘制方法" class="headerlink" title="三种绘制方法"></a>三种绘制方法</h2><ul>
+<li><p>三个参数 <code>darwImage(img, x, y)</code></p>
+<ul>
+<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
+</li>
+<li><p><code>x</code>、<code>y</code> 图片绘制的左上角</p>
+</li>
+</ul>
+</li>
+<li><p>五个参数 <code>darwImage(img, x, y, w, h)</code></p>
+<ul>
+<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
+</li>
+<li><p><code>x</code>、<code>y</code> 图片绘制的左上角</p>
+</li>
+<li><p><code>w</code>、<code>h</code> 图片绘制尺寸设置，会对图片进行缩放而不是裁剪</p>
+</li>
+</ul>
+</li>
+<li><p>九个参数 <code>drawImage(img, x, y, w, h, x1, y1, w1, h1)</code></p>
+<ul>
+<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
+</li>
+<li><p><code>x</code>、<code>y</code>、<code>w</code>、<code>h</code> 图片中的一个矩形区域</p>
+</li>
+<li><p><code>x1</code>、<code>y1</code>、<code>w1</code>、<code>h1</code> 画布中的一个矩形区域, <code>w1</code>、<code>h1</code>是图片的缩放尺寸而不是裁剪</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h2><h3 id="绘制关键思路"><a href="#绘制关键思路" class="headerlink" title="绘制关键思路"></a>绘制关键思路</h3><ol>
+<li><p>动态获取当前图片的尺寸</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> imageWidth = image.width;</span><br><span class="line"><span class="keyword">var</span> imageHeight = image.height;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算出每个小人物的尺寸</p>
+</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><a href="https://garden.aezo.cn/demos/canvas帧动画.html">https://garden.aezo.cn/demos/canvas帧动画.html</a></p>
+<h3 id="方向键控制精灵行走的帧动画"><a href="#方向键控制精灵行走的帧动画" class="headerlink" title="方向键控制精灵行走的帧动画"></a>方向键控制精灵行走的帧动画</h3><p><a href="https://garden.aezo.cn/demos/canvas方向键控制行走动画.html">https://garden.aezo.cn/demos/canvas方向键控制行走动画.html</a></p>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><hr>
+<p>参考视频</p>
+<p> <a href="https://www.bilibili.com/video/av53813293?p=2" target="_blank" rel="noopener">https://www.bilibili.com/video/av53813293?p=2</a> (canvas视频【高级教程】)</p>
+]]></content>
+      <categories>
+        <category>web,CSS</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>web</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端基础之CSS</title>
     <url>/2019/10/13/frontend/css/</url>
     <content><![CDATA[<h1 id="CSS一些基本概念"><a href="#CSS一些基本概念" class="headerlink" title="CSS一些基本概念"></a>CSS一些基本概念</h1><h2 id="术语解释"><a href="#术语解释" class="headerlink" title="术语解释"></a>术语解释</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2988,246 +3228,6 @@ Bob->Alice : hello
 </code></pre><hr>
 <p>参考视频</p>
 <p> <a href="https://www.bilibili.com/video/av57100756?from=search&amp;seid=2646463889570770154" target="_blank" rel="noopener">https://www.bilibili.com/video/av57100756?from=search&amp;seid=2646463889570770154</a> (2019年 HTML+CSS 零基础权威入学宝典【渡一教育】p16~p58)</p>
-]]></content>
-      <categories>
-        <category>web,CSS</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>web</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端基础之canvas</title>
-    <url>/2020/03/21/frontend/canvas/</url>
-    <content><![CDATA[<p>canvas最早由Apple引入WebKit，用于Mac OS X的dashboard，后来又在safari和Google Chrome被实现。基于Geoko 1.8的浏览器（如firefox1.5）支持此元素。</p>
-<p><code>&lt;canvas&gt;</code>元素是WhatWG Web applications 1.0规范的一部分，也包含于HTML5中。<code>&lt;canvas&gt;</code>不再是语义化标签，存在兼容性问题，因此使用语义化标签兼容插件无法解决兼容问题。</p>
-<h1 id="canvas体验"><a href="#canvas体验" class="headerlink" title="canvas体验"></a>canvas体验</h1><p>绘图步骤：</p>
-<ol>
-<li><p>准备画布</p>
-<p> 使用<code>&lt;canvas&gt;</code>标签定义一个画布，默认画布为透明色(<code>rgba(0, 0, 0, 0)</code>)，大小为300*150</p>
-<p> 可在<code>&lt;canvas&gt;</code>的样式中设置边框，但不设置大小，画布大小在<code>&lt;canvas&gt;</code>属性中设置</p>
-<h2 id="canvas尺寸设置"><a href="#canvas尺寸设置" class="headerlink" title="canvas尺寸设置"></a>canvas尺寸设置</h2><ul>
-<li><p>在样式中设置<code>canvas</code>尺寸：</p>
-  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid pink;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  运行结果：</p>
-<p>  <img src="/source/data/img/html/canvas/canvas尺寸样式.png" alt="canvas使用样式设置尺寸"></p>
-</li>
-<li><p>使用<code>canvas</code>属性设置画布尺寸</p>
-  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">width</span>=<span class="string">"600px"</span> <span class="attr">height</span>=<span class="string">"400px"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>  运行结果：</p>
-<p>  <img src="/source/data/img/html/canvas/canvas尺寸属性.png" alt="canvas使用属性设置尺寸"></p>
-<p>可以看出虽然两种方法设置的画布最终大小是一致的，但画布中的内容却不一样。</p>
-<p><strong>使用样式设置画布大小，相当于对画布进行了放大操作，画布中的内容也会被拉伸；使用canvas自带属性设置画布大小设置的是画布的实际大小，内容不会有影响</strong></p>
-</li>
-</ul>
-</li>
-<li><p>准备绘图工具</p>
-<p> <code>&lt;canvas&gt;</code>标签中不能写内容，因此绘图工具只能在js中设置</p>
-</li>
-<li><p>利用工具绘图</p>
-<p> 绘图步骤也需写在JS中</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 获取canvas元素</span></span><br><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 获取上下文(此处上下文为canvas的回执工具箱)</span></span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 移动画笔</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 绘制直线(轨迹/绘制路径)</span></span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 描边</span></span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>canvas不支持3d效果，一般使用web gl绘制3d效果的网页</strong></p>
-<h1 id="绘制平行线"><a href="#绘制平行线" class="headerlink" title="绘制平行线"></a>绘制平行线</h1><h2 id="绘制两条平行线"><a href="#绘制两条平行线" class="headerlink" title="绘制两条平行线"></a>绘制两条平行线</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第一条线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第二条线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 描边</span></span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
-<h2 id="关于描边"><a href="#关于描边" class="headerlink" title="关于描边"></a>关于描边</h2><p>描边默认的宽度是1px,默认颜色为黑色，但实际在浏览器显示为2px,浅黑色</p>
-<p>描边线的中心位置与刻度线对齐，因此描边线会占据浏览器上下各0.5px，但浏览器无法解析0.5px，只能解析1px，因此最终显示结果是宽度为2px,颜色饱和度降低</p>
-<p>解决方案： 前后(Y轴)移动0.5px</p>
-<h3 id="绘制三条不同颜色的平行线"><a href="#绘制三条不同颜色的平行线" class="headerlink" title="绘制三条不同颜色的平行线"></a>绘制三条不同颜色的平行线</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = myCanvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第一条蓝线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">100</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'blue'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"><span class="comment">// 绘制第二条红线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'red'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">20</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启新路径</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line"><span class="comment">// 绘制第三条绿线</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">300</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">300</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">'green'</span>;</span><br><span class="line">ctx.lineWidth = <span class="number">30</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
-<p>绘制不同属性的线条时，需要用<code>ctx.beginPath();</code>来开启新路径解决样式覆盖问题</p>
-<h1 id="绘制三角形"><a href="#绘制三角形" class="headerlink" title="绘制三角形"></a>绘制三角形</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
-<p>使用此方法绘制出的三角形会出现起始点和lineto的连接点无法闭合产生缺角的问题:</p>
-<p><img src="/source/data/img/html/canvas/canvas手动闭合三角形.png" alt="canvas绘制手动闭合三角形"></p>
-<p>解决方案：使用<code>ctx.closePath()</code>让canvas自动闭合</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line"><span class="comment">// ctx.lineTo(200,100);</span></span><br><span class="line">ctx.closePath();<span class="comment">// 关闭路径</span></span><br><span class="line">ctx.lineWidth = <span class="number">10</span>;    </span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
-<p><img src="/source/data/img/html/canvas/canvas自动闭合三角形.png" alt="canvas绘制自动闭合三角形"></p>
-<h2 id="绘制填充的三角形"><a href="#绘制填充的三角形" class="headerlink" title="绘制填充的三角形"></a>绘制填充的三角形</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ctx.moveTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">300</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.fillStyle = <span class="string">'#FF4040'</span>;</span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
-<p>绘制结果：</p>
-<p><img src="/source/data/img/html/canvas/canvas填充三角形.png" alt="canvas绘制填充三角形"></p>
-<p><strong>填充时不再使用<code>ctx.stroke()</code>而是使用<code>ctx.fill()</code>,同样的，填充样式属性用的是<code>fillStyle</code>而不是<code>strokeStyle</code></strong></p>
-<h1 id="绘制镂空正方形"><a href="#绘制镂空正方形" class="headerlink" title="绘制镂空正方形"></a>绘制镂空正方形</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 顺时针绘制100*100小正方形</span></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">200</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 逆时针绘制200*200大正方形</span></span><br><span class="line">ctx.moveTo(<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>,<span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>,<span class="number">250</span>);</span><br><span class="line">ctx.lineTo(<span class="number">50</span>,<span class="number">250</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line">ctx.fill();<span class="comment">// 非零环绕填充规则进行填充</span></span><br></pre></td></tr></table></figure>
-<p>绘制结果：</p>
-<p><img src="/source/data/img/html/canvas/canvas绘制镂空正方形.png" alt="canvas绘制镂空正方形"></p>
-<p><strong>非零环绕规则</strong>：从区域内往外画一条足够长的线，线与顺时针路径相交，计数器+1，与逆时针路径相交，计数器-1，计数器最终不为0则填充</p>
-<p><img src="/source/data/img/html/canvas/非零环绕规则图解.png" alt="非零环绕规则图解"></p>
-<h2 id="与线条相关的属性-画笔状态"><a href="#与线条相关的属性-画笔状态" class="headerlink" title="与线条相关的属性(画笔状态)"></a>与线条相关的属性(画笔状态)</h2><ul>
-<li><p><code>lineWidth</code>: 线宽，默认1px</p>
-</li>
-<li><p><code>lineCap</code>: 线末端属性： butt、round、square</p>
-</li>
-<li><p><code>lineJoin</code>: 相交线的拐点： miter(默认)、round、bevel</p>
-</li>
-<li><p><code>strokeStyle</code>: 线的颜色</p>
-</li>
-<li><p><code>fillStyle</code>: 填充颜色</p>
-</li>
-<li><p><code>setLineDash()</code>: 设置虚线</p>
-<p>  <code>setLineDash()</code>方法中需要传一个数组，用来描述虚线的排列方式,如<code>ctx.setLineDash([5,10,15,20])</code></p>
-</li>
-</ul>
-<ul>
-<li><p><code>getLineDash()</code>: 获取虚线宽度集合</p>
-</li>
-<li><p><code>lineDashOffset</code>: 设置虚线偏移量(负值向右偏移)</p>
-</li>
-</ul>
-<h1 id="绘制渐变色矩形"><a href="#绘制渐变色矩形" class="headerlink" title="绘制渐变色矩形"></a>绘制渐变色矩形</h1><p>绘制思路： 绘制点组成线，为每个点上色</p>
-<h1 id="绘制折线图"><a href="#绘制折线图" class="headerlink" title="绘制折线图"></a>绘制折线图</h1><p>绘制流程： 绘制网格 –&gt; 绘制坐标系 –&gt; 绘制点 –&gt; 连点成线</p>
-<p>具体实现： </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 构造函数</span></span><br><span class="line"><span class="keyword">var</span> LineChart = <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取绘制工具</span></span><br><span class="line">    <span class="keyword">this</span>.ctx = ctx || <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置画布大小</span></span><br><span class="line">    <span class="keyword">this</span>.canvasWidth = <span class="keyword">this</span>.ctx.canvas.width;</span><br><span class="line">    <span class="keyword">this</span>.canvasHeight = <span class="keyword">this</span>.ctx.canvas.height;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置网格大小</span></span><br><span class="line">    <span class="keyword">this</span>.gridSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置坐标系的间距</span></span><br><span class="line">    <span class="keyword">this</span>.space = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置坐标原点位置</span></span><br><span class="line">    <span class="keyword">this</span>.x0 = <span class="keyword">this</span>.space;</span><br><span class="line">    <span class="keyword">this</span>.y0 = <span class="keyword">this</span>.canvasHeight - <span class="keyword">this</span>.space;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置箭头大小</span></span><br><span class="line">    <span class="keyword">this</span>.arrowSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置点的大小</span></span><br><span class="line">    <span class="keyword">this</span>.dotSize = <span class="number">6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 行为和方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化</span></span><br><span class="line">LineChart.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.drawGrid();</span><br><span class="line">    <span class="keyword">this</span>.drawCoordinate();</span><br><span class="line">    <span class="keyword">this</span>.drawDots(data);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制网格</span></span><br><span class="line">LineChart.prototype.drawGrid = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// X轴方向线条数 = 画布高度 / 网格大小  向下取整</span></span><br><span class="line">    <span class="keyword">var</span> xLine = <span class="built_in">Math</span>.floor(<span class="keyword">this</span>.canvasHeight / <span class="keyword">this</span>.gridSize);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制x轴方向线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= xLine; i++) &#123;</span><br><span class="line">       <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">       <span class="keyword">this</span>.ctx.moveTo(<span class="number">0</span>, i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth, i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'#eee'</span>;</span><br><span class="line">       <span class="keyword">this</span>.ctx.stroke();            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Y轴方向线条数 = 画布宽度 / 网格大小 向下取整</span></span><br><span class="line">    <span class="keyword">var</span> yLine = <span class="built_in">Math</span>.floor(<span class="keyword">this</span>.canvasWidth / <span class="keyword">this</span>.gridSize);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制Y轴方向线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= yLine; i++) &#123;</span><br><span class="line">       <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">       <span class="keyword">this</span>.ctx.moveTo(i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>, <span class="number">0</span>);</span><br><span class="line">       <span class="keyword">this</span>.ctx.lineTo(i * <span class="keyword">this</span>.gridSize - <span class="number">0.5</span>, <span class="keyword">this</span>.canvasHeight);</span><br><span class="line">       <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'#eee'</span>;</span><br><span class="line">       <span class="keyword">this</span>.ctx.stroke();            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制坐标系</span></span><br><span class="line">LineChart.prototype.drawCoordinate = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 绘制X轴</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">    <span class="keyword">this</span>.ctx.moveTo(<span class="keyword">this</span>.x0, <span class="keyword">this</span>.y0);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space, <span class="keyword">this</span>.y0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// X轴箭头</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space - <span class="keyword">this</span>.arrowSize, <span class="keyword">this</span>.y0 - <span class="keyword">this</span>.arrowSize / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space - <span class="keyword">this</span>.arrowSize, <span class="keyword">this</span>.y0 + <span class="keyword">this</span>.arrowSize / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.canvasWidth - <span class="keyword">this</span>.space, <span class="keyword">this</span>.y0);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.ctx.fill();</span><br><span class="line">    <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">'black'</span>;</span><br><span class="line">    <span class="keyword">this</span>.ctx.stroke();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制Y轴</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.beginPath();</span><br><span class="line">    <span class="keyword">this</span>.ctx.moveTo(<span class="keyword">this</span>.x0, <span class="keyword">this</span>.y0);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.space, <span class="keyword">this</span>.space);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Y轴箭头</span></span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.x0 + <span class="keyword">this</span>.arrowSize / <span class="number">2</span>, <span class="keyword">this</span>.space + <span class="keyword">this</span>.arrowSize);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.x0 - <span class="keyword">this</span>.arrowSize / <span class="number">2</span>, <span class="keyword">this</span>.space + <span class="keyword">this</span>.arrowSize);</span><br><span class="line">    <span class="keyword">this</span>.ctx.lineTo(<span class="keyword">this</span>.space, <span class="keyword">this</span>.space);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.ctx.fill();</span><br><span class="line">    <span class="keyword">this</span>.ctx.stroke();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制点</span></span><br><span class="line">LineChart.prototype.drawDots = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 传入数据的坐标不是canvas坐标，因此需要先转换成canvas坐标，再进行绘制和连线</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> item = data[i];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> canvasX = _this.x0 + item.x;<span class="comment">// canvas x轴坐标 = canvas原点X轴坐标 + 数据X轴坐标</span></span><br><span class="line">        <span class="keyword">var</span> canvasY = _this.y0 - item.y;<span class="comment">// canvas y轴坐标 = canvas原点y轴坐标 - 数据Y轴坐标</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绘制点</span></span><br><span class="line">        _this.ctx.beginPath();</span><br><span class="line">        _this.ctx.moveTo(canvasX - _this.dotSize / <span class="number">2</span>, canvasY - _this.dotSize / <span class="number">2</span>);<span class="comment">// 起始位置为点的左上角位置</span></span><br><span class="line">        _this.ctx.lineTo(canvasX + _this.dotSize / <span class="number">2</span>, canvasY - _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.lineTo(canvasX + _this.dotSize / <span class="number">2</span>, canvasY + _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.lineTo(canvasX - _this.dotSize / <span class="number">2</span>, canvasY + _this.dotSize / <span class="number">2</span>);</span><br><span class="line">        _this.ctx.closePath();</span><br><span class="line"></span><br><span class="line">        _this.ctx.fill();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将点连成线 (第一个点起点为(x0,y0),其他坐标起点为上一个点)</span></span><br><span class="line">        _this.ctx.beginPath();</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>) &#123;</span><br><span class="line">            _this.ctx.moveTo( _this.x0,  _this.y0);                </span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            _this.ctx.moveTo( _this.x0 + data[i<span class="number">-1</span>].x, _this.y0 - data[i<span class="number">-1</span>].y);</span><br><span class="line">        &#125;</span><br><span class="line">        _this.ctx.lineTo(canvasX, canvasY);</span><br><span class="line"></span><br><span class="line">        _this.ctx.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 初始化</span></span><br><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">100</span>,</span><br><span class="line">        y: <span class="number">120</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">150</span>,</span><br><span class="line">        y: <span class="number">300</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">400</span>,</span><br><span class="line">        y: <span class="number">360</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">430</span>,</span><br><span class="line">        y: <span class="number">200</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        x: <span class="number">470</span>,</span><br><span class="line">        y: <span class="number">100</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> lineChart = <span class="keyword">new</span> LineChart();</span><br><span class="line">lineChart.init(data);</span><br></pre></td></tr></table></figure>
-<h1 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h1><p>矩形：</p>
-<ul>
-<li><p><code>rect(x轴坐标,Y轴坐标,长度,高度)</code> </p>
-<ul>
-<li><p>X轴坐标、Y轴坐标表示矩形左上角的点的位置</p>
-</li>
-<li><p>此方法绘制的是轨迹，要显示出来还必须使用<code>stroke()</code>或<code>fill()</code>进行描边或填充</p>
-</li>
-<li><p>绘制的路径不是独立路径</p>
-</li>
-</ul>
-</li>
-<li><p><code>strokeRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
-<ul>
-<li><p>绘制描边矩形</p>
-</li>
-<li><p>此方法绘制有自己的独立路径，即默认自带<code>beginPath()</code>，不会被其他路径样式覆盖</p>
-</li>
-</ul>
-</li>
-<li><p><code>fillRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
-<ul>
-<li><p>绘制填充矩形</p>
-</li>
-<li><p>此方法绘制有自己的独立路径，即默认自带<code>beginPath()</code>，不会被其他路径样式覆盖</p>
-</li>
-</ul>
-</li>
-<li><p><code>clearRect(x轴坐标,Y轴坐标,长度,高度)</code></p>
-<ul>
-<li>清除矩形内容</li>
-</ul>
-</li>
-</ul>
-<h2 id="绘制渐变矩形"><a href="#绘制渐变矩形" class="headerlink" title="绘制渐变矩形"></a>绘制渐变矩形</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> linearGradient = ctx.createLinearGradient(<span class="number">100</span>,<span class="number">100</span>,<span class="number">400</span>,<span class="number">100</span>);<span class="comment">// 设置渐变方向，以两点的坐标来定</span></span><br><span class="line">linearGradient.addColorStop(<span class="number">0</span>,<span class="string">'pink'</span>);<span class="comment">// 起始颜色，若中间需要加别的颜色可以调整第一个参数为0~1之间</span></span><br><span class="line">linearGradient.addColorStop(<span class="number">1</span>,<span class="string">'blue'</span>);<span class="comment">// 结束颜色</span></span><br><span class="line"></span><br><span class="line">ctx.fillStyle = linearGradient;</span><br><span class="line"></span><br><span class="line">ctx.fillRect(<span class="number">100</span>,<span class="number">100</span>,<span class="number">300</span>,<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="绘制曲线"><a href="#绘制曲线" class="headerlink" title="绘制曲线"></a>绘制曲线</h1><h2 id="弧形"><a href="#弧形" class="headerlink" title="弧形"></a>弧形</h2><p>一个弧度 = 一个半径的长度</p>
-<ul>
-<li><p><code>arc(圆心x轴,圆心y轴,起始弧度,结束弧度,绘制方向)</code></p>
-<ul>
-<li><p>圆心x轴,圆心y轴为圆心坐标，类型为<code>number</code></p>
-</li>
-<li><p>起始弧度与结束弧度类型为<code>number</code>,π用<code>Math.PI</code>表示</p>
-</li>
-<li><p>绘制方向类型为<code>boolean</code>，默认为顺时针</p>
-</li>
-<li><p>此方法绘制的是路径，需要使用描边才能显示</p>
-<h2 id="扇形"><a href="#扇形" class="headerlink" title="扇形"></a>扇形</h2></li>
-</ul>
-</li>
-</ul>
-<p>起始点放在弧线的圆心位置，绘制弧线，闭合路径</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"></span><br><span class="line">ctx.moveTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">ctx.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">50</span>,<span class="built_in">Math</span>.PI * <span class="number">3</span> / <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line"></span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
-<p>起始点若不设置直接闭合，则绘制出的为扇形</p>
-<h2 id="n等分随机颜色的圆"><a href="#n等分随机颜色的圆" class="headerlink" title="n等分随机颜色的圆"></a>n等分随机颜色的圆</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">8</span>;<span class="comment">// 等分数</span></span><br><span class="line"><span class="keyword">var</span> angle = <span class="built_in">Math</span>.PI * <span class="number">2</span> / num;<span class="comment">// 每份弧度</span></span><br><span class="line"><span class="keyword">var</span> startAngle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> w = ctx.canvas.width;<span class="comment">// 画布宽度</span></span><br><span class="line"><span class="keyword">var</span> h = ctx.canvas.height;<span class="comment">// 画布高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取随机颜色</span></span><br><span class="line"><span class="keyword">var</span> getRandomColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span>+ r + <span class="string">','</span> + g + <span class="string">','</span> + b +<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制随机等分圆形</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">    startAngle = i * angle;</span><br><span class="line">    <span class="keyword">var</span> endAngle = (i + <span class="number">1</span>) * angle;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(w / <span class="number">2</span>,h / <span class="number">2</span>);</span><br><span class="line">    ctx.arc(w / <span class="number">2</span>,h / <span class="number">2</span>, h / <span class="number">2</span>,startAngle,endAngle);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fillStyle = getRandomColor();</span><br><span class="line">    ctx.fill();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="根据数据绘制饼图"><a href="#根据数据绘制饼图" class="headerlink" title="根据数据绘制饼图"></a>根据数据绘制饼图</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> data = [<span class="number">5</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">3</span>];<span class="comment">// 动态数据    </span></span><br><span class="line"><span class="keyword">var</span> w = ctx.canvas.width;<span class="comment">// 画布宽度</span></span><br><span class="line"><span class="keyword">var</span> h = ctx.canvas.height;<span class="comment">// 画布高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取随机颜色</span></span><br><span class="line"><span class="keyword">var</span> getRandomColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span>+ r + <span class="string">','</span> + g + <span class="string">','</span> + b +<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取总数</span></span><br><span class="line"><span class="keyword">let</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">    total = total + data[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据每份比例绘制饼图</span></span><br><span class="line"><span class="keyword">var</span> startAngle = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;      </span><br><span class="line">    <span class="keyword">var</span> endAngle = startAngle +  <span class="built_in">Math</span>.PI * <span class="number">2</span> * (data[i] / total);</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(w / <span class="number">2</span>,h / <span class="number">2</span>);</span><br><span class="line">    ctx.arc(w / <span class="number">2</span>,h / <span class="number">2</span>, h / <span class="number">2</span>,startAngle,endAngle);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fillStyle = getRandomColor();</span><br><span class="line">    ctx.fill();</span><br><span class="line"></span><br><span class="line">    startAngle = endAngle;<span class="comment">// 下一区域起始弧度为本区域结束弧度，此处必须要赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h1><ul>
-<li><p><code>strokeText(文本内容,x坐标,y坐标)</code></p>
-<ul>
-<li><p>文本绘制的起点在左下角，矩形绘制的起点在左上角</p>
-</li>
-<li><p><code>strokeText</code>绘制出的是描边的文字，字体为空心，若要实心则使用<code>fillText</code>绘制</p>
-</li>
-</ul>
-</li>
-<li><p><code>textAlign</code></p>
-<ul>
-<li>文本对齐方式，基于起始坐标的对齐方式</li>
-</ul>
-</li>
-<li><p><code>font</code></p>
-<ul>
-<li>设置文本大小、字体</li>
-</ul>
-</li>
-<li><p><code>textBaseline</code></p>
-<ul>
-<li><p>设置基线（垂直对齐方式），基于起始坐标的对齐方式</p>
-</li>
-<li><p>可取值： <code>top</code>、<code>middle</code>、 <code>bottom</code>、 <code>hanging</code>、 <code>alphabetic</code>、 <code>ideographic</code></p>
-</li>
-<li><p><code>hanging</code> 文本的基线处于文本的正上方并且和文本相粘合(适用于印度文)</p>
-</li>
-<li><p><code>alphabetic</code> 默认值，基线处于文本下方，并穿过文字(适用于英文)</p>
-</li>
-<li><p><code>ideographic</code> 与 <code>bottom</code> 相似(适用于中文)</p>
-</li>
-</ul>
-</li>
-<li><p><code>measureText(文本内容)</code></p>
-<ul>
-<li><p>获取文本的宽度对象</p>
-</li>
-<li><p><strong>若取文本长度则需要xxx.ctx.measureText(xx).width</strong></p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="绘制带文本的饼图"><a href="#绘制带文本的饼图" class="headerlink" title="绘制带文本的饼图"></a>绘制带文本的饼图</h1><p><a href="https://garden.aezo.cn/demos/canvas饼状图.html">https://garden.aezo.cn/demos/canvas饼状图.html</a></p>
-<h1 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h1><p>绘制图片使用方法<code>drawImage()</code>,可传三个参数、五个参数、九个参数</p>
-<h2 id="绘制思路"><a href="#绘制思路" class="headerlink" title="绘制思路"></a>绘制思路</h2><ol>
-<li><p>加载图片至内存,创建image对象</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法1</span></span><br><span class="line"><span class="keyword">var</span> img = doucment.createElement(<span class="string">'img'</span>);</span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法2</span></span><br><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> Image();<span class="comment">// Image()为JS提供的内置构造函数</span></span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>图片加载完成才能执行代码，因此必须写在onload函数里面</p>
-<p> <strong>部分浏览器如果有缓存时，图片可能会在onload函数触发之前就已经加载完毕，第一次加载图片时已经触发了onload事件，含有缓存时不再触发onload事件，为保证兼容性，最好把onload事件写在图片加载之前</strong></p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> Image();<span class="comment">// Image()为JS提供的内置构造函数</span></span><br><span class="line">image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 此处实现图片绘制</span></span><br><span class="line">&#125;</span><br><span class="line">img.src = <span class="string">'image/dude.png'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="三种绘制方法"><a href="#三种绘制方法" class="headerlink" title="三种绘制方法"></a>三种绘制方法</h2><ul>
-<li><p>三个参数 <code>darwImage(img, x, y)</code></p>
-<ul>
-<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
-</li>
-<li><p><code>x</code>、<code>y</code> 图片绘制的左上角</p>
-</li>
-</ul>
-</li>
-<li><p>五个参数 <code>darwImage(img, x, y, w, h)</code></p>
-<ul>
-<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
-</li>
-<li><p><code>x</code>、<code>y</code> 图片绘制的左上角</p>
-</li>
-<li><p><code>w</code>、<code>h</code> 图片绘制尺寸设置，会对图片进行缩放而不是裁剪</p>
-</li>
-</ul>
-</li>
-<li><p>九个参数 <code>drawImage(img, x, y, w, h, x1, y1, w1, h1)</code></p>
-<ul>
-<li><p><code>img</code> 图片对象、canvas对象、 video对象</p>
-</li>
-<li><p><code>x</code>、<code>y</code>、<code>w</code>、<code>h</code> 图片中的一个矩形区域</p>
-</li>
-<li><p><code>x1</code>、<code>y1</code>、<code>w1</code>、<code>h1</code> 画布中的一个矩形区域, <code>w1</code>、<code>h1</code>是图片的缩放尺寸而不是裁剪</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h2><h3 id="绘制关键思路"><a href="#绘制关键思路" class="headerlink" title="绘制关键思路"></a>绘制关键思路</h3><ol>
-<li><p>动态获取当前图片的尺寸</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> imageWidth = image.width;</span><br><span class="line"><span class="keyword">var</span> imageHeight = image.height;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>计算出每个小人物的尺寸</p>
-</li>
-</ol>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><a href="https://garden.aezo.cn/demos/canvas帧动画.html">https://garden.aezo.cn/demos/canvas帧动画.html</a></p>
-<h3 id="方向键控制精灵行走的帧动画"><a href="#方向键控制精灵行走的帧动画" class="headerlink" title="方向键控制精灵行走的帧动画"></a>方向键控制精灵行走的帧动画</h3><p><a href="https://garden.aezo.cn/demos/canvas方向键控制行走动画.html">https://garden.aezo.cn/demos/canvas方向键控制行走动画.html</a></p>
-<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><hr>
-<p>参考视频</p>
-<p> <a href="https://www.bilibili.com/video/av53813293?p=2" target="_blank" rel="noopener">https://www.bilibili.com/video/av53813293?p=2</a> (canvas视频【高级教程】)</p>
 ]]></content>
       <categories>
         <category>web,CSS</category>
@@ -3731,6 +3731,26 @@ Bob->Alice : hello
       </tags>
   </entry>
   <entry>
+    <title>SpringMVC</title>
+    <url>/2020/08/17/java/beforeArchitect/SpringMVC/</url>
+    <content><![CDATA[<h1 id="SpringMVC初识"><a href="#SpringMVC初识" class="headerlink" title="SpringMVC初识"></a>SpringMVC初识</h1><h2 id="什么是MVC？"><a href="#什么是MVC？" class="headerlink" title="什么是MVC？"></a>什么是MVC？</h2><p><code>MVC</code>是模型(Model)、视图(View)、控制器(Controller)的简写，是一种软件设计规范。将业务逻辑、数据、显示分离方法来组织代码。MVC主要作用是降低了视图与业务逻辑间的双向耦合。是一种<strong>架构模式</strong></p>
+<p><code>Model</code>(模型): 数据模型。提供要展示的数据，因此包含数据和行为，可以认为是领域模型或JavaBean组件（包含数据和行为），不过现在一般都是分离开来： Value Object（数据DAO） 和服务层（行为Service），也就是模型提供了模型数据查询和模型数据的状态更新等功能，包括数据和业务。</p>
+<p><code>View</code>(视图)： 负责进行模型的展示，一般就是我们见到的用户界面，客户想看到的东西</p>
+<p><code>Controller</code>（控制器）： 接收用户请求、委托给模型进行处理（状态改变），处理完毕后把返回的模型数据返回给视图，由视图负责展示。控制器做了个调度员的工作</p>
+<p><strong>最典型MVC: JSP + Servlet + JavaBean</strong></p>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>SpringMVC是Spring框架的一个模块</p>
+<p>SpringMVC运行流程：</p>
+]]></content>
+      <categories>
+        <category>framework,SpringMVC</category>
+      </categories>
+      <tags>
+        <tag>Computer Language</tag>
+        <tag>framework</tag>
+        <tag>SpringMVC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>反射</title>
     <url>/2020/10/27/java/beforeArchitect/%E5%8F%8D%E5%B0%84/</url>
     <content><![CDATA[<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>JAVA反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法；对于任意一个对象，都能调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法功能称为Java语言的反射机制。 </p>
@@ -4041,26 +4061,6 @@ Bob->Alice : hello
       </categories>
       <tags>
         <tag>others</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringMVC</title>
-    <url>/2020/08/17/java/beforeArchitect/SpringMVC/</url>
-    <content><![CDATA[<h1 id="SpringMVC初识"><a href="#SpringMVC初识" class="headerlink" title="SpringMVC初识"></a>SpringMVC初识</h1><h2 id="什么是MVC？"><a href="#什么是MVC？" class="headerlink" title="什么是MVC？"></a>什么是MVC？</h2><p><code>MVC</code>是模型(Model)、视图(View)、控制器(Controller)的简写，是一种软件设计规范。将业务逻辑、数据、显示分离方法来组织代码。MVC主要作用是降低了视图与业务逻辑间的双向耦合。是一种<strong>架构模式</strong></p>
-<p><code>Model</code>(模型): 数据模型。提供要展示的数据，因此包含数据和行为，可以认为是领域模型或JavaBean组件（包含数据和行为），不过现在一般都是分离开来： Value Object（数据DAO） 和服务层（行为Service），也就是模型提供了模型数据查询和模型数据的状态更新等功能，包括数据和业务。</p>
-<p><code>View</code>(视图)： 负责进行模型的展示，一般就是我们见到的用户界面，客户想看到的东西</p>
-<p><code>Controller</code>（控制器）： 接收用户请求、委托给模型进行处理（状态改变），处理完毕后把返回的模型数据返回给视图，由视图负责展示。控制器做了个调度员的工作</p>
-<p><strong>最典型MVC: JSP + Servlet + JavaBean</strong></p>
-<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>SpringMVC是Spring框架的一个模块</p>
-<p>SpringMVC运行流程：</p>
-]]></content>
-      <categories>
-        <category>framework,SpringMVC</category>
-      </categories>
-      <tags>
-        <tag>Computer Language</tag>
-        <tag>framework</tag>
-        <tag>SpringMVC</tag>
       </tags>
   </entry>
   <entry>

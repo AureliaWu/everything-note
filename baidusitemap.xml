@@ -666,6 +666,28 @@
 
     
   <url>
+    <loc>http://garden.aezo.cn/2020/10/25/java/beforeArchitect/JDBC/</loc>
+    <lastmod>2023-02-24T08:23:43.344Z</lastmod>
+    <data>
+        <display>
+        <title>JDBC</title>
+        <pubTime>2020-10-25T14:54:00.000Z</pubTime>
+        
+        <tag>Computer Language</tag>
+         
+        <tag>JDBC</tag>
+         
+         
+           
+             
+              <breadCrumb title="Database" url="http://garden.aezo.cn/categories/Database/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://garden.aezo.cn/2020/08/17/java/beforeArchitect/SpringMVC/</loc>
     <lastmod>2023-02-24T08:23:43.344Z</lastmod>
     <data>
@@ -683,28 +705,6 @@
            
              
               <breadCrumb title="framework,SpringMVC" url="http://garden.aezo.cn/categories/framework-SpringMVC/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://garden.aezo.cn/2020/10/25/java/beforeArchitect/JDBC/</loc>
-    <lastmod>2023-02-24T08:23:43.344Z</lastmod>
-    <data>
-        <display>
-        <title>JDBC</title>
-        <pubTime>2020-10-25T14:54:00.000Z</pubTime>
-        
-        <tag>Computer Language</tag>
-         
-        <tag>JDBC</tag>
-         
-         
-           
-             
-              <breadCrumb title="Database" url="http://garden.aezo.cn/categories/Database/"/>
           
         </display>
     </data>
