@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大数据 - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,Hadoop内存寻址时间比IO寻址快10w倍
+单机处理大数据的Io速度太慢，内存也太小
+大数据技术关心的重点： 
+
+分而治之
+并行计算
+计算向数据移动
+数据本地化读取 
+
+HDFSHadoop Di,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="大数据 - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,Hadoop内存寻址时间比IO寻址快10w倍
+单机处理大数据的Io速度太慢，内存也太小
+大数据技术关心的重点： 
+
+分而治之
+并行计算
+计算向数据移动
+数据本地化读取 
+
+HDFSHadoop Di,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="大数据 - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,Hadoop内存寻址时间比IO寻址快10w倍
+单机处理大数据的Io速度太慢，内存也太小
+大数据技术关心的重点： 
+
+分而治之
+并行计算
+计算向数据移动
+数据本地化读取 
+
+HDFSHadoop Di,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">大数据</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">大数据</h1>
+        <div class="stuff">
+            <span>十一月 29, 2023</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/algorithm/">algorithm</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/basic/">basic</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/bigData/">bigData</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><p>内存寻址时间比IO寻址快10w倍</p>
+<p>单机处理大数据的Io速度太慢，内存也太小</p>
+<p>大数据技术关心的重点： </p>
+<ul>
+<li>分而治之</li>
+<li>并行计算</li>
+<li>计算向数据移动</li>
+<li>数据本地化读取 </li>
+</ul>
+<h2 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h2><p>Hadoop Distributed File System 分布式文件系统，与其他的分布式文件系统相比，Hadoop能更好的支持分布式计算。</p>
+<h3 id="存储模型"><a href="#存储模型" class="headerlink" title="存储模型"></a>存储模型</h3><ul>
+<li>文件线性按字节切割成块（block），具有offset, id</li>
+<li>文件与文件的block大小可以不一样</li>
+<li>一个文件除最后一个block，其他block大小一致</li>
+<li>block的大小依据硬件的I/O特性调整</li>
+<li>block被分散存放在集群的节点中，具有location</li>
+<li>Block具有副本(replication),没有主从概念，副本不能出现在同一个节点</li>
+<li>副本是满足可靠性和性能的关键</li>
+<li>文件上传可以指定block的大小和副本数，上传后只能修改副本数</li>
+<li>一次写入多次读取，不支持修改</li>
+<li>支持追加数据</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

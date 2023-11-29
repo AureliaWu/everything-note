@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Uniapp - 奇天大圣的蟠桃园</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="记录当下！,Uniapp开发安卓APP离线缓存与数据持久化离线缓存： 将网络请求的数据缓存到本地，用户在没有网络链接的情况下可以继续访问已缓存的数据。Uniapp使用uni.setStorageSync和uni,"> 
+    <meta name="author" content="Aurelia"> 
+    <link rel="alternative" href="atom.xml" title="奇天大圣的蟠桃园" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Uniapp - 奇天大圣的蟠桃园">
+    <meta name="twitter:description" content="记录当下！,Uniapp开发安卓APP离线缓存与数据持久化离线缓存： 将网络请求的数据缓存到本地，用户在没有网络链接的情况下可以继续访问已缓存的数据。Uniapp使用uni.setStorageSync和uni,">
+    
+    
+    
+    
+    <meta property="og:site_name" content="奇天大圣的蟠桃园">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Uniapp - 奇天大圣的蟠桃园">
+    <meta property="og:description" content="记录当下！,Uniapp开发安卓APP离线缓存与数据持久化离线缓存： 将网络请求的数据缓存到本地，用户在没有网络链接的情况下可以继续访问已缓存的数据。Uniapp使用uni.setStorageSync和uni,">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">奇天大圣的蟠桃园</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://garden.aezo.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Uniapp</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Uniapp</h1>
+        <div class="stuff">
+            <span>十一月 29, 2023</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Computer-Language/">Computer Language</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Uniapp/">Uniapp</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/framework/">framework</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Uniapp开发安卓APP"><a href="#Uniapp开发安卓APP" class="headerlink" title="Uniapp开发安卓APP"></a>Uniapp开发安卓APP</h1><h2 id="离线缓存与数据持久化"><a href="#离线缓存与数据持久化" class="headerlink" title="离线缓存与数据持久化"></a>离线缓存与数据持久化</h2><p>离线缓存： 将网络请求的数据缓存到本地，用户在没有网络链接的情况下可以继续访问已缓存的数据。<br>Uniapp使用<code>uni.setStorageSync</code>和<code>uni.getStorageSync</code>来实现</p>
+<blockquote>
+<p>uni-app的Storage在不同端的实现不同, App端为原生的plus.storage，无大小限制，不是缓存，是持久化的</p>
+</blockquote>
+<h1 id="Uniapp离线打包安卓APK"><a href="#Uniapp离线打包安卓APK" class="headerlink" title="Uniapp离线打包安卓APK"></a>Uniapp离线打包安卓APK</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="一些下载"><a href="#一些下载" class="headerlink" title="一些下载"></a>一些下载</h3><ol>
+<li>下载安装<code>Android Studio</code>,<a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="noopener">下载地址</a></li>
+<li>下载HbuilderX最新的SDK,<a href="https://nativesupport.dcloud.net.cn/AppDocs/download/android.html#" target="_blank" rel="noopener">下载地址</a></li>
+</ol>
+<h3 id="HbuilderX离线打包"><a href="#HbuilderX离线打包" class="headerlink" title="HbuilderX离线打包"></a>HbuilderX离线打包</h3><ol>
+<li><code>HbuilderX</code>界面选择<code>发行 -&gt; 原生APP-本地打包 -&gt; 生成本地打包APP资源</code></li>
+<li>打包完成后会在控制台输出打包生成的文件地址<code>xxxx/__UNI__XXX/xxx</code>,<code>__UNI__XXX</code>是本项目对应的Appid</li>
+<li>将下载的HbuilderX最新的SDK解压，使用<code>Android Studio</code>打开包中的<code>HBuilder-Integrate-AS</code>文件夹</li>
+<li>将<code>HBuilder-Integrate-AS\simpleDemo\src\main\assets\apps\</code>下的所有文件删除，替换成步骤2中生成的整个<code>__UNI__XXX/</code>文件夹</li>
+<li>将<code>src/main/assets/data/dcloud_control.xml</code>中的<code>APPID</code>修改为上面的<code>__UNI__XXX</code></li>
+<li><code>Android Studio</code>界面选择<code>Build -&gt; Generate Signed Bundle/APK...</code>,在跳出的弹窗页面选择APK,选择<code>Next</code>,进入下一步</li>
+<li>首次生成选择<code>Create new ...</code>,<code>key store path</code>要在<code>simpleDemo</code>文件夹下，可以直接放在根目录；密码和别名都可以自定义，点击<code>ok</code>开始生成签名文件<br> 注：<ul>
+<li>此步骤是在生成签名文件，由于下载的Demo包是Gradle，可能会出现生成签名出错的问题，目前遇到的基本都是提示<code>invalid keystore format</code></li>
+<li><code>invalid keystore format</code>很可能是因为项目本身的JDK版本和电脑环境变量的JDK版本不一致，将两者调成JDK12是可以运行的</li>
+</ul>
+</li>
+<li>在<code>/simpleDemo/build.gradle</code>中配置信息，<code>keyAlias</code>为刚刚填写的key的别名，<code>keypassword</code>为自定义的密码，<code>StorageFile</code>为刚刚生成的文件名</li>
+<li>查看刚生成的签名文件(此处以<code>test.keystore</code>为例)的签名，进入到<code>test.keystore</code>文件夹，在命令行输入<code>keytool -list -v -keystore test.keystore</code></li>
+<li>步骤9中查看的签名可能只会有<code>SHA1</code>和<code>SHA256</code>两种，但实际配置时还需要<code>MD5</code>签名，则只能使用<a href="#jump">另一种方法</a>查看</li>
+<li>登录UniAPP开发者中心管理应用，进入相应的应用，选择<code>各平台信息</code>标签，如果没有则自己新建一个</li>
+<li>配置信息中的包名需要填写在<code>/simpleDemo/build.gradle</code>文件的<code>applicationId</code>中</li>
+<li>填写步骤10中的<code>MD5</code>信息、<code>SHA1</code>信息、<code>SHA256</code>信息，提交后会生成对应的APPKey</li>
+<li>将生成的APPKey填入<code>src/main/AndroidManifest.xml</code>的<code>android:value</code></li>
+<li><code>\src\main\res\drawable</code>文件夹下的<code>icon.png</code>、<code>push.png</code>、<code>splash.png</code>分别对应APP的logo、消息推送logo、启动页图片，可改成自定义</li>
+<li>在<code>\src\main\res\values\strings.xml</code>中修改APP的名称</li>
+<li><code>Android Studio</code>界面选择<code>Build -&gt; Build Bundle(s)/APK(s) -&gt; Build APK(s)</code>开始打包</li>
+<li>打包后的文件位置在<code>\build\outputs\apk\debug\simpleDemo-debug.apk</code>(<code>\release\simpleDemo-release.apk</code>不是自定义的apk包，为啥？？？有待继续研究)</li>
+</ol>
+<h4 id="查看签名文件的SHA1-SHA256-MD5信息"><a href="#查看签名文件的SHA1-SHA256-MD5信息" class="headerlink" title="查看签名文件的SHA1 SHA256 MD5信息"></a><span id="jump">查看签名文件的<code>SHA1</code> <code>SHA256</code> <code>MD5</code>信息</span></h4><p>生成<code>test.keystore</code>文件后，在<code>Android Studio</code>的<code>HBuilder-Integrate-AS</code>项目根目录下打开终端，输入<code>./gradlew signingReport</code>命令</p>
+<p>正常情况下能获取到<code>SHA1</code> <code>SHA256</code> <code>MD5</code>信息，如果报错则查看jdk版本是否一致</p>
+<p><strong>如果修改过环境变量，需要重启<code>Android Studio</code>再操作</strong></p>
+<h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><ol>
+<li><a href="https://blog.csdn.net/qq_26282869/article/details/127012224" target="_blank" rel="noopener">uniapp离线打包安卓APP全过程</a></li>
+<li><a href="https://nativesupport.dcloud.net.cn/AppDocs/download/android.html#" target="_blank" rel="noopener">HBuilderX离线SDK (Android)</a></li>
+<li><a href="https://blog.csdn.net/m0_62059090/article/details/127425912" target="_blank" rel="noopener">Android 连接第三方模拟器</a></li>
+<li><a href="https://blog.csdn.net/Ysmooth_Alone/article/details/130176427" target="_blank" rel="noopener">uniapp离线打包在Android Studio创建的jsk证书无法获取MD5的问题</a></li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
