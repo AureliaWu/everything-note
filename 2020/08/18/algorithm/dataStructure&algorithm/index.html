@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="奇天大圣的蟠桃园">
 <meta property="og:description" content="复杂度、对数器、二分法、异或运算常见的评估算法优劣的核心指标：  时间复杂度(流程决定) 额外空间复杂度(流程决定) 常数项时间(实现细节决定)  基本步骤什么是常数时间的操作？如果一个操作的执行时间不以具体样本量为转移，每次执行时间都是固定时间，这样的操作被称为常数时间的操作。 常见的常数时间操作：  算数运算(+ - * % /)等 常见的位运算(&amp;gt;&amp;gt; &amp;gt;&amp;gt;&amp;gt; &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-11-29T09:06:33.643Z">
+<meta property="og:updated_time" content="2023-12-01T08:43:08.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法基础">
 <meta name="twitter:description" content="复杂度、对数器、二分法、异或运算常见的评估算法优劣的核心指标：  时间复杂度(流程决定) 额外空间复杂度(流程决定) 常数项时间(实现细节决定)  基本步骤什么是常数时间的操作？如果一个操作的执行时间不以具体样本量为转移，每次执行时间都是固定时间，这样的操作被称为常数时间的操作。 常见的常数时间操作：  算数运算(+ - * % /)等 常见的位运算(&amp;gt;&amp;gt; &amp;gt;&amp;gt;&amp;gt; &amp;">
@@ -571,7 +571,8 @@
 <li><p>实现一个特殊的栈，在基本功能的基础上再实现返回栈中最小元素的功能</p>
 </li>
 </ol>
-<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>$$<br>T(N) = a * T(\frac{N}{b}) + O(N^d)<br>$$</p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>Master公式：</p>
+<p>$$<br>T(N) = a * T(\frac{N}{b}) + O(N^d)<br>$$</p>
 <ul>
 <li>a b d 均为常数</li>
 </ul>
@@ -593,7 +594,163 @@
 </ul>
 <h3 id="有序表"><a href="#有序表" class="headerlink" title="有序表"></a>有序表</h3><p>java中的treeMap是有序表</p>
 <p>有序表的增删查改的时间复杂度是O(logN)</p>
-<h1 id="归并排序与随机快排"><a href="#归并排序与随机快排" class="headerlink" title="归并排序与随机快排"></a>归并排序与随机快排</h1>
+<h1 id="归并排序与随机快排"><a href="#归并排序与随机快排" class="headerlink" title="归并排序与随机快排"></a>归并排序与随机快排</h1><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><ul>
+<li>整体是递归，左边排好序 + 右边排好序 + merge让整体有序</li>
+<li>让整体有序的过程里用了排外序的方法</li>
+<li>利用master公式来求解时间复杂度</li>
+<li>可以用非递归实现</li>
+</ul>
+<h3 id="常见面试题-1"><a href="#常见面试题-1" class="headerlink" title="常见面试题"></a>常见面试题</h3><p>在一个数组中，一个数左边比它小的数的总和叫数的小和，所有数的小和累加起来，叫做数组小和，求数组小和。</p>
+<p>例： [1,3,4,2,5]</p>
+<ul>
+<li>1左边比1小的数： 没有</li>
+<li>3左边比3小的数： 1</li>
+<li>4左边比4小的数： 1， 3</li>
+<li>2左边比2小的数：1</li>
+<li>5左边比5小的数： 1,3,4,2</li>
+</ul>
+<p>所以数组的小和为1+1+3+1+1+3+4+2 = 16</p>
+<p>求每个数左边有多少数大或者右边有多少数大之类的问题可以用mergesort</p>
+<h2 id="随机快排"><a href="#随机快排" class="headerlink" title="随机快排"></a>随机快排</h2><p>Partition过程：</p>
+<p>给定一个数组arr和一个数num，请把小于等于num的数放在数组的左边，大于num的数放在数组的右边。<br>要求额外空间复杂度O(1)，时间复杂度O(N)</p>
+<p>荷兰国旗划分问题</p>
+<h3 id="随机快排的时间复杂度分析"><a href="#随机快排的时间复杂度分析" class="headerlink" title="随机快排的时间复杂度分析"></a>随机快排的时间复杂度分析</h3><ul>
+<li>通过分析知道，划分值越靠近中间性能越好；越靠近两边性能越差</li>
+<li>随机选一个数进行划分的目的就是让好情况和差情况都变成概率事件</li>
+<li>把每一种情况都列出来，会有每种情况下的时间复杂度，但概率都是1/N</li>
+<li>那么所有情况都考虑，时间复杂度就是这种概率模型下的长期期望</li>
+</ul>
+<p>时间复杂度O(N * logN),额外空间复杂度O(logN)都是这么来的</p>
+<h1 id="堆与比较器"><a href="#堆与比较器" class="headerlink" title="堆与比较器"></a>堆与比较器</h1><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆结构：</p>
+<ul>
+<li>用数组实现的完全二叉树结构</li>
+<li>完全二叉树中如果每棵子树的最大值都在顶部就是大根堆</li>
+<li>完全二叉树中如果每棵子树的最小值都在最顶部就是小根堆</li>
+<li>堆结构的heapInsert与heapify操作</li>
+<li>堆结构的增大和减少</li>
+<li>优先级队列结构就是堆结构</li>
+</ul>
+<p>堆排序： 将无序数组调整成大根堆，再将第一个数与最后一个数交换，交换后堆的大小–，对剩下的数组进行heapify,最终的数组是从小到大的有序数组</p>
+<ul>
+<li>让整个数组都变成大根堆的结构建立堆的过程：从上到下的方法时间复杂度是O(N*logN);从下到上的方法，时间复杂度是O(N)</li>
+<li>把堆的最大值和堆末尾的值交换，然后减少堆的大小后再去调整堆，周而复始，时间复杂度是O(N*logN)</li>
+<li>堆的大小减小成0之后，排序完成</li>
+</ul>
+<p>Java中的PriorityQueue底层默认是小根堆</p>
+<h3 id="与堆相关的题目"><a href="#与堆相关的题目" class="headerlink" title="与堆相关的题目"></a>与堆相关的题目</h3><p>已知一个几乎有序的数组。几乎有序是指，如果把数组排好顺序的话，每个元素移动的距离一定不超过k，并且k相对于数组长度来说是比较小的。<br>请选择一个合适的排序策略，对这个数组进行排序。</p>
+<h2 id="比较器"><a href="#比较器" class="headerlink" title="比较器"></a>比较器</h2><p>任何比较器遵循-1表示前者比后者小，0表示两者相等，1表示后者比前者大</p>
+<ul>
+<li>比较器的实质是重载比较运算符</li>
+<li>比较器可以很好的用在特殊标准的排序上</li>
+<li>比较器可以很好的应用在根据特殊标准排序的结构上</li>
+<li>写代码变得容易，还用于泛型编程</li>
+</ul>
+<h1 id="trie、桶排序和排序总结"><a href="#trie、桶排序和排序总结" class="headerlink" title="trie、桶排序和排序总结"></a>trie、桶排序和排序总结</h1><p> 前缀树：</p>
+<ol>
+<li>单个字符串中，字符从前到后的加到一颗多叉树上</li>
+<li>字符放在路上，节点上有专属的数据项（常见的是pass和end值）</li>
+<li>所有样本都这样添加，如果没有路就新建，如有路就复用</li>
+<li>沿途节点的pass值增加1，每个字符串结束时来到的节点end值加1</li>
+</ol>
+<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><p>计数排序 &amp; 基数排序</p>
+<ul>
+<li>桶排序思想下的排序都是不基于比较的排序</li>
+<li>时间复杂度为O(N),额外空间复杂度O(M)</li>
+<li>应用范围有限，需要样本的数据满足桶的规划</li>
+</ul>
+<p>桶排序是一种思想，计数排序和基数排序是实现方法</p>
+<p>基于比较的排序有更广泛的用途</p>
+<h2 id="排序算法的稳定性"><a href="#排序算法的稳定性" class="headerlink" title="排序算法的稳定性"></a>排序算法的稳定性</h2><p>稳定性是指同样大小的样本在排序之后不会改变相对次序</p>
+<p>对基础类型来说，稳定性毫无意义</p>
+<p>对非基础类型来说，稳定性有重要意义</p>
+<p>有些排序算法可以实现成稳定的，而有些排序算法无论如何都实现不成稳定的</p>
+<h2 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>时间复杂度</th>
+<th>额外空间复杂度</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选择排序</td>
+<td>$O(N^2)$</td>
+<td>O(1)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>冒泡排序</td>
+<td>$O(N^2)$</td>
+<td>O(1)</td>
+<td>有</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>$O(N^2)$</td>
+<td>O(1)</td>
+<td>有</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>$O(N * logN)$</td>
+<td>O(N)</td>
+<td>有</td>
+</tr>
+<tr>
+<td>随机快排</td>
+<td>$O(N * logN)$</td>
+<td>O(logN)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>$O(N * logN)$</td>
+<td>O(1)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>计数排序</td>
+<td>O(N)</td>
+<td>O(M)</td>
+<td>有</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(N)</td>
+<td>O(M)</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+<h3 id="排序算法的选择"><a href="#排序算法的选择" class="headerlink" title="排序算法的选择"></a>排序算法的选择</h3><ol>
+<li>不基于比较的排序，对样本数据有严格要求，不易改写</li>
+<li>基于比较的排序，只要规定好两个样本怎么比大小就可以直接复用</li>
+<li>基于比较的排序，时间复杂度的极限是O(N*logN)</li>
+<li>时间复杂度O(N * logN)、额外空间复杂度低于O(N)、且稳定的基于比较排序是不存在的</li>
+<li>为了绝对的速度选快排、为了省空间选堆排、为了稳定性选归并</li>
+</ol>
+<h3 id="常见的坑"><a href="#常见的坑" class="headerlink" title="常见的坑"></a>常见的坑</h3><ol>
+<li>归并排序的额外空间复杂度可以变成O(1),“归并排序 内部缓存法”，但是将变得不在稳定</li>
+<li>“原地归并排序”是垃圾帖，会让时间复杂度变成O(N^2)</li>
+<li>快速排序稳定性改进，”01 stable sort”,但是会对样本数据要求更多<br>例如： “在整型数组中，请把奇数放在数组的左边，偶数放在数组右边，要求所有奇数之间原始的相对次序不变，所有偶数之间原始相对次序不变<br>时间复杂度做到O(N),额外空间复杂度做到O(1)” 实际partition过程做不到稳定性</li>
+</ol>
+<h1 id="链表相关面试题"><a href="#链表相关面试题" class="headerlink" title="链表相关面试题"></a>链表相关面试题</h1><ul>
+<li>对于笔试，不用太在乎空间复杂度，一切为了时间复杂度</li>
+<li>对于面试，时间复杂度依然在第一位，但是一定要找到空间最省的方法</li>
+</ul>
+<h2 id="链表面试题常用数据结构与技巧"><a href="#链表面试题常用数据结构与技巧" class="headerlink" title="链表面试题常用数据结构与技巧"></a>链表面试题常用数据结构与技巧</h2><ol>
+<li>使用容器（哈希表、数组等）</li>
+<li>快慢指针</li>
+</ol>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><ol>
+<li>输入链表头节点，奇数长度返回中点，偶数长度返回上中点</li>
+<li>输入链表头节点，奇数长度返回中点，偶数长度返回下中点</li>
+<li>输入链表头结点，奇数长度返回中点前一个，偶数长度返回上中点前一个</li>
+<li>输入链表节点，奇数长度返回中点前一个，偶数长度返回下中点前一个</li>
+</ol>
+
       
     </div>
 
@@ -788,7 +945,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂度、对数器、二分法、异或运算"><span class="nav-number">1.</span> <span class="nav-text">复杂度、对数器、二分法、异或运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本步骤"><span class="nav-number">1.1.</span> <span class="nav-text">基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本排序"><span class="nav-number">1.3.</span> <span class="nav-text">基本排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#额外空间复杂度"><span class="nav-number">1.4.</span> <span class="nav-text">额外空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常数项时间"><span class="nav-number">1.5.</span> <span class="nav-text">常数项时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最优解"><span class="nav-number">1.6.</span> <span class="nav-text">最优解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数器"><span class="nav-number">1.7.</span> <span class="nav-text">对数器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分法"><span class="nav-number">1.8.</span> <span class="nav-text">二分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异或运算"><span class="nav-number">1.9.</span> <span class="nav-text">异或运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异或运算的应用"><span class="nav-number">1.9.1.</span> <span class="nav-text">异或运算的应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表结构、栈、队列、递归行为、哈希表"><span class="nav-number">2.</span> <span class="nav-text">链表结构、栈、队列、递归行为、哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表结构"><span class="nav-number">2.1.</span> <span class="nav-text">链表结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单向链表和双向链表最简单的练习"><span class="nav-number">2.1.1.</span> <span class="nav-text">单向链表和双向链表最简单的练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈和队列"><span class="nav-number">2.2.</span> <span class="nav-text">栈和队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑概念"><span class="nav-number">2.2.1.</span> <span class="nav-text">逻辑概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际实现"><span class="nav-number">2.2.2.</span> <span class="nav-text">实际实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见面试题"><span class="nav-number">2.2.3.</span> <span class="nav-text">常见面试题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归"><span class="nav-number">2.3.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希表"><span class="nav-number">2.4.</span> <span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有序表"><span class="nav-number">2.4.1.</span> <span class="nav-text">有序表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序与随机快排"><span class="nav-number">3.</span> <span class="nav-text">归并排序与随机快排</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂度、对数器、二分法、异或运算"><span class="nav-number">1.</span> <span class="nav-text">复杂度、对数器、二分法、异或运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本步骤"><span class="nav-number">1.1.</span> <span class="nav-text">基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本排序"><span class="nav-number">1.3.</span> <span class="nav-text">基本排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#额外空间复杂度"><span class="nav-number">1.4.</span> <span class="nav-text">额外空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常数项时间"><span class="nav-number">1.5.</span> <span class="nav-text">常数项时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最优解"><span class="nav-number">1.6.</span> <span class="nav-text">最优解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数器"><span class="nav-number">1.7.</span> <span class="nav-text">对数器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分法"><span class="nav-number">1.8.</span> <span class="nav-text">二分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异或运算"><span class="nav-number">1.9.</span> <span class="nav-text">异或运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异或运算的应用"><span class="nav-number">1.9.1.</span> <span class="nav-text">异或运算的应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表结构、栈、队列、递归行为、哈希表"><span class="nav-number">2.</span> <span class="nav-text">链表结构、栈、队列、递归行为、哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表结构"><span class="nav-number">2.1.</span> <span class="nav-text">链表结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单向链表和双向链表最简单的练习"><span class="nav-number">2.1.1.</span> <span class="nav-text">单向链表和双向链表最简单的练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈和队列"><span class="nav-number">2.2.</span> <span class="nav-text">栈和队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑概念"><span class="nav-number">2.2.1.</span> <span class="nav-text">逻辑概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际实现"><span class="nav-number">2.2.2.</span> <span class="nav-text">实际实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见面试题"><span class="nav-number">2.2.3.</span> <span class="nav-text">常见面试题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归"><span class="nav-number">2.3.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希表"><span class="nav-number">2.4.</span> <span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有序表"><span class="nav-number">2.4.1.</span> <span class="nav-text">有序表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序与随机快排"><span class="nav-number">3.</span> <span class="nav-text">归并排序与随机快排</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序"><span class="nav-number">3.1.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见面试题-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">常见面试题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机快排"><span class="nav-number">3.2.</span> <span class="nav-text">随机快排</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机快排的时间复杂度分析"><span class="nav-number">3.2.1.</span> <span class="nav-text">随机快排的时间复杂度分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆与比较器"><span class="nav-number">4.</span> <span class="nav-text">堆与比较器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-number">4.1.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与堆相关的题目"><span class="nav-number">4.1.1.</span> <span class="nav-text">与堆相关的题目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较器"><span class="nav-number">4.2.</span> <span class="nav-text">比较器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trie、桶排序和排序总结"><span class="nav-number">5.</span> <span class="nav-text">trie、桶排序和排序总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排序"><span class="nav-number">5.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法的稳定性"><span class="nav-number">5.2.</span> <span class="nav-text">排序算法的稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法总结"><span class="nav-number">5.3.</span> <span class="nav-text">排序算法总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#排序算法的选择"><span class="nav-number">5.3.1.</span> <span class="nav-text">排序算法的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的坑"><span class="nav-number">5.3.2.</span> <span class="nav-text">常见的坑</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表相关面试题"><span class="nav-number">6.</span> <span class="nav-text">链表相关面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表面试题常用数据结构与技巧"><span class="nav-number">6.1.</span> <span class="nav-text">链表面试题常用数据结构与技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题"><span class="nav-number">6.2.</span> <span class="nav-text">面试题</span></a></li></ol></li></ol></div>
             
 
           </div>
